@@ -1,0 +1,355 @@
+{
+    "declaration": {
+        "attributes": {
+            "version": "1.0",
+            "encoding": "utf-8",
+            "standalone": "yes"
+        }
+    },
+    "elements": [
+        {
+            "type": "element",
+            "name": "items",
+            "attributes": {
+                "totalitems": "62",
+                "termsofuse": "https://boardgamegeek.com/xmlapi/termsofuse",
+                "pubdate": "Sat, 31 Aug 2019 05:34:24 +0000"
+            },
+            "elements": [
+                {
+                    "type": "element",
+                    "name": "item",
+                    "attributes": {
+                        "objecttype": "thing",
+                        "objectid": "161970",
+                        "subtype": "boardgame",
+                        "collid": "29804189"
+                    },
+                    "elements": [
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "sortindex": "1"
+                            },
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Alchemists"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "yearpublished",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "2014"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "image",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "https://cf.geekdo-images.com/original/img/VKBFHqR2xm0EFGWfb1sPJZctMCs=/0x0/pic2241156.png"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "thumbnail",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "https://cf.geekdo-images.com/thumb/img/4VjOkEjTXNR4KQMjaOK7JibjPSw=/fit-in/200x150/pic2241156.png"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "stats",
+                            "attributes": {
+                                "minplayers": "2",
+                                "maxplayers": "4",
+                                "minplaytime": "120",
+                                "maxplaytime": "120",
+                                "playingtime": "120",
+                                "numowned": "19700"
+                            },
+                            "elements": [
+                                {
+                                    "type": "element",
+                                    "name": "rating",
+                                    "attributes": {
+                                        "value": "8"
+                                    },
+                                    "elements": [
+                                        {
+                                            "type": "element",
+                                            "name": "usersrated",
+                                            "attributes": {
+                                                "value": "15242"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "average",
+                                            "attributes": {
+                                                "value": "7.69466"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "bayesaverage",
+                                            "attributes": {
+                                                "value": "7.47884"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "stddev",
+                                            "attributes": {
+                                                "value": "1.39824"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "median",
+                                            "attributes": {
+                                                "value": "0"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "ranks",
+                                            "elements": [
+                                                {
+                                                    "type": "element",
+                                                    "name": "rank",
+                                                    "attributes": {
+                                                        "type": "subtype",
+                                                        "id": "1",
+                                                        "name": "boardgame",
+                                                        "friendlyname": "Board Game Rank",
+                                                        "value": "91",
+                                                        "bayesaverage": "7.47884"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "element",
+                                                    "name": "rank",
+                                                    "attributes": {
+                                                        "type": "family",
+                                                        "id": "5497",
+                                                        "name": "strategygames",
+                                                        "friendlyname": "Strategy Game Rank",
+                                                        "value": "76",
+                                                        "bayesaverage": "7.50035"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "status",
+                            "attributes": {
+                                "own": "1",
+                                "prevowned": "0",
+                                "fortrade": "0",
+                                "want": "0",
+                                "wanttoplay": "0",
+                                "wanttobuy": "0",
+                                "wishlist": "0",
+                                "preordered": "0",
+                                "lastmodified": "2016-01-24 03:30:10"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "numplays",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "1"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "comment",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "You are competing to be the most prestigious Alchemiet, by publishing your theories, debunking others theories and generally showing off.\r\nA worker placement game, combined with a sudoko like logic puzzle. You combine two cards to make a potion, and try to figure out what the true nature of an ingredent is. The game uses a smartphone app to combine ingredients (by scanning th cards) and to randomize the solution to the puzzle for each game."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "element",
+                    "name": "item",
+                    "attributes": {
+                        "objecttype": "thing",
+                        "objectid": "204650",
+                        "subtype": "boardgame",
+                        "collid": "37549313"
+                    },
+                    "elements": [
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "sortindex": "1"
+                            },
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Alchemists: The King's Golem"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "yearpublished",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "2016"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "image",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "https://cf.geekdo-images.com/original/img/8KjTjLyMfdjh-ftl3p2E_MYEBYY=/0x0/pic3195558.jpg"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "thumbnail",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "https://cf.geekdo-images.com/thumb/img/8JvyNMgJl6R1Vf01ybWAd0XVQ5U=/fit-in/200x150/pic3195558.jpg"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "stats",
+                            "attributes": {
+                                "minplayers": "2",
+                                "maxplayers": "4",
+                                "minplaytime": "120",
+                                "playingtime": "120",
+                                "numowned": "3794"
+                            },
+                            "elements": [
+                                {
+                                    "type": "element",
+                                    "name": "rating",
+                                    "attributes": {
+                                        "value": "N/A"
+                                    },
+                                    "elements": [
+                                        {
+                                            "type": "element",
+                                            "name": "usersrated",
+                                            "attributes": {
+                                                "value": "757"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "average",
+                                            "attributes": {
+                                                "value": "8.45367"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "bayesaverage",
+                                            "attributes": {
+                                                "value": "6.53682"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "stddev",
+                                            "attributes": {
+                                                "value": "1.20512"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "median",
+                                            "attributes": {
+                                                "value": "0"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "ranks",
+                                            "elements": [
+                                                {
+                                                    "type": "element",
+                                                    "name": "rank",
+                                                    "attributes": {
+                                                        "type": "subtype",
+                                                        "id": "1",
+                                                        "name": "boardgame",
+                                                        "friendlyname": "Board Game Rank",
+                                                        "value": "Not Ranked",
+                                                        "bayesaverage": "6.53682"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "status",
+                            "attributes": {
+                                "own": "1",
+                                "prevowned": "0",
+                                "fortrade": "0",
+                                "want": "0",
+                                "wanttoplay": "0",
+                                "wanttobuy": "0",
+                                "wishlist": "0",
+                                "preordered": "0",
+                                "lastmodified": "2016-10-17 08:13:14"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "numplays",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

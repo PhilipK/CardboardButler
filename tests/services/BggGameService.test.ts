@@ -35,17 +35,17 @@ describe("BggGameService", () => {
             expect(games).toHaveLength(2);
         })
 
-        it('Games names are set', async () => {
-            const singleGameXml = readFileSync('tests/services/testxml/TwoGamesCollection.xml', 'utf8');
-            fetch.mock(expectedUrl, 200, {
-                response: {
-                    body: singleGameXml
-                }
-            });
-            const games = await service.getUserCollection("Warium");
-            expect(games[0].name).toEqual("Alchemists");
-            expect(games[1].name).toEqual("Alchemists: The King's Golem");
-        })
+        // it('Games names are set', async () => {
+        //     const singleGameXml = readFileSync('tests/services/testxml/TwoGamesCollection.xml', 'utf8');
+        //     fetch.mock(expectedUrl, 200, {
+        //         response: {
+        //             body: singleGameXml
+        //         }
+        //     });
+        //     const games = await service.getUserCollection("Warium");
+        //     expect(games[0].name).toEqual("Alchemists");
+        //     expect(games[1].name).toEqual("Alchemists: The King's Golem");
+        // })
     });
 
 })

@@ -70,5 +70,7 @@
     "webpack-merge": "^4.2.1",
     "whatwg-fetch": "^3.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "xml-js": "^1.6.11"
+  }
 }

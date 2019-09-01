@@ -1,5 +1,6 @@
 import GameService, { BggRetryResult } from "./GameService";
 import FetchService from "./FetchService";
+import * as convert from "xml-js";
 
 class BggGameService implements GameService {
 
@@ -12,20 +13,19 @@ class BggGameService implements GameService {
     }
 
     async getUserCollection(username: string): Promise<GameInfo[] | BggRetryResult> {
-        const textResult = await this.fetchService(this.buildCollectionUrl(username)).then((res) => res.text());
-        const xmlDoc = this.parser.parseFromString(textResult, "application/xml");
-        const itemsXml = xmlDoc.childNodes[1];
-        const games: GameInfo[] = [];
-        itemsXml.childNodes.forEach((item, i) => {
-            if (item.nodeName == "item") {
-                
-                const game: GameInfo = {
-                    name: "john",
-                    thumbnailUrl: "seena"
-                }
-                games.push(game);
+        const textXml = await this.fetchService(this.buildCollectionUrl(username)).then((res) => res.text());
+        const jsObj = convert.xml2js(textXml);
+        const itemsXml: [] = jsObj.elements[0].elements;
+
+        const games: GameInfo[] = itemsXml.map((item) => {
+            const game: GameInfo = {
+                name: "john",
+                thumbnailUrl: "seena"
             }
-        });
+            return game;
+        })
+
+
         return games;
 
     }
