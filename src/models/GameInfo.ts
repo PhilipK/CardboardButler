@@ -3,7 +3,9 @@ export interface GameInfo {
     thumbnailUrl: string;
     imageUrl:string;
     yearPublished: number;
-    minPlayers:number;
-    maxPlayers:number;
+    minPlayers?:number;
+    maxPlayers?:number;
+    minPlaytime?:number;
+    maxPlaytime?:number;
     
 }

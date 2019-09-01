@@ -97,6 +97,20 @@ describe("BggGameService", () => {
             expect(games[1].minPlayers).toEqual(2);
             expect(games[1].maxPlayers).toEqual(4);            
         })
+
+        it('Has min and max playtime', async () => {
+            const singleGameXml = readFileSync('tests/services/testxml/TwoGamesCollection.xml', 'utf8');
+            fetch.mock(expectedUrl, 200, {
+                response: {
+                    body: singleGameXml
+                }
+            });
+            const games: GameInfo[] = await service.getUserCollection("Warium");
+            expect(games[0].minPlaytime).toEqual(120);
+            expect(games[0].maxPlaytime).toEqual(120);
+            expect(games[1].minPlaytime).toEqual(120);
+            expect(games[1].maxPlaytime).toBeUndefined();            
+        })
     });
 
 })

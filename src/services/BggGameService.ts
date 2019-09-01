@@ -8,7 +8,7 @@ class BggGameService implements GameService {
     private fetchService: FetchService;
 
 
-    constructor(fetchService: FetchService) {
+    constructor(fetchService?: FetchService) {
         this.fetchService = fetchService;
     }
 
@@ -49,7 +49,7 @@ class BggGameService implements GameService {
     }
 
     private async fetCollectionXml(username: string) {
-        return await this.fetchService(this.buildCollectionUrl(username)).then((res) => res.text());
+        return await (this.fetchService || fetch)(this.buildCollectionUrl(username)).then((res) => res.text());
     }
 
     private buildCollectionUrl(username: string) {

@@ -1,3 +1,5 @@
+import { GameInfo } from "../models/GameInfo";
+
 export type BggRetryResult = { retryLater: true };
 
 

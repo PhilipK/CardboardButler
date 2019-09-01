@@ -1,20 +1,25 @@
 import * as React from "react";
 import "./../assets/scss/App.scss";
+import BggGameService from "../services/BggGameService";
+import { GameInfo } from "../models/GameInfo";
 
 export interface AppProps {
 }
 
 
 export interface AppState {
-    xmlText: string;
+    games: GameInfo[];
 }
 
 
 export default class App extends React.Component<AppProps, AppState> {
+
+    private bggService: BggGameService;
     constructor(superProps: Readonly<AppProps>) {
         super(superProps);
-        this.state = { xmlText: undefined };
+        this.state = { games: [] };
         this.fetchGames = this.fetchGames.bind(this);
+        this.bggService = new BggGameService(window.fetch);
     }
 
     componentDidMount() {
@@ -22,19 +27,24 @@ export default class App extends React.Component<AppProps, AppState> {
     }
 
     async fetchGames() {
-        const url = "https://cors-anywhere.herokuapp.com/https://bggproxy.azurewebsites.net/collection?username=Warium&own=1";
-        let gamesText = await fetch(url)
-            .then((res) => res.text())
-        this.setState({ xmlText: gamesText });
+        const games = await this.bggService.getUserCollection("Cyndaq");
+        console.log(games);
+        this.setState({ games: games });
     }
 
     render() {
-        const { xmlText } = this.state;
+        const { games } = this.state;
         return (
             <div className="app">
                 Hello World
                 <div>
-                    {xmlText}
+                    {games.map((game) => (
+                        <div key={game.name}>
+
+                            <h3>{game.name}</h3>
+                            <img src={game.thumbnailUrl}></img>
+                        </div>
+                    ))}
                 </div>
             </div>
         );
