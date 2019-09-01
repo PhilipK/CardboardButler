@@ -5,7 +5,6 @@ import * as convert from "xml-js";
 class BggGameService implements GameService {
 
     private fetchService: FetchService;
-    private parser = new DOMParser();
 
 
     constructor(fetchService: FetchService) {
@@ -13,21 +12,22 @@ class BggGameService implements GameService {
     }
 
     async getUserCollection(username: string): Promise<GameInfo[] | BggRetryResult> {
-        const textXml = await this.fetchService(this.buildCollectionUrl(username)).then((res) => res.text());
-        const jsObj = convert.xml2js(textXml);
-        const itemsXml: [] = jsObj.elements[0].elements;
-
-        const games: GameInfo[] = itemsXml.map((item) => {
+        const xmlResult = await this.fetCollectionXml(username);
+        const jsObj = convert.xml2js(xmlResult);
+        const allItems = jsObj.elements[0].elements;
+        return allItems.map((item: convert.Element) => {
+            const tag = item.elements;
+            const gameName = tag.find((t) => t.name == "name").elements[0].text.toString();
             const game: GameInfo = {
-                name: "john",
+                name: gameName,
                 thumbnailUrl: "seena"
             }
             return game;
         })
+    }
 
-
-        return games;
-
+    private async fetCollectionXml(username: string) {
+        return await this.fetchService(this.buildCollectionUrl(username)).then((res) => res.text());
     }
 
     private buildCollectionUrl(username: string) {
