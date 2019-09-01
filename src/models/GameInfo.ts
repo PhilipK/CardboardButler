@@ -1,4 +1,4 @@
-interface GameInfo{
+export interface GameInfo{
     name:string;
     thumbnailUrl:string;
 }
