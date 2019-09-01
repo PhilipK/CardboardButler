@@ -1,17 +1,17 @@
-import GameService from "./GameService";
+import GameService, { BggRetryResult } from "./GameService";
 import FetchService from "./FetchService";
 
 class BggGameService implements GameService {
 
-    fetchService: FetchService;
+    private fetchService: FetchService;
 
     constructor(fetchService: FetchService) {
         this.fetchService = fetchService;
     }
 
-    getUserCollection(username: string): GameInfo[] {
-        
-        throw new Error("Method not implemented.");
+    getUserCollection(username: string): GameInfo[] | BggRetryResult {
+        this.fetchService(`https://cors-anywhere.herokuapp.com/https://api.geekdo.com/xmlapi2/collection?username=${username}&own=1&stats=1`);
+        return [];
     }
 
 }

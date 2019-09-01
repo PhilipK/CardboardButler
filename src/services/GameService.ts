@@ -1,5 +1,7 @@
+export type BggRetryResult = { retryLater: true };
+
 interface GameService {
-    getUserCollection(username: string): GameInfo[];
+    getUserCollection(username: string): GameInfo[] | BggRetryResult;
 }
 
 
