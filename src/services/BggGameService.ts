@@ -17,14 +17,12 @@ class BggGameService implements GameService {
         const jsObj = convert.xml2js(xmlResult);
         const allItems: convert.Element[] = jsObj.elements[0].elements;
         return allItems.map((item: convert.Element) => {
-            const tag = item.elements;
-            const gameName = this.getTagValue(tag, "name");
-            const thumbnailUrl = this.getTagValue(tag, "thumbnail");
-            const yearpublished = parseInt(this.getTagValue(tag, "yearpublished"), 10);
+            const valueOf = (attributeName: string) => this.getTagValue(item.elements, attributeName);
             const game: GameInfo = {
-                name: gameName,
-                thumbnailUrl: thumbnailUrl,
-                yearPublished: yearpublished
+                name: valueOf("name"),
+                thumbnailUrl: valueOf("thumbnail"),
+                yearPublished: parseInt(valueOf("yearpublished"), 10),
+                imageUrl: valueOf("image")
             }
             return game;
         })

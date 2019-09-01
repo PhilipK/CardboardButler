@@ -71,6 +71,18 @@ describe("BggGameService", () => {
             expect(games[0].yearPublished).toEqual(2014);
             expect(games[1].yearPublished).toEqual(2016);
         })
+
+        it('Games image is set', async () => {
+            const singleGameXml = readFileSync('tests/services/testxml/TwoGamesCollection.xml', 'utf8');
+            fetch.mock(expectedUrl, 200, {
+                response: {
+                    body: singleGameXml
+                }
+            });
+            const games: GameInfo[] = await service.getUserCollection("Warium");
+            expect(games[0].imageUrl).toEqual("https://cf.geekdo-images.com/original/img/VKBFHqR2xm0EFGWfb1sPJZctMCs=/0x0/pic2241156.png");
+            expect(games[1].imageUrl).toEqual("https://cf.geekdo-images.com/original/img/8KjTjLyMfdjh-ftl3p2E_MYEBYY=/0x0/pic3195558.jpg");
+        })
     });
 
 })
