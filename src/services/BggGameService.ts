@@ -20,9 +20,11 @@ class BggGameService implements GameService {
             const tag = item.elements;
             const gameName = this.getTagValue(tag, "name");
             const thumbnailUrl = this.getTagValue(tag, "thumbnail");
+            const yearpublished = parseInt(this.getTagValue(tag, "yearpublished"), 10);
             const game: GameInfo = {
                 name: gameName,
-                thumbnailUrl: thumbnailUrl
+                thumbnailUrl: thumbnailUrl,
+                yearPublished: yearpublished
             }
             return game;
         })
