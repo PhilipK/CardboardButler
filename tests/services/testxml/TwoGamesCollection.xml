@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<items totalitems="62" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse" pubdate="Sat, 31 Aug 2019 05:34:24 +0000">
+    <item objecttype="thing" objectid="161970" subtype="boardgame" collid="29804189">
+        <name sortindex="1">Alchemists</name>
+        <yearpublished>2014</yearpublished>
+        <image>https://cf.geekdo-images.com/original/img/VKBFHqR2xm0EFGWfb1sPJZctMCs=/0x0/pic2241156.png</image>
+        <thumbnail>https://cf.geekdo-images.com/thumb/img/4VjOkEjTXNR4KQMjaOK7JibjPSw=/fit-in/200x150/pic2241156.png</thumbnail>
+        <stats minplayers="2" maxplayers="4" minplaytime="120" maxplaytime="120" playingtime="120" numowned="19700">
+            <rating value="8">
+                <usersrated value="15242" />
+                <average value="7.69466" />
+                <bayesaverage value="7.47884" />
+                <stddev value="1.39824" />
+                <median value="0" />
+                <ranks>
+                    <rank type="subtype" id="1" name="boardgame" friendlyname="Board Game Rank" value="91" bayesaverage="7.47884" />
+                    <rank type="family" id="5497" name="strategygames" friendlyname="Strategy Game Rank" value="76" bayesaverage="7.50035" />
+                </ranks>
+            </rating>
+        </stats>
+        <status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0" preordered="0" lastmodified="2016-01-24 03:30:10" />
+        <numplays>1</numplays>
+        <comment>You are competing to be the most prestigious Alchemiet, by publishing your theories, debunking others theories and generally showing off.
+A worker placement game, combined with a sudoko like logic puzzle. You combine two cards to make a potion, and try to figure out what the true nature of an ingredent is. The game uses a smartphone app to combine ingredients (by scanning th cards) and to randomize the solution to the puzzle for each game.</comment>
+    </item>
+    <item objecttype="thing" objectid="204650" subtype="boardgame" collid="37549313">
+        <name sortindex="1">Alchemists: The King&#039;s Golem</name>
+        <yearpublished>2016</yearpublished>
+        <image>https://cf.geekdo-images.com/original/img/8KjTjLyMfdjh-ftl3p2E_MYEBYY=/0x0/pic3195558.jpg</image>
+        <thumbnail>https://cf.geekdo-images.com/thumb/img/8JvyNMgJl6R1Vf01ybWAd0XVQ5U=/fit-in/200x150/pic3195558.jpg</thumbnail>
+        <stats minplayers="2" maxplayers="4" minplaytime="120" playingtime="120" numowned="3794">
+            <rating value="N/A">
+                <usersrated value="757" />
+                <average value="8.45367" />
+                <bayesaverage value="6.53682" />
+                <stddev value="1.20512" />
+                <median value="0" />
+                <ranks>
+                    <rank type="subtype" id="1" name="boardgame" friendlyname="Board Game Rank" value="Not Ranked" bayesaverage="6.53682" />
+                </ranks>
+            </rating>
+        </stats>
+        <status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0" preordered="0" lastmodified="2016-10-17 08:13:14" />
+        <numplays>0</numplays>
+    </item>
+</items>
