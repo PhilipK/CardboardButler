@@ -1,4 +1,4 @@
-import GameService, { CollectionResult, BggRetryResult } from "./GameService";
+import { BggRetryResult } from "./GameService";
 import FetchService from "./FetchService";
 import * as convert from "xml-js";
 import { GameInfo } from "../models/GameInfo";
@@ -62,7 +62,7 @@ class BggGameService {
                     return { retryLater: true };
                 }
             }
-        }).catch((error:Error) => {
+        }).catch((error: Error) => {
             return { retryLater: true, error };
 
         });

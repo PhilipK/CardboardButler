@@ -1,8 +1,6 @@
 import BggGameService from "../../src/services/BggGameService";
 import * as fetchMock from "fetch-mock";
-// import fetch from "node-fetch";
 import { readFileSync } from "fs";
-import { GameInfo } from "../../src/models/GameInfo";
 
 describe("BggGameService", () => {
 
@@ -124,7 +122,7 @@ describe("BggGameService", () => {
         </message>`;
 
         it("Returns try again when 202 is given", async () => {
-            const myMock = fetch.mock(expectedUrl, 202, {
+            fetch.mock(expectedUrl, 202, {
                 response: {
                     status: 202,
                     body: tryAgainMessage
@@ -142,7 +140,7 @@ describe("BggGameService", () => {
 
         it("Returns try again when an error is given, but informs there was an error", async () => {
             const error= new TypeError("Error!!!");
-            const myMock = fetch.mock(expectedUrl, 503, {
+            fetch.mock(expectedUrl, 503, {
                 response: {
                     throws: error
                 }
