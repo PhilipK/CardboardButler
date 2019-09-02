@@ -1,9 +1,9 @@
-import GameService, { BggRetryResult } from "./GameService";
+import GameService, { CollectionResult, BggRetryResult } from "./GameService";
 import FetchService from "./FetchService";
 import * as convert from "xml-js";
 import { GameInfo } from "../models/GameInfo";
 
-class BggGameService implements GameService {
+class BggGameService {
 
     private fetchService: FetchService;
 
@@ -12,8 +12,11 @@ class BggGameService implements GameService {
         this.fetchService = fetchService;
     }
 
-    async getUserCollection(username: string) {
+    async getUserCollection(username: string): Promise<BggRetryResult | GameInfo[]> {
         const xmlResult = await this.fetCollectionXml(username);
+        if (typeof xmlResult !== "string") {
+            return xmlResult;
+        };
         const jsObj = convert.xml2js(xmlResult);
         const allItems: convert.Element[] = jsObj.elements[0].elements;
         return allItems.map((item: convert.Element) => {
@@ -49,7 +52,18 @@ class BggGameService implements GameService {
     }
 
     private async fetCollectionXml(username: string) {
-        return await (this.fetchService || fetch)(this.buildCollectionUrl(username)).then((res) => res.text());
+        const url = this.buildCollectionUrl(username);
+        const f = this.fetchService || fetch;
+        return f(url).then(async (res) => {
+            if (res.status === 200) {
+                return await res.text();
+            } else {
+                if (res.status === 202) {
+                    const retryLater = { retryLater: true };
+                    return retryLater;
+                }
+            }
+        });
     }
 
     private buildCollectionUrl(username: string) {
