@@ -134,9 +134,25 @@ describe("BggGameService", () => {
             expect(response).toBeInstanceOf(Object);
             if (!Array.isArray(response)) {
                 expect(response.retryLater).toBeTruthy();
+                expect(response.error).toBeUndefined();
+
             }
+        });
 
 
+        it("Returns try again when an error is given, but informs there was an error", async () => {
+            const error= new TypeError("Error!!!");
+            const myMock = fetch.mock(expectedUrl, 503, {
+                response: {
+                    throws: error
+                }
+            });
+            const response = await service.getUserCollection("Warium");
+            expect(response).toBeInstanceOf(Object);
+            if (!Array.isArray(response)) {
+                expect(response.retryLater).toBeTruthy();
+                expect(response.error).toEqual(error);
+            }
         });
     });
 

@@ -59,10 +59,12 @@ class BggGameService {
                 return await res.text();
             } else {
                 if (res.status === 202) {
-                    const retryLater = { retryLater: true };
-                    return retryLater;
+                    return { retryLater: true };
                 }
             }
+        }).catch((error:Error) => {
+            return { retryLater: true, error };
+
         });
     }
 
