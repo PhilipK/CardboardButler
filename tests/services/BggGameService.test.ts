@@ -39,41 +39,35 @@ describe("BggGameService", () => {
             })
 
             it('Returns a list of games', async () => {
-
                 const games = await service.getUserCollection("Warium");
                 expect(games).toHaveLength(2);
             })
 
             it('Games names are set', async () => {
-
                 const games = await service.getUserCollection("Warium");
                 expect(games[0].name).toEqual("Alchemists");
                 expect(games[1].name).toEqual("Alchemists: The King's Golem");
             })
 
             it('Games thumbnails are set', async () => {
-
                 const games = await service.getUserCollection("Warium");
                 expect(games[0].thumbnailUrl).toEqual("https://cf.geekdo-images.com/thumb/img/4VjOkEjTXNR4KQMjaOK7JibjPSw=/fit-in/200x150/pic2241156.png");
                 expect(games[1].thumbnailUrl).toEqual("https://cf.geekdo-images.com/thumb/img/8JvyNMgJl6R1Vf01ybWAd0XVQ5U=/fit-in/200x150/pic3195558.jpg");
             })
 
             it('Games yearpublished is set', async () => {
-
                 const games = await service.getUserCollection("Warium");
                 expect(games[0].yearPublished).toEqual(2014);
                 expect(games[1].yearPublished).toEqual(2016);
             })
 
             it('Games image is set', async () => {
-
                 const games = await service.getUserCollection("Warium");
                 expect(games[0].imageUrl).toEqual("https://cf.geekdo-images.com/original/img/VKBFHqR2xm0EFGWfb1sPJZctMCs=/0x0/pic2241156.png");
                 expect(games[1].imageUrl).toEqual("https://cf.geekdo-images.com/original/img/8KjTjLyMfdjh-ftl3p2E_MYEBYY=/0x0/pic3195558.jpg");
             })
 
             it('Has min and max players numbers', async () => {
-
                 const games = await service.getUserCollection("Warium");
                 expect(games[0].minPlayers).toEqual(2);
                 expect(games[0].maxPlayers).toEqual(4);
@@ -82,7 +76,6 @@ describe("BggGameService", () => {
             })
 
             it('Has min and max playtime', async () => {
-
                 const games = await service.getUserCollection("Warium");
                 expect(games[0].minPlaytime).toEqual(120);
                 expect(games[0].maxPlaytime).toEqual(120);
@@ -91,14 +84,12 @@ describe("BggGameService", () => {
             })
 
             it('Has a bgg id', async () => {
-
                 const games = await service.getUserCollection("Warium");
                 expect(games[0].id).toBe(161970);
                 expect(games[1].id).toBe(204650);
             })
 
             it('Has an average rating', async () => {
-
                 const games = await service.getUserCollection("Warium");
                 expect(Array.isArray(games)).toBe(true);
                 if (Array.isArray(games)) {
@@ -106,6 +97,19 @@ describe("BggGameService", () => {
                     expect(games[1].averagerating).toBe(8.45367);
                 }
             });
+
+
+            it('Has reads family information', async () => {
+                const games = await service.getUserCollection("Warium");
+                expect(Array.isArray(games)).toBe(true);
+                if (Array.isArray(games)) {
+                    expect(games[0].families).toContainEqual({
+                        name: "strategygames", friendlyName: "Strategy Game Rank", bayesaverage: 7.50035, value: 76, type: "family"
+                    });
+                    expect(games[1].families.length).toBe(0);
+                }
+            });
+
 
         })
 

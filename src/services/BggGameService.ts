@@ -45,7 +45,7 @@ class BggGameService {
                 thumbnailUrl: valueOf("thumbnail"),
                 yearPublished: parseInt(valueOf("yearpublished"), 10),
                 imageUrl: valueOf("image"),
-                families: []
+                families: this.getFamilies(elements)
             }, playStats);
             return game;
         });
@@ -56,12 +56,16 @@ class BggGameService {
         return parseFloat(stringValue.toString())
     }
 
-    private getRatingElement(elements: convert.Element[]) {
-        return elements.find((t) => t.name === "stats").elements[0];
+    private getStatsElement(elements: convert.Element[]) {
+        return elements.find((t) => t.name === "stats");
     }
 
-    private getPlayStatsFromCollection(tags: convert.Element[]) {
-        const stats = tags.find((t) => t.name === "stats");
+    private getRatingElement(elements: convert.Element[]) {
+        return this.getStatsElement(elements).elements[0];
+    }
+
+    private getPlayStatsFromCollection(elements: convert.Element[]) {
+        const stats = this.getStatsElement(elements);
         const attr = stats.attributes;
         return {
             minPlayers: attr.minplayers && parseInt(attr.minplayers.toString()),
@@ -71,6 +75,27 @@ class BggGameService {
             playingTime: attr.playingtime && parseInt(attr.playingtime.toString()),
             numberOwned: attr.numowned && parseInt(attr.numowned.toString()),
         };
+    }
+
+    private getFamilies(elements: convert.Element[]) {
+        const ranks = this.getRanks(elements);
+        return ranks.filter((r) => r.type === "family");
+    }
+
+
+    private getRanks(elements: convert.Element[]) {
+        const ratings = this.getRatingElement(elements);
+        const ranks = ratings.elements.find((t) => t.name === "ranks").elements;
+        return ranks.map((element) => {
+            const attributes = element.attributes;
+            return {
+                name: attributes.name.toString(),
+                friendlyName: attributes.friendlyname.toString(),
+                bayesaverage: parseFloat(attributes.bayesaverage.toString()),
+                value: parseInt(attributes.value.toString()),
+                type: attributes.type.toString()
+            }
+        })
     }
 
     private getTagValue(tags: convert.Element[], tagName: string) {
