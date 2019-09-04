@@ -37,8 +37,9 @@ class BggGameService {
             const elements = item.elements;
             const valueOf = (attributeName: string) => this.getTagValue(elements, attributeName);
             const playStats = this.getPlayStatsFromCollection(elements);
+            const gameId = parseInt(item.attributes.objectid as string);
             const game: GameInfo = Object.assign({
-                id: parseInt(item.attributes.objectid as string),
+                id: gameId,
                 name: valueOf("name"),
                 thumbnailUrl: valueOf("thumbnail"),
                 yearPublished: parseInt(valueOf("yearpublished"), 10),
