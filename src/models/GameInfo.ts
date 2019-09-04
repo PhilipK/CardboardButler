@@ -1,4 +1,5 @@
 export interface GameInfo {
+    id: number;
     name: string;
     thumbnailUrl: string;
     imageUrl: string;
