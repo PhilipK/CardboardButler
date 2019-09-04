@@ -113,7 +113,7 @@ describe("BggGameService", () => {
             expect(games[1].minPlaytime).toEqual(120);
             expect(games[1].maxPlaytime).toBeUndefined();
         })
-        
+
         it('Has a bgg id', async () => {
             const twoGameXml = readFileSync('tests/services/testxml/TwoGamesCollection.xml', 'utf8');
             fetch.mock(expectedUrl, 200, {
@@ -124,6 +124,21 @@ describe("BggGameService", () => {
             const games = await service.getUserCollection("Warium");
             expect(games[0].id).toBe(161970);
             expect(games[1].id).toBe(204650);
+        })
+
+        it('Has an average rating', async () => {
+            const twoGameXml = readFileSync('tests/services/testxml/TwoGamesCollection.xml', 'utf8');
+            fetch.mock(expectedUrl, 200, {
+                response: {
+                    body: twoGameXml
+                }
+            });
+            const games = await service.getUserCollection("Warium");
+            expect(Array.isArray(games)).toBe(true);
+            if (Array.isArray(games)) {
+                expect(games[0].averagerating).toBe(7.69466);
+                expect(games[1].averagerating).toBe(8.45367);
+            }
         })
     });
 

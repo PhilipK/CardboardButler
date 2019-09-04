@@ -109,10 +109,6 @@ export default class DescriptionGenerator {
     private getWeightInfo = (gameInfo: GameInfo) => {
         const weight = gameInfo.weight;
         const weightIndex = Math.round((weight - 1) / 5 * 6);
-        if (weightIndex <= 0) {
-            return weightName[0].toLowerCase();;
-        }
-
-        return weightName[weightIndex].toLowerCase();
+        return weightName[Math.max(weightIndex, 0)].toLowerCase();
     }
 }

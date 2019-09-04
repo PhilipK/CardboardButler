@@ -40,15 +40,24 @@ class BggGameService {
             const gameId = parseInt(item.attributes.objectid as string);
             const game: GameInfo = Object.assign({
                 id: gameId,
+                averagerating: this.getAverageRating(elements),
                 name: valueOf("name"),
                 thumbnailUrl: valueOf("thumbnail"),
                 yearPublished: parseInt(valueOf("yearpublished"), 10),
                 imageUrl: valueOf("image"),
-
-
+                families: []
             }, playStats);
             return game;
         });
+    }
+
+    private getAverageRating(elements: convert.Element[]) {
+        const stringValue = this.getRatingElement(elements).elements.find((t) => t.name === "average").attributes.value;
+        return parseFloat(stringValue.toString())
+    }
+
+    private getRatingElement(elements: convert.Element[]) {
+        return elements.find((t) => t.name === "stats").elements[0];
     }
 
     private getPlayStatsFromCollection(tags: convert.Element[]) {
