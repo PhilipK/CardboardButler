@@ -2,6 +2,7 @@ import * as React from "react";
 import "./../assets/scss/App.scss";
 import BggGameService from "../services/BggGameService";
 import { GameInfo } from "../models/GameInfo";
+import GameListItem from "./GameListItem";
 
 export interface AppProps {
 }
@@ -28,7 +29,7 @@ export default class App extends React.Component<AppProps, AppState> {
     }
 
     async fetchGames() {
-        this.setState({ loadingMessage: "Fetching games"});
+        this.setState({ loadingMessage: "Fetching games" });
         const games = await this.bggService.getUserCollection("TomVasel");
         console.log(games);
         if (Array.isArray(games)) {
@@ -50,10 +51,7 @@ export default class App extends React.Component<AppProps, AppState> {
                 {loadingMessage}
                 <div>
                     {games.map((game) => (
-                        <div key={game.name}>
-                            <h3>{game.name}</h3>
-                            <img src={game.thumbnailUrl}></img>
-                        </div>
+                        <GameListItem item={game} />
                     ))}
                 </div>
             </div>
