@@ -2,7 +2,7 @@ import { GameInfo } from "../models/GameInfo";
 
 export type BggRetryResult = { retryLater: boolean, error?: Error };
 
-export type CollectionResult = BggRetryResult | GameInfo[]
+export type CollectionResult = BggRetryResult | GameInfo[];
 
 
 interface GameService {
