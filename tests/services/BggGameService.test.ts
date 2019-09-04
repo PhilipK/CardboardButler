@@ -21,9 +21,9 @@ describe("BggGameService", () => {
     describe("Get Collection", () => {
         const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/collection?username=Warium&own=1&stats=1`;
 
-        it('Calls the bgg api throug a proxy', () => {
+        it('Calls the bgg api throug a proxy', async () => {
             const myMock = fetch.mock(expectedUrl, 200);
-            service.getUserCollection("Warium");
+            const games = await service.getUserCollection("Warium")
             expect(myMock.lastUrl()).toEqual(expectedUrl);
         });
 
@@ -139,13 +139,13 @@ describe("BggGameService", () => {
 
 
         it("Returns try again when an error is given, but informs there was an error", async () => {
-            const error= new TypeError("Error!!!");
+            const error = new TypeError("Error!!!");
             fetch.mock(expectedUrl, 503, {
                 response: {
                     throws: error
                 }
             });
-            const response = await service.getUserCollection("Warium");
+            const response = await service.getUserCollection("Warium").catch((error) => { throw error; });;
             expect(response).toBeInstanceOf(Object);
             if (!Array.isArray(response)) {
                 expect(response.retryLater).toBeTruthy();

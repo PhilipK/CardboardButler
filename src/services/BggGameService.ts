@@ -29,6 +29,9 @@ class BggGameService {
             return xmlResult;
         }
         const jsObj = convert.xml2js(xmlResult);
+        if (jsObj.elements === undefined) {
+            return [];
+        }
         const allItems: convert.Element[] = jsObj.elements[0].elements;
         return allItems.map((item: convert.Element) => {
             const elements = item.elements;
@@ -67,7 +70,7 @@ class BggGameService {
         const f = this.fetchService || fetch;
         return f(url).then(async (res) => {
             if (res.status === 200) {
-                return await res.text();
+                return res.text().catch((error) => ({ retryLater: true, error }));
             } else {
                 if (res.status === 202) {
                     return { retryLater: true };

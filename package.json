@@ -27,7 +27,7 @@
     "start": "yarn run start-dev",
     "start-dev": "webpack-dev-server --config=configs/webpack/dev.js",
     "start-prod": "yarn run build && node express.js",
-    "test": "jest --watch --coverage --config=configs/jest.json"
+    "test": "jest --watch --coverage "
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -35,6 +35,8 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@hot-loader/react-dom": "^16.9.0",
+    "@testing-library/jest-dom": "^4.1.0",
+    "@testing-library/react": "^9.1.4",
     "@types/fetch-mock": "^7.3.1",
     "@types/jest": "^24.0.18",
     "@types/node": "^11.13.20",
@@ -64,14 +66,13 @@
     "webpack-dev-middleware": "^3.7.1",
     "webpack-dev-server": "^3.8.0",
     "webpack-merge": "^4.2.2",
-    "whatwg-fetch": "^3.0.0",
-    "@testing-library/jest-dom": "^4.1.0",
-    "@testing-library/react": "^9.1.4"
+    "whatwg-fetch": "^3.0.0"
   },
   "dependencies": {
-    "semantic-ui-react": "^0.88.0",
-    "xml-js": "^1.6.11",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "semantic-ui-react": "^0.88.0",
+    "ts-jest": "^24.0.2",
+    "xml-js": "^1.6.11"
   }
 }
