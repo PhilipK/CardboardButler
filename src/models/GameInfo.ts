@@ -1,3 +1,10 @@
+interface BoardGameFamily {
+    name: string;
+    friendlyName: string;
+    value: number;
+    bayesaverage: number;
+}
+
 export interface GameInfo {
     id: number;
     name: string;
@@ -8,5 +15,8 @@ export interface GameInfo {
     maxPlayers?: number;
     minPlaytime?: number;
     maxPlaytime?: number;
+    averagerating: number;
+    weight?: number;
+    families: BoardGameFamily[];
 
 }
