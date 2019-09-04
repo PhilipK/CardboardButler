@@ -4,6 +4,8 @@ import BggGameService from "../services/BggGameService";
 import { GameInfo } from "../models/GameInfo";
 import GameListItem from "./GameListItem";
 
+import { Item, Container } from "semantic-ui-react";
+
 export interface AppProps {
 }
 
@@ -49,11 +51,15 @@ export default class App extends React.Component<AppProps, AppState> {
         return (
             <div className="app">
                 {loadingMessage}
-                <div>
-                    {games.map((game) => (
-                        <GameListItem item={game} />
-                    ))}
-                </div>
+                <Container fluid className="collections">
+                    <div>
+                        <Container text className="main" >
+                            <Item.Group>
+                                {games.map((game) => <GameListItem item={game} />)}
+                            </Item.Group>
+                        </Container>
+                    </div>
+                </Container>
             </div>
         );
     }
