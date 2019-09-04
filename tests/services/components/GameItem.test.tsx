@@ -1,8 +1,9 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import * as TestUtils from "react-dom/test-utils";
 import GameListItem from "../../../src/components/GameListItem";
 import { GameInfo } from "../../../src/models/GameInfo";
+import { render, fireEvent, waitForElement } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
 
 describe("GameItem react component", () => {
 
@@ -15,26 +16,13 @@ describe("GameItem react component", () => {
     };
 
     it("is rendered given a gameinfo item", () => {
-        // Render GameListItem in the document
-        const appElement = TestUtils.renderIntoDocument(
-            <GameListItem item={testItem} />
-        );
-
-        const appNode = ReactDOM.findDOMNode(appElement as GameListItem);
-        // Verify text content
-        expect(appNode).toBeDefined();
+        const { getByTestId } = render(<GameListItem item={testItem} />);
+        expect(getByTestId("GameName")).toBeDefined();
     });
 
-
     it("renders the game name", () => {
-        // Render GameListItem in the document
-        const appElement = TestUtils.renderIntoDocument(
-            <GameListItem item={testItem} />
-        );
-
-        const appNode = ReactDOM.findDOMNode(appElement as GameListItem);
-        // Verify text content
-        expect(appNode.textContent).toContain(testItem.name);
+        const { getByTestId } = render(<GameListItem item={testItem} />);
+        expect(getByTestId("GameName")).toHaveTextContent(testItem.name);
     });
 });
 

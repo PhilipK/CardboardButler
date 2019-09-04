@@ -16,7 +16,7 @@ export default class GameListItem extends React.PureComponent<AppProps> {
             <Item >
                 {/* <Item.Image size={large ? 'large' : 'small'} >{image}</Item.Image> */}
                 <Item.Content verticalAlign={"middle"}>
-                    <Item.Header as="a" size={"medium"} target="_blank">{item.name}</Item.Header>
+                    <Item.Header data-testid="GameName" as="a" size={"medium"} target="_blank">{item.name}</Item.Header>
                     {/* <Item.Meta>{game.get("yearpublished") + " - " + game.get("owners").join(', ')}</Item.Meta> */}
                     {/* {hasLastTimePlayed && <Item.Meta> Last played {timeSince(game.get("lastTimePlayed"))}</Item.Meta>} */}
                     {/* {hasTimePlayed && <Item.Meta> Time played {timePlayed(game.get("lengthPlayed"))}</Item.Meta>} */}
