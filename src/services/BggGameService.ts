@@ -3,26 +3,37 @@ import FetchService from "./FetchService";
 import * as convert from "xml-js";
 import { GameInfo } from "../models/GameInfo";
 
+/**
+ * A service that can get Gameplay information from the BGG Api.
+ */
 class BggGameService {
 
     private fetchService: FetchService;
 
-
+    /**
+     * Construct a new bgg game service.
+     * @param fetchService the service to use when trying to fetch information from bgg. If none is given the browser global fetch will be used.
+     */
     constructor(fetchService?: FetchService) {
         this.fetchService = fetchService;
     }
 
+    /**
+     * Gets a collection of the owned games from a user.
+     * @param username username of the user whose collection to get.
+     * @returns Either a list of game infromation, or a bgg retry result, if there is an error or bgg needed time to generate the list.
+     */
     async getUserCollection(username: string): Promise<BggRetryResult | GameInfo[]> {
         const xmlResult = await this.fetCollectionXml(username);
         if (typeof xmlResult !== "string") {
             return xmlResult;
-        };
+        }
         const jsObj = convert.xml2js(xmlResult);
         const allItems: convert.Element[] = jsObj.elements[0].elements;
         return allItems.map((item: convert.Element) => {
             const elements = item.elements;
             const valueOf = (attributeName: string) => this.getTagValue(elements, attributeName);
-            const playStats = this.getPlayStats(elements);;
+            const playStats = this.getPlayStatsFromCollection(elements);
             const game: GameInfo = Object.assign({
                 name: valueOf("name"),
                 thumbnailUrl: valueOf("thumbnail"),
@@ -31,11 +42,11 @@ class BggGameService {
 
             }, playStats);
             return game;
-        })
+        });
     }
 
-    private getPlayStats(tags: convert.Element[]) {
-        const stats = tags.find((t) => t.name == "stats");
+    private getPlayStatsFromCollection(tags: convert.Element[]) {
+        const stats = tags.find((t) => t.name === "stats");
         const attr = stats.attributes;
         return {
             minPlayers: attr.minplayers && parseInt(attr.minplayers.toString()),
@@ -44,11 +55,11 @@ class BggGameService {
             maxPlaytime: attr.maxplaytime && parseInt(attr.maxplaytime.toString()),
             playingTime: attr.playingtime && parseInt(attr.playingtime.toString()),
             numberOwned: attr.numowned && parseInt(attr.numowned.toString()),
-        }
-    };
+        };
+    }
 
     private getTagValue(tags: convert.Element[], tagName: string) {
-        return tags.find((t) => t.name == tagName).elements[0].text.toString();
+        return tags.find((t) => t.name === tagName).elements[0].text.toString();
     }
 
     private async fetCollectionXml(username: string) {
