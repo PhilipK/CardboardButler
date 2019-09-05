@@ -3,6 +3,9 @@ import "./../assets/scss/App.scss";
 import BggGameService from "../services/BggGameService";
 import { GameInfo } from "../models/GameInfo";
 import GameListItem from "./GameListItem";
+import SelectUserInput from "./SelectUserInput";
+
+
 
 import { Item, Container } from "semantic-ui-react";
 
@@ -13,6 +16,7 @@ export interface AppProps {
 export interface AppState {
     games: GameInfo[];
     loadingMessage: string;
+    names: string[];
 }
 
 
@@ -21,9 +25,10 @@ export default class App extends React.Component<AppProps, AppState> {
     private bggService: BggGameService;
     constructor(superProps: Readonly<AppProps>) {
         super(superProps);
-        this.state = { games: [], loadingMessage: "" };
+        this.state = { games: [], loadingMessage: "", names: [] };
         this.fetchGames = this.fetchGames.bind(this);
         this.bggService = new BggGameService(window.fetch);
+        this.onNameChange = this.onNameChange.bind(this);
     }
 
     componentDidMount() {
@@ -46,10 +51,17 @@ export default class App extends React.Component<AppProps, AppState> {
         }
     }
 
+    onNameChange(newNames: string[]) {
+        this.setState({
+            names: newNames
+        })
+    }
+
     render() {
-        const { games, loadingMessage } = this.state;
+        const { games, loadingMessage, names } = this.state;
         return (
             <div className="app">
+                <SelectUserInput bggNames={names} onNameChange={this.onNameChange} />
                 {loadingMessage}
                 <Container fluid className="collections">
                     <div>
