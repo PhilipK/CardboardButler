@@ -7,13 +7,13 @@ describe("BggGameService", () => {
     const fetch = fetchMock.sandbox();
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 
-    afterEach(fetch.restore)
+    afterEach(fetch.restore);
 
     const service = new BggGameService(fetch);
 
 
     describe("Initialization", () => {
-        it('Can be constructoed with a fetch service', () => {
+        it("Can be constructoed with a fetch service", () => {
             new BggGameService(fetch);
         });
     });
@@ -21,14 +21,14 @@ describe("BggGameService", () => {
     describe("Get Collection", () => {
         const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/collection?username=Warium&own=1&stats=1`;
 
-        it('Calls the bgg api throug a proxy', async () => {
+        it("Calls the bgg api throug a proxy", async () => {
             const myMock = fetch.mock(expectedUrl, 200);
-            const games = await service.getUserCollection("Warium")
+            const games = await service.getUserCollection("Warium");
             expect(myMock.lastUrl()).toEqual(expectedUrl);
         });
 
         describe("attributes", () => {
-            const twoGameXml = readFileSync('tests/services/testxml/TwoGamesCollection.xml', 'utf8');
+            const twoGameXml = readFileSync("tests/services/testxml/TwoGamesCollection.xml", "utf8");
 
             beforeEach(() => {
                 fetch.mock(expectedUrl, 200, {
@@ -36,60 +36,60 @@ describe("BggGameService", () => {
                         body: twoGameXml
                     }
                 });
-            })
+            });
 
-            it('Returns a list of games', async () => {
+            it("Returns a list of games", async () => {
                 const games = await service.getUserCollection("Warium");
                 expect(games).toHaveLength(2);
-            })
+            });
 
-            it('Games names are set', async () => {
+            it("Games names are set", async () => {
                 const games = await service.getUserCollection("Warium");
                 expect(games[0].name).toEqual("Alchemists");
                 expect(games[1].name).toEqual("Alchemists: The King's Golem");
-            })
+            });
 
-            it('Games thumbnails are set', async () => {
+            it("Games thumbnails are set", async () => {
                 const games = await service.getUserCollection("Warium");
                 expect(games[0].thumbnailUrl).toEqual("https://cf.geekdo-images.com/thumb/img/4VjOkEjTXNR4KQMjaOK7JibjPSw=/fit-in/200x150/pic2241156.png");
                 expect(games[1].thumbnailUrl).toEqual("https://cf.geekdo-images.com/thumb/img/8JvyNMgJl6R1Vf01ybWAd0XVQ5U=/fit-in/200x150/pic3195558.jpg");
-            })
+            });
 
-            it('Games yearpublished is set', async () => {
+            it("Games yearpublished is set", async () => {
                 const games = await service.getUserCollection("Warium");
                 expect(games[0].yearPublished).toEqual(2014);
                 expect(games[1].yearPublished).toEqual(2016);
-            })
+            });
 
-            it('Games image is set', async () => {
+            it("Games image is set", async () => {
                 const games = await service.getUserCollection("Warium");
                 expect(games[0].imageUrl).toEqual("https://cf.geekdo-images.com/original/img/VKBFHqR2xm0EFGWfb1sPJZctMCs=/0x0/pic2241156.png");
                 expect(games[1].imageUrl).toEqual("https://cf.geekdo-images.com/original/img/8KjTjLyMfdjh-ftl3p2E_MYEBYY=/0x0/pic3195558.jpg");
-            })
+            });
 
-            it('Has min and max players numbers', async () => {
+            it("Has min and max players numbers", async () => {
                 const games = await service.getUserCollection("Warium");
                 expect(games[0].minPlayers).toEqual(2);
                 expect(games[0].maxPlayers).toEqual(4);
                 expect(games[1].minPlayers).toEqual(2);
                 expect(games[1].maxPlayers).toEqual(4);
-            })
+            });
 
-            it('Has min and max playtime', async () => {
+            it("Has min and max playtime", async () => {
                 const games = await service.getUserCollection("Warium");
                 expect(games[0].minPlaytime).toEqual(120);
                 expect(games[0].maxPlaytime).toEqual(120);
                 expect(games[1].minPlaytime).toEqual(120);
                 expect(games[1].maxPlaytime).toBeUndefined();
-            })
+            });
 
-            it('Has a bgg id', async () => {
+            it("Has a bgg id", async () => {
                 const games = await service.getUserCollection("Warium");
                 expect(games[0].id).toBe(161970);
                 expect(games[1].id).toBe(204650);
-            })
+            });
 
-            it('Has an average rating', async () => {
+            it("Has an average rating", async () => {
                 const games = await service.getUserCollection("Warium");
                 expect(Array.isArray(games)).toBe(true);
                 if (Array.isArray(games)) {
@@ -99,7 +99,7 @@ describe("BggGameService", () => {
             });
 
 
-            it('Has reads family information', async () => {
+            it("Has reads family information", async () => {
                 const games = await service.getUserCollection("Warium");
                 expect(Array.isArray(games)).toBe(true);
                 if (Array.isArray(games)) {
@@ -111,7 +111,7 @@ describe("BggGameService", () => {
             });
 
 
-        })
+        });
 
 
     });
@@ -146,7 +146,7 @@ describe("BggGameService", () => {
                     throws: error
                 }
             });
-            const response = await service.getUserCollection("Warium").catch((error) => { throw error; });;
+            const response = await service.getUserCollection("Warium").catch((error) => { throw error; });
             expect(response).toBeInstanceOf(Object);
             if (!Array.isArray(response)) {
                 expect(response.retryLater).toBeTruthy();
@@ -155,5 +155,5 @@ describe("BggGameService", () => {
         });
     });
 
-})
+});
 

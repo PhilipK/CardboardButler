@@ -18,7 +18,7 @@ export default class GameListItem extends React.PureComponent<AppProps> {
 
         return (
             <Item >
-                <Item.Image size={'large'} ><img data-testid="GameImage" src={item.imageUrl} /></Item.Image>
+                <Item.Image ><img data-testid="GameImage" src={item.imageUrl} /></Item.Image>
                 <Item.Content verticalAlign={"middle"}>
                     <Item.Header data-testid="GameName" as="a" size={"medium"} target="_blank">{item.name}</Item.Header>
                     {/* <Item.Meta>{game.get("yearpublished") + " - " + game.get("owners").join(', ')}</Item.Meta> */}

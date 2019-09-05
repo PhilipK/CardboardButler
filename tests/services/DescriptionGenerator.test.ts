@@ -20,13 +20,13 @@ describe("DescriptionGenerator", () => {
         const expected = "A strategy game for 2 to 4 players in 120 minutes. Most people think it is very good.";
         const description = generator.generateDescription(testWithoutWeight);
         expect(description).toBe(expected);
-    })
+    });
 
     it("can describe with a weight", () => {
         const expected = "A strategy game for 2 to 4 players in 120 minutes. Most people think it is very good and somewhat hard to learn.";
         const description = generator.generateDescription(testItem);
         expect(description).toBe(expected);
-    })
+    });
 
 
     it("can describe without a family", () => {
@@ -34,7 +34,7 @@ describe("DescriptionGenerator", () => {
         const expected = "A boardgame for 2 to 4 players in 120 minutes. Most people think it is very good and somewhat hard to learn.";
         const description = generator.generateDescription(testWithoutFamily);
         expect(description).toBe(expected);
-    })
+    });
 
     it("pick the highest ranked family", () => {
         const testWithTwoFamilies = Object.assign({}, testItem);
@@ -42,7 +42,7 @@ describe("DescriptionGenerator", () => {
         const expected = "An abstract game for 2 to 4 players in 120 minutes. Most people think it is very good and somewhat hard to learn.";
         const description = generator.generateDescription(testItem);
         expect(description).toBe(expected);
-    })
+    });
 
 });
 

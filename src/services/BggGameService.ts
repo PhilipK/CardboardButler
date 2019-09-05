@@ -53,7 +53,7 @@ class BggGameService {
 
     private getAverageRating(elements: convert.Element[]) {
         const stringValue = this.getRatingElement(elements).elements.find((t) => t.name === "average").attributes.value;
-        return parseFloat(stringValue.toString())
+        return parseFloat(stringValue.toString());
     }
 
     private getStatsElement(elements: convert.Element[]) {
@@ -94,8 +94,8 @@ class BggGameService {
                 bayesaverage: parseFloat(attributes.bayesaverage.toString()),
                 value: parseInt(attributes.value.toString()),
                 type: attributes.type.toString()
-            }
-        })
+            };
+        });
     }
 
     private getTagValue(tags: convert.Element[], tagName: string) {

@@ -23,7 +23,7 @@ const weightName = [
     "Very Hard"
 ];
 
-var vowel_list = 'aeiouAEIOU';
+const vowel_list = "aeiouAEIOU";
 
 
 export default class DescriptionGenerator {
@@ -41,7 +41,7 @@ export default class DescriptionGenerator {
         } else {
             return firstString + ".";
         }
-    };
+    }
 
     private isVowel(input: string) {
         return vowel_list.indexOf(input) > -1;
@@ -61,7 +61,7 @@ export default class DescriptionGenerator {
         const bestFamily = gameInfo.families.sort((a, b) => a.value - b.value)[0];
         const name = bestFamily.friendlyName.toLowerCase();
         if (name.indexOf(" rank") > -1) {
-            return name.substring(0, name.indexOf(" rank"))
+            return name.substring(0, name.indexOf(" rank"));
         }
         return name;
     }
@@ -76,7 +76,7 @@ export default class DescriptionGenerator {
         let playerInfo = "";
         const { minPlayers, maxPlayers } = gameInfo;
 
-        if (minPlayers == maxPlayers) {
+        if (minPlayers === maxPlayers) {
             playerInfo += maxPlayers + " player";
         } else {
             playerInfo += minPlayers + " to " + maxPlayers + " player";
@@ -93,7 +93,7 @@ export default class DescriptionGenerator {
         const mintime = gameInfo.minPlaytime;
         const maxtime = gameInfo.maxPlaytime;
 
-        if (mintime == maxtime) {
+        if (mintime === maxtime) {
             timeInfo += maxtime + " minute";
         } else if (maxtime < mintime) {
             timeInfo += mintime + " minutes";
