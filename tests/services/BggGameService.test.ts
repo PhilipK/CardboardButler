@@ -99,7 +99,7 @@ describe("BggGameService", () => {
             });
 
 
-            it("Has reads family information", async () => {
+            it('Has family information', async () => {
                 const games = await service.getUserCollection("Warium");
                 expect(Array.isArray(games)).toBe(true);
                 if (Array.isArray(games)) {

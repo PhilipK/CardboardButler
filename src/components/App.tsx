@@ -32,7 +32,7 @@ export default class App extends React.Component<AppProps, AppState> {
 
     async fetchGames() {
         this.setState({ loadingMessage: "Fetching games" });
-        const games = await this.bggService.getUserCollection("TomVasel");
+        const games = await this.bggService.getUserCollection("Warium");
         console.log(games);
         if (Array.isArray(games)) {
             this.setState({ games: games, loadingMessage: "" });
