@@ -62,8 +62,10 @@ class BggGameService {
         }
         const jsObj = convert.xml2js(xml);
         if (jsObj.elements) {
-            const id = jsObj.elements[0].attributes.id;
+            const attributes = jsObj.elements[0].attributes;
+            const id = attributes.id;
             if (id !== "") {
+                const name = attributes.name;
                 return {
                     isValid: true,
                     username: name

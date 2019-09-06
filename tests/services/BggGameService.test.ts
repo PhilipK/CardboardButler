@@ -123,7 +123,7 @@ describe("BggGameService", () => {
         const inValidUserXml = readFileSync("tests/services/testxml/InvalidUserResult.xml", "utf8");
         it("Calls the bgg api throug a proxy", async () => {
             const myMock = fetch.mock(validUserUrl, 200);
-            const userinfo = await service.getUserInfo("Warium");
+            await service.getUserInfo("Warium");
             expect(myMock.lastUrl()).toEqual(validUserUrl);
         });
 
@@ -147,6 +147,22 @@ describe("BggGameService", () => {
             });
             const userinfo = await service.getUserInfo("asdfasdfasdfasdfasdfasdf");
             expect(userinfo.isValid).toBe(false);
+        });
+
+        describe("attributes", () => {
+            it("name", async () => {
+                fetch.mock(validUserUrl, 202, {
+                    response: {
+                        status: 202,
+                        body: validUserXml
+                    }
+                });
+                const userinfo = await service.getUserInfo("Warium");
+                expect(userinfo.isValid).toBe(true);
+                if (userinfo.isValid) {
+                    expect(userinfo.username).toBe("Warium");
+                }
+            });
         });
     });
 
