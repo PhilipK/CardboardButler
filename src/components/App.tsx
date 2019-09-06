@@ -54,7 +54,7 @@ export default class App extends React.Component<AppProps, AppState> {
     onNameChange(newNames: string[]) {
         this.setState({
             names: newNames
-        })
+        });
     }
 
     render() {
