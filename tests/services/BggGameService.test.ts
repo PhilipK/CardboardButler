@@ -99,7 +99,7 @@ describe("BggGameService", () => {
             });
 
 
-            it('Has family information', async () => {
+            it("Has family information", async () => {
                 const games = await service.getUserCollection("Warium");
                 expect(Array.isArray(games)).toBe(true);
                 if (Array.isArray(games)) {
@@ -114,6 +114,40 @@ describe("BggGameService", () => {
         });
 
 
+    });
+
+    describe("Get Userinfo", () => {
+        const validUserUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/user?name=Warium`;
+        const invalidUserUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/user?name=asdfasdfasdfasdfasdfasdf`;
+        const validUserXml = readFileSync("tests/services/testxml/WariumUserResult.xml", "utf8");
+        const inValidUserXml = readFileSync("tests/services/testxml/InvalidUserResult.xml", "utf8");
+        it("Calls the bgg api throug a proxy", async () => {
+            const myMock = fetch.mock(validUserUrl, 200);
+            const userinfo = await service.getUserInfo("Warium");
+            expect(myMock.lastUrl()).toEqual(validUserUrl);
+        });
+
+        it("valid users give valid results", async () => {
+            fetch.mock(validUserUrl, 202, {
+                response: {
+                    status: 202,
+                    body: validUserXml
+                }
+            });
+            const userinfo = await service.getUserInfo("Warium");
+            expect(userinfo.isValid).toBe(true);
+        });
+
+        it("invalid users give invalid results", async () => {
+            fetch.mock(invalidUserUrl, 202, {
+                response: {
+                    status: 202,
+                    body: inValidUserXml
+                }
+            });
+            const userinfo = await service.getUserInfo("asdfasdfasdfasdfasdfasdf");
+            expect(userinfo.isValid).toBe(false);
+        });
     });
 
     describe("Handling errors", () => {

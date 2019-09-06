@@ -1,0 +1,126 @@
+{
+    "declaration": {
+        "attributes": {
+            "version": "1.0",
+            "encoding": "utf-8"
+        }
+    },
+    "elements": [
+        {
+            "type": "element",
+            "name": "user",
+            "attributes": {
+                "id": "1070138",
+                "name": "Warium",
+                "termsofuse": "https://boardgamegeek.com/xmlapi/termsofuse"
+            },
+            "elements": [
+                {
+                    "type": "element",
+                    "name": "firstname",
+                    "attributes": {
+                        "value": "Philip"
+                    }
+                },
+                {
+                    "type": "element",
+                    "name": "lastname",
+                    "attributes": {
+                        "value": "Kristoffersen"
+                    }
+                },
+                {
+                    "type": "element",
+                    "name": "avatarlink",
+                    "attributes": {
+                        "value": "https://cf.geekdo-static.com/avatars/avatar_id101123.png"
+                    }
+                },
+                {
+                    "type": "element",
+                    "name": "yearregistered",
+                    "attributes": {
+                        "value": "2015"
+                    }
+                },
+                {
+                    "type": "element",
+                    "name": "lastlogin",
+                    "attributes": {
+                        "value": "2019-09-06"
+                    }
+                },
+                {
+                    "type": "element",
+                    "name": "stateorprovince",
+                    "attributes": {
+                        "value": ""
+                    }
+                },
+                {
+                    "type": "element",
+                    "name": "country",
+                    "attributes": {
+                        "value": "Denmark"
+                    }
+                },
+                {
+                    "type": "element",
+                    "name": "webaddress",
+                    "attributes": {
+                        "value": "http://cardboardbutler.dk"
+                    }
+                },
+                {
+                    "type": "element",
+                    "name": "xboxaccount",
+                    "attributes": {
+                        "value": ""
+                    }
+                },
+                {
+                    "type": "element",
+                    "name": "wiiaccount",
+                    "attributes": {
+                        "value": ""
+                    }
+                },
+                {
+                    "type": "element",
+                    "name": "psnaccount",
+                    "attributes": {
+                        "value": ""
+                    }
+                },
+                {
+                    "type": "element",
+                    "name": "battlenetaccount",
+                    "attributes": {
+                        "value": ""
+                    }
+                },
+                {
+                    "type": "element",
+                    "name": "steamaccount",
+                    "attributes": {
+                        "value": ""
+                    }
+                },
+                {
+                    "type": "element",
+                    "name": "traderating",
+                    "attributes": {
+                        "value": "6"
+                    }
+                },
+                {
+                    "type": "element",
+                    "name": "marketrating",
+                    "attributes": {
+                        "value": "0"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -2,6 +2,7 @@ import { BggRetryResult } from "./GameService";
 import FetchService from "./FetchService";
 import * as convert from "xml-js";
 import { GameInfo } from "../models/GameInfo";
+import { UserInfo } from "../models/UserInfo";
 
 /**
  * A service that can get Gameplay information from the BGG Api.
@@ -49,6 +50,29 @@ class BggGameService {
             }, playStats);
             return game;
         });
+    }
+
+    async getUserInfo(username: string): Promise<UserInfo> {
+        const xml = await this.fetUserInfoXml(username);
+        if (typeof xml !== "string") {
+            return {
+                isValid: false,
+                error: xml.error
+            };
+        }
+        const jsObj = convert.xml2js(xml);
+        if (jsObj.elements) {
+            const id = jsObj.elements[0].attributes.id;
+            if (id !== "") {
+                return {
+                    isValid: true,
+                    username: name
+                };
+            }
+        }
+        return {
+            isValid: false
+        };
     }
 
     private getAverageRating(elements: convert.Element[]) {
@@ -119,8 +143,22 @@ class BggGameService {
         });
     }
 
+    private async fetUserInfoXml(username: string) {
+        const url = this.buildUserUrl(username);
+        const f = this.fetchService || fetch;
+        return f(url).then((res) => {
+            return res.text();
+        }).catch((error: Error) => {
+            return { error };
+        });
+    }
+
     private buildCollectionUrl(username: string) {
         return `https://cors-anywhere.herokuapp.com/https://api.geekdo.com/xmlapi2/collection?username=${username}&own=1&stats=1`;
+    }
+
+    private buildUserUrl(username: string) {
+        return `https://cors-anywhere.herokuapp.com/https://api.geekdo.com/xmlapi2/user?name=${username}`;
     }
 }
 
