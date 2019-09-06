@@ -56,7 +56,7 @@ class BggGameService {
         const xml = await this.fetUserInfoXml(username);
         if (typeof xml !== "string") {
             return {
-                isValid: false,
+                isValid: "unknown",
                 error: xml.error
             };
         }

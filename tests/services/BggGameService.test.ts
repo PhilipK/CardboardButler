@@ -149,6 +149,23 @@ describe("BggGameService", () => {
             expect(userinfo.isValid).toBe(false);
         });
 
+        it("valid users gives error if bgg fails", async () => {
+            const expectedError = new TypeError("Error");
+            fetch.mock(validUserUrl, 503, {
+                response: {
+                    status: 503,
+                    body: "Error",
+                    throws: expectedError
+                }
+            });
+            const result = await service.getUserInfo("Warium");
+            expect(result.isValid).toBe("unknown");
+            if (result.isValid === "unknown") {
+                expect(result.error).toBe(expectedError);
+            }
+        });
+
+
         describe("attributes", () => {
             it("name", async () => {
                 fetch.mock(validUserUrl, 202, {
@@ -159,7 +176,7 @@ describe("BggGameService", () => {
                 });
                 const userinfo = await service.getUserInfo("Warium");
                 expect(userinfo.isValid).toBe(true);
-                if (userinfo.isValid) {
+                if (userinfo.isValid === true) {
                     expect(userinfo.username).toBe("Warium");
                 }
             });
