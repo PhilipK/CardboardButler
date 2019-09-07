@@ -8,6 +8,7 @@ import SelectUserInput from "./SelectUserInput";
 
 
 import { Item, Container } from "semantic-ui-react";
+import ValidatingUserInput from "./ValidatingUserInput";
 
 export interface AppProps {
 }
@@ -61,7 +62,7 @@ export default class App extends React.Component<AppProps, AppState> {
         const { games, loadingMessage, names } = this.state;
         return (
             <div className="app">
-                <SelectUserInput bggNames={names} onNameChange={this.onNameChange} />
+                <ValidatingUserInput userValidator={(name) => this.bggService.getUserInfo(name).then((res) => res.isValid === true)} />
                 {loadingMessage}
                 <Container fluid className="collections">
                     <div>

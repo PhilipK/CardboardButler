@@ -51,6 +51,14 @@ describe("SelectUserInput react component", () => {
             expect(onChangeMock.mock.calls.length).toBe(1);
             expect(onChangeMock.mock.calls[0][0]).toEqual(["Warium", ""]);
         });
+
+        it("calls the 'onchange' prop on typing a name even when none where given", () => {
+            const onChangeMock = jest.fn();
+            const { getByTestId } = render(<SelectUserInput  onNameChange={onChangeMock} />);
+            fireEvent.change(getByTestId("Input0"), { target: { value: 'Nakul' } });
+            expect(onChangeMock.mock.calls.length).toBe(1);
+            expect(onChangeMock.mock.calls[0][0]).toEqual(["Nakul"]);
+        });
     });
 
     describe("Valid Names Check", () => {

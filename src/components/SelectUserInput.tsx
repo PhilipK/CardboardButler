@@ -24,11 +24,10 @@ export default class SelectUserInput extends React.PureComponent<AppProps> {
 
     onInputChange(value: string, index: number) {
         if (this.props.onNameChange) {
-            if (this.props.bggNames) {
-                const clone = [...this.props.bggNames];
-                clone[index] = value;
-                this.props.onNameChange(clone);
-            }
+            const bggNames = this.props.bggNames || [];
+            const clone = [...bggNames];
+            clone[index] = value;
+            this.props.onNameChange(clone);
         }
     }
 
