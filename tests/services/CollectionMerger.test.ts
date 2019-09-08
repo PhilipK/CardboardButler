@@ -1,4 +1,3 @@
-import { GameInfo } from "../../src/models/GameInfo";
 import { CollectionMerger } from "../../src/services/CollectionMerger";
 import "@testing-library/jest-dom/extend-expect";
 import { alchemists, alchemistsTheKing } from "./model/TestGames";
