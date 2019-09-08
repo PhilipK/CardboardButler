@@ -2,6 +2,9 @@
 
 Cardboard Butler is a webapp that let [BGG](https://boardgamegeek.com/) users show find a game from their collection that fit their game group.
 
+Note, this is the early beta of Cardboard Butler verion 2, that is a reimplementation of version 1.
+This project is still under contruction.
+
 
 ## Installation
 
