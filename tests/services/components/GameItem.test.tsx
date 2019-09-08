@@ -10,6 +10,7 @@ import DescriptionGenerator from "../../../src/services/GameDescriptionGenerator
 describe("GameItem react component", () => {
 
     const testItem: GameInfo = alchemists;
+    const ownerTestItem = Object.assign({}, testItem, { owners: ["Warium"] });
 
     describe("it renders", () => {
         it(" a gameinfo item", () => {
@@ -35,8 +36,17 @@ describe("GameItem react component", () => {
         });
 
         it("year published", () => {
-            const { getByTestId } = render(<GameListItem item={testItem} />);
-            expect(getByTestId("GameYear")).toHaveTextContent(testItem.yearPublished + "");
+            const { getByTestId } = render(<GameListItem item={ownerTestItem} />);
+            expect(getByTestId("GameYear")).toHaveTextContent(testItem.yearPublished + " -");
+        });
+        it("owner", () => {
+            const { getByTestId } = render(<GameListItem item={ownerTestItem} />);
+            expect(getByTestId("Owners")).toHaveTextContent("- Warium");
+        });
+
+        it("owners", () => {
+            const { getByTestId } = render(<GameListItem item={ownerTestItem} />);
+            expect(getByTestId("Owners")).toHaveTextContent("- Warium, Nakul");
         });
     });
 });

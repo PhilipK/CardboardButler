@@ -9,6 +9,7 @@ import SelectUserInput from "./SelectUserInput";
 
 import { Item, Container } from "semantic-ui-react";
 import ValidatingUserInput from "./ValidatingUserInput";
+import { CollectionMerger } from "../services/CollectionMerger";
 
 export interface AppProps {
 }
@@ -16,6 +17,7 @@ export interface AppProps {
 
 export interface AppState {
     games: GameInfo[];
+    userCollections: { [names: string]: GameInfo[] };
     loadingMessage: string;
     names: string[];
 }
@@ -24,13 +26,17 @@ export interface AppState {
 export default class App extends React.Component<AppProps, AppState> {
 
     private bggService: BggGameService;
+    private collectionMerger: CollectionMerger;
     constructor(superProps: Readonly<AppProps>) {
         super(superProps);
-        this.state = { games: [], loadingMessage: "", names: [] };
-        this.fetchGames = this.fetchGames.bind(this);
+        this.state = { games: [], loadingMessage: "", names: [], userCollections: {} };
         this.bggService = new BggGameService(window.fetch);
+        this.collectionMerger = new CollectionMerger();
+
+        this.fetchGames = this.fetchGames.bind(this);
         this.onNameSelect = this.onNameSelect.bind(this);
         this.userValidator = this.userValidator.bind(this);
+
     }
 
 
@@ -38,9 +44,10 @@ export default class App extends React.Component<AppProps, AppState> {
         this.setState({ loadingMessage: "Fetching games", games: [] });
         const games = await this.bggService.getUserCollection(name);
         if (Array.isArray(games)) {
-            const curGames = [...this.state.games];
-            const gamesToAdd = games.filter((game) => curGames.every((curGame) => curGame.id !== game.id));
-            this.setState({ games: [...curGames, ...gamesToAdd], loadingMessage: "" });
+            const collection = this.state.userCollections;
+            collection[name] = games;
+            const allGames = this.collectionMerger.getMergedCollection(collection);
+            this.setState({ games: allGames, userCollections: collection, loadingMessage: "" });
         } else if (games.retryLater) {
             if (games.error) {
                 this.setState({ loadingMessage: "An error occoured, trying agian in 5 seconds" });
@@ -53,7 +60,8 @@ export default class App extends React.Component<AppProps, AppState> {
 
     onNameSelect(newNames: string[]) {
         this.setState({
-            names: newNames
+            names: newNames,
+            userCollections: {}
         });
         newNames.forEach(this.fetchGames);
     }
@@ -64,7 +72,7 @@ export default class App extends React.Component<AppProps, AppState> {
     }
 
     render() {
-        const { games, loadingMessage, names } = this.state;
+        const { games, loadingMessage } = this.state;
         return (
             <div className="app">
                 <ValidatingUserInput userValidator={this.userValidator} onNameSelect={this.onNameSelect} />

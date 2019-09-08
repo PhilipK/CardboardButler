@@ -15,13 +15,16 @@ const gameDescription = new DescriptionGenerator();
 export default class GameListItem extends React.PureComponent<AppProps> {
     render() {
         const { item } = this.props;
-
+        const { owners = [] } = item;
         return (
             <Item >
                 <Item.Image size="small"><img data-testid="GameImage" src={item.imageUrl} /></Item.Image>
                 <Item.Content verticalAlign={"middle"}>
                     <Item.Header data-testid="GameName" as="a" size={"medium"} target="_blank">{item.name}</Item.Header>
-                    <Item.Meta data-testid="GameYear">{item.yearPublished}</Item.Meta>
+                    <Item.Meta data-testid="GameYear">
+                        <span>{item.yearPublished}</span>
+                        {item.owners && <span data-testid="Owners"> - <span>{owners.join(", ")}</span></span>}
+                    </Item.Meta >
                     <Item.Description data-testid="GameDescription">
                         {gameDescription.generateDescription(item)}
                     </Item.Description>
