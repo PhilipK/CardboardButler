@@ -5,6 +5,9 @@ interface BoardGameFamily {
     bayesaverage: number;
 }
 
+
+
+
 export interface GameInfo {
     id: number;
     name: string;
@@ -18,5 +21,5 @@ export interface GameInfo {
     averagerating: number;
     weight?: number;
     families: BoardGameFamily[];
-
+    owners?: string[];
 }
