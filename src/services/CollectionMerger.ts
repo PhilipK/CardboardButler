@@ -9,10 +9,11 @@ export class CollectionMerger {
 
     getMergedCollection(collectionsMap: CollectionMap): GameInfo[] {
         return Object.keys(collectionsMap).reduce((curGames, name) => {
-            const thisUsersGames = collectionsMap[name];
-            const gamesToAdd = thisUsersGames.filter((game) => curGames.every((curGame) => curGame.id !== game.id));
+            const usersGames = collectionsMap[name];
+            const gameUnkown = (game: GameInfo) => curGames.every((curGame) => curGame.id !== game.id);
+            const gamesToAdd = usersGames.filter(gameUnkown);
             return [...curGames, ...gamesToAdd].map((game) => {
-                if (thisUsersGames.some((useGame) => game.id === useGame.id)) {
+                if (usersGames.some((useGame) => game.id === useGame.id)) {
                     return Object.assign({}, game, {
                         owners: game.owners ? [...game.owners, name] : [name]
                     });

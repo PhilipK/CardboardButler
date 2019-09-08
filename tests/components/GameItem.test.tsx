@@ -1,11 +1,11 @@
 
 import * as React from "react";
-import GameListItem from "../../../src/components/GameListItem";
-import { GameInfo } from "../../../src/models/GameInfo";
+import GameListItem from "../../src/components/GameListItem";
+import { GameInfo } from "../../src/models/GameInfo";
 import { render, fireEvent, waitForElement } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import { alchemists } from "../model/TestGames";
-import DescriptionGenerator from "../../../src/services/GameDescriptionGenerator";
+import { alchemists } from "../services/model/TestGames";
+import DescriptionGenerator from "../../src/services/GameDescriptionGenerator";
 
 describe("GameItem react component", () => {
 

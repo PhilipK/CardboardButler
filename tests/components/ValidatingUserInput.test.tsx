@@ -1,10 +1,10 @@
 
 import * as React from "react";
-import ValidatingUserInput from "../../../src/components/ValidatingUserInput";
+import ValidatingUserInput from "../../src/components/ValidatingUserInput";
 import { render, fireEvent, waitForElement, waitForElementToBeRemoved } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
-describe("GameItem react component", () => {
+describe("ValidatingUserInput", () => {
     const testName = "Warium";
 
 

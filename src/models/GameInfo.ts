@@ -18,6 +18,7 @@ export interface GameInfo {
     maxPlayers?: number;
     minPlaytime?: number;
     maxPlaytime?: number;
+    playingTime?: number;
     averagerating: number;
     weight?: number;
     families: BoardGameFamily[];

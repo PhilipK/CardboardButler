@@ -31,3 +31,63 @@ export const alchemistsTheKing: GameInfo = {
     families: [
     ]
 };
+
+export const sevenWonders: GameInfo = {
+    id: 68448,
+    averagerating: 7.77508,
+    name: "7 Wonders",
+    thumbnailUrl: "https://cf.geekdo-images.com/thumb/img/Grz-qM9xwxlvQGK7B-MiljtO9pQ=/fit-in/200x150/pic860217.jpg",
+    yearPublished: 2010,
+    imageUrl: "https://cf.geekdo-images.com/original/img/3DP_RW5lTX0WrV67s8qi8CsiXoQ=/0x0/pic860217.jpg",
+    families: [
+        {
+            name: "familygames",
+            friendlyName: "Family Game Rank",
+            bayesaverage: 7.67883,
+            value: 3,
+        },
+        {
+            name: "strategygames",
+            friendlyName: "Strategy Game Rank",
+            bayesaverage: 7.64901,
+            value: 49,
+        }
+    ],
+    minPlayers: 2,
+    maxPlayers: 7,
+    minPlaytime: 30,
+    maxPlaytime: 30,
+    playingTime: 30,
+
+}
+
+export const smallWorld: GameInfo = {
+    id: 40692,
+    averagerating: 7.29416,
+    name: "Small World",
+    thumbnailUrl: "https://cf.geekdo-images.com/thumb/img/w1PBg6RSkhkQVHgUMeVeDWIjbrs=/fit-in/200x150/pic428828.jpg",
+    yearPublished: 2009,
+    imageUrl: "https://cf.geekdo-images.com/original/img/WvXe0YG-Mj2KBtyRSBNtRw4DIx0=/0x0/pic428828.jpg",
+    families: [
+        {
+            name: "familygames",
+            friendlyName: "Family Game Rank",
+            bayesaverage: 7.19712,
+            value: 36,
+        },
+        {
+            name: "strategygames",
+            friendlyName: "Strategy Game Rank",
+            bayesaverage: 7.16696,
+            value: 187,
+        }
+    ],
+    minPlayers: 2,
+    maxPlayers: 5,
+    minPlaytime: 40,
+    maxPlaytime: 80,
+    playingTime: 80,
+    owners: [
+        "Cyndaq"
+    ]
+}
