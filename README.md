@@ -1,6 +1,7 @@
 # Cardboard Butler
 
-Cardboard Butler is a javascript client that show users their bgg collection.
+Cardboard Butler is a webapp that let [BGG](https://boardgamegeek.com/) users show find a game from their collection that fit their game group.
+
 
 ## Installation
 
