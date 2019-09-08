@@ -58,7 +58,5 @@ describe("CollectionMerger", () => {
         }
     });
 
-
-
 });
 
