@@ -11,6 +11,7 @@ describe("GameItem react component", () => {
 
     const testItem: GameInfo = alchemists;
     const ownerTestItem = Object.assign({}, testItem, { owners: ["Warium"] });
+    const ownersTestItem = Object.assign({}, testItem, { owners: ["Warium", "Nakul"] });
 
     describe("it renders", () => {
         it(" a gameinfo item", () => {
@@ -45,7 +46,7 @@ describe("GameItem react component", () => {
         });
 
         it("owners", () => {
-            const { getByTestId } = render(<GameListItem item={ownerTestItem} />);
+            const { getByTestId } = render(<GameListItem item={ownersTestItem} />);
             expect(getByTestId("Owners")).toHaveTextContent("- Warium, Nakul");
         });
     });
