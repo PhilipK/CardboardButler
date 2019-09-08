@@ -34,29 +34,40 @@ export default class ValidatingUserInput extends React.Component<Props, State> {
         this.state = initialState;
     }
 
+
+
     onNamesChange(names: string[]) {
         const validate = this.props.userValidator;
-        const knownNames = [...this.state.validNames, ...this.state.invalidNames];
-        const namesToValidate = names.filter((name) => knownNames.indexOf(name) === -1);
+        const knownNames = [...this.state.validNames, ...this.state.invalidNames, ...this.state.loadingNames];
+        const namesToValidate = validate ? names.filter((name) => knownNames.indexOf(name) === -1) : [];
         this.setState({
             shownNames: names,
-            loadingNames: namesToValidate
         });
-        if (namesToValidate) {
+        if (validate) {
             namesToValidate.forEach(async (name) => {
-                const isValid = await validate(name);
-                const newLoading = [...this.state.loadingNames].filter((loadingName) => loadingName !== name)
-                if (isValid) {
-                    this.setState({
-                        validNames: [...this.state.validNames, name],
-                        loadingNames: newLoading
-                    })
-                } else {
-                    this.setState({
-                        invalidNames: [...this.state.invalidNames, name],
-                        loadingNames: newLoading
-                    })
-                }
+                setTimeout(async () => {
+                    const loadingNow = this.state.loadingNames;
+                    const alreadyLoading = loadingNow.indexOf(name) > -1;
+                    const stillShowingName = this.state.shownNames.indexOf(name) > -1;
+                    if (stillShowingName && !alreadyLoading) {
+                        this.setState({
+                            loadingNames: [...loadingNow, name]
+                        })
+                        const isValid = await validate(name);
+                        const loadingWithoutName = this.state.loadingNames.filter((loadingName) => loadingName !== name)
+                        if (isValid) {
+                            this.setState({
+                                validNames: [...this.state.validNames, name],
+                                loadingNames: loadingWithoutName
+                            })
+                        } else {
+                            this.setState({
+                                invalidNames: [...this.state.invalidNames, name],
+                                loadingNames: loadingWithoutName
+                            })
+                        }
+                    }
+                }, 200);
             });
         };
     }

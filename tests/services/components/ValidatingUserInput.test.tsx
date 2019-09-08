@@ -17,69 +17,101 @@ describe("GameItem react component", () => {
 
     var validUserMock = jest.fn((username) => {
         return new Promise<boolean>((resolver) => {
-            resolver(true);
+            setTimeout(() => resolver(true), 0);
         });
     });
     beforeEach(() => {
+        jest.useFakeTimers();
         validUserMock = jest.fn((username) => {
             return new Promise<boolean>((resolver) => {
-                setTimeout(() => resolver(true), 1);
+                setTimeout(() => resolver(true), 0);
             });
         });
-    })
+    });
+    afterEach(() => {
+        jest.clearAllTimers();
+    });
+
 
     describe("validation", () => {
 
-        it("Asks to validate input", () => {
+
+        it("asks to validate input", () => {
             const { getByTestId } = render(<ValidatingUserInput userValidator={validUserMock} />);
             fireEvent.change(getByTestId("Input0"), { target: { value: testName } });
+            jest.advanceTimersByTime(300);
             expect(validUserMock.mock.calls.length).toBe(1);
             expect(validUserMock.mock.calls[0][0]).toBe(testName);
         });
 
-        it("Valid results are marked as valid", async () => {
+        it("marks valid results as valid", async () => {
             const { getByTestId } = render(<ValidatingUserInput userValidator={validUserMock} />);
             fireEvent.change(getByTestId("Input0"), { target: { value: testName } });
-            const validElement = await waitForElement(
-                () => getByTestId("Input0Valid"),
+            jest.advanceTimersByTime(300);
+            await waitForElement(
+                () => getByTestId("Input0Loading"),
             );
+            expect(() => getByTestId("Input0Loading")).toThrow();
+            const validElement = getByTestId("Input0Valid");
             expect(validElement).toBeDefined();
         });
         it("doesnt ask twice", async () => {
             const { getByTestId } = render(<ValidatingUserInput userValidator={validUserMock} />);
             fireEvent.change(getByTestId("Input0"), { target: { value: "Warium" } });
-            await waitForElement(
-                () => getByTestId("Input0Valid"),
-            );
+            jest.runAllTimers();
             fireEvent.change(getByTestId("Input0"), { target: { value: "Nakul" } });
+            jest.runAllTimers();
             fireEvent.change(getByTestId("Input0"), { target: { value: "Warium" } });
+            jest.runAllTimers();
             fireEvent.change(getByTestId("Input0"), { target: { value: "Cyndaq" } });
-            await waitForElement(
-                () => getByTestId("Input0Valid"),
-            );
+            jest.runAllTimers();
             expect(validUserMock.mock.calls.length).toBe(3);
             expect(validUserMock.mock.calls[0][0]).toBe("Warium");
             expect(validUserMock.mock.calls[1][0]).toBe("Nakul");
             expect(validUserMock.mock.calls[2][0]).toBe("Cyndaq");
         });
+
+        it("lets the user finish typing before validating", async () => {
+            const { getByTestId } = render(<ValidatingUserInput userValidator={validUserMock} />);
+            fireEvent.change(getByTestId("Input0"), { target: { value: "W" } });
+            jest.advanceTimersByTime(100);
+            fireEvent.change(getByTestId("Input0"), { target: { value: "Wa" } });
+            jest.advanceTimersByTime(100);
+            fireEvent.change(getByTestId("Input0"), { target: { value: "War" } });
+            jest.advanceTimersByTime(100);
+            fireEvent.change(getByTestId("Input0"), { target: { value: "Wari" } });
+            jest.advanceTimersByTime(100);
+            fireEvent.change(getByTestId("Input0"), { target: { value: "Wariu" } });
+            jest.advanceTimersByTime(100);
+            fireEvent.change(getByTestId("Input0"), { target: { value: "Warium" } });
+            jest.advanceTimersByTime(300);
+
+            expect(validUserMock.mock.calls.length).toBe(1);
+            expect(validUserMock.mock.calls[0][0]).toBe("Warium");;
+        });
     });
 
     describe("loading", () => {
 
-        it("Shows loading while loading", async () => {
+        it("shows loading while loading", async () => {
 
             const { getByTestId } = render(<ValidatingUserInput userValidator={validUserMock} />);
             fireEvent.change(getByTestId("Input0"), { target: { value: testName } });
+            jest.advanceTimersByTime(300);
             const loadingElement = await waitForElement(
                 () => getByTestId("Input0Loading"),
             );
             expect(loadingElement).toBeDefined();
         });
 
-        it("after loading the loading is removed", async () => {
+        it("removes loading after done validating", async () => {
             const { getByTestId } = render(<ValidatingUserInput userValidator={validUserMock} />);
             fireEvent.change(getByTestId("Input0"), { target: { value: testName } });
-            await waitForElementToBeRemoved(() => getByTestId("Input0Loading"));
+            jest.advanceTimersByTime(300);
+            await waitForElement(
+                () => getByTestId("Input0Loading"),
+            );
+            expect(() => getByTestId("Input0Loading")).toThrow();
         });
     });
 
