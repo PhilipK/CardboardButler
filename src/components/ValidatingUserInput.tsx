@@ -34,10 +34,12 @@ export default class ValidatingUserInput extends React.Component<Props, State> {
         this.state = initialState;
         this.doesNameNeedValidation = this.doesNameNeedValidation.bind(this);
         this.isNameShown = this.isNameShown.bind(this);
+        this.setNameLoading = this.setNameLoading.bind(this);
+        this.setNameValidity = this.setNameValidity.bind(this);
     }
 
 
-    doesNameNeedValidation(name: string): boolean {
+    private doesNameNeedValidation(name: string): boolean {
         const { validNames, invalidNames, loadingNames } = this.state;
         const { userValidator } = this.props;
         if (!userValidator) {
@@ -48,41 +50,52 @@ export default class ValidatingUserInput extends React.Component<Props, State> {
             && !(loadingNames.indexOf(name) > -1);
     }
 
-    isNameShown(name: string): boolean {
+    private isNameShown(name: string): boolean {
         return this.state.shownNames.indexOf(name) > -1;
     }
 
-    onNamesChange(names: string[]) {
+    private setNameLoading(name: string, loading: boolean) {
+        if (loading) {
+            this.setState({
+                loadingNames: [...this.state.loadingNames, name]
+            })
+        } else {
+            this.setState({
+                loadingNames: this.state.loadingNames.filter((loadingName) => loadingName !== name)
+            })
+        }
+    }
+
+    private setNameValidity(name: string, isValid: boolean) {
+        if (isValid) {
+            this.setState({
+                validNames: [...this.state.validNames, name]
+            })
+        } else {
+            this.setState({
+                invalidNames: [...this.state.invalidNames, name]
+            })
+        }
+    }
+
+    private onNamesChange(names: string[]) {
+        const { doesNameNeedValidation, isNameShown, setNameValidity, setNameLoading } = this;
+        const { userValidator } = this.props;
         this.setState({
             shownNames: names,
         });
-        const needValidate = this.doesNameNeedValidation;
-        const namesToValidate = names.filter(needValidate);
+        const namesToValidate = names.filter(doesNameNeedValidation);
         namesToValidate.forEach(async (name) => {
             setTimeout(async () => {
                 //things might have changed, so check again if the name is still shown
-                if (this.isNameShown(name) && needValidate(name)) {
-                    const { userValidator } = this.props;
-                    const loadingNow = this.state.loadingNames;
-                    this.setState({
-                        loadingNames: [...loadingNow, name]
-                    })
+                if (isNameShown(name) && doesNameNeedValidation(name)) {
+                    setNameLoading(name, true);
                     const isValid = await userValidator(name);
-                    const loadingWithoutName = this.state.loadingNames.filter((loadingName) => loadingName !== name)
-                    if (isValid) {
-                        this.setState({
-                            validNames: [...this.state.validNames, name],
-                            loadingNames: loadingWithoutName
-                        })
-                    } else {
-                        this.setState({
-                            invalidNames: [...this.state.invalidNames, name],
-                            loadingNames: loadingWithoutName
-                        })
-                    }
+                    setNameValidity(name, isValid);
+                    setNameLoading(name, false);
                 }
                 //wait a little with calling validator, to make sure people are done typing.
-            }, 200);
+            }, 300);
         });
     }
 
