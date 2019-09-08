@@ -19,6 +19,20 @@ describe("CollectionMerger", () => {
         expect(result[1].id).toEqual(alchemistsTheKing.id);
     });
 
+    it("is immutable", () => {
+        const collection1 = [alchemists, alchemistsTheKing];
+        const collection2 = [alchemistsTheKing];
+        const result = merger.getMergedCollection({
+            "col1": collection1,
+            "col2": collection2
+        })
+        expect(result).toHaveLength(2);
+        expect(result[0].id).toEqual(alchemists.id);
+        expect(result[1].id).toEqual(alchemistsTheKing.id);
+        expect(collection1[0].owners).toBeUndefined();
+        expect(collection2[0].owners).toBeUndefined();
+    });
+
     it("sets the owner on the games", () => {
         const collection1 = [alchemists, alchemistsTheKing];
         const collection2 = [alchemistsTheKing];
@@ -33,7 +47,7 @@ describe("CollectionMerger", () => {
             expect(firstOwners).toHaveLength(1);
             expect(firstOwners[0]).toBe("HasTwoGames");
 
-            }
+        }
 
         const secondOwners = result[1].owners;
         expect(secondOwners).toBeDefined();
