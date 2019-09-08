@@ -29,40 +29,45 @@ export default class App extends React.Component<AppProps, AppState> {
         this.state = { games: [], loadingMessage: "", names: [] };
         this.fetchGames = this.fetchGames.bind(this);
         this.bggService = new BggGameService(window.fetch);
-        this.onNameChange = this.onNameChange.bind(this);
+        this.onNameSelect = this.onNameSelect.bind(this);
+        this.userValidator = this.userValidator.bind(this);
     }
 
-    componentDidMount() {
-        this.fetchGames();
-    }
 
-    async fetchGames() {
-        this.setState({ loadingMessage: "Fetching games" });
-        const games = await this.bggService.getUserCollection("Warium");
-        console.log(games);
+    async fetchGames(name: string) {
+        this.setState({ loadingMessage: "Fetching games", games: [] });
+        const games = await this.bggService.getUserCollection(name);
         if (Array.isArray(games)) {
-            this.setState({ games: games, loadingMessage: "" });
+            const curGames = [...this.state.games];
+            const gamesToAdd = games.filter((game) => curGames.every((curGame) => curGame.id !== game.id));
+            this.setState({ games: [...curGames, ...gamesToAdd], loadingMessage: "" });
         } else if (games.retryLater) {
             if (games.error) {
                 this.setState({ loadingMessage: "An error occoured, trying agian in 5 seconds" });
             } else {
                 this.setState({ loadingMessage: "Bgg is working on it, trying again in 5 seconds" });
             }
-            setTimeout(this.fetchGames, 5000);
+            setTimeout(() => this.fetchGames(name), 5000);
         }
     }
 
-    onNameChange(newNames: string[]) {
+    onNameSelect(newNames: string[]) {
         this.setState({
             names: newNames
         });
+        newNames.forEach(this.fetchGames);
+    }
+
+    async userValidator(name: string) {
+        const res = await this.bggService.getUserInfo(name);
+        return res.isValid === true;
     }
 
     render() {
         const { games, loadingMessage, names } = this.state;
         return (
             <div className="app">
-                <ValidatingUserInput userValidator={(name) => this.bggService.getUserInfo(name).then((res) => res.isValid === true)} />
+                <ValidatingUserInput userValidator={this.userValidator} onNameSelect={this.onNameSelect} />
                 {loadingMessage}
                 <Container fluid className="collections">
                     <div>

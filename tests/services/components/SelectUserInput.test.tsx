@@ -54,7 +54,7 @@ describe("SelectUserInput react component", () => {
 
         it("calls the 'onchange' prop on typing a name even when none where given", () => {
             const onChangeMock = jest.fn();
-            const { getByTestId } = render(<SelectUserInput  onNameChange={onChangeMock} />);
+            const { getByTestId } = render(<SelectUserInput onNameChange={onChangeMock} />);
             fireEvent.change(getByTestId("Input0"), { target: { value: 'Nakul' } });
             expect(onChangeMock.mock.calls.length).toBe(1);
             expect(onChangeMock.mock.calls[0][0]).toEqual(["Nakul"]);
@@ -134,6 +134,34 @@ describe("SelectUserInput react component", () => {
             expect(onChangeMock.mock.calls.length).toBe(1);
             expect(onChangeMock.mock.calls[0][0]).toEqual(["Warium", "Nakul"]);
         });
+    });
+
+    describe("Use Names", () => {
+        it("Calls Usenames when clicking go", () => {
+            const testNames: string[] = ["Warium", "Cyndaq"];
+            const useNamesMock = jest.fn((names) => names);
+            const { getByTestId } = render(<SelectUserInput bggNames={testNames} validNames={testNames} onNameSelect={useNamesMock} />);
+            fireEvent.click(getByTestId("UseNames"));
+            expect(useNamesMock.mock.calls.length).toBe(1);
+            expect(useNamesMock.mock.calls[0][0]).toEqual(testNames);
+        });
+
+        it("does not call when names are invalid", () => {
+            const testNames: string[] = ["Warium", "Cyndaq"];
+            const useNamesMock = jest.fn((names) => names);
+            const { getByTestId } = render(<SelectUserInput bggNames={testNames} onNameSelect={useNamesMock} />);
+            fireEvent.click(getByTestId("UseNames"));
+            expect(useNamesMock.mock.calls.length).toBe(0);
+        });
+
+        it("does not call when names are loading", () => {
+            const testNames: string[] = ["Warium", "Cyndaq", "Nakul"];
+            const useNamesMock = jest.fn((names) => names);
+            const { getByTestId } = render(<SelectUserInput bggNames={testNames} onNameSelect={useNamesMock} loadingNames={["Nakul"]} />);
+            fireEvent.click(getByTestId("UseNames"));
+            expect(useNamesMock.mock.calls.length).toBe(0);
+        });
+
     });
 
 

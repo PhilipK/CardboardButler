@@ -6,6 +6,7 @@ interface AppProps {
     onNameChange?: (newNames: string[]) => any;
     validNames?: string[];
     loadingNames?: string[];
+    onNameSelect?: (names: string[]) => any;
 }
 
 
@@ -20,6 +21,7 @@ export default class SelectUserInput extends React.PureComponent<AppProps> {
         this.getNamesToShow = this.getNamesToShow.bind(this);
         this.onAddClick = this.onAddClick.bind(this);
         this.onDeleteClick = this.onDeleteClick.bind(this);
+        this.onUseClick = this.onUseClick.bind(this);
     }
 
     onInputChange(value: string, index: number) {
@@ -53,9 +55,15 @@ export default class SelectUserInput extends React.PureComponent<AppProps> {
 
     }
 
+    onUseClick() {
+        const { onNameSelect } = this.props;
+        if (onNameSelect) {
+            onNameSelect(this.props.bggNames);
+        };
+    }
+
     render() {
         const namesToShow = this.getNamesToShow();
-
         const showDelete = namesToShow.length > 1;
         const { validNames = [], loadingNames = [] } = this.props;
         const hasEnoughNames = namesToShow.length > 0 && namesToShow[0] !== "";
@@ -84,7 +92,7 @@ export default class SelectUserInput extends React.PureComponent<AppProps> {
                     )
                 }
                 <button data-testid="AddButton" onClick={(e) => this.onAddClick()} >Add Name</button>
-                <button data-testid="UseNames" disabled={!canUseNames}>Go</button>
+                <button data-testid="UseNames" disabled={!canUseNames} onClick={(e) => this.onUseClick()} >Go</button>
             </div >
         );
     }

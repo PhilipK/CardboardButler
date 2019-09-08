@@ -7,6 +7,7 @@ import SelectUserInput from "./SelectUserInput";
 interface Props {
     //can ask this if user is valid or not
     userValidator?: (name: string) => Promise<boolean>
+    onNameSelect?: (names: string[]) => any;
 }
 
 interface State {
@@ -101,6 +102,13 @@ export default class ValidatingUserInput extends React.Component<Props, State> {
 
     render() {
         const { validNames, shownNames, loadingNames } = this.state;
-        return <SelectUserInput bggNames={shownNames} validNames={validNames} onNameChange={this.onNamesChange} loadingNames={loadingNames} />
+        const { onNameSelect } = this.props;
+        return <SelectUserInput
+            bggNames={shownNames}
+            validNames={validNames}
+            onNameChange={this.onNamesChange}
+            loadingNames={loadingNames}
+            onNameSelect={onNameSelect}
+        />
     }
 }
