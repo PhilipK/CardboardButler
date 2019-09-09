@@ -73,6 +73,8 @@ describe("BggGameService", () => {
                 expect(games[1].yearPublished).toEqual(2016);
             });
 
+
+
             it("Games image is set", async () => {
                 const games = await service.getUserCollection("Warium");
                 expect(games[0].imageUrl).toEqual("https://cf.geekdo-images.com/original/img/VKBFHqR2xm0EFGWfb1sPJZctMCs=/0x0/pic2241156.png");
@@ -124,6 +126,16 @@ describe("BggGameService", () => {
 
         });
 
+        it("can handle where yearpublished is undefined", async () => {
+            const gamesWithoutYearCollection = readFileSync("tests/services/testxml/GamesWithoutYearCollection.xml", "utf8");
+            fetch.mock(expectedUrl, 200, {
+                response: {
+                    body: gamesWithoutYearCollection
+                }
+            });
+            const games = await service.getUserCollection("Warium");
+            expect(games[0].yearPublished).toBeUndefined();
+        });
 
     });
 

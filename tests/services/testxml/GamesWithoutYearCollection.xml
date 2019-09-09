@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<items totalitems="1" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse" pubdate="Sat, 31 Aug 2019 05:34:24 +0000">
+    <item objecttype="thing" objectid="204431" subtype="boardgame" collid="43492420">
+        <name sortindex="1">One Night Ultimate Alien</name>
+        <image>https://cf.geekdo-images.com/original/img/6p243WGCC3TAOoie8727xDypbQ8=/0x0/pic3493866.jpg</image>
+        <thumbnail>https://cf.geekdo-images.com/thumb/img/bDVbpWSnToI-EYpaidIsZmP5qh4=/fit-in/200x150/pic3493866.jpg</thumbnail>
+        <stats minplayers="4"																	maxplayers="10"																	minplaytime="10"																	maxplaytime="10"																	playingtime="10"																	numowned="2676" >
+            <rating value="6.5">
+                <usersrated value="774" />
+                <average value="7.1241" />
+                <bayesaverage value="6.09032" />
+                <stddev value="1.54602" />
+                <median value="0" />
+                <ranks>
+                    <rank type="subtype" id="1" name="boardgame" friendlyname="Board Game Rank" value="1886" bayesaverage="6.09032" />
+                    <rank type="family" id="5498" name="partygames" friendlyname="Party Game Rank" value="71" bayesaverage="6.58702" />
+                </ranks>
+            </rating>
+        </stats>
+        <status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2017-09-14 00:26:56" />
+        <numplays>0</numplays>
+    </item>
+</items>
