@@ -29,7 +29,6 @@
     "start-prod": "yarn run build && node express.js",
     "test": "jest --watch --verbose"
   },
-
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
