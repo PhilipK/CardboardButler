@@ -17,6 +17,7 @@ class BggGameService {
      */
     constructor(fetchService?: FetchService) {
         this.fetchService = fetchService;
+        this.getFetch = this.getFetch.bind(this);
     }
 
     /**
@@ -136,7 +137,7 @@ class BggGameService {
 
     private async fetCollectionXml(username: string) {
         const url = this.buildCollectionUrl(username);
-        const f = this.fetchService || fetch;
+        const f = this.getFetch();
         return f(url).then(async (res) => {
             if (res.status === 200) {
                 return res.text().catch((error) => ({ retryLater: true, error }));
@@ -153,7 +154,7 @@ class BggGameService {
 
     private async fetUserInfoXml(username: string) {
         const url = this.buildUserUrl(username);
-        const f = this.fetchService || fetch;
+        const f = this.getFetch();
         return f(url).then((res) => {
             return res.text();
         }).catch((error: Error) => {
@@ -167,6 +168,10 @@ class BggGameService {
 
     private buildUserUrl(username: string) {
         return `https://cors-anywhere.herokuapp.com/https://api.geekdo.com/xmlapi2/user?name=${username}`;
+    }
+
+    private getFetch() {
+        return this.fetchService || fetch;
     }
 }
 
