@@ -19,6 +19,9 @@
   "bugs": {
     "url": "https://github.com/PhilipK/CardboardButler/issues"
   },
+  "jest": {
+    "testEnvironment": "node"
+  },
   "homepage": "https://github.com/PhilipK/CardboardButler",
   "scripts": {
     "build": "yarn run clean-dist && webpack -p --config=configs/webpack/prod.js",

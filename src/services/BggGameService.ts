@@ -17,6 +17,7 @@ class BggGameService {
      */
     constructor(fetchService?: FetchService) {
         this.fetchService = fetchService;
+        this.getFetch = this.getFetch.bind(this);
     }
 
     /**
@@ -38,13 +39,15 @@ class BggGameService {
             const elements = item.elements;
             const valueOf = (attributeName: string) => this.getTagValue(elements, attributeName);
             const playStats = this.getPlayStatsFromCollection(elements);
+            const yearAsString: string | undefined = valueOf("yearpublished");
+            const yearAsNumber = yearAsString === undefined ? undefined : parseInt(yearAsString, 10);
             const gameId = parseInt(item.attributes.objectid as string);
             const game: GameInfo = Object.assign({
                 id: gameId,
                 averagerating: this.getAverageRating(elements),
                 name: valueOf("name"),
                 thumbnailUrl: valueOf("thumbnail"),
-                yearPublished: parseInt(valueOf("yearpublished"), 10),
+                yearPublished: yearAsNumber,
                 imageUrl: valueOf("image"),
                 families: this.getFamilies(elements)
             }, playStats);
@@ -125,12 +128,16 @@ class BggGameService {
     }
 
     private getTagValue(tags: convert.Element[], tagName: string) {
-        return tags.find((t) => t.name === tagName).elements[0].text.toString();
+        const tagElement = tags.find((t) => t.name === tagName);
+        if (tagElement === undefined || tagElement.elements === undefined) {
+            return undefined;
+        }
+        return tagElement.elements[0].text.toString();
     }
 
     private async fetCollectionXml(username: string) {
         const url = this.buildCollectionUrl(username);
-        const f = this.fetchService || fetch;
+        const f = this.getFetch();
         return f(url).then(async (res) => {
             if (res.status === 200) {
                 return res.text().catch((error) => ({ retryLater: true, error }));
@@ -147,7 +154,7 @@ class BggGameService {
 
     private async fetUserInfoXml(username: string) {
         const url = this.buildUserUrl(username);
-        const f = this.fetchService || fetch;
+        const f = this.getFetch();
         return f(url).then((res) => {
             return res.text();
         }).catch((error: Error) => {
@@ -161,6 +168,10 @@ class BggGameService {
 
     private buildUserUrl(username: string) {
         return `https://cors-anywhere.herokuapp.com/https://api.geekdo.com/xmlapi2/user?name=${username}`;
+    }
+
+    private getFetch() {
+        return this.fetchService || fetch;
     }
 }
 

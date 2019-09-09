@@ -27,6 +27,18 @@ describe("BggGameService", () => {
             expect(myMock.lastUrl()).toEqual(expectedUrl);
         });
 
+        it("Handles large collections", async () => {
+            const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/collection?username=TheJadeKnightCollection&own=1&stats=1`;
+            const largeCollection = readFileSync("tests/services/testxml/TheJadeKnightCollection.xml", "utf8");
+            fetch.mock(expectedUrl, 200, {
+                response: {
+                    body: largeCollection
+                }
+            });
+            const games = await service.getUserCollection("TheJadeKnightCollection");
+            expect(games).toHaveLength(70);
+        });
+
         describe("attributes", () => {
             const twoGameXml = readFileSync("tests/services/testxml/TwoGamesCollection.xml", "utf8");
 
@@ -60,6 +72,8 @@ describe("BggGameService", () => {
                 expect(games[0].yearPublished).toEqual(2014);
                 expect(games[1].yearPublished).toEqual(2016);
             });
+
+
 
             it("Games image is set", async () => {
                 const games = await service.getUserCollection("Warium");
@@ -110,9 +124,18 @@ describe("BggGameService", () => {
                 }
             });
 
-
         });
 
+        it("can handle where yearpublished is undefined", async () => {
+            const gamesWithoutYearCollection = readFileSync("tests/services/testxml/GamesWithoutYearCollection.xml", "utf8");
+            fetch.mock(expectedUrl, 200, {
+                response: {
+                    body: gamesWithoutYearCollection
+                }
+            });
+            const games = await service.getUserCollection("Warium");
+            expect(games[0].yearPublished).toBeUndefined();
+        });
 
     });
 
