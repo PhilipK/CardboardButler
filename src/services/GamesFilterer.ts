@@ -4,7 +4,7 @@ interface FilterOptions {
     playtime?: {
         minimum?: number;
         maximum?: number;
-    }
+    };
 }
 
 export class GamesFilterer {

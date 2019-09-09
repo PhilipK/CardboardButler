@@ -17,9 +17,9 @@ export class CollectionMerger {
                     return Object.assign({}, game, {
                         owners: game.owners ? [...game.owners, name] : [name]
                     });
-                };
+                }
                 return game;
-            })
+            });
         }, []);
     }
 }

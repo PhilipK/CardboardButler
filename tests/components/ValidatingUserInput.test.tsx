@@ -89,6 +89,31 @@ describe("ValidatingUserInput", () => {
             expect(validUserMock.mock.calls.length).toBe(1);
             expect(validUserMock.mock.calls[0][0]).toBe("Warium");;
         });
+
+        it("doesnt validate when no validator given", async () => {
+            const { getByTestId } = render(<ValidatingUserInput />);
+            fireEvent.change(getByTestId("Input0"), { target: { value: testName } });
+            jest.advanceTimersByTime(300);
+            expect(() => getByTestId("Input0Loading")).toThrow();
+        });
+
+        it("doesnt load invalid names again", async () => {
+            const invalidUserMock = jest.fn((username) => {
+                return new Promise<boolean>((resolver) => {
+                    setTimeout(() => resolver(false), 0);
+                });
+            });
+            const { getByTestId } = render(<ValidatingUserInput userValidator={invalidUserMock} />);
+            fireEvent.change(getByTestId("Input0"), { target: { value: "Warium" } });
+            jest.runAllTimers();
+            fireEvent.change(getByTestId("Input0"), { target: { value: "Nakul" } });
+            jest.runAllTimers();
+            fireEvent.change(getByTestId("Input0"), { target: { value: "Warium" } });
+            jest.runAllTimers();
+            expect(invalidUserMock.mock.calls.length).toBe(2);
+            expect(invalidUserMock.mock.calls[0][0]).toBe("Warium");
+            expect(invalidUserMock.mock.calls[1][0]).toBe("Nakul");
+        });
     });
 
     describe("loading", () => {

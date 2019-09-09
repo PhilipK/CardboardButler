@@ -50,7 +50,7 @@ export default class SelectUserInput extends React.PureComponent<AppProps> {
 
     getNamesToShow() {
         const { bggNames } = this.props;
-        const namesToShow = (bggNames === undefined || bggNames.length == 0) ? [""] : [...bggNames];
+        const namesToShow = (bggNames === undefined || bggNames.length === 0) ? [""] : [...bggNames];
         return namesToShow;
 
     }
@@ -59,7 +59,7 @@ export default class SelectUserInput extends React.PureComponent<AppProps> {
         const { onNameSelect } = this.props;
         if (onNameSelect) {
             onNameSelect(this.props.bggNames);
-        };
+        }
     }
 
     render() {
@@ -87,7 +87,7 @@ export default class SelectUserInput extends React.PureComponent<AppProps> {
                                 style={{ cursor: "pointer" }}
                                 onClick={(e) => this.onDeleteClick(i)}
                                 data-testid={inputName + "Delete"}>X</button>}
-                        </div>
+                        </div>;
                     }
                     )
                 }

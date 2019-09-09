@@ -5,8 +5,8 @@ import SelectUserInput from "./SelectUserInput";
 
 
 interface Props {
-    //can ask this if user is valid or not
-    userValidator?: (name: string) => Promise<boolean>
+    // can ask this if user is valid or not
+    userValidator?: (name: string) => Promise<boolean>;
     onNameSelect?: (names: string[]) => any;
 }
 
@@ -24,7 +24,7 @@ const initialState: State = {
     validNames: [],
     invalidNames: [],
     loadingNames: [],
-}
+};
 
 
 export default class ValidatingUserInput extends React.Component<Props, State> {
@@ -59,11 +59,11 @@ export default class ValidatingUserInput extends React.Component<Props, State> {
         if (loading) {
             this.setState({
                 loadingNames: [...this.state.loadingNames, name]
-            })
+            });
         } else {
             this.setState({
                 loadingNames: this.state.loadingNames.filter((loadingName) => loadingName !== name)
-            })
+            });
         }
     }
 
@@ -71,11 +71,11 @@ export default class ValidatingUserInput extends React.Component<Props, State> {
         if (isValid) {
             this.setState({
                 validNames: [...this.state.validNames, name]
-            })
+            });
         } else {
             this.setState({
                 invalidNames: [...this.state.invalidNames, name]
-            })
+            });
         }
     }
 
@@ -88,14 +88,14 @@ export default class ValidatingUserInput extends React.Component<Props, State> {
         const namesToValidate = names.filter(doesNameNeedValidation);
         namesToValidate.forEach(async (name) => {
             setTimeout(async () => {
-                //things might have changed, so check again if the name is still shown
+                // things might have changed, so check again if the name is still shown
                 if (isNameShown(name) && doesNameNeedValidation(name)) {
                     setNameLoading(name, true);
                     const isValid = await userValidator(name);
                     setNameValidity(name, isValid);
                     setNameLoading(name, false);
                 }
-                //wait a little with calling validator, to make sure people are done typing.
+                // wait a little with calling validator, to make sure people are done typing.
             }, 300);
         });
     }
@@ -109,6 +109,6 @@ export default class ValidatingUserInput extends React.Component<Props, State> {
             onNameChange={this.onNamesChange}
             loadingNames={loadingNames}
             onNameSelect={onNameSelect}
-        />
+        />;
     }
 }
