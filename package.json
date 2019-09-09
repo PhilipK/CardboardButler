@@ -30,7 +30,8 @@
     "start": "yarn run start-dev",
     "start-dev": "webpack-dev-server --config=configs/webpack/dev.js",
     "start-prod": "yarn run build && node express.js",
-    "test": "jest --watch --coverage"
+    "test-coverage": "jest --watch --watchAll --coverage",
+    "test": "jest --watch"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
