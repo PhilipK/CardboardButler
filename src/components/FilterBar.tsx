@@ -18,12 +18,12 @@ interface TimerOptions {
 }
 
 export const timeOptions: TimerOptions[] = [
-    { text: 'any time', value: 0, playtime: undefined },
-    { text: 'less than 20 minutes', value: 1, playtime: { minimum: 0, maximum: 20 } },
-    { text: '20-60 minutes', value: 2, playtime: { minimum: 20, maximum: 60 } },
-    { text: '1-2 hours', value: 3, playtime: { minimum: 60, maximum: 120 } },
-    { text: '2-4 hours', value: 4, playtime: { minimum: 120, maximum: 240 } },
-    { text: '4 or more hours', value: 5, playtime: { minimum: 240, maximum: 9999999 } }
+    { text: "any time", value: 0, playtime: null },
+    { text: "less than 20 minutes", value: 1, playtime: { minimum: 0, maximum: 20 } },
+    { text: "20-60 minutes", value: 2, playtime: { minimum: 20, maximum: 60 } },
+    { text: "1-2 hours", value: 3, playtime: { minimum: 60, maximum: 120 } },
+    { text: "2-4 hours", value: 4, playtime: { minimum: 120, maximum: 240 } },
+    { text: "4 or more hours", value: 5, playtime: { minimum: 240, maximum: 9999999 } }
 ];
 
 
@@ -35,34 +35,29 @@ interface PlayerCountOptions {
 }
 
 export const playercountOptions: PlayerCountOptions[] = [
-    { text: 'any number of players', value: 0 },
-    { text: '1 person', value: 1, playercount: 1 },
-    { text: '2 people', value: 2, playercount: 2 },
-    { text: '3 people', value: 3, playercount: 3 },
-    { text: '5 people', value: 4, playercount: 5 },
-    { text: '6 people', value: 5, playercount: 6 },
-    { text: '7 people', value: 6, playercount: 7 },
-    { text: '8 people', value: 7, playercount: 8 },
-    { text: '9 people', value: 8, playercount: 9 },
-    { text: '10 people', value: 9, playercount: 10 }
+    { text: "any number of players", value: 0, playercount: null },
+    { text: "1 person", value: 1, playercount: 1 },
+    { text: "2 people", value: 2, playercount: 2 },
+    { text: "3 people", value: 3, playercount: 3 },
+    { text: "5 people", value: 4, playercount: 5 },
+    { text: "6 people", value: 5, playercount: 6 },
+    { text: "7 people", value: 6, playercount: 7 },
+    { text: "8 people", value: 7, playercount: 8 },
+    { text: "9 people", value: 8, playercount: 9 },
+    { text: "10 people", value: 9, playercount: 10 }
 ];
 
 
 const initialState: State = {
     filterOptions: {
-
     }
 };
 
-
-/**
- * PureComponent that renders  a given GameInfo item into a list like view.
- */
 export default class FilterBar extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = initialState;
-        this.onTimeChange = this.onTimeChange
+        this.onTimeChange = this.onTimeChange.bind(this);
     }
 
 
@@ -85,7 +80,7 @@ export default class FilterBar extends React.Component<Props, State> {
             <div>
                 <Dropdown
                     inline={true}
-                    placeholder='any time'
+                    placeholder="any time"
                     data-testid="PlaytimeDropdown"
                     options={timeOptions}
                     onChange={(e, d) => this.onTimeChange(d.value as number)} />
@@ -93,7 +88,7 @@ export default class FilterBar extends React.Component<Props, State> {
 
                 <Dropdown
                     inline={true}
-                    placeholder='any number of players'
+                    placeholder="any number of players"
                     data-testid="PlayercountDropdown"
                     options={playercountOptions}
                     onChange={(e, d) => this.onPlayerCountChange(d.value as number)} />
