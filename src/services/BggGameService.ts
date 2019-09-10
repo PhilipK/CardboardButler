@@ -9,14 +9,14 @@ import { UserInfo } from "../models/UserInfo";
  */
 class BggGameService {
 
-    private fetchService: FetchService;
+    private fetch: FetchService;
 
     /**
      * Construct a new bgg game service.
      * @param fetchService the service to use when trying to fetch information from bgg. If none is given the browser global fetch will be used.
      */
     constructor(fetchService?: FetchService) {
-        this.fetchService = fetchService || fetch;
+        this.fetch = fetchService || fetch;
     }
 
     /**
@@ -128,7 +128,7 @@ class BggGameService {
 
     private getTagValue(tags: convert.Element[], tagName: string) {
         const tagElement = tags.find((t) => t.name === tagName);
-        if (tagElement === undefined || tagElement.elements === undefined) {
+        if (!(tagElement && tagElement.elements)) {
             return undefined;
         }
         return tagElement.elements[0].text.toString();
@@ -136,14 +136,11 @@ class BggGameService {
 
     private async fetCollectionXml(username: string) {
         const url = this.buildCollectionUrl(username);
-        const f = this.fetchService;
-        return f(url).then(async (res) => {
+        return this.fetch(url).then(async (res) => {
             if (res.status === 200) {
                 return res.text();
             } else {
-                if (res.status === 202) {
-                    return { retryLater: true };
-                }
+                return { retryLater: true };
             }
         }).catch((error: Error) => {
             return { retryLater: true, error };
@@ -153,8 +150,7 @@ class BggGameService {
 
     private async fetUserInfoXml(username: string) {
         const url = this.buildUserUrl(username);
-        const f = this.fetchService;
-        return f(url).then((res) => {
+        return this.fetch(url).then((res) => {
             return res.text();
         }).catch((error: Error) => {
             return { error };
