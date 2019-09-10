@@ -68,7 +68,7 @@ describe("Filter bar", () => {
             expect(onChange.mock.calls[0][0]).toEqual({
                 playerCount: 3
             });
-        })
+        });
 
         it("Clicking 'any' playercount will result in null", () => {
             const onChange = jest.fn((filterOptions: FilterOptions) => { });

@@ -19,7 +19,7 @@ describe("Filtering games", () => {
         it("no options result in no time filtering", () => {
             const result = filterer.filter(testCollection);
             expect(result).toEqual(testCollection);
-        })
+        });
         it("filters pesimisticly, games must be without the set time limit", () => {
             const filterOptions = {
                 playtime: {
@@ -28,9 +28,9 @@ describe("Filtering games", () => {
                 }
             };
             const result = filterer.filter(testCollection, filterOptions);
-            expect(result).toHaveLength(1)
-            expect(result).toEqual([testGame3])
-        })
+            expect(result).toHaveLength(1);
+            expect(result).toEqual([testGame3]);
+        });
 
         it("can handle infinite bounds maximum  ", () => {
             const filterOptions = {
@@ -42,7 +42,7 @@ describe("Filtering games", () => {
             const result = filterer.filter(testCollection, filterOptions);
             expect(result).toHaveLength(2);
             expect(result).toEqual([testGame1, testGame2]);
-        })
+        });
 
         it("can handle infinite bounds minimum  ", () => {
             const filterOptions = {
@@ -51,9 +51,9 @@ describe("Filtering games", () => {
                 }
             };
             const result = filterer.filter(testCollection, filterOptions);
-            expect(result).toHaveLength(2)
+            expect(result).toHaveLength(2);
             expect(result).toEqual([testGame3, testGame4]);
-        })
+        });
 
         it("can handle if game has missing limits", () => {
             const fakeGame: GameInfo = {
@@ -66,7 +66,7 @@ describe("Filtering games", () => {
                 minPlaytime: 60,
                 imageUrl: "ImageUrl"
             };
-            const fakeCollection = [fakeGame]
+            const fakeCollection = [fakeGame];
             const filterOptions = {
                 playtime: {
                     minimum: 30
@@ -74,7 +74,7 @@ describe("Filtering games", () => {
             };
             const result = filterer.filter(fakeCollection, filterOptions);
             expect(result).toHaveLength(1);
-        })
+        });
         it("can handle if game has no limit", () => {
             const fakeGame: GameInfo = {
                 name: "FakeGame",
@@ -85,7 +85,7 @@ describe("Filtering games", () => {
                 id: 2323,
                 imageUrl: "ImageUrl"
             };
-            const fakeCollection = [fakeGame]
+            const fakeCollection = [fakeGame];
             const filterOptions = {
                 playtime: {
                     maximum: 90
@@ -93,7 +93,7 @@ describe("Filtering games", () => {
             };
             const result = filterer.filter(fakeCollection, filterOptions);
             expect(result).toHaveLength(0);
-        })
+        });
     });
 
     describe("player count time filtering", () => {

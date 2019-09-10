@@ -15,7 +15,7 @@ describe("CollectionMerger", () => {
         const result = merger.getMergedCollection({
             "col1": collection1,
             "col2": collection2
-        })
+        });
         expect(result).toHaveLength(2);
         expect(result[0].id).toEqual(testGame1.id);
         expect(result[1].id).toEqual(testGame2.id);
@@ -27,7 +27,7 @@ describe("CollectionMerger", () => {
         const result = merger.getMergedCollection({
             "col1": collection1,
             "col2": collection2
-        })
+        });
         expect(result).toHaveLength(2);
         expect(result[0].id).toEqual(testGame1.id);
         expect(result[1].id).toEqual(testGame2.id);
@@ -41,7 +41,7 @@ describe("CollectionMerger", () => {
         const result = merger.getMergedCollection({
             "HasTwoGames": collection1,
             "HasOneGame": collection2
-        })
+        });
         const firstOwners = result[0].owners;
         expect(firstOwners).toBeDefined();
         expect(result[0].id).toEqual(testGame1.id);

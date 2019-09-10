@@ -254,7 +254,7 @@ export async function getLargeCollection(fetch: fetchMock.FetchMockSandbox) {
             body: largeCollection
         }
     });
-    return await service.getUserCollection("TheJadeKnightCollection");;
+    return await service.getUserCollection("TheJadeKnightCollection");
 }
 
 export async function getHugeCollection(fetch: fetchMock.FetchMockSandbox) {

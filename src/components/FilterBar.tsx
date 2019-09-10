@@ -29,7 +29,7 @@ export const timeOptions: TimerOptions[] = [
 
 
 interface PlayerCountOptions {
-    text: string,
+    text: string;
     value: number;
     playercount?: PlayCountOption;
 }
