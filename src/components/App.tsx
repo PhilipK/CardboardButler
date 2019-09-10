@@ -10,6 +10,7 @@ import SelectUserInput from "./SelectUserInput";
 import { Item, Container } from "semantic-ui-react";
 import ValidatingUserInput from "./ValidatingUserInput";
 import { CollectionMerger } from "../services/CollectionMerger";
+import FilterBar from "./FilterBar";
 
 export interface AppProps {
 }
@@ -75,6 +76,7 @@ export default class App extends React.Component<AppProps, AppState> {
         const { games, loadingMessage } = this.state;
         return (
             <div className="app">
+                <FilterBar />
                 <ValidatingUserInput userValidator={this.userValidator} onNameSelect={this.onNameSelect} />
                 {loadingMessage}
                 <Container fluid className="collections">

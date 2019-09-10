@@ -1,11 +1,7 @@
 import { GameInfo } from "../models/GameInfo";
+import { FilterOptions } from "../models/FilterOptions";
 
-interface FilterOptions {
-    playtime?: {
-        minimum?: number;
-        maximum?: number;
-    };
-}
+
 
 export class GamesFilterer {
 
