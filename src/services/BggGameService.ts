@@ -139,7 +139,7 @@ class BggGameService {
         const f = this.fetchService;
         return f(url).then(async (res) => {
             if (res.status === 200) {
-                return res.text().catch((error) => ({ retryLater: true, error }));
+                return res.text();
             } else {
                 if (res.status === 202) {
                     return { retryLater: true };
