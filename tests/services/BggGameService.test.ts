@@ -3,7 +3,7 @@ import * as fetchMock from "fetch-mock";
 import { readFileSync } from "fs";
 
 describe("BggGameService", () => {
-
+    
     const fetch = fetchMock.sandbox();
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 
@@ -11,15 +11,20 @@ describe("BggGameService", () => {
 
     const service = new BggGameService(fetch);
 
+    const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/collection?username=Warium&own=1&stats=1`;
 
     describe("Initialization", () => {
         it("Can be constructoed with a fetch service", () => {
             new BggGameService(fetch);
         });
+
+        it("Can be constructoed without a fetch service", () => {
+            fetchMock.mock(expectedUrl, 200);
+            new BggGameService();
+        });
     });
 
     describe("Get Collection", () => {
-        const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/collection?username=Warium&own=1&stats=1`;
 
         it("Calls the bgg api throug a proxy", async () => {
             const myMock = fetch.mock(expectedUrl, 200);

@@ -1,6 +1,6 @@
 import { GameInfo } from "../../../src/models/GameInfo";
 
-export const alchemists: GameInfo = {
+export const alchemists: () => GameInfo = () => ({
     id: 161970,
     name: "Alchemiests",
     imageUrl: "https://cf.geekdo-images.com/original/img/VKBFHqR2xm0EFGWfb1sPJZctMCs=/0x0/pic2241156.png",
@@ -15,9 +15,9 @@ export const alchemists: GameInfo = {
     families: [
         { name: "strategygames", friendlyName: "Strategy Game Rank", bayesaverage: 7.50035, value: 76 }
     ]
-};
+});
 
-export const alchemistsTheKing: GameInfo = {
+export const alchemistsTheKing: () => GameInfo = () => ({
     id: 204650,
     name: "Alchemists: The King's Golem",
     imageUrl: "https://cf.geekdo-images.com/original/img/8KjTjLyMfdjh-ftl3p2E_MYEBYY=/0x0/pic3195558.jpg",
@@ -30,9 +30,9 @@ export const alchemistsTheKing: GameInfo = {
     averagerating: 8.45367,
     families: [
     ]
-};
+});
 
-export const sevenWonders: GameInfo = {
+export const sevenWonders: () => GameInfo = () => ({
     id: 68448,
     averagerating: 7.77508,
     name: "7 Wonders",
@@ -59,9 +59,9 @@ export const sevenWonders: GameInfo = {
     maxPlaytime: 30,
     playingTime: 30,
 
-}
+});
 
-export const smallWorld: GameInfo = {
+export const smallWorld: () => GameInfo = () => ({
     id: 40692,
     averagerating: 7.29416,
     name: "Small World",
@@ -90,4 +90,4 @@ export const smallWorld: GameInfo = {
     owners: [
         "Cyndaq"
     ]
-}
+});

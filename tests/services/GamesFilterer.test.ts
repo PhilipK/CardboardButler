@@ -4,8 +4,11 @@ import { alchemists, alchemistsTheKing, sevenWonders, smallWorld } from "./model
 import { GameInfo } from "../../src/models/GameInfo";
 
 describe("Filtering games", () => {
-
-    const testCollection = [alchemists, alchemistsTheKing, sevenWonders, smallWorld];
+    const testGame1 = alchemists();
+    const testGame2 = alchemistsTheKing();
+    const testGame3 = sevenWonders();
+    const testGame4 = smallWorld();
+    const testCollection = [testGame1, testGame2, testGame3, testGame4];
 
 
     describe("games time filtering", () => {
@@ -24,7 +27,7 @@ describe("Filtering games", () => {
             });
             const result = filterer.filter(testCollection);
             expect(result).toHaveLength(1)
-            expect(result).toEqual([sevenWonders])
+            expect(result).toEqual([testGame3])
         })
 
         it("can handle infinite bounds maximum  ", () => {
@@ -35,7 +38,7 @@ describe("Filtering games", () => {
             });
             const result = filterer.filter(testCollection);
             expect(result).toHaveLength(2)
-            expect(result).toEqual([alchemists, alchemistsTheKing])
+            expect(result).toEqual([testGame1, testGame2])
         })
 
         it("can handle infinite bounds minimum  ", () => {
@@ -46,7 +49,7 @@ describe("Filtering games", () => {
             });
             const result = filterer.filter(testCollection);
             expect(result).toHaveLength(2)
-            expect(result).toEqual([sevenWonders, smallWorld])
+            expect(result).toEqual([testGame3, testGame4])
         })
 
         it("can handle if game has missing limits", () => {

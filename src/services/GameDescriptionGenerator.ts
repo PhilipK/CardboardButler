@@ -34,13 +34,25 @@ export default class DescriptionGenerator {
         const players = this.getPlayerInfoString(gameInfo);
         const playtime = this.getTimeInfoString(gameInfo);
         const aOrAn = this.getAOrAn(family);
-        const firstString = `${aOrAn} ${family} for ${players} in ${playtime}. Most people think it is ${rating.toLowerCase()}`;
+        let firstString = `${aOrAn} ${family} for ${players} in ${playtime}.`;
+
+        if (gameInfo.weight !== undefined || gameInfo.averagerating !== undefined) {
+            firstString += ` Most people think it is `;
+        }
+        if (gameInfo.averagerating !== undefined) {
+            firstString += rating.toLowerCase();
+            if (gameInfo.weight === undefined) {
+                firstString += ".";
+            }
+        }
+        if (gameInfo.weight !== undefined && gameInfo.averagerating !== undefined) {
+            firstString = firstString + " and ";
+        }
         if (gameInfo.weight !== undefined) {
             const weight = this.getWeightInfo(gameInfo);
-            return firstString + " and " + weight + " to learn.";
-        } else {
-            return firstString + ".";
+            firstString += weight + " to learn.";
         }
+        return firstString;
     }
 
     private isVowel(input: string) {
@@ -66,10 +78,10 @@ export default class DescriptionGenerator {
         return name;
     }
 
-    private getRatingDescription(ratingValue: number) {
+    private getRatingDescription(ratingValue?: number) {
         const ratingIndex = Math.round(ratingValue);
         const ratingInfo = ratingNames[ratingIndex - 1];
-        return ratingInfo ? ratingInfo : "Ok";
+        return ratingInfo ? ratingInfo : "";
     }
 
     private getPlayerInfoString(gameInfo: GameInfo) {
@@ -96,7 +108,7 @@ export default class DescriptionGenerator {
         if (mintime === maxtime) {
             timeInfo += maxtime + " minute";
         } else if (maxtime < mintime) {
-            timeInfo += mintime + " minutes";
+            timeInfo += mintime + " minute";
         } else {
             timeInfo += mintime + " - " + maxtime + " minute";
         }

@@ -9,7 +9,7 @@ import DescriptionGenerator from "../../src/services/GameDescriptionGenerator";
 
 describe("GameItem react component", () => {
 
-    const testItem: GameInfo = alchemists;
+    const testItem: GameInfo = alchemists();
     const ownerTestItem = Object.assign({}, testItem, { owners: ["Warium"] });
     const ownersTestItem = Object.assign({}, testItem, { owners: ["Warium", "Nakul"] });
 
