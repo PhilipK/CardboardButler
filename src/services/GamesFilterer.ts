@@ -12,9 +12,12 @@ export class GamesFilterer {
         if (!options) {
             return collection;
         }
-        const { playtime } = options;
+        const { playtime, playerCount } = options;
         if (playtime) {
             collection = this.filterOnTime(collection, playtime);
+        }
+        if (playerCount) {
+            collection = this.filterOnPlayerCount(collection, playerCount);
         }
         return collection;
     }
@@ -26,5 +29,9 @@ export class GamesFilterer {
             &&
             (game.maxPlaytime === playtime.maximum || game.maxPlaytime <= maximum));
         return collection;
+    }
+
+    private filterOnPlayerCount(collection: GameInfo[], playerCount: number) {
+        return collection.filter((game) => game.minPlayers <= playerCount && playerCount <= game.maxPlayers);
     }
 }
