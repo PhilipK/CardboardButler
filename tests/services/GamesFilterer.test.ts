@@ -12,44 +12,45 @@ describe("Filtering games", () => {
 
 
     describe("games time filtering", () => {
+        const filterer = new GamesFilterer();
 
         it("no options result in no time filtering", () => {
-            const filterer = new GamesFilterer({});
             const result = filterer.filter(testCollection);
-            expect(result).toEqual(testCollection)
+            expect(result).toEqual(testCollection);
         })
         it("filters pesimisticly, games must be without the set time limit", () => {
-            const filterer = new GamesFilterer({
+            const filterOptions = {
                 playtime: {
                     minimum: 30,
                     maximum: 60
                 }
-            });
-            const result = filterer.filter(testCollection);
+            };
+            const result = filterer.filter(testCollection, filterOptions);
             expect(result).toHaveLength(1)
             expect(result).toEqual([testGame3])
         })
 
         it("can handle infinite bounds maximum  ", () => {
-            const filterer = new GamesFilterer({
+            const filterOptions = {
                 playtime: {
                     minimum: 60
                 }
-            });
-            const result = filterer.filter(testCollection);
-            expect(result).toHaveLength(2)
-            expect(result).toEqual([testGame1, testGame2])
+            };
+            const filterer = new GamesFilterer();
+            const result = filterer.filter(testCollection, filterOptions);
+            expect(result).toHaveLength(2);
+            expect(result).toEqual([testGame1, testGame2]);
         })
 
         it("can handle infinite bounds minimum  ", () => {
-            const filterer = new GamesFilterer({
+            const filterOptions = {
                 playtime: {
                     maximum: 90
                 }
-            });
-            const result = filterer.filter(testCollection);
+            };
+            const result = filterer.filter(testCollection, filterOptions);
             expect(result).toHaveLength(2)
-            expect(result).toEqual([testGame3, testGame4])
+            expect(result).toEqual([testGame3, testGame4]);
         })
 
         it("can handle if game has missing limits", () => {
@@ -64,13 +65,13 @@ describe("Filtering games", () => {
                 imageUrl: "ImageUrl"
             };
             const fakeCollection = [fakeGame]
-            const filterer = new GamesFilterer({
+            const filterOptions = {
                 playtime: {
                     minimum: 30
                 }
-            });
-            const result = filterer.filter(fakeCollection);
-            expect(result).toHaveLength(1)
+            };
+            const result = filterer.filter(fakeCollection, filterOptions);
+            expect(result).toHaveLength(1);
         })
         it("can handle if game has no limit", () => {
             const fakeGame: GameInfo = {
@@ -83,13 +84,17 @@ describe("Filtering games", () => {
                 imageUrl: "ImageUrl"
             };
             const fakeCollection = [fakeGame]
-            const filterer = new GamesFilterer({
+            const filterOptions = {
                 playtime: {
                     maximum: 90
                 }
-            });
-            const result = filterer.filter(fakeCollection);
-            expect(result).toHaveLength(0)
+            };
+            const result = filterer.filter(fakeCollection, filterOptions);
+            expect(result).toHaveLength(0);
         })
+    });
+
+    describe("player count time filtering", () => {
+        
     });
 });

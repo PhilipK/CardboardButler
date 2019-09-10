@@ -5,15 +5,14 @@ import { FilterOptions } from "../models/FilterOptions";
 
 export class GamesFilterer {
 
-    private options: FilterOptions;
 
-    constructor(_options: FilterOptions) {
-        this.options = _options;
-    }
 
-    filter(outerCollection: GameInfo[]): GameInfo[] {
+    filter(outerCollection: GameInfo[], options?: FilterOptions): GameInfo[] {
         let collection = [...outerCollection];
-        const { playtime } = this.options;
+        if (!options) {
+            return collection;
+        }
+        const { playtime } = options;
         if (playtime) {
             collection = this.filterOnTime(collection, playtime);
         }

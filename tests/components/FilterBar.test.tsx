@@ -12,10 +12,17 @@ describe("Filter bar", () => {
             const { baseElement } = render(<FilterBar />);
             expect(baseElement).toBeDefined();
         });
+
+        it("does not crash when selecting without onFilterChange", () => {
+            const { getByTestId } = render(<FilterBar />);
+            const playtimeDropdown = getByTestId("PlaytimeDropdown");
+            fireEvent.click(playtimeDropdown);
+            const options = playtimeDropdown.querySelectorAll(".item");
+            fireEvent.click(options[0]);
+        });
     });
 
     describe("Time selection", () => {
-
 
         it("can select a time option", () => {
             const onChange = jest.fn((filterOptions: FilterOptions) => { });

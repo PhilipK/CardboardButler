@@ -9,14 +9,14 @@ import { UserInfo } from "../models/UserInfo";
  */
 class BggGameService {
 
-    private fetch: FetchService;
+    private fetchService: FetchService;
 
     /**
      * Construct a new bgg game service.
      * @param fetchService the service to use when trying to fetch information from bgg. If none is given the browser global fetch will be used.
      */
     constructor(fetchService?: FetchService) {
-        this.fetch = fetchService || fetch;
+        this.fetchService = fetchService || fetch;
     }
 
     /**
@@ -79,6 +79,10 @@ class BggGameService {
         };
     }
 
+    private getFetch() {
+        return this.fetchService;
+    }
+
     private getAverageRating(elements: convert.Element[]) {
         const stringValue = this.getRatingElement(elements).elements.find((t) => t.name === "average").attributes.value;
         return parseFloat(stringValue.toString());
@@ -136,7 +140,7 @@ class BggGameService {
 
     private async fetCollectionXml(username: string) {
         const url = this.buildCollectionUrl(username);
-        return this.fetch(url).then(async (res) => {
+        return this.getFetch()(url).then(async (res) => {
             if (res.status === 200) {
                 return res.text();
             } else {
@@ -150,7 +154,7 @@ class BggGameService {
 
     private async fetUserInfoXml(username: string) {
         const url = this.buildUserUrl(username);
-        return this.fetch(url).then((res) => {
+        return this.getFetch()(url).then((res) => {
             return res.text();
         }).catch((error: Error) => {
             return { error };

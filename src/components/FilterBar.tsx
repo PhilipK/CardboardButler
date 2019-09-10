@@ -12,7 +12,7 @@ interface State {
 }
 
 interface TimerOptions {
-    text: string,
+    text: string;
     value: number;
     playtime?: PlayTimeOption;
 }
@@ -37,15 +37,11 @@ interface PlayerCountOptions {
 export const playercountOptions: PlayerCountOptions[] = [
     { text: "any number of players", value: 0, playercount: null },
     { text: "1 person", value: 1, playercount: 1 },
-    { text: "2 people", value: 2, playercount: 2 },
-    { text: "3 people", value: 3, playercount: 3 },
-    { text: "5 people", value: 4, playercount: 5 },
-    { text: "6 people", value: 5, playercount: 6 },
-    { text: "7 people", value: 6, playercount: 7 },
-    { text: "8 people", value: 7, playercount: 8 },
-    { text: "9 people", value: 8, playercount: 9 },
-    { text: "10 people", value: 9, playercount: 10 }
 ];
+
+for (let i = 2; i <= 10; i++) {
+    playercountOptions.push({ text: i + " people", value: i, playercount: i });
+}
 
 
 const initialState: State = {
@@ -57,21 +53,24 @@ export default class FilterBar extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = initialState;
-        this.onTimeChange = this.onTimeChange.bind(this);
     }
-
 
     onTimeChange(timerIndex: number) {
         const option = timeOptions[timerIndex].playtime;
-        const newFilter = Object.assign({}, this.state.filterOptions, { playtime: option });
-        this.props.onFilterChange(newFilter);
-        this.setState({ filterOptions: newFilter });
+        this.combineState({ playtime: option });
     }
 
     onPlayerCountChange(playerCountIndex: number) {
         const option = playercountOptions[playerCountIndex].playercount;
-        const newFilter = Object.assign({}, this.state.filterOptions, { playerCount: option });
-        this.props.onFilterChange(newFilter);
+        this.combineState({ playerCount: option });
+
+    }
+
+    combineState(options: FilterOptions) {
+        const newFilter = Object.assign({}, this.state.filterOptions, options);
+        if (this.props.onFilterChange) {
+            this.props.onFilterChange(newFilter);
+        }
         this.setState({ filterOptions: newFilter });
     }
 
@@ -83,17 +82,17 @@ export default class FilterBar extends React.Component<Props, State> {
                     placeholder="any time"
                     data-testid="PlaytimeDropdown"
                     options={timeOptions}
-                    onChange={(e, d) => this.onTimeChange(d.value as number)} />
-                );
-
+                    closeOnChange={true}
+                    onChange={(_e, d) => this.onTimeChange(d.value as number)} />
                 <Dropdown
                     inline={true}
                     placeholder="any number of players"
                     data-testid="PlayercountDropdown"
                     options={playercountOptions}
-                    onChange={(e, d) => this.onPlayerCountChange(d.value as number)} />
-                );
-        </div>
-        )
-    };
+                    closeOnChange={true}
+                    onChange={(_e, d) => this.onPlayerCountChange(d.value as number)} />
+
+            </div>
+        );
+    }
 }
