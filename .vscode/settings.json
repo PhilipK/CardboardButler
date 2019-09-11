@@ -1,0 +1,10 @@
+    // Place your settings in this file to overwrite the default settings
+    {
+        "[typescript]": {
+            "editor.formatOnSave": true,
+            "editor.formatOnPaste": true,
+            "editor.codeActionsOnSave": {
+                "source.fixAll.tslint": true
+            }
+        },
+    }
