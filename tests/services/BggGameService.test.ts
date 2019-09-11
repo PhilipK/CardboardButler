@@ -257,7 +257,7 @@ export async function getLargeCollection(fetch: fetchMock.FetchMockSandbox) {
     return await service.getUserCollection("TheJadeKnightCollection");
 }
 
-export async function getHugeCollection(fetch: fetchMock.FetchMockSandbox) {
+export async function getHugeCollection(fetch: fetchMock.FetchMockSandbox = fetchMock.sandbox()) {
     const service = new BggGameService(fetch);
     const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/collection?username=TomVasel&own=1&stats=1`;
     const largeCollection = readFileSync("tests/services/testxml/TomVasel.xml", "utf8");

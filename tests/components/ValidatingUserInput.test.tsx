@@ -15,7 +15,7 @@ describe("ValidatingUserInput", () => {
         });
     });
 
-    var validUserMock = jest.fn((username) => {
+    let validUserMock = jest.fn((username) => {
         return new Promise<boolean>((resolver) => {
             setTimeout(() => resolver(true), 0);
         });

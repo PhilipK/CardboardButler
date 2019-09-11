@@ -2,16 +2,14 @@ import * as React from "react";
 import "./../assets/scss/App.scss";
 import BggGameService from "../services/BggGameService";
 import { GameInfo } from "../models/GameInfo";
-import GameListItem from "./GameListItem";
 
 
 
-import { Item, Container } from "semantic-ui-react";
-import ValidatingUserInput from "./ValidatingUserInput";
 import { CollectionMerger } from "../services/CollectionMerger";
-import FilterBar from "./FilterBar";
 import { FilterOptions } from "../models/FilterOptions";
 import { GamesFilterer } from "../services/GamesFilterer";
+import FrontPage from "./FrontPage";
+import CollectionPage from "./CollectionPage";
 
 export interface AppProps {
     bggServce?: BggGameService;
@@ -19,11 +17,11 @@ export interface AppProps {
 
 
 export interface AppState {
-    games: GameInfo[];
-    filterOptions: FilterOptions;
     userCollections: { [names: string]: GameInfo[] };
-    loadingMessage: string;
     names: string[];
+    games: GameInfo[];
+    loadingMessage: string;
+    showingCollection: boolean;
 }
 
 
@@ -32,13 +30,12 @@ export default class App extends React.Component<AppProps, AppState> {
     private collectionMerger: CollectionMerger;
     constructor(superProps: Readonly<AppProps>) {
         super(superProps);
-        this.state = { games: [], loadingMessage: "", names: [], userCollections: {}, filterOptions: {} };
+        this.state = { games: [], loadingMessage: "", names: [], userCollections: {}, showingCollection: false };
         this.collectionMerger = new CollectionMerger();
 
         this.fetchGames = this.fetchGames.bind(this);
         this.onNameSelect = this.onNameSelect.bind(this);
         this.userValidator = this.userValidator.bind(this);
-        this.onFilterChange = this.onFilterChange.bind(this);
 
     }
 
@@ -50,7 +47,7 @@ export default class App extends React.Component<AppProps, AppState> {
             const collection = this.state.userCollections;
             collection[name] = games;
             const allGames = this.collectionMerger.getMergedCollection(collection);
-            this.setState({ games: allGames, userCollections: collection, loadingMessage: "" });
+            this.setState({ games: allGames, userCollections: collection, loadingMessage: "", showingCollection: true });
         } else if (games.retryLater) {
             if (games.error) {
                 this.setState({ loadingMessage: "An error occoured, trying agian in 5 seconds" });
@@ -74,35 +71,19 @@ export default class App extends React.Component<AppProps, AppState> {
         newNames.forEach(this.fetchGames);
     }
 
+
     async userValidator(name: string) {
         const res = await this.getBggService().getUserInfo(name);
         return res.isValid === true;
     }
 
-    onFilterChange(filterOptions: FilterOptions) {
-        this.setState({
-            filterOptions: filterOptions
-        });
-    }
-
     render() {
-        const { filterOptions, loadingMessage, games } = this.state;
-        const filterer = new GamesFilterer();
-        const filteredGames = filterer.filter(games, filterOptions);
+        const { loadingMessage, games, showingCollection } = this.state;
         return (
             <div className="app">
-                <FilterBar onFilterChange={this.onFilterChange} />
-                <ValidatingUserInput userValidator={this.userValidator} onNameSelect={this.onNameSelect} />
+                {!showingCollection && <FrontPage onNameSelect={this.onNameSelect} userValidator={this.userValidator} />}
                 {loadingMessage}
-                <Container fluid className="collections">
-                    <div>
-                        <Container text className="main" >
-                            <Item.Group>
-                                {filteredGames.map((game) => <GameListItem key={game.id} item={game} />)}
-                            </Item.Group>
-                        </Container>
-                    </div>
-                </Container>
+                {showingCollection && <CollectionPage games={games} />}
             </div>
         );
     }
