@@ -162,7 +162,7 @@ class BggGameService {
     }
 
     private buildCollectionUrl(username: string) {
-        return `https://cors-anywhere.herokuapp.com/https://api.geekdo.com/xmlapi2/collection?username=${username}&own=1&stats=1`;
+        return `https://cors-anywhere.herokuapp.com/https://api.geekdo.com/xmlapi2/collection?username=${username}&own=1&stats=1&excludesubtype=boardgameexpansion`;
     }
 
     private buildUserUrl(username: string) {

@@ -1,8 +1,10 @@
 import BggGameService from "../../src/services/BggGameService";
 import * as fetchMock from "fetch-mock";
 import { readFileSync } from "fs";
+import { GameInfo } from "../../src/models/GameInfo";
 
 const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/collection?username=Warium&own=1&stats=1&excludesubtype=boardgameexpansion`;
 
 describe("BggGameService", () => {
     const fetch = fetchMock.sandbox();
@@ -10,8 +12,6 @@ describe("BggGameService", () => {
     afterEach(fetch.restore);
 
     const service = new BggGameService(fetch);
-
-    const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/collection?username=Warium&own=1&stats=1`;
 
     describe("Initialization", () => {
         it("Can be constructoed with a fetch service", () => {
@@ -205,7 +205,7 @@ describe("BggGameService", () => {
     });
 
     describe("Handling errors", () => {
-        const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/collection?username=Warium&own=1&stats=1`;
+        // const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/collection?username=Warium&own=1&stats=1`;
         const tryAgainMessage = `<message>
         Your request for this collection has been accepted and will be processed. Please try again later for access.
         </message>`;
@@ -245,27 +245,36 @@ describe("BggGameService", () => {
 
 });
 
-export async function getLargeCollection(fetch: fetchMock.FetchMockSandbox) {
-    const service = new BggGameService(fetch);
-    const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/collection?username=TheJadeKnightCollection&own=1&stats=1`;
-    const largeCollection = readFileSync("tests/services/testxml/TheJadeKnightCollection.xml", "utf8");
-    fetch.mock(expectedUrl, 200, {
-        response: {
-            body: largeCollection
-        }
-    });
-    return await service.getUserCollection("TheJadeKnightCollection");
+let largeCollectionCache: GameInfo[] = undefined;
+export async function getLargeCollection(fetch: fetchMock.FetchMockSandbox = fetchMock.sandbox()) {
+    if (largeCollectionCache === undefined) {
+        const service = new BggGameService(fetch);
+        const largeCollection = readFileSync("tests/services/testxml/TheJadeKnightCollection.xml", "utf8");
+        fetch.mock(expectedUrl, 200, {
+            response: {
+                body: largeCollection
+            },
+            overwriteRoutes: true
+
+        });
+        largeCollectionCache = await service.getUserCollection("Warium") as GameInfo[];
+    }
+    return largeCollectionCache;
 }
 
+let hugeCollection: GameInfo[] = undefined;
 export async function getHugeCollection(fetch: fetchMock.FetchMockSandbox = fetchMock.sandbox()) {
-    const service = new BggGameService(fetch);
-    const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/collection?username=TomVasel&own=1&stats=1`;
-    const largeCollection = readFileSync("tests/services/testxml/TomVasel.xml", "utf8");
-    fetch.mock(expectedUrl, 200, {
-        response: {
-            body: largeCollection
-        }
-    });
-    return await service.getUserCollection("TomVasel");
+    if (hugeCollection === undefined) {
+        const service = new BggGameService(fetch);
+        const largeCollection = readFileSync("tests/services/testxml/TomVasel.xml", "utf8");
+        fetch.mock(expectedUrl, 200, {
+            response: {
+                body: largeCollection
+            },
+            overwriteRoutes: true
+        });
+        hugeCollection = await service.getUserCollection("Warium") as GameInfo[];
+    }
+    return hugeCollection;
 }
 

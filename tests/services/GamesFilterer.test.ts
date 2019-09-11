@@ -107,8 +107,7 @@ describe("Filtering games", () => {
 
     describe("filtering large collections", () => {
         it("filter large collections", async () => {
-            const fetch = fetchMock.sandbox();
-            const largeCollection = await getHugeCollection(fetch);
+            const largeCollection = await getHugeCollection();
             expect(largeCollection).toHaveLength(360);
             if (Array.isArray(largeCollection)) {
                 const result = filterer.filter(largeCollection, {

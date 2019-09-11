@@ -30,7 +30,7 @@
     "start": "yarn run start-dev",
     "start-dev": "webpack-dev-server --config=configs/webpack/dev.js",
     "start-prod": "yarn run build && node express.js",
-    "test-coverage": "jest --watch --watchAll --coverage",
+    "test-coverage": "jest --watch --watchAll --coverage --verbose",
     "test": "jest --watch",
     "test-ci": "jest --coverage"
   },
