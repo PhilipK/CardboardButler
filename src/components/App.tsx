@@ -1,14 +1,9 @@
 import * as React from "react";
-import "./../assets/scss/App.scss";
+// import "./../assets/scss/App.scss";
 import BggGameService from "../services/BggGameService";
 import { GameInfo } from "../models/GameInfo";
-
-
-
 import { CollectionMerger } from "../services/CollectionMerger";
-import { FilterOptions } from "../models/FilterOptions";
-import { GamesFilterer } from "../services/GamesFilterer";
-import FrontPage from "./FrontPage";
+import WelcomePage from "./WelcomePage";
 import CollectionPage from "./CollectionPage";
 
 export interface AppProps {
@@ -80,11 +75,11 @@ export default class App extends React.Component<AppProps, AppState> {
     render() {
         const { loadingMessage, games, showingCollection } = this.state;
         return (
-            <div className="app">
-                {!showingCollection && <FrontPage onNameSelect={this.onNameSelect} userValidator={this.userValidator} />}
+            <span >
+                {!showingCollection && <WelcomePage onNameSelect={this.onNameSelect} userValidator={this.userValidator} />}
                 {loadingMessage}
                 {showingCollection && <CollectionPage games={games} />}
-            </div>
+            </span>
         );
     }
 }

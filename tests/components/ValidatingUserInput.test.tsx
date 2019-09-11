@@ -114,6 +114,18 @@ describe("ValidatingUserInput", () => {
             expect(invalidUserMock.mock.calls[0][0]).toBe("Warium");
             expect(invalidUserMock.mock.calls[1][0]).toBe("Nakul");
         });
+
+        it("Never asks for empty string", async () => {
+            const invalidUserMock = jest.fn((username) => {
+                return new Promise<boolean>((resolver) => {
+                    setTimeout(() => resolver(false), 0);
+                });
+            });
+            const { getByTestId } = render(<ValidatingUserInput userValidator={invalidUserMock} />);
+            fireEvent.click(getByTestId("AddButton"));
+            jest.runAllTimers();
+            expect(invalidUserMock.mock.calls.length).toBe(0);
+        });
     });
 
     describe("loading", () => {

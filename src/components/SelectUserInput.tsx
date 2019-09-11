@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Item } from "semantic-ui-react";
+import { Item, Button, Input, Icon } from "semantic-ui-react";
 
 interface AppProps {
     bggNames?: string[];
@@ -67,6 +67,7 @@ export default class SelectUserInput extends React.PureComponent<AppProps> {
         const showDelete = namesToShow.length > 1;
         const { validNames = [], loadingNames = [] } = this.props;
         const hasEnoughNames = namesToShow.length > 0 && namesToShow[0] !== "";
+        const forwardButtonText = `Can you help ${namesToShow.length === 1 ? "me" : "us"} find a game to play?`;
         const canUseNames = hasEnoughNames && namesToShow.every((name) => validNames.indexOf(name) > -1);
         return (
             <div >
@@ -74,25 +75,55 @@ export default class SelectUserInput extends React.PureComponent<AppProps> {
                     namesToShow.map((name, i) => {
                         const isValid = validNames.indexOf(name) > -1;
                         const isLoading = loadingNames.indexOf(name) > -1;
+                        const isLast = i === namesToShow.length - 1;
                         const inputName = "Input" + i;
-                        return <div key={inputName}>
-                            <input
-                                data-testid={inputName}
-                                value={name}
-                                type="text"
-                                onChange={(e) => this.onInputChange(e.target.value, i)} />
-                            {isValid && <span data-testid={inputName + "Valid"}>✓</span>}
-                            {isLoading && <span data-testid={inputName + "Loading"}>↺</span>}
-                            {showDelete && <button
+                        const isValidLabel = isValid ? { icon: "check", "data-testid": inputName + "Valid" } : null;
+                        const removeButton = showDelete ? (
+                            <Icon
+                                data-testid={inputName + "Delete"}
                                 style={{ cursor: "pointer" }}
-                                onClick={(e) => this.onDeleteClick(i)}
-                                data-testid={inputName + "Delete"}>X</button>}
+                                name="remove"
+                                className="link"
+                                onClick={() => this.onDeleteClick(i)}
+                            />) : null;
+
+                        return <div key={inputName} className="field">
+                            <Input
+                                labelPosition="left corner"
+                                placeholder="BGG Username"
+                                label={isValidLabel}
+                                input={{
+                                    "data-testid": inputName
+                                }
+                                }
+                                icon={removeButton}
+                                loading={isLoading}
+                                value={name}
+                                data-testid={isLoading ? inputName + "Loading" : null}
+                                type="text"
+                                autoFocus={isLast}
+                                onChange={(e) => this.onInputChange(e.target.value, i)} />
                         </div>;
                     }
                     )
                 }
-                <button data-testid="AddButton" onClick={(e) => this.onAddClick()} >Add Name</button>
-                <button data-testid="UseNames" disabled={!canUseNames} onClick={(e) => this.onUseClick()} >Go</button>
+                <div className="field">
+                    <button data-testid="AddButton" onClick={(e) => this.onAddClick()} className="ui basic button tiny">
+                        <i className="icon plus"></i>
+                        Add a friend
+                </button>
+                </div>
+                <div className="field">
+                    <Button
+                        data-testid="UseNames"
+                        basic
+                        disabled={!canUseNames}
+                        onClick={(e) => this.onUseClick()}
+                        className="large"
+                        icon="right arrow"
+                        labelPosition="right"
+                        content={forwardButtonText} ></Button>
+                </div>
             </div >
         );
     }

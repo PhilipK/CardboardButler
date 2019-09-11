@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Item } from "semantic-ui-react";
+import { Item, Header } from "semantic-ui-react";
 import SelectUserInput from "./SelectUserInput";
 
 
@@ -41,6 +41,9 @@ export default class ValidatingUserInput extends React.Component<Props, State> {
 
 
     private doesNameNeedValidation(name: string): boolean {
+        if (name === "" || name === undefined) {
+            return false;
+        }
         const { validNames, invalidNames, loadingNames } = this.state;
         const { userValidator } = this.props;
         if (!userValidator) {
@@ -103,12 +106,19 @@ export default class ValidatingUserInput extends React.Component<Props, State> {
     render() {
         const { validNames, shownNames, loadingNames } = this.state;
         const { onNameSelect } = this.props;
-        return <SelectUserInput
-            bggNames={shownNames}
-            validNames={validNames}
-            onNameChange={this.onNamesChange}
-            loadingNames={loadingNames}
-            onNameSelect={onNameSelect}
-        />;
+        return (
+            <div>
+                <Header as="h4" style={{ marginTop: "2em" }}>
+                    Hi {shownNames.length <= 1 ? "my name is" : "our names are"}
+                </Header>
+                <SelectUserInput
+                    bggNames={shownNames}
+                    validNames={validNames}
+                    onNameChange={this.onNamesChange}
+                    loadingNames={loadingNames}
+                    onNameSelect={onNameSelect}
+                />
+            </div >
+        );
     }
 }

@@ -3,7 +3,7 @@ import * as React from "react";
 import { render, fireEvent, waitForElement } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
-import SelectUserInput from "../../src/components/SelectUserInput"
+import SelectUserInput from "../../src/components/SelectUserInput";
 describe("SelectUserInput react component", () => {
 
 
@@ -30,7 +30,7 @@ describe("SelectUserInput react component", () => {
         it("shows a 'use theese names' button", () => {
             const { getByTestId } = render(<SelectUserInput />);
             expect(getByTestId("UseNames")).toBeDefined();
-        })
+        });
     });
 
     describe("Adding names", () => {
@@ -38,7 +38,7 @@ describe("SelectUserInput react component", () => {
             const testNames: string[] = ["Warium", "Cyndaq"];
             const onChangeMock = jest.fn();
             const { getByTestId } = render(<SelectUserInput bggNames={testNames} onNameChange={onChangeMock} />);
-            fireEvent.change(getByTestId("Input0"), { target: { value: 'Nakul' } });
+            fireEvent.change(getByTestId("Input0"), { target: { value: "Nakul" } });
             expect(onChangeMock.mock.calls.length).toBe(1);
             expect(onChangeMock.mock.calls[0][0]).toEqual(["Nakul", "Cyndaq"]);
         });
@@ -55,7 +55,7 @@ describe("SelectUserInput react component", () => {
         it("calls the 'onchange' prop on typing a name even when none where given", () => {
             const onChangeMock = jest.fn();
             const { getByTestId } = render(<SelectUserInput onNameChange={onChangeMock} />);
-            fireEvent.change(getByTestId("Input0"), { target: { value: 'Nakul' } });
+            fireEvent.change(getByTestId("Input0"), { target: { value: "Nakul" } });
             expect(onChangeMock.mock.calls.length).toBe(1);
             expect(onChangeMock.mock.calls[0][0]).toEqual(["Nakul"]);
         });
@@ -74,19 +74,19 @@ describe("SelectUserInput react component", () => {
             const validNames: string[] = ["Warium", "Cyndaq"];
             const { getByTestId } = render(<SelectUserInput bggNames={testNames} validNames={validNames} />);
             expect(getByTestId("UseNames")).toHaveAttribute("disabled");
-        })
+        });
         it("Disables 'use theese names' button when there are no names", () => {
             const testNames: string[] = [""];
             const validNames: string[] = ["Warium", "Cyndaq"];
             const { getByTestId } = render(<SelectUserInput bggNames={testNames} validNames={validNames} />);
             expect(getByTestId("UseNames")).toHaveAttribute("disabled");
-        })
+        });
         it("Enables 'use theese names' button when all names are valid", () => {
             const testNames: string[] = ["Warium", "Cyndaq"];
             const validNames: string[] = ["Warium", "Cyndaq"];
             const { getByTestId } = render(<SelectUserInput bggNames={testNames} validNames={validNames} />);
             expect(getByTestId("UseNames")).not.toHaveAttribute("disabled");
-        })
+        });
 
     });
 
@@ -162,7 +162,21 @@ describe("SelectUserInput react component", () => {
             expect(useNamesMock.mock.calls.length).toBe(0);
         });
 
+        it("has text for  one name", () => {
+            const testNames: string[] = ["Warium"];
+            const useNamesMock = jest.fn((names) => names);
+            const { getByTestId } = render(<SelectUserInput bggNames={testNames} onNameSelect={useNamesMock} />);
+            expect(getByTestId("UseNames")).toHaveTextContent("Can you help me find a game to play?");
+        });
+        it("has different text for multiple names", () => {
+            const testNames: string[] = ["Warium", "Nakul"];
+            const useNamesMock = jest.fn((names) => names);
+            const { getByTestId } = render(<SelectUserInput bggNames={testNames} onNameSelect={useNamesMock} />);
+            expect(getByTestId("UseNames")).toHaveTextContent("Can you help us find a game to play?");
+        });
     });
+
+
 
 
 });

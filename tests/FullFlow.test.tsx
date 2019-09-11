@@ -21,9 +21,9 @@ describe("Full flow", () => {
             expect(baseElement).toBeDefined();
         });
 
-        it("only shows the frontpage when no names are selected yet", () => {
+        it("only shows the WelcomePage when no names are selected yet", () => {
             const { getByTestId } = render(<App bggServce={service} />);
-            expect(getByTestId("FrontPage")).toBeDefined();
+            expect(getByTestId("WelcomePage")).toBeDefined();
             expect(() => getByTestId("CollectionPage")).toThrow();
         });
 
@@ -42,7 +42,7 @@ describe("Full flow", () => {
             fireEvent.click(getByTestId("UseNames"));
             jest.runAllTimers();
             waitForElement(() => getByTestId("CollectionPage"));
-            waitForElementToBeRemoved(() => getByTestId("FrontPage"));
+            waitForElementToBeRemoved(() => getByTestId("WelcomePage"));
         });
     });
 });
