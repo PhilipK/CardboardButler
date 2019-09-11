@@ -3,7 +3,7 @@ import * as fetchMock from "fetch-mock";
 import { readFileSync } from "fs";
 
 describe("BggGameService", () => {
-    
+
     const fetch = fetchMock.sandbox();
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 
