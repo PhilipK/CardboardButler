@@ -7,4 +7,11 @@
                 "source.fixAll.tslint": true
             }
         },
+        "[typescriptreact]": {
+            "editor.formatOnSave": true,
+            "editor.formatOnPaste": true,
+            "editor.codeActionsOnSave": {
+                "source.fixAll.tslint": true
+            }
+        },
     }

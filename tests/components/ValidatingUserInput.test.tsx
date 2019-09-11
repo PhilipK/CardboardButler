@@ -15,7 +15,7 @@ describe("ValidatingUserInput", () => {
         });
     });
 
-    var validUserMock = jest.fn((username) => {
+    let validUserMock = jest.fn((username) => {
         return new Promise<boolean>((resolver) => {
             setTimeout(() => resolver(true), 0);
         });
@@ -87,7 +87,7 @@ describe("ValidatingUserInput", () => {
             jest.advanceTimersByTime(300);
 
             expect(validUserMock.mock.calls.length).toBe(1);
-            expect(validUserMock.mock.calls[0][0]).toBe("Warium");;
+            expect(validUserMock.mock.calls[0][0]).toBe("Warium");
         });
 
         it("doesnt validate when no validator given", async () => {

@@ -79,6 +79,10 @@ class BggGameService {
         };
     }
 
+    private getFetch() {
+        return this.fetchService;
+    }
+
     private getAverageRating(elements: convert.Element[]) {
         const stringValue = this.getRatingElement(elements).elements.find((t) => t.name === "average").attributes.value;
         return parseFloat(stringValue.toString());
@@ -128,7 +132,7 @@ class BggGameService {
 
     private getTagValue(tags: convert.Element[], tagName: string) {
         const tagElement = tags.find((t) => t.name === tagName);
-        if (tagElement === undefined || tagElement.elements === undefined) {
+        if (!(tagElement && tagElement.elements)) {
             return undefined;
         }
         return tagElement.elements[0].text.toString();
@@ -136,14 +140,11 @@ class BggGameService {
 
     private async fetCollectionXml(username: string) {
         const url = this.buildCollectionUrl(username);
-        const f = this.fetchService;
-        return f(url).then(async (res) => {
+        return this.getFetch()(url).then(async (res) => {
             if (res.status === 200) {
                 return res.text();
             } else {
-                if (res.status === 202) {
-                    return { retryLater: true };
-                }
+                return { retryLater: true };
             }
         }).catch((error: Error) => {
             return { retryLater: true, error };
@@ -153,8 +154,7 @@ class BggGameService {
 
     private async fetUserInfoXml(username: string) {
         const url = this.buildUserUrl(username);
-        const f = this.fetchService;
-        return f(url).then((res) => {
+        return this.getFetch()(url).then((res) => {
             return res.text();
         }).catch((error: Error) => {
             return { error };

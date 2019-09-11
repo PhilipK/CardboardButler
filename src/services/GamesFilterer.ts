@@ -1,25 +1,23 @@
 import { GameInfo } from "../models/GameInfo";
+import { FilterOptions } from "../models/FilterOptions";
 
-interface FilterOptions {
-    playtime?: {
-        minimum?: number;
-        maximum?: number;
-    };
-}
+
 
 export class GamesFilterer {
 
-    private options: FilterOptions;
 
-    constructor(_options: FilterOptions) {
-        this.options = _options;
-    }
 
-    filter(outerCollection: GameInfo[]): GameInfo[] {
+    filter(outerCollection: GameInfo[], options?: FilterOptions): GameInfo[] {
         let collection = [...outerCollection];
-        const { playtime } = this.options;
+        if (!options) {
+            return collection;
+        }
+        const { playtime, playerCount } = options;
         if (playtime) {
             collection = this.filterOnTime(collection, playtime);
+        }
+        if (playerCount) {
+            collection = this.filterOnPlayerCount(collection, playerCount);
         }
         return collection;
     }
@@ -31,5 +29,9 @@ export class GamesFilterer {
             &&
             (game.maxPlaytime === playtime.maximum || game.maxPlaytime <= maximum));
         return collection;
+    }
+
+    private filterOnPlayerCount(collection: GameInfo[], playerCount: number) {
+        return collection.filter((game) => game.minPlayers <= playerCount && playerCount <= game.maxPlayers);
     }
 }

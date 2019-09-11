@@ -2,35 +2,35 @@ import * as React from "react";
 import "./../assets/scss/App.scss";
 import BggGameService from "../services/BggGameService";
 import { GameInfo } from "../models/GameInfo";
-import GameListItem from "./GameListItem";
-import SelectUserInput from "./SelectUserInput";
 
 
 
-import { Item, Container } from "semantic-ui-react";
-import ValidatingUserInput from "./ValidatingUserInput";
 import { CollectionMerger } from "../services/CollectionMerger";
+import { FilterOptions } from "../models/FilterOptions";
+import { GamesFilterer } from "../services/GamesFilterer";
+import FrontPage from "./FrontPage";
+import CollectionPage from "./CollectionPage";
 
 export interface AppProps {
+    bggServce?: BggGameService;
 }
 
 
 export interface AppState {
-    games: GameInfo[];
     userCollections: { [names: string]: GameInfo[] };
-    loadingMessage: string;
     names: string[];
+    games: GameInfo[];
+    loadingMessage: string;
+    showingCollection: boolean;
 }
 
 
 export default class App extends React.Component<AppProps, AppState> {
 
-    private bggService: BggGameService;
     private collectionMerger: CollectionMerger;
     constructor(superProps: Readonly<AppProps>) {
         super(superProps);
-        this.state = { games: [], loadingMessage: "", names: [], userCollections: {} };
-        this.bggService = new BggGameService(window.fetch);
+        this.state = { games: [], loadingMessage: "", names: [], userCollections: {}, showingCollection: false };
         this.collectionMerger = new CollectionMerger();
 
         this.fetchGames = this.fetchGames.bind(this);
@@ -42,12 +42,12 @@ export default class App extends React.Component<AppProps, AppState> {
 
     async fetchGames(name: string) {
         this.setState({ loadingMessage: "Fetching games", games: [] });
-        const games = await this.bggService.getUserCollection(name);
+        const games = await this.getBggService().getUserCollection(name);
         if (Array.isArray(games)) {
             const collection = this.state.userCollections;
             collection[name] = games;
             const allGames = this.collectionMerger.getMergedCollection(collection);
-            this.setState({ games: allGames, userCollections: collection, loadingMessage: "" });
+            this.setState({ games: allGames, userCollections: collection, loadingMessage: "", showingCollection: true });
         } else if (games.retryLater) {
             if (games.error) {
                 this.setState({ loadingMessage: "An error occoured, trying agian in 5 seconds" });
@@ -58,6 +58,11 @@ export default class App extends React.Component<AppProps, AppState> {
         }
     }
 
+    getBggService() {
+        return this.props.bggServce || new BggGameService();
+    }
+
+
     onNameSelect(newNames: string[]) {
         this.setState({
             names: newNames,
@@ -66,26 +71,19 @@ export default class App extends React.Component<AppProps, AppState> {
         newNames.forEach(this.fetchGames);
     }
 
+
     async userValidator(name: string) {
-        const res = await this.bggService.getUserInfo(name);
+        const res = await this.getBggService().getUserInfo(name);
         return res.isValid === true;
     }
 
     render() {
-        const { games, loadingMessage } = this.state;
+        const { loadingMessage, games, showingCollection } = this.state;
         return (
             <div className="app">
-                <ValidatingUserInput userValidator={this.userValidator} onNameSelect={this.onNameSelect} />
+                {!showingCollection && <FrontPage onNameSelect={this.onNameSelect} userValidator={this.userValidator} />}
                 {loadingMessage}
-                <Container fluid className="collections">
-                    <div>
-                        <Container text className="main" >
-                            <Item.Group>
-                                {games.map((game) => <GameListItem item={game} />)}
-                            </Item.Group>
-                        </Container>
-                    </div>
-                </Container>
+                {showingCollection && <CollectionPage games={games} />}
             </div>
         );
     }
