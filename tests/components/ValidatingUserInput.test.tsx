@@ -87,7 +87,7 @@ describe("ValidatingUserInput", () => {
             jest.advanceTimersByTime(300);
 
             expect(validUserMock.mock.calls.length).toBe(1);
-            expect(validUserMock.mock.calls[0][0]).toBe("Warium");;
+            expect(validUserMock.mock.calls[0][0]).toBe("Warium");
         });
 
         it("doesnt validate when no validator given", async () => {
