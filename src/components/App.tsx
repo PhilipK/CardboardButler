@@ -77,7 +77,7 @@ export default class App extends React.Component<AppProps, AppState> {
             <span >
                 {!showingCollection && <WelcomePage onNameSelect={this.onNameSelect} userValidator={this.userValidator} />}
                 {loadingMessage}
-                {showingCollection && <CollectionPage games={games} />}
+                {showingCollection && <CollectionPage currentUsers={this.state.names} games={games} />}
             </span>
         );
     }

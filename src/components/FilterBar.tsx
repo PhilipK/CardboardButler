@@ -1,11 +1,11 @@
 import * as React from "react";
-import { Dropdown } from "semantic-ui-react";
+import { Dropdown, Container } from "semantic-ui-react";
 import { FilterOptions, PlayTimeOption, PlayCountOption } from "../models/FilterOptions";
-
 
 export interface Props {
 
     onFilterChange?: (options: FilterOptions) => any;
+    currentUsers?: string[];
 }
 interface State {
     filterOptions: FilterOptions;
@@ -74,25 +74,56 @@ export default class FilterBar extends React.Component<Props, State> {
         this.setState({ filterOptions: newFilter });
     }
 
-    render() {
-        return (
-            <div>
-                <Dropdown
-                    inline={true}
-                    placeholder="any time"
-                    data-testid="PlaytimeDropdown"
-                    options={timeOptions}
-                    closeOnChange={true}
-                    onChange={(_e, d) => this.onTimeChange(d.value as number)} />
-                <Dropdown
-                    inline={true}
-                    placeholder="any number of players"
-                    data-testid="PlayercountDropdown"
-                    options={playercountOptions}
-                    closeOnChange={true}
-                    onChange={(_e, d) => this.onPlayerCountChange(d.value as number)} />
+    joinWithAndEnd(strings: string[]): string {
+        if (strings.length === 1) {
+            return strings[0];
+        }
+        const newStrings = [...strings];
+        const last = newStrings.pop();
+        return newStrings.join(", ") + " and " + last;
+    }
 
-            </div>
+    render() {
+        const { currentUsers = ["Unknown"] } = this.props;
+        const oneUser = currentUsers.length <= 1;
+        const iAmWeAre = oneUser ? "i am" : "we are";
+        return (
+            <Container fluid>
+                <div className="topMenu ui fixed" >
+                    <div className="ui container">
+                        <span className="topselect">
+                            <span>Hi {iAmWeAre} </span>
+                            <Dropdown
+                                inline={true}
+                                text={this.joinWithAndEnd(currentUsers)}
+                            />
+                            <span>{iAmWeAre} looking for a </span>
+                            <span>boardgame </span>
+                            <span className="topselect">
+                                <span>that plays in </span>
+                                <Dropdown
+                                    inline={true}
+                                    placeholder="any time"
+                                    data-testid="PlaytimeDropdown"
+                                    options={timeOptions}
+                                    closeOnChange={true}
+                                    onChange={(_e, d) => this.onTimeChange(d.value as number)} />
+                            </span>
+                        </span>
+
+                        <span className="topselect">
+                            <span>with </span>
+                            <Dropdown
+                                inline={true}
+                                placeholder="any number of players"
+                                data-testid="PlayercountDropdown"
+                                options={playercountOptions}
+                                closeOnChange={true}
+                                onChange={(_e, d) => this.onPlayerCountChange(d.value as number)} />
+                        </span>
+                    </div>
+                </div>
+            </Container>
         );
     }
 }

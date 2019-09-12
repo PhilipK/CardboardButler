@@ -1,6 +1,6 @@
 import * as React from "react";
 import { GameInfo } from "../../src/models/GameInfo";
-import { render, fireEvent, waitForElement, getByTestId } from "@testing-library/react";
+import { render, fireEvent, waitForElement, getByTestId, getByText } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import FilterBar from "../../src/components/FilterBar";
 import { FilterOptions } from "../../src/models/FilterOptions";
@@ -109,7 +109,41 @@ describe("Filter bar", () => {
                 }
             });
         });
+    });
+    describe("Showing names", () => {
 
+        it("shows given multiple names", () => {
+            const currentUsers = ["Cyndaq", "Warium", "Nakul"];
+            const { getByText } = render(<FilterBar currentUsers={currentUsers} />);
+            getByText("Hi we are");
+            getByText("Cyndaq, Warium and Nakul");
+        });
+
+        it("shows given single name", () => {
+            const currentUsers = ["Cyndaq"];
+            const { getByText } = render(<FilterBar currentUsers={currentUsers} />);
+            getByText("Hi i am");
+            getByText("Cyndaq");
+        });
+    });
+
+    describe("Showing names", () => {
+
+        it("shows given multiple names", () => {
+            const currentUsers = ["Cyndaq", "Warium", "Nakul"];
+            const { getByText } = render(<FilterBar currentUsers={currentUsers} />);
+            getByText("Hi we are");
+            getByText("Cyndaq, Warium and Nakul");
+            getByText("we are looking for a");
+        });
+
+        it("shows given single name", () => {
+            const currentUsers = ["Cyndaq"];
+            const { getByText } = render(<FilterBar currentUsers={currentUsers} />);
+            getByText("Hi i am");
+            getByText("Cyndaq");
+            getByText("i am looking for a");
+        });
     });
 });
 

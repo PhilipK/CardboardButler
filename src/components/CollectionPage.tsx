@@ -1,15 +1,17 @@
 import GameListItem from "./GameListItem";
 import FilterBar from "./FilterBar";
-import { Item, Container } from "semantic-ui-react";
+import { Item, Container, Header } from "semantic-ui-react";
 
 import * as React from "react";
 import { FilterOptions } from "../models/FilterOptions";
 import { GamesFilterer } from "../services/GamesFilterer";
 import { GameInfo } from "../models/GameInfo";
+import NoGamesFound from "./NoGamesFound";
 
 
 interface Props {
     games?: GameInfo[];
+    currentUsers?: string[];
 }
 
 interface State {
@@ -33,12 +35,20 @@ export default class CollectionPage extends React.Component<Props, State> {
     }
 
     render() {
-        const { games = [] } = this.props;
+        const { games = [], currentUsers = [] } = this.props;
         const filterer = new GamesFilterer();
         const filteredGames = filterer.filter(games, this.state.filterOptions);
+        const noGames = filteredGames.length === 0;
         return (
             <div data-testid="CollectionPage">
-                <FilterBar onFilterChange={this.onFilterChange} />
+                <Container fluid textAlign="center" className="logoHeader">
+                    <Header as="h1">
+                        <span className="logoscript">Cardboard Butler</span>
+                    </Header>
+                </Container>
+                <FilterBar onFilterChange={this.onFilterChange} currentUsers={currentUsers} />
+
+                {noGames && <NoGamesFound />}
                 <Container fluid className="collections">
                     <div>
                         <Container text className="main" >
