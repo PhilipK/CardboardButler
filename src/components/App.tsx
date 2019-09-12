@@ -1,5 +1,4 @@
 import * as React from "react";
-// import "./../assets/scss/App.scss";
 import BggGameService from "../services/BggGameService";
 import { GameInfo } from "../models/GameInfo";
 import { CollectionMerger } from "../services/CollectionMerger";

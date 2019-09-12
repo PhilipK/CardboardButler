@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Item, Dropdown } from "semantic-ui-react";
+import { Dropdown } from "semantic-ui-react";
 import { FilterOptions, PlayTimeOption, PlayCountOption } from "../models/FilterOptions";
 
 

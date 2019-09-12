@@ -8,8 +8,9 @@ branches:
 cache:
   directories:
     - node_modules
+before-install:
+  - npm install -g yarn --cache-min 999999999
 install:
-  - npm install
-  - yarn install
+  - yarn
 script:
   - yarn test-ci

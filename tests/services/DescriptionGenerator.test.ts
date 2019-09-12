@@ -1,4 +1,3 @@
-import { GameInfo } from "../../src/models/GameInfo";
 import DescriptionGenerator from "../../src/services/GameDescriptionGenerator";
 import "@testing-library/jest-dom/extend-expect";
 import { alchemists } from "./model/TestGames";
