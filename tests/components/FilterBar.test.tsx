@@ -110,22 +110,7 @@ describe("Filter bar", () => {
             });
         });
     });
-    describe("Showing names", () => {
 
-        it("shows given multiple names", () => {
-            const currentUsers = ["Cyndaq", "Warium", "Nakul"];
-            const { getByText } = render(<FilterBar currentUsers={currentUsers} />);
-            getByText("Hi we are");
-            getByText("Cyndaq, Warium and Nakul");
-        });
-
-        it("shows given single name", () => {
-            const currentUsers = ["Cyndaq"];
-            const { getByText } = render(<FilterBar currentUsers={currentUsers} />);
-            getByText("Hi i am");
-            getByText("Cyndaq");
-        });
-    });
 
     describe("Showing names", () => {
 
@@ -140,10 +125,30 @@ describe("Filter bar", () => {
         it("shows given single name", () => {
             const currentUsers = ["Cyndaq"];
             const { getByText } = render(<FilterBar currentUsers={currentUsers} />);
-            getByText("Hi i am");
+            getByText("Hi I am");
             getByText("Cyndaq");
-            getByText("i am looking for a");
+            getByText("I am looking for a");
         });
+    });
+
+
+    describe("sorting", () => {
+
+        it("can sort by bggrating", () => {
+
+            const onChange = jest.fn((filterOptions: FilterOptions) => { });
+            const { getByTestId } = render(<FilterBar onFilterChange={onChange} />);
+            const sortDropdown = getByTestId("SortOptionDropdown");
+            fireEvent.click(sortDropdown);
+            const options = sortDropdown.querySelectorAll(".item");
+            fireEvent.click(options[1]);
+            expect(onChange.mock.calls.length).toEqual(1);
+            expect(onChange.mock.calls[0][0]).toEqual({
+                sortOption: "bggrating"
+            });
+        });
+
+
     });
 });
 

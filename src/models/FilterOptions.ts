@@ -5,8 +5,10 @@ export interface PlayTimeOption {
 
 export type PlayCountOption = number;
 
+export type SortOption = "bggrating";
 
 export interface FilterOptions {
     playtime?: PlayTimeOption;
     playerCount?: PlayCountOption;
+    sortOption?: SortOption;
 }

@@ -19,8 +19,15 @@ export class GamesFilterer {
             if (playerCount) {
                 collection = this.filterOnPlayerCount(collection, playerCount);
             }
+            if (options.sortOption) {
+                collection.sort(this.averageRatingSorter);
+            }
         }
         return collection;
+    }
+
+    private averageRatingSorter(a: GameInfo, b: GameInfo): number {
+        return b.averagerating - a.averagerating;
     }
 
     private nameSorter(a: GameInfo, b: GameInfo): number {
