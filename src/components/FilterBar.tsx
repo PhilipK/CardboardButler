@@ -93,11 +93,8 @@ export default class FilterBar extends React.Component<Props, State> {
                     <div className="ui container">
                         <span className="topselect">
                             <span>Hi {iAmWeAre} </span>
-                            <Dropdown
-                                inline={true}
-                                text={this.joinWithAndEnd(currentUsers)}
-                            />
-                            <span>{iAmWeAre} looking for a </span>
+                            <span><b>{this.joinWithAndEnd(currentUsers)}</b></span>
+                            <span> {iAmWeAre} looking for a </span>
                             <span>boardgame </span>
                             <span className="topselect">
                                 <span>that plays in </span>
