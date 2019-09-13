@@ -10,25 +10,28 @@ export class GamesFilterer {
     filter(outerCollection: GameInfo[], options?: FilterOptions): GameInfo[] {
         let collection = [...outerCollection];
         if (!options) {
-            return collection;
-        }
-        const { playtime, playerCount } = options;
-        if (playtime) {
-            collection = this.filterOnTime(collection, playtime);
-        }
-        if (playerCount) {
-            collection = this.filterOnPlayerCount(collection, playerCount);
+            collection.sort(this.nameSorter);
+        } else {
+            const { playtime, playerCount } = options;
+            if (playtime) {
+                collection = this.filterOnTime(collection, playtime);
+            }
+            if (playerCount) {
+                collection = this.filterOnPlayerCount(collection, playerCount);
+            }
         }
         return collection;
     }
 
+    private nameSorter(a: GameInfo, b: GameInfo): number {
+        return a.name.localeCompare(b.name);
+    }
+
     private filterOnTime(collection: GameInfo[], playtime: { minimum?: number; maximum?: number; }) {
-        const { minimum = 0, maximum = 99999999 } = playtime;
-        collection = collection.filter((game) =>
-            (game.minPlaytime === playtime.minimum || minimum <= game.minPlaytime)
-            &&
-            (game.maxPlaytime === playtime.maximum || game.maxPlaytime <= maximum));
-        return collection;
+        const { minimum = 0, maximum = Infinity } = playtime;
+        return collection.filter((game) =>
+            minimum <= (game.minPlaytime || 0) && (game.maxPlaytime || Infinity) <= maximum
+        );
     }
 
     private filterOnPlayerCount(collection: GameInfo[], playerCount: number) {

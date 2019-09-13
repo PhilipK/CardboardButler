@@ -13,13 +13,23 @@ describe("Filtering games", () => {
     const testCollection = [testGame1, testGame2, testGame3, testGame4];
     const filterer = new GamesFilterer();
 
+    describe("default", () => {
+        it("does not filter", () => {
+            const result = filterer.filter(testCollection);
+            expect(result.length).toEqual(testCollection.length);
+        });
+        it("sorts by name", () => {
+            const onOrdered = [testGame2, testGame3, testGame1, testGame4];
+            const nameOrdered = [testGame3, testGame1, testGame2, testGame4];
+            const result = filterer.filter(onOrdered);
+            expect(result.map((r) => r.name)).toEqual(nameOrdered.map((r) => r.name));
+        });
+    });
+
 
     describe("games time filtering", () => {
 
-        it("no options result in no time filtering", () => {
-            const result = filterer.filter(testCollection);
-            expect(result).toEqual(testCollection);
-        });
+
         it("filters pesimisticly, games must be without the set time limit", () => {
             const filterOptions = {
                 playtime: {
