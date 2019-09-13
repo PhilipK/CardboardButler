@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Dropdown, Container } from "semantic-ui-react";
-import { FilterOptions, PlayTimeOption, PlayCountOption } from "../models/FilterOptions";
+import { FilterOptions, PlayTimeOption, PlayCountOption, SortOption } from "../models/FilterOptions";
 
 export interface Props {
 
@@ -43,6 +43,27 @@ for (let i = 2; i <= 10; i++) {
     playercountOptions.push({ text: i + " people", value: i, playercount: i });
 }
 
+interface SortingOptions {
+    text: string;
+    value: number;
+    sortoption: SortOption;
+}
+
+
+export const sortingOptions: SortingOptions[] = [
+    { text: "are alphabetic", value: 0, sortoption: null },
+    { text: "are highly rated", value: 1, sortoption: "bggrating" },
+    // { text: "have a high bgg rank", value: "rank" },
+    // { text: "are best with this number of players", value: "bestWithPlayers" },
+    // { text: "are easy to learn", value: "easy" },
+    // { text: "are complex", value: "complex" },
+    // { text: "are new", value: "new" },
+    // { text: "are old", value: "old" },
+    // // { text: "least recently got played", value: "lastTimePlayed" },
+    // { text: "most recently got played", value: "lastTimePlayedRev" },
+    // { text: "have been played a lot", value: "timePlayed" },
+    // { text: "have not been played a lot", value: "timePlayedRev" }
+];
 
 const initialState: State = {
     filterOptions: {
@@ -63,7 +84,11 @@ export default class FilterBar extends React.Component<Props, State> {
     onPlayerCountChange(playerCountIndex: number) {
         const option = playercountOptions[playerCountIndex].playercount;
         this.combineState({ playerCount: option });
+    }
 
+    onSortChange(sortOptionIndex: number) {
+        const option = sortingOptions[sortOptionIndex].sortoption;
+        this.combineState({ sortOption: option });
     }
 
     combineState(options: FilterOptions) {
@@ -86,15 +111,16 @@ export default class FilterBar extends React.Component<Props, State> {
     render() {
         const { currentUsers = ["Unknown"] } = this.props;
         const oneUser = currentUsers.length <= 1;
-        const iAmWeAre = oneUser ? "i am" : "we are";
+        const iWe = oneUser ? "I" : "we";
+        const amAre = oneUser ? "am" : "are";
         return (
             <Container fluid>
                 <div className="topMenu ui fixed" >
                     <div className="ui container">
                         <span className="topselect">
-                            <span>Hi {iAmWeAre} </span>
+                            <span>Hi {iWe}  {amAre} </span>
                             <span><b>{this.joinWithAndEnd(currentUsers)}</b></span>
-                            <span> {iAmWeAre} looking for a </span>
+                            <span> {iWe}  {amAre} looking for a </span>
                             <span>boardgame </span>
                             <span className="topselect">
                                 <span>that plays in </span>
@@ -117,6 +143,17 @@ export default class FilterBar extends React.Component<Props, State> {
                                 options={playercountOptions}
                                 closeOnChange={true}
                                 onChange={(_e, d) => this.onPlayerCountChange(d.value as number)} />
+                        </span>
+
+                        <span className="topselect">
+                            <span>and {iWe} prefer games that </span>
+                            <Dropdown
+                                inline={true}
+                                defaultValue={sortingOptions[0].value}
+                                data-testid="SortOptionDropdown"
+                                options={sortingOptions}
+                                closeOnChange={true}
+                                onChange={(_e, d) => this.onSortChange(d.value as number)} />
                         </span>
                     </div>
                 </div>

@@ -18,12 +18,7 @@ describe("Filtering games", () => {
             const result = filterer.filter(testCollection);
             expect(result.length).toEqual(testCollection.length);
         });
-        it("sorts by name", () => {
-            const onOrdered = [testGame2, testGame3, testGame1, testGame4];
-            const nameOrdered = [testGame3, testGame1, testGame2, testGame4];
-            const result = filterer.filter(onOrdered);
-            expect(result.map((r) => r.name)).toEqual(nameOrdered.map((r) => r.name));
-        });
+
     });
 
 
@@ -129,6 +124,19 @@ describe("Filtering games", () => {
             }
         });
     });
+
+    describe("sorting", () => {
+        it("sorts by name by default", () => {
+            const onOrdered = [testGame2, testGame3, testGame1, testGame4];
+            const nameOrdered = [testGame3, testGame1, testGame2, testGame4];
+            const result = filterer.filter(onOrdered);
+            expect(result.map((r) => r.name)).toEqual(nameOrdered.map((r) => r.name));
+        });
+        it("can sort by bggranking", () => {
+            const onOrdered = [testGame1, testGame2, testGame3, testGame4];
+            const rankordering = [testGame2, testGame3, testGame1, testGame4];
+            const result = filterer.filter(onOrdered, { sortOption: "bggrating" });
+            expect(result.map((r) => r.averagerating)).toEqual(rankordering.map((r) => r.averagerating));
+        });
+    });
 });
-
-
