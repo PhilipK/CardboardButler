@@ -12,28 +12,43 @@ export class GamesFilterer {
         if (!options) {
             collection.sort(this.nameSorter);
         } else {
-            const { playtime, playerCount } = options;
+            const { playtime, playerCount, sortOption } = options;
             if (playtime) {
                 collection = this.filterOnTime(collection, playtime);
             }
             if (playerCount) {
                 collection = this.filterOnPlayerCount(collection, playerCount);
             }
-            if (options.sortOption) {
-                if (options.sortOption === "bggrating") {
-                    collection.sort(this.averageRatingSorter);
-                }
-                if (options.sortOption === "old") {
-                    collection.sort(this.oldYearSorter);
-                }
-                if (options.sortOption === "new") {
-                    collection.sort(this.newYearSorter);
-                }
-
+            if (!sortOption) {
+                collection.sort(this.nameSorter);
             }
+            if (sortOption === "bggrating") {
+                collection.sort(this.averageRatingSorter);
+            }
+            if (sortOption === "old") {
+                collection.sort(this.oldYearSorter);
+            }
+            if (sortOption === "new") {
+                collection.sort(this.newYearSorter);
+            }
+            if (sortOption === "userrating") {
+                collection.sort(this.userRatingSorter);
+            }
+
         }
         return collection;
     }
+
+
+
+
+    private userRatingSorter(a: GameInfo, b: GameInfo): number {
+        const aRating = a.userRating ? Object.keys(a.userRating).reduce((prev, name) => a.userRating[name] + prev, 0) / Object.keys(a.userRating).length : 0;
+        const bRating = b.userRating ? Object.keys(b.userRating).reduce((prev, name) => (b.userRating[name]) + prev, 0) / Object.keys(b.userRating).length : 0;
+        return (bRating || 0) - (aRating || 0);
+    }
+
+
 
     private oldYearSorter(a: GameInfo, b: GameInfo): number {
         return (a.yearPublished || Infinity) - (b.yearPublished || Infinity);
