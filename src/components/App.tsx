@@ -35,7 +35,7 @@ export default class App extends React.Component<AppProps, AppState> {
 
 
     async fetchGames(name: string) {
-        this.setState({ loadingMessage: "Fetching games", games: [] });
+        this.setState({ loadingMessage: "Fetching games" });
         const games = await this.getBggService().getUserCollection(name);
         if (Array.isArray(games)) {
             const collection = this.state.userCollections;
@@ -50,6 +50,9 @@ export default class App extends React.Component<AppProps, AppState> {
             }
             setTimeout(() => this.fetchGames(name), 5000);
         }
+    }
+    componentWillUnmount() {
+
     }
 
     getBggService() {

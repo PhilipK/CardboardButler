@@ -259,7 +259,7 @@ export async function getLargeCollection(fetch: fetchMock.FetchMockSandbox = fet
         });
         largeCollectionCache = await service.getUserCollection("Warium") as GameInfo[];
     }
-    return largeCollectionCache;
+    return largeCollectionCache as GameInfo[];
 }
 
 let hugeCollection: GameInfo[] = undefined;
@@ -275,6 +275,6 @@ export async function getHugeCollection(fetch: fetchMock.FetchMockSandbox = fetc
         });
         hugeCollection = await service.getUserCollection("Warium") as GameInfo[];
     }
-    return hugeCollection;
+    return hugeCollection as GameInfo[];
 }
 

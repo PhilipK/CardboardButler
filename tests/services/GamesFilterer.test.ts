@@ -138,5 +138,34 @@ describe("Filtering games", () => {
             const result = filterer.filter(onOrdered, { sortOption: "bggrating" });
             expect(result.map((r) => r.averagerating)).toEqual(rankordering.map((r) => r.averagerating));
         });
+        it("can sort by new games", () => {
+            const onOrdered = [testGame1, testGame2, testGame3, testGame4];
+            const newOrdering = [testGame2, testGame1, testGame3, testGame4];
+            const result = filterer.filter(onOrdered, { sortOption: "new" });
+            expect(result.map((r) => r.yearPublished)).toEqual(newOrdering.map((r) => r.yearPublished));
+        });
+
+        it("can sort by old games", () => {
+            const onOrdered = [testGame1, testGame2, testGame3, testGame4];
+            const oldOrdering = [testGame4, testGame3, testGame1, testGame2];
+            const result = filterer.filter(onOrdered, { sortOption: "old" });
+            expect(result.map((r) => r.yearPublished)).toEqual(oldOrdering.map((r) => r.yearPublished));
+        });
+
+        it("when sorting by new, it handles games without year as always being very old", () => {
+            const wihtoutYear = Object.assign({}, testGame4, { yearPublished: undefined });
+            const onOrdered = [wihtoutYear, testGame1, testGame2, testGame3];
+            const oldOrdering = [testGame3, testGame1, testGame2, wihtoutYear];
+            const result = filterer.filter(onOrdered, { sortOption: "old" });
+            expect(result.map((r) => r.yearPublished)).toEqual(oldOrdering.map((r) => r.yearPublished));
+        });
+
+        it("when sorting by old, it handles games without year as always being very new", () => {
+            const wihtoutYear = Object.assign({}, testGame4, { yearPublished: undefined });
+            const onOrdered = [testGame1, wihtoutYear, testGame2, testGame3];
+            const newOrdering = [testGame2, testGame1, testGame3, wihtoutYear];
+            const result = filterer.filter(onOrdered, { sortOption: "new" });
+            expect(result.map((r) => r.yearPublished)).toEqual(newOrdering.map((r) => r.yearPublished));
+        });
     });
 });

@@ -1,11 +1,13 @@
 
 import * as React from "react";
 import App from "../src/components/App";
-import { render, fireEvent, waitForElement, waitForElementToBeRemoved } from "@testing-library/react";
+import { render, fireEvent, waitForElement, waitForElementToBeRemoved, waitForDomChange } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import BggGameService from "../src/services/BggGameService";
 import * as fetchMock from "fetch-mock";
 import { getHugeCollection } from "./services/BggGameService.test";
+import { GameInfo } from "../src/models/GameInfo";
+import { UserInfo } from "../src/models/UserInfo";
 
 
 describe("Full flow", () => {
@@ -27,7 +29,7 @@ describe("Full flow", () => {
             expect(() => getByTestId("CollectionPage")).toThrow();
         });
 
-        it("Typing a name and clicking go will load collection page", () => {
+        it("Typing a name and clicking go will load collection page", async () => {
             jest.useFakeTimers();
             service.getUserInfo = jest.fn((username) => (new Promise((resolver) => resolver({
                 isValid: true,
@@ -38,12 +40,15 @@ describe("Full flow", () => {
             ))));
             const { getByTestId } = render(<App bggServce={service} />);
             fireEvent.change(getByTestId("Input0"), { target: { value: "Warium" } });
-            jest.runAllTimers();
+            jest.advanceTimersByTime(300);
+            await waitForElement(
+                () => getByTestId("Input0Loading"),
+            );
             fireEvent.click(getByTestId("UseNames"));
-            jest.runAllTimers();
             waitForElement(() => getByTestId("CollectionPage"));
             waitForElementToBeRemoved(() => getByTestId("WelcomePage"));
         });
+
     });
 });
 

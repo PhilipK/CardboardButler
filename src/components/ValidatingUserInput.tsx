@@ -89,7 +89,7 @@ export default class ValidatingUserInput extends React.Component<Props, State> {
             shownNames: names,
         });
         const namesToValidate = names.filter(doesNameNeedValidation);
-        namesToValidate.forEach(async (name) => {
+        namesToValidate.forEach((name) => {
             setTimeout(async () => {
                 // things might have changed, so check again if the name is still shown
                 if (isNameShown(name) && doesNameNeedValidation(name)) {

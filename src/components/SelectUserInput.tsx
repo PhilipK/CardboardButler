@@ -114,15 +114,11 @@ export default class SelectUserInput extends React.PureComponent<AppProps> {
                 </button>
                 </div>
                 <div className="field">
-                    <Button
-                        data-testid="UseNames"
-                        basic
+                    <button data-testid="UseNames"
                         disabled={!canUseNames}
-                        onClick={(e) => this.onUseClick()}
-                        className="large"
-                        icon="right arrow"
-                        labelPosition="right"
-                        content={forwardButtonText} ></Button>
+                        onClick={this.onUseClick} className="ui basic button large">
+                        {forwardButtonText}
+                    </button>
                 </div>
             </div >
         );

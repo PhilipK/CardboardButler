@@ -166,13 +166,13 @@ describe("SelectUserInput react component", () => {
             const testNames: string[] = ["Warium"];
             const useNamesMock = jest.fn((names) => names);
             const { getByTestId } = render(<SelectUserInput bggNames={testNames} onNameSelect={useNamesMock} />);
-            expect(getByTestId("UseNames")).toHaveTextContent("Can you help me find a game to play?");
+            expect(getByTestId("UseNames")).toContainHTML("me");
         });
         it("has different text for multiple names", () => {
             const testNames: string[] = ["Warium", "Nakul"];
             const useNamesMock = jest.fn((names) => names);
             const { getByTestId } = render(<SelectUserInput bggNames={testNames} onNameSelect={useNamesMock} />);
-            expect(getByTestId("UseNames")).toHaveTextContent("Can you help us find a game to play?");
+            expect(getByTestId("UseNames")).toContainHTML("us");
         });
     });
 

@@ -53,11 +53,13 @@ interface SortingOptions {
 export const sortingOptions: SortingOptions[] = [
     { text: "are alphabetic", value: 0, sortoption: null },
     { text: "are highly rated", value: 1, sortoption: "bggrating" },
+    { text: "are new", value: 2, sortoption: "new" },
+    { text: "are old", value: 3, sortoption: "old" },
     // { text: "have a high bgg rank", value: "rank" },
     // { text: "are best with this number of players", value: "bestWithPlayers" },
     // { text: "are easy to learn", value: "easy" },
     // { text: "are complex", value: "complex" },
-    // { text: "are new", value: "new" },
+
     // { text: "are old", value: "old" },
     // // { text: "least recently got played", value: "lastTimePlayed" },
     // { text: "most recently got played", value: "lastTimePlayedRev" },
