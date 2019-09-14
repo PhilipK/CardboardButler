@@ -5,7 +5,9 @@ import { FilterOptions } from "../models/FilterOptions";
 
 export class GamesFilterer {
 
-
+    constructor() {
+        this.userRatingSorter = this.userRatingSorter.bind(this);
+    }
 
     filter(outerCollection: GameInfo[], options?: FilterOptions): GameInfo[] {
         let collection = [...outerCollection];
@@ -43,9 +45,20 @@ export class GamesFilterer {
 
 
     private userRatingSorter(a: GameInfo, b: GameInfo): number {
-        const aRating = a.userRating ? Object.keys(a.userRating).reduce((prev, name) => a.userRating[name] + prev, 0) / Object.keys(a.userRating).length : 0;
-        const bRating = b.userRating ? Object.keys(b.userRating).reduce((prev, name) => (b.userRating[name]) + prev, 0) / Object.keys(b.userRating).length : 0;
+        const aRating = this.getAverageUserRating(a);
+        const bRating = this.getAverageUserRating(b);
         return (bRating || 0) - (aRating || 0);
+    }
+
+    private getAverageUserRating(a: GameInfo) {
+        const scoreMap = a.userRating;
+        if (!scoreMap) {
+            return undefined;
+        } else {
+            const userNames = Object.keys(scoreMap);
+            const sum = userNames.reduce((p, c) => p + scoreMap[c], 0);
+            return sum / userNames.length;
+        }
     }
 
 
