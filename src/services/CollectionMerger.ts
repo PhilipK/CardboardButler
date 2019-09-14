@@ -4,25 +4,30 @@ interface CollectionMap {
     [username: string]: GameInfo[];
 }
 
+interface GameIdCache {
+    [id: number]: GameInfo | undefined;
+}
 
 export class CollectionMerger {
 
+
+
     getMergedCollection(collectionsMap: CollectionMap): GameInfo[] {
-        const fullCollection: GameInfo[] = [];
+        const cache: GameIdCache = {};
         const userNames = Object.keys(collectionsMap);
         userNames.forEach((username) => {
             const currentCollection = collectionsMap[username];
             currentCollection.forEach((currentGame) => {
-                const alreadyKnownGame = fullCollection.find((alreadyKnownGame) => alreadyKnownGame.id === currentGame.id);
+                const alreadyKnownGame = cache[currentGame.id];
                 if (alreadyKnownGame) {
                     alreadyKnownGame.owners.push(username);
                     alreadyKnownGame.userRating = Object.assign({}, alreadyKnownGame.userRating, currentGame.userRating);
                 } else {
-                    fullCollection.push(Object.assign({}, currentGame, { owners: [username] }));
+                    cache[currentGame.id] = Object.assign({}, currentGame, { owners: [username] });
                 }
             });
         });
 
-        return fullCollection;
+        return Object.values(cache);
     }
 }
