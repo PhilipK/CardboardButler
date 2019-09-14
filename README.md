@@ -5,7 +5,7 @@ Cardboard Butler is a webapp that let [BGG](https://boardgamegeek.com/) users sh
 Note, this is the early beta of Cardboard Butler verion 2, that is a reimplementation of version 1.
 This project is still under contruction.
 
-You an use the beta version here:
+You can use the beta version here:
 
 https://cardboardbutlerbeta.z21.web.core.windows.net/
 
