@@ -13,9 +13,11 @@ export class CollectionMerger {
             const gameUnkown = (game: GameInfo) => curGames.every((curGame) => curGame.id !== game.id);
             const gamesToAdd = usersGames.filter(gameUnkown);
             return [...curGames, ...gamesToAdd].map((game) => {
-                if (usersGames.some((useGame) => game.id === useGame.id)) {
+                const thisUsersGame = usersGames.find((useGame) => game.id === useGame.id);
+                if (thisUsersGame) {
                     return Object.assign({}, game, {
-                        owners: game.owners ? [...game.owners, name] : [name]
+                        owners: game.owners ? [...game.owners, name] : [name],
+                        userRating: Object.assign({}, game.userRating, thisUsersGame.userRating)
                     });
                 }
                 return game;
