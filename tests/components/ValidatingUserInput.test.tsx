@@ -1,7 +1,7 @@
 
 import * as React from "react";
 import ValidatingUserInput from "../../src/components/ValidatingUserInput";
-import { render, fireEvent, waitForElement, waitForElementToBeRemoved } from "@testing-library/react";
+import { render, fireEvent, waitForElement, waitForDomChange, waitForElementToBeRemoved } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
 describe("ValidatingUserInput", () => {
@@ -17,14 +17,14 @@ describe("ValidatingUserInput", () => {
 
     let validUserMock = jest.fn((username) => {
         return new Promise<boolean>((resolver) => {
-            setTimeout(() => resolver(true), 0);
+            resolver(true);
         });
     });
     beforeEach(() => {
         jest.useFakeTimers();
         validUserMock = jest.fn((username) => {
             return new Promise<boolean>((resolver) => {
-                setTimeout(() => resolver(true), 0);
+                resolver(true);
             });
         });
     });
@@ -126,6 +126,24 @@ describe("ValidatingUserInput", () => {
             jest.runAllTimers();
             expect(invalidUserMock.mock.calls.length).toBe(0);
         });
+
+        it("uses names when use name is clicked", async () => {
+            const namesSelect = jest.fn((names) => { });
+            const { getByTestId, baseElement } = render(<ValidatingUserInput onNameSelect={namesSelect} userValidator={validUserMock} />);
+            fireEvent.change(getByTestId("Input0"), { target: { value: "Warium" } });
+            jest.advanceTimersByTime(300);
+            await waitForElement(
+                () => getByTestId("Input0Loading"),
+            );
+            expect(() => getByTestId("Input0Loading")).toThrow();
+            const button = getByTestId("UseNames");
+            expect(button["disabled"]).toBe(false);
+            fireEvent.click(button);
+            expect(namesSelect.mock.calls.length).toBe(1);
+            expect(namesSelect.mock.calls[0][0][0]).toBe("Warium");
+
+
+        });
     });
 
     describe("loading", () => {
@@ -151,6 +169,8 @@ describe("ValidatingUserInput", () => {
             expect(() => getByTestId("Input0Loading")).toThrow();
         });
     });
+
+
 
 
 });

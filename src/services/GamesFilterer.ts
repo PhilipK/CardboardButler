@@ -20,10 +20,27 @@ export class GamesFilterer {
                 collection = this.filterOnPlayerCount(collection, playerCount);
             }
             if (options.sortOption) {
-                collection.sort(this.averageRatingSorter);
+                if (options.sortOption === "bggrating") {
+                    collection.sort(this.averageRatingSorter);
+                }
+                if (options.sortOption === "old") {
+                    collection.sort(this.oldYearSorter);
+                }
+                if (options.sortOption === "new") {
+                    collection.sort(this.newYearSorter);
+                }
+
             }
         }
         return collection;
+    }
+
+    private oldYearSorter(a: GameInfo, b: GameInfo): number {
+        return (a.yearPublished || Infinity) - (b.yearPublished || Infinity);
+    }
+
+    private newYearSorter(a: GameInfo, b: GameInfo): number {
+        return (b.yearPublished || -100000) - (a.yearPublished || -10000);
     }
 
     private averageRatingSorter(a: GameInfo, b: GameInfo): number {
