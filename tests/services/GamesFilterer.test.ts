@@ -178,10 +178,10 @@ describe("Filtering games", () => {
         });
 
         it("can sort by multiple user rating", () => {
-            const ratedGame1 = Object.assign({}, testGame1, { userRating: { cyndaq: 7, warium: 1 } });
+            const ratedGame1 = Object.assign({}, testGame1, { userRating: { cyndaq: 7, warium: null, nakul: 4 } });
             const ratedGame2 = Object.assign({}, testGame2, { userRating: { warium: 6, cyndaq: 4 } });
             const onOrdered = [ratedGame2, ratedGame1, testGame3];
-            const newOrdering = [ratedGame2, ratedGame1, testGame3];
+            const newOrdering = [ratedGame1, ratedGame2, testGame3];
             const result = filterer.filter(onOrdered, { sortOption: "userrating" });
             expect(result.map((r) => r.userRating)).toEqual(newOrdering.map((r) => r.userRating));
         });

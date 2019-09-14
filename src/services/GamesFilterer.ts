@@ -64,8 +64,12 @@ export class GamesFilterer {
             return undefined;
         } else {
             const userNames = Object.keys(scoreMap);
-            const sum = userNames.reduce((p, c) => p + scoreMap[c], 0);
-            return sum / userNames.length;
+            const userNamesWithRatings = userNames.filter((name) => scoreMap[name]);
+            if (userNamesWithRatings.length === 0) {
+                return undefined;
+            }
+            const sum = userNamesWithRatings.reduce((p, c) => p + scoreMap[c], 0);
+            return sum / userNamesWithRatings.length;
         }
     }
 

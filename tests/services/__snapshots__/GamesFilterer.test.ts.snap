@@ -23,6 +23,9 @@ Array [
     "numberOwned": 2555,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/51KscgsVQaNfvrzsnrosOG0EMmo=/fit-in/200x150/pic3772064.png",
+    "userRating": Object {
+      "Warium": null,
+    },
     "yearPublished": 2010,
   },
   Object {
@@ -53,6 +56,9 @@ Array [
     "numberOwned": 94104,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/Grz-qM9xwxlvQGK7B-MiljtO9pQ=/fit-in/200x150/pic860217.jpg",
+    "userRating": Object {
+      "Warium": 7.5,
+    },
     "yearPublished": 2010,
   },
   Object {
@@ -68,6 +74,9 @@ Array [
     "numberOwned": 443,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/aOCFWbroAewD9tend5WU3Mr2LIY=/fit-in/200x150/pic1642230.jpg",
+    "userRating": Object {
+      "Warium": 7.5,
+    },
     "yearPublished": 2013,
   },
   Object {
@@ -98,6 +107,9 @@ Array [
     "numberOwned": 7404,
     "playingTime": 75,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/uRI0Jrl7AwvhZdId_xoYNNAHDEc=/fit-in/200x150/pic975416.jpg",
+    "userRating": Object {
+      "Warium": 9,
+    },
     "yearPublished": 2011,
   },
   Object {
@@ -128,6 +140,9 @@ Array [
     "numberOwned": 7935,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/8bvVGeqP1wLrjgIVzYAIO8Lc888=/fit-in/200x150/pic535726.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2009,
   },
   Object {
@@ -151,6 +166,9 @@ Array [
     "numberOwned": 23341,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/SLrCC5Vc1K2qxQ-sw3U4lHk9nQk=/fit-in/200x150/pic213515.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 1999,
   },
   Object {
@@ -166,6 +184,9 @@ Array [
     "numberOwned": 133,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/o8CB7NtAnB9vxyWrscdBNSdlYYE=/fit-in/200x150/pic1831599.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2013,
   },
   Object {
@@ -181,6 +202,9 @@ Array [
     "numberOwned": 8,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/TPUI50HZWL9wT8OUchaEOBeV7a8=/fit-in/200x150/pic2224636.jpg",
+    "userRating": Object {
+      "Warium": null,
+    },
     "yearPublished": 2015,
   },
   Object {
@@ -204,6 +228,9 @@ Array [
     "numberOwned": 4009,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/Z59trGztbhTg0lO-YimBpO4MbSc=/fit-in/200x150/pic125581.jpg",
+    "userRating": Object {
+      "Warium": 8.5,
+    },
     "yearPublished": 1989,
   },
   Object {
@@ -227,6 +254,9 @@ Array [
     "numberOwned": 7930,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/c6ofMooAX4QE9Xesd8lfVNKVyfY=/fit-in/200x150/pic40574.jpg",
+    "userRating": Object {
+      "Warium": 9.5,
+    },
     "yearPublished": 1984,
   },
   Object {
@@ -250,6 +280,9 @@ Array [
     "numberOwned": 588,
     "playingTime": 50,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/7AEq_e4KhJMbNRC9Xlfvgpetzg4=/fit-in/200x150/pic561501.jpg",
+    "userRating": Object {
+      "Warium": 7,
+    },
     "yearPublished": 2009,
   },
   Object {
@@ -273,6 +306,9 @@ Array [
     "numberOwned": 112,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/6h19Sk7bx-3qyUc09LNCJu2BUFc=/fit-in/200x150/pic1600609.jpg",
+    "userRating": Object {
+      "Warium": 6,
+    },
     "yearPublished": 2003,
   },
   Object {
@@ -296,6 +332,9 @@ Array [
     "numberOwned": 841,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/3EAJMfPyl8_RdQOg47z_NsgvIU0=/fit-in/200x150/pic2085021.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2011,
   },
   Object {
@@ -319,6 +358,9 @@ Array [
     "numberOwned": 16035,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/7xupWQbyCBFchLyKNzR8axA9K5Q=/fit-in/200x150/pic2907864.jpg",
+    "userRating": Object {
+      "Warium": 8.5,
+    },
     "yearPublished": 2014,
   },
   Object {
@@ -342,6 +384,9 @@ Array [
     "numberOwned": 125266,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/kqE4YJSm5PVkocYGl-V_IJcZQw4=/fit-in/200x150/pic2337577.jpg",
+    "userRating": Object {
+      "Warium": 8.5,
+    },
     "yearPublished": 2000,
   },
   Object {
@@ -365,6 +410,9 @@ Array [
     "numberOwned": 2194,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/NnAwNYbinH3Pctlf2Wszj3tvvfM=/fit-in/200x150/pic9642.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2000,
   },
   Object {
@@ -388,6 +436,9 @@ Array [
     "numberOwned": 21635,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/IgWfEJ63ailu4y7vOmsaSH06u-M=/fit-in/200x150/pic496923.jpg",
+    "userRating": Object {
+      "Warium": 6,
+    },
     "yearPublished": 2009,
   },
   Object {
@@ -411,6 +462,9 @@ Array [
     "numberOwned": 3431,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/oySH-49QXteHKp1JkSz3Zcq-wEM=/fit-in/200x150/pic1258597.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2010,
   },
   Object {
@@ -441,6 +495,9 @@ Array [
     "numberOwned": 8266,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/xPCizEN_Cx2atbDWaafGDWPW63g=/fit-in/200x150/pic1680709.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 1997,
   },
   Object {
@@ -464,6 +521,9 @@ Array [
     "numberOwned": 1440,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/EOtzzEG7QqamfHTazRs-_62DpNk=/fit-in/200x150/pic336536.jpg",
+    "userRating": Object {
+      "Warium": 6,
+    },
     "yearPublished": 1996,
   },
   Object {
@@ -487,6 +547,9 @@ Array [
     "numberOwned": 19333,
     "playingTime": 40,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/qunPa-ZV7iN7DnuQ7xz0ULKTMW8=/fit-in/200x150/pic1907628.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2013,
   },
   Object {
@@ -510,6 +573,9 @@ Array [
     "numberOwned": 1833,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/xAi8eO6eByp6u8TMmt8UrJoeKy8=/fit-in/200x150/pic359902.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 1998,
   },
   Object {
@@ -533,6 +599,9 @@ Array [
     "numberOwned": 18600,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/-0GtGGGsPNuRWyGAW2-Ja_h18hY=/fit-in/200x150/pic3581963.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2005,
   },
   Object {
@@ -556,6 +625,9 @@ Array [
     "numberOwned": 7326,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/Q4VW2yywLW79EhPnu3yPTZw7Rno=/fit-in/200x150/pic3763073.jpg",
+    "userRating": Object {
+      "Warium": 8.5,
+    },
     "yearPublished": 2009,
   },
   Object {
@@ -579,6 +651,9 @@ Array [
     "numberOwned": 57588,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/-pTlIzjMjawpDvdG3TBwsUrHrk4=/fit-in/200x150/pic3483909.jpg",
+    "userRating": Object {
+      "Warium": 8.5,
+    },
     "yearPublished": 2008,
   },
   Object {
@@ -602,6 +677,9 @@ Array [
     "numberOwned": 4155,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/vRgLIKJMuP9xFX8aKeu9yKEHVfc=/fit-in/200x150/pic2410752.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2001,
   },
   Object {
@@ -625,6 +703,9 @@ Array [
     "numberOwned": 7192,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/lQUtbu88F2JazmQv_fT57j8OeK4=/fit-in/200x150/pic2411495.png",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2011,
   },
   Object {
@@ -648,6 +729,9 @@ Array [
     "numberOwned": 1487,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/CQvUjLTM9WAaE8caHcAJmDOPuXE=/fit-in/200x150/pic2301154.png",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2014,
   },
   Object {
@@ -671,6 +755,9 @@ Array [
     "numberOwned": 13574,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/_TOl-lEL1_VBJ2n73W2_oJzMMto=/fit-in/200x150/pic660244.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2010,
   },
   Object {
@@ -694,6 +781,9 @@ Array [
     "numberOwned": 1374,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/oS7864NkgIfl4k8dIPLz9qbW0k0=/fit-in/200x150/pic440763.jpg",
+    "userRating": Object {
+      "Warium": 7,
+    },
     "yearPublished": 1998,
   },
   Object {
@@ -717,6 +807,9 @@ Array [
     "numberOwned": 425,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/DbPAJVXRrSDjZ6f3CYa5ze6XxtM=/fit-in/200x150/pic222530.jpg",
+    "userRating": Object {
+      "Warium": 9,
+    },
     "yearPublished": 2003,
   },
   Object {
@@ -747,6 +840,9 @@ Array [
     "numberOwned": 11705,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/fIMHxZQjmAkwPz3h541ls5X-ico=/fit-in/200x150/pic2024738.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2004,
   },
   Object {
@@ -762,6 +858,9 @@ Array [
     "numberOwned": 741,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/oIDCGoUQQUlkslDeKqZRXJIN16g=/fit-in/200x150/pic72653.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2002,
   },
   Object {
@@ -792,6 +891,9 @@ Array [
     "numberOwned": 2268,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/v8gHLXzIyyIfNtpV54TLIAJNwiM=/fit-in/200x150/pic441579.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2002,
   },
   Object {
@@ -822,6 +924,9 @@ Array [
     "numberOwned": 28836,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/U3IWrvKrFjj-LD1j7QLQgv5afXw=/fit-in/200x150/pic1129370.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2011,
   },
   Object {
@@ -852,6 +957,9 @@ Array [
     "numberOwned": 12329,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/8rX_8dVaNbWvYotSyL2f1H6GQPQ=/fit-in/200x150/pic2439671.png",
+    "userRating": Object {
+      "Warium": 9,
+    },
     "yearPublished": 2015,
   },
   Object {
@@ -875,6 +983,9 @@ Array [
     "numberOwned": 24645,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/F2K71-jsnipHghuOl2dUbnBQlm4=/fit-in/200x150/pic1513085.jpg",
+    "userRating": Object {
+      "Warium": 8.5,
+    },
     "yearPublished": 1997,
   },
   Object {
@@ -898,6 +1009,9 @@ Array [
     "numberOwned": 37234,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/gm5d7sO006n-WTSG2ynzyLz169A=/fit-in/200x150/pic1528722.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2013,
   },
   Object {
@@ -913,6 +1027,9 @@ Array [
     "numberOwned": 60,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/R2rhAEPn-D6pG2neaft0HSkUDfA=/fit-in/200x150/pic625341.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2010,
   },
   Object {
@@ -943,6 +1060,9 @@ Array [
     "numberOwned": 2109,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/I8huD5rmXO5JClzod1d2sVFMKt8=/fit-in/200x150/pic1040235.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2010,
   },
   Object {
@@ -966,6 +1086,9 @@ Array [
     "numberOwned": 25396,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/bpzsKbMbBy1wgNhFZVL4NlSMtII=/fit-in/200x150/pic143139.jpg",
+    "userRating": Object {
+      "Warium": 6.5,
+    },
     "yearPublished": 1998,
   },
   Object {
@@ -989,6 +1112,9 @@ Array [
     "numberOwned": 855,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/l6V8ydbHSzBmN--mt_LarnrgTWQ=/fit-in/200x150/pic90071.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2005,
   },
   Object {
@@ -1019,6 +1145,9 @@ Array [
     "numberOwned": 1712,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/eKEUitBZ5cD-fo1wuXLYJasE-e4=/fit-in/200x150/pic953844.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2010,
   },
   Object {
@@ -1034,6 +1163,9 @@ Array [
     "numberOwned": 654,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/ykgpNMFuIcfYNkZGw6cMtIUVwUA=/fit-in/200x150/pic1951142.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2013,
   },
   Object {
@@ -1057,6 +1189,9 @@ Array [
     "numberOwned": 19119,
     "playingTime": 40,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/WaW2VsdMYT0Xh3JWcuLA9e-L85Y=/fit-in/200x150/pic2407103.jpg",
+    "userRating": Object {
+      "Warium": 9,
+    },
     "yearPublished": 2014,
   },
   Object {
@@ -1080,6 +1215,9 @@ Array [
     "numberOwned": 71452,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/iEQpTdf7xHrGznRhdNBMiKy_mIM=/fit-in/200x150/pic3043734.jpg",
+    "userRating": Object {
+      "Warium": 9,
+    },
     "yearPublished": 2011,
   },
   Object {
@@ -1103,6 +1241,9 @@ Array [
     "numberOwned": 26718,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/3iHQT7yoRs_1qn-KaF4NR9b1Sp8=/fit-in/200x150/pic1430769.jpg",
+    "userRating": Object {
+      "Warium": 8.5,
+    },
     "yearPublished": 2012,
   },
   Object {
@@ -1126,6 +1267,9 @@ Array [
     "numberOwned": 13037,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/hV0E4oacYDZy9EtueZ7q_k3jWQY=/fit-in/200x150/pic1326136.jpg",
+    "userRating": Object {
+      "Warium": 8.5,
+    },
     "yearPublished": 2012,
   },
   Object {
@@ -1149,6 +1293,9 @@ Array [
     "numberOwned": 3781,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/8w9EukCbjtILY4j6zwZV78XP3bA=/fit-in/200x150/pic236080.jpg",
+    "userRating": Object {
+      "Warium": 7,
+    },
     "yearPublished": 2002,
   },
   Object {
@@ -1164,6 +1311,9 @@ Array [
     "numberOwned": 1499,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/W3_37hNmAhAWxFsiilzEWP58t2E=/fit-in/200x150/pic1780912.jpg",
+    "userRating": Object {
+      "Warium": 9,
+    },
     "yearPublished": 2014,
   },
   Object {
@@ -1179,6 +1329,9 @@ Array [
     "numberOwned": 255,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/hPMuiz3p4pAVBxYgO5xM9qGKI4I=/fit-in/200x150/pic471477.jpg",
+    "userRating": Object {
+      "Warium": 7,
+    },
     "yearPublished": 2006,
   },
   Object {
@@ -1202,6 +1355,9 @@ Array [
     "numberOwned": 8928,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/ZDIP5rLgatnm54j63T1d4KlMAUE=/fit-in/200x150/pic2411639.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2015,
   },
   Object {
@@ -1225,6 +1381,9 @@ Array [
     "numberOwned": 1102,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/sJLY-9UFY7FsHpK9sFZotL-_aew=/fit-in/200x150/pic2695208.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2002,
   },
   Object {
@@ -1248,6 +1407,9 @@ Array [
     "numberOwned": 7002,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/cqBShx7i7jACgcYxJS_CsJtbLEU=/fit-in/200x150/pic2824027.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 1998,
   },
   Object {
@@ -1271,6 +1433,9 @@ Array [
     "numberOwned": 4806,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/P5jPRZIcj2EPa23-O4coIIh7QXM=/fit-in/200x150/pic1919164.jpg",
+    "userRating": Object {
+      "Warium": 8.5,
+    },
     "yearPublished": 2014,
   },
   Object {
@@ -1286,6 +1451,9 @@ Array [
     "numberOwned": 36,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/HfE6OFsTB6-3K9A9urXX1DDNiyc=/fit-in/200x150/pic4622917.jpg",
+    "userRating": Object {
+      "Warium": 6,
+    },
     "yearPublished": 2013,
   },
   Object {
@@ -1301,6 +1469,9 @@ Array [
     "numberOwned": 829,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/ghuc0PAkvZcq9LvzXGS5vIw5EZQ=/fit-in/200x150/pic1188327.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2015,
   },
   Object {
@@ -1324,6 +1495,9 @@ Array [
     "numberOwned": 2168,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/scilQykiTVmQvpTbum3Way_GlKY=/fit-in/200x150/pic1744976.jpg",
+    "userRating": Object {
+      "Warium": 7,
+    },
     "yearPublished": 2013,
   },
   Object {
@@ -1347,6 +1521,9 @@ Array [
     "numberOwned": 4827,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/yZ2Q_ui8dHrXX9zl7-GJFqlcWAI=/fit-in/200x150/pic649087.jpg",
+    "userRating": Object {
+      "Warium": 7.5,
+    },
     "yearPublished": 2010,
   },
   Object {
@@ -1370,6 +1547,9 @@ Array [
     "numberOwned": 1997,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/RUfXH49WCFI8nPKeVDxJPwCEtac=/fit-in/200x150/pic138178.jpg",
+    "userRating": Object {
+      "Warium": 9,
+    },
     "yearPublished": 2006,
   },
   Object {
@@ -1393,6 +1573,9 @@ Array [
     "numberOwned": 1727,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/QfBRQWnBk9dwrn7D8s0DFdUGya4=/fit-in/200x150/pic1444145.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2011,
   },
   Object {
@@ -1423,6 +1606,9 @@ Array [
     "numberOwned": 12087,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/qpI06yrY6cnlKqqdMHMfJywXXCU=/fit-in/200x150/pic1991455.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2014,
   },
   Object {
@@ -1453,6 +1639,9 @@ Array [
     "numberOwned": 9160,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/Mnha5AOM6sfJGbiR1XqodHp_B-g=/fit-in/200x150/pic215555.jpg",
+    "userRating": Object {
+      "Warium": 10,
+    },
     "yearPublished": 1995,
   },
   Object {
@@ -1476,6 +1665,9 @@ Array [
     "numberOwned": 876,
     "playingTime": 50,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/HGBbTsBBIfW-_b5zH66O1gmRKm4=/fit-in/200x150/pic1245374.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2012,
   },
   Object {
@@ -1499,6 +1691,9 @@ Array [
     "numberOwned": 12002,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/VsOVVNYzSlFaCTmYOycEFiq9rNA=/fit-in/200x150/pic1196938.jpg",
+    "userRating": Object {
+      "Warium": 8.5,
+    },
     "yearPublished": 2011,
   },
   Object {
@@ -1522,6 +1717,9 @@ Array [
     "numberOwned": 27547,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/k3jYCE3FCLUkcJH3OhGt-LXZPMA=/fit-in/200x150/pic1473629.jpg",
+    "userRating": Object {
+      "Warium": 9,
+    },
     "yearPublished": 2014,
   },
   Object {
@@ -1545,6 +1743,9 @@ Array [
     "numberOwned": 2855,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/fOuUI0x0dOzfNFoOAYVdry9J3UM=/fit-in/200x150/pic3021582.jpg",
+    "userRating": Object {
+      "Warium": 8.5,
+    },
     "yearPublished": 2014,
   },
   Object {
@@ -1568,6 +1769,9 @@ Array [
     "numberOwned": 19582,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/6siAiU5wG1NN8NFckD0N8LjGLUE=/fit-in/200x150/pic1296144.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2011,
   },
   Object {
@@ -1591,6 +1795,9 @@ Array [
     "numberOwned": 29414,
     "playingTime": 80,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/j69YtQ286qbIC7myOV6n6v-FPy4=/fit-in/200x150/pic70547.jpg",
+    "userRating": Object {
+      "Warium": 9,
+    },
     "yearPublished": 2005,
   },
   Object {
@@ -1621,6 +1828,9 @@ Array [
     "numberOwned": 38756,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/18ToCY0hvajoDtgqXaB6T7inL8Y=/fit-in/200x150/pic2075830.jpg",
+    "userRating": Object {
+      "Warium": 9,
+    },
     "yearPublished": 2014,
   },
   Object {
@@ -1651,6 +1861,9 @@ Array [
     "numberOwned": 1514,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/FvWI-Z0Yv1XzlLa5vRZDMoxxEko=/fit-in/200x150/pic904899.jpg",
+    "userRating": Object {
+      "Warium": 7.5,
+    },
     "yearPublished": 1982,
   },
   Object {
@@ -1666,6 +1879,9 @@ Array [
     "numberOwned": 265,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/sQ3jSpsIDYqFg94blRVUIg9CvJ8=/fit-in/200x150/pic2059046.jpg",
+    "userRating": Object {
+      "Warium": 4.5,
+    },
     "yearPublished": 2013,
   },
   Object {
@@ -1689,6 +1905,9 @@ Array [
     "numberOwned": 4628,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/x2y9aU-XbCaCg5Y4sbiag4B3KKw=/fit-in/200x150/pic1339353.png",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 1971,
   },
   Object {
@@ -1712,6 +1931,9 @@ Array [
     "numberOwned": 722,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/lIHuQbNL3P3E9j_4qQaBpMKGoTc=/fit-in/200x150/pic309360.jpg",
+    "userRating": Object {
+      "Warium": 7,
+    },
     "yearPublished": 2003,
   },
   Object {
@@ -1735,6 +1957,9 @@ Array [
     "numberOwned": 4624,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/hTygk_SB2mINpKIBNQKtrCrdUw8=/fit-in/200x150/pic1650556.png",
+    "userRating": Object {
+      "Warium": 7,
+    },
     "yearPublished": 2013,
   },
   Object {
@@ -1758,6 +1983,9 @@ Array [
     "numberOwned": 1121,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/ttJ6gI3S2vnDdeCWGlcnCOpwo7c=/fit-in/200x150/pic829005.jpg",
+    "userRating": Object {
+      "Warium": 6.5,
+    },
     "yearPublished": 2002,
   },
   Object {
@@ -1788,6 +2016,9 @@ Array [
     "numberOwned": 5406,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/QWe7CSk58qXmLJt8zWBgmvEcHw8=/fit-in/200x150/pic2537618.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2015,
   },
   Object {
@@ -1803,6 +2034,9 @@ Array [
     "numberOwned": 355,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/T3S0w4Z2tiufyw6D4e-HcjxD_pw=/fit-in/200x150/pic2292316.jpg",
+    "userRating": Object {
+      "Warium": 7.5,
+    },
     "yearPublished": 2013,
   },
   Object {
@@ -1826,6 +2060,9 @@ Array [
     "numberOwned": 1573,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/26wPuMcwIcni0pf_FvD32kKF6Zw=/fit-in/200x150/pic2571306.jpg",
+    "userRating": Object {
+      "Warium": 7.5,
+    },
     "yearPublished": 2012,
   },
   Object {
@@ -1849,6 +2086,9 @@ Array [
     "numberOwned": 14607,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/KRHpCUvBWxDEXNe9z9pz2iH80I0=/fit-in/200x150/pic2523100.jpg",
+    "userRating": Object {
+      "Warium": 7.5,
+    },
     "yearPublished": 2009,
   },
   Object {
@@ -1879,6 +2119,9 @@ Array [
     "numberOwned": 5313,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/xOKCkBGINLhhLMgBj8-Mg4LQ7zI=/fit-in/200x150/pic517825.jpg",
+    "userRating": Object {
+      "Warium": 8.5,
+    },
     "yearPublished": 2009,
   },
   Object {
@@ -1902,6 +2145,9 @@ Array [
     "numberOwned": 2564,
     "playingTime": 75,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/Jf8QONxZGHl6lYof8mN11BlgIdA=/fit-in/200x150/pic1926145.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2014,
   },
   Object {
@@ -1925,6 +2171,9 @@ Array [
     "numberOwned": 49397,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/TiLJY5V47pk3vvidXcfMoeUcRd8=/fit-in/200x150/pic2576459.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2009,
   },
   Object {
@@ -1948,6 +2197,9 @@ Array [
     "numberOwned": 9362,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/2ad5x7FpMRqU7hb84dQRrQpDpdY=/fit-in/200x150/pic1927856.jpg",
+    "userRating": Object {
+      "Warium": 10,
+    },
     "yearPublished": 2014,
   },
   Object {
@@ -1978,6 +2230,9 @@ Array [
     "numberOwned": 10425,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/qlKaveJbkaWE1lgIW-ekK8eXGPI=/fit-in/200x150/pic162026.jpg",
+    "userRating": Object {
+      "Warium": 10,
+    },
     "yearPublished": 2006,
   },
   Object {
@@ -2001,6 +2256,9 @@ Array [
     "numberOwned": 4116,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/j1w4yhBLsNhYrzGLAe9aI59HCwo=/fit-in/200x150/pic3690447.jpg",
+    "userRating": Object {
+      "Warium": 9.5,
+    },
     "yearPublished": 2008,
   },
   Object {
@@ -2024,6 +2282,9 @@ Array [
     "numberOwned": 1697,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/bL_Qw-EEY4w8TLFUjA69BSarKFk=/fit-in/200x150/pic2726917.jpg",
+    "userRating": Object {
+      "Warium": 7,
+    },
     "yearPublished": 2013,
   },
   Object {
@@ -2054,6 +2315,9 @@ Array [
     "numberOwned": 5099,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/YfRbMwkGwYvhh1TsBqiQ0FYtah4=/fit-in/200x150/pic510123.jpg",
+    "userRating": Object {
+      "Warium": 9,
+    },
     "yearPublished": 2000,
   },
   Object {
@@ -2077,6 +2341,9 @@ Array [
     "numberOwned": 1523,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/XVTyRSqN2rKse7iOU7PQo1Pwmsw=/fit-in/200x150/pic2409973.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2011,
   },
   Object {
@@ -2100,6 +2367,9 @@ Array [
     "numberOwned": 1670,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/xyNmjcCAFkuwk_RCCIDo60qm-8Y=/fit-in/200x150/pic1616566.jpg",
+    "userRating": Object {
+      "Warium": 7,
+    },
     "yearPublished": 2013,
   },
   Object {
@@ -2115,6 +2385,9 @@ Array [
     "numberOwned": 582,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/dXVb5X28J7GBT-metMa-H0H-esI=/fit-in/200x150/pic96574.jpg",
+    "userRating": Object {
+      "Warium": 8.5,
+    },
     "yearPublished": 2001,
   },
   Object {
@@ -2138,6 +2411,9 @@ Array [
     "numberOwned": 6873,
     "playingTime": 75,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/rCuMNCzaIquQg3bjgKxP8RYsp5A=/fit-in/200x150/pic4599533.jpg",
+    "userRating": Object {
+      "Warium": 8.5,
+    },
     "yearPublished": 2005,
   },
   Object {
@@ -2168,6 +2444,9 @@ Array [
     "numberOwned": 40,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/ZUltF-stxfixZy8gEaKUVhnuMsU=/fit-in/200x150/pic828851.jpg",
+    "userRating": Object {
+      "Warium": 6,
+    },
     "yearPublished": 2010,
   },
   Object {
@@ -2191,6 +2470,9 @@ Array [
     "numberOwned": 536,
     "playingTime": 30,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/AayZhxbGG-sYs9EZzgLsBI0jn1I=/fit-in/200x150/pic352854.jpg",
+    "userRating": Object {
+      "Warium": 6.5,
+    },
     "yearPublished": 2005,
   },
   Object {
@@ -2206,6 +2488,9 @@ Array [
     "numberOwned": 450,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/guw560d8metRuzFoMV_TA9M2T_Y=/fit-in/200x150/pic1765253.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2013,
   },
   Object {
@@ -2229,6 +2514,9 @@ Array [
     "numberOwned": 2185,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/UjRVzwsY-bdKV1SqzZwPxWD3_vM=/fit-in/200x150/pic269322.jpg",
+    "userRating": Object {
+      "Warium": 7.5,
+    },
     "yearPublished": 2007,
   },
   Object {
@@ -2252,6 +2540,9 @@ Array [
     "numberOwned": 812,
     "playingTime": 70,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/84HEpB3DnIFHsE93WUOIehk_-b8=/fit-in/200x150/pic1658616.jpg",
+    "userRating": Object {
+      "Warium": 8,
+    },
     "yearPublished": 2012,
   },
   Object {
@@ -2275,6 +2566,9 @@ Array [
     "numberOwned": 5231,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/ieK9v_hMu2PgIBbaoswHzgrY_ZQ=/fit-in/200x150/pic1068602.jpg",
+    "userRating": Object {
+      "Warium": 8.5,
+    },
     "yearPublished": 1985,
   },
   Object {
@@ -2298,6 +2592,9 @@ Array [
     "numberOwned": 2466,
     "playingTime": 60,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/Vle-59bFU911xVUg2O1uKCZN2X8=/fit-in/200x150/pic3808891.jpg",
+    "userRating": Object {
+      "Warium": 8.5,
+    },
     "yearPublished": 2001,
   },
   Object {
@@ -2321,6 +2618,9 @@ Array [
     "numberOwned": 16350,
     "playingTime": 45,
     "thumbnailUrl": "https://cf.geekdo-images.com/thumb/img/j2dVcsYo4TDVjmq6P_kKFzTGdo8=/fit-in/200x150/pic2021685.png",
+    "userRating": Object {
+      "Warium": 7.5,
+    },
     "yearPublished": 2007,
   },
 ]
