@@ -5,7 +5,7 @@ export interface PlayTimeOption {
 
 export type PlayCountOption = number;
 
-export type SortOption = "bggrating" | "new" | "old";
+export type SortOption = "alphabetic" | "bggrating" | "new" | "old" | "userrating";
 
 export interface FilterOptions {
     playtime?: PlayTimeOption;

@@ -61,5 +61,25 @@ describe("CollectionMerger", () => {
         }
     });
 
+    it("sets the user ratings of games", () => {
+        const game1WithRatingA = Object.assign({}, testGame1, { userRating: { HasTwoGames: 7 } });
+        const game1WithRatingB = Object.assign({}, testGame1, { userRating: { HasOneGame: null } });
+        const game2WithRatingA = Object.assign({}, testGame2, { userRating: { HasTwoGames: 6 } });
+        const game2WithRatingB = Object.assign({}, testGame2, { userRating: { HasOneGame: 1 } });
+        const collection1 = [game1WithRatingA, game2WithRatingA];
+        const collection2 = [game1WithRatingB, game2WithRatingB];
+        const result = merger.getMergedCollection({
+            "HasTwoGames": collection1,
+            "HasOneGame": collection2
+        });
+
+        expect(result[0].userRating).toEqual(
+            { HasTwoGames: 7, HasOneGame: null }
+        );
+        expect(result[1].userRating).toEqual(
+            { HasTwoGames: 6, HasOneGame: 1 }
+        );
+    });
+
 });
 

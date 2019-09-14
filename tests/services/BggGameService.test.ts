@@ -122,6 +122,17 @@ describe("BggGameService", () => {
                 }
             });
 
+            it("Has userrating information", async () => {
+                const games = await service.getUserCollection("Warium");
+                expect(Array.isArray(games)).toBe(true);
+                if (Array.isArray(games)) {
+                    const gamesWithRatings = games.filter((game) => game.userRating);
+                    expect(gamesWithRatings.length).toBe(2);
+                    expect(gamesWithRatings[0].userRating).toEqual({ Warium: 8 });
+                    expect(gamesWithRatings[1].userRating).toEqual({ Warium: null });
+                }
+            });
+
         });
 
         it("can handle where yearpublished is undefined", async () => {

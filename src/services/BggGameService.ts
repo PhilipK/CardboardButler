@@ -48,7 +48,8 @@ class BggGameService {
                 thumbnailUrl: valueOf("thumbnail"),
                 yearPublished: yearAsNumber,
                 imageUrl: valueOf("image"),
-                families: this.getFamilies(elements)
+                families: this.getFamilies(elements),
+                userRating: this.getUserRating(username, elements)
             }, playStats);
             return game;
         });
@@ -108,6 +109,16 @@ class BggGameService {
             numberOwned: attr.numowned && parseInt(attr.numowned.toString()),
         };
     }
+
+    private getUserRating(username: string, elements: convert.Element[]) {
+        const ratingElement = this.getRatingElement(elements);
+        const ratingString = ratingElement.attributes["value"] as string;
+        const rating = (ratingString === "N/A" || ratingString === undefined) ? null : parseFloat(ratingString);
+        const result = {};
+        result[username] = rating;
+        return result;
+    }
+
 
     private getFamilies(elements: convert.Element[]) {
         const ranks = this.getRanks(elements);

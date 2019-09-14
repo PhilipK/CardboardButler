@@ -23,4 +23,5 @@ export interface GameInfo {
     weight?: number;
     families: BoardGameFamily[];
     owners?: string[];
+    userRating?: { [username: string]: number | undefined };
 }

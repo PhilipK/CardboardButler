@@ -55,12 +55,11 @@ export const sortingOptions: SortingOptions[] = [
     { text: "are highly rated", value: 1, sortoption: "bggrating" },
     { text: "are new", value: 2, sortoption: "new" },
     { text: "are old", value: 3, sortoption: "old" },
+    { text: "we like", value: 4, sortoption: "userrating" },
     // { text: "have a high bgg rank", value: "rank" },
     // { text: "are best with this number of players", value: "bestWithPlayers" },
     // { text: "are easy to learn", value: "easy" },
     // { text: "are complex", value: "complex" },
-
-    // { text: "are old", value: "old" },
     // // { text: "least recently got played", value: "lastTimePlayed" },
     // { text: "most recently got played", value: "lastTimePlayedRev" },
     // { text: "have been played a lot", value: "timePlayed" },
@@ -115,6 +114,7 @@ export default class FilterBar extends React.Component<Props, State> {
         const oneUser = currentUsers.length <= 1;
         const iWe = oneUser ? "I" : "we";
         const amAre = oneUser ? "am" : "are";
+        sortingOptions[4].text = iWe + " rate highly";
         return (
             <Container fluid>
                 <div className="topMenu ui fixed" >

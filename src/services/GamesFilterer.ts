@@ -1,39 +1,79 @@
 import { GameInfo } from "../models/GameInfo";
-import { FilterOptions } from "../models/FilterOptions";
+import { FilterOptions, SortOption } from "../models/FilterOptions";
 
+type SorterMap = {
+    [option in SortOption]: (a: GameInfo, b: GameInfo) => number | undefined;
+};
 
 
 export class GamesFilterer {
 
+    private sortMap: SorterMap;
+
+    constructor() {
+        this.userRatingSorter = this.userRatingSorter.bind(this);
+        this.getAverageUserRating = this.getAverageUserRating.bind(this);
+        this.sortMap = {
+            alphabetic: this.nameSorter,
+            bggrating: this.averageRatingSorter,
+            new: this.newYearSorter,
+            old: this.oldYearSorter,
+            userrating: this.userRatingSorter
+        };
+    }
 
 
-    filter(outerCollection: GameInfo[], options?: FilterOptions): GameInfo[] {
+    filter(outerCollection: GameInfo[], options: FilterOptions = {}): GameInfo[] {
         let collection = [...outerCollection];
         if (!options) {
             collection.sort(this.nameSorter);
         } else {
-            const { playtime, playerCount } = options;
-            if (playtime) {
-                collection = this.filterOnTime(collection, playtime);
-            }
-            if (playerCount) {
-                collection = this.filterOnPlayerCount(collection, playerCount);
-            }
-            if (options.sortOption) {
-                if (options.sortOption === "bggrating") {
-                    collection.sort(this.averageRatingSorter);
-                }
-                if (options.sortOption === "old") {
-                    collection.sort(this.oldYearSorter);
-                }
-                if (options.sortOption === "new") {
-                    collection.sort(this.newYearSorter);
-                }
+            collection = this.filterCollection(options, collection);
+            this.sortCollection(options, collection);
 
-            }
         }
         return collection;
     }
+
+
+    private sortCollection(options: FilterOptions, collection: GameInfo[]) {
+        const { sortOption = "alphabetic" } = options;
+        collection.sort(this.sortMap[sortOption]);
+    }
+
+    private filterCollection(options: FilterOptions, collection: GameInfo[]) {
+        const { playtime, playerCount } = options;
+        if (playtime) {
+            collection = this.filterOnTime(collection, playtime);
+        }
+        if (playerCount) {
+            collection = this.filterOnPlayerCount(collection, playerCount);
+        }
+        return collection;
+    }
+
+    private userRatingSorter(a: GameInfo, b: GameInfo): number {
+        const aRating = this.getAverageUserRating(a);
+        const bRating = this.getAverageUserRating(b);
+        return (bRating || 0) - (aRating || 0);
+    }
+
+    private getAverageUserRating(a: GameInfo) {
+        const scoreMap = a.userRating;
+        if (!scoreMap) {
+            return undefined;
+        } else {
+            const userNames = Object.keys(scoreMap);
+            const userNamesWithRatings = userNames.filter((name) => scoreMap[name]);
+            if (userNamesWithRatings.length === 0) {
+                return undefined;
+            }
+            const sum = userNamesWithRatings.reduce((p, c) => p + scoreMap[c], 0);
+            return sum / userNamesWithRatings.length;
+        }
+    }
+
+
 
     private oldYearSorter(a: GameInfo, b: GameInfo): number {
         return (a.yearPublished || Infinity) - (b.yearPublished || Infinity);
