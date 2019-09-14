@@ -8,20 +8,21 @@ interface CollectionMap {
 export class CollectionMerger {
 
     getMergedCollection(collectionsMap: CollectionMap): GameInfo[] {
-        return Object.keys(collectionsMap).reduce((curGames, name) => {
-            const usersGames = collectionsMap[name];
-            const gameUnkown = (game: GameInfo) => curGames.every((curGame) => curGame.id !== game.id);
-            const gamesToAdd = usersGames.filter(gameUnkown);
-            return [...curGames, ...gamesToAdd].map((game) => {
-                const thisUsersGame = usersGames.find((useGame) => game.id === useGame.id);
-                if (thisUsersGame) {
-                    return Object.assign({}, game, {
-                        owners: game.owners ? [...game.owners, name] : [name],
-                        userRating: Object.assign({}, game.userRating, thisUsersGame.userRating)
-                    });
+        const fullCollection: GameInfo[] = [];
+        const userNames = Object.keys(collectionsMap);
+        userNames.forEach((username) => {
+            const currentCollection = collectionsMap[username];
+            currentCollection.forEach((currentGame) => {
+                const alreadyKnownGame = fullCollection.find((alreadyKnownGame) => alreadyKnownGame.id === currentGame.id);
+                if (alreadyKnownGame) {
+                    alreadyKnownGame.owners.push(username);
+                    alreadyKnownGame.userRating = Object.assign({}, alreadyKnownGame.userRating, currentGame.userRating);
+                } else {
+                    fullCollection.push(Object.assign({}, currentGame, { owners: [username] }));
                 }
-                return game;
             });
-        }, []);
+        });
+
+        return fullCollection;
     }
 }
