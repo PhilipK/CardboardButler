@@ -88,6 +88,26 @@ describe("Full flow", () => {
             expect(getColMock.mock.calls.length).toBe(3);
             expect(getColMock.mock.calls[2][0]).toBe("Nakul");
         });
+
+        it("Goes to frontpage on no hash change", async () => {
+            window.location.hash = "usernames=Cyndaq";
+            jest.useFakeTimers();
+            service.getUserInfo = jest.fn((username) => (new Promise((resolver) => resolver({
+                isValid: true,
+                username: username
+            }))));
+            const getColMock = jest.fn((username) => (new Promise<GameInfo[]>((resolver) => resolver(
+                getHugeCollection()
+            ))));
+            service.getUserCollection = getColMock;
+            const { getByText, getByTestId } = render(<App bggServce={service} />);
+            window.location.hash = "";
+            getColMock.mockReset();
+            window.dispatchEvent(new HashChangeEvent("hashchange"));
+            expect(() => getByText("Fetching games")).toThrow();
+            getByTestId("WelcomePage");
+
+        });
     });
 });
 

@@ -4,6 +4,7 @@ import { GameInfo } from "../models/GameInfo";
 import { CollectionMerger } from "../services/CollectionMerger";
 import WelcomePage from "./WelcomePage";
 import CollectionPage from "./CollectionPage";
+import { thisExpression } from "@babel/types";
 
 export interface AppProps {
     bggServce?: BggGameService;
@@ -18,6 +19,8 @@ export interface AppState {
     showingCollection: boolean;
 }
 
+const initialState: AppState = { games: [], loadingMessage: "", names: [], userCollections: {}, showingCollection: false };
+
 
 export default class App extends React.Component<AppProps, AppState> {
 
@@ -31,7 +34,7 @@ export default class App extends React.Component<AppProps, AppState> {
         this.onNameSelect = this.onNameSelect.bind(this);
         this.userValidator = this.userValidator.bind(this);
         this.handleHashChange = this.handleHashChange.bind(this);
-        this.state = { games: [], loadingMessage: "", names: [], userCollections: {}, showingCollection: false };
+        this.state = initialState;
         window.addEventListener("hashchange", this.handleHashChange, false);
     }
 
@@ -71,6 +74,8 @@ export default class App extends React.Component<AppProps, AppState> {
         if (hashValue && hashValue !== "" && hashValue.indexOf("usernames=") > -1) {
             const usernames = hashValue.substring("usernames=".length + 1).split(",");
             this.onNameSelect(usernames);
+        } else {
+            this.setState(initialState);
         }
     }
 
