@@ -16,10 +16,10 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm install -g webpack webpack-cli --save-dev
-    npm install
-    webpack -p --config=configs/webpack/prod.js
-  displayName: 'npm install, run webpack'
+    npm install -g yarn --cache-min 999999999    
+    yarn
+    yarn run build
+  displayName: 'yarn run build'
 
 - task: PublishPipelineArtifact@0
   inputs:
