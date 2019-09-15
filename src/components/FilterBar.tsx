@@ -51,7 +51,7 @@ interface SortingOptions {
 
 
 export const sortingOptions: SortingOptions[] = [
-    { text: "are alphabetic", value: 0, sortoption: null },
+    { text: "are alphabetic", value: 0, sortoption: "alphabetic" },
     { text: "are highly rated", value: 1, sortoption: "bggrating" },
     { text: "are new", value: 2, sortoption: "new" },
     { text: "are old", value: 3, sortoption: "old" },
