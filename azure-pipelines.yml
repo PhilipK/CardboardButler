@@ -15,6 +15,14 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
+- task: CacheBeta@0
+  inputs:
+    key: |
+      $(Agent.OS)
+      $(Build.SourcesDirectory)/yarn.lock
+    path: $(Pipeline.Workspace)/.cache/yarn
+  displayName: 'Cache yarn'
+
 - script: |
     npm install -g yarn --cache-min 999999999    
     yarn    
