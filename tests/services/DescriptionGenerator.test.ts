@@ -57,13 +57,29 @@ describe("DescriptionGenerator", () => {
     it("sorts out the rank word information", () => {
         const singlePlayerGame = Object.assign({}, testItem, {
             families: [
-                { name: "Unfriendly", friendlyName: "Unfriendly game", bayesaverage: 7.50035, value: 76 }
+                { name: "Unfriendly", friendlyName: "Unfriendly game Rank", bayesaverage: 7.50035, value: 76 },
+                { name: "thematic", friendlyName: "Thematic Rank", bayesaverage: 6.20458, value: 585 },
+
             ]
         });
         const expected = "An unfriendly game for 2 to 4 players in 120 minutes. Most people think it is very good and somewhat hard to learn.";
         const description = generator.generateDescription(singlePlayerGame);
         expect(description).toBe(expected);
     });
+
+    it("Always has a game at the end of a description", () => {
+        const singlePlayerGame = Object.assign({}, testItem, {
+            families: [
+                { name: "Unfriendly", friendlyName: "Unfriendly game Rank", bayesaverage: 7.50035, value: 76 },
+                { name: "thematic", friendlyName: "Thematic Rank", bayesaverage: 6.20458, value: 1 },
+
+            ]
+        });
+        const expected = "A thematic game for 2 to 4 players in 120 minutes. Most people think it is very good and somewhat hard to learn.";
+        const description = generator.generateDescription(singlePlayerGame);
+        expect(description).toBe(expected);
+    });
+
 
     it("handles games without incorrect min max playtimes", () => {
         const singlePlayerGame = Object.assign({}, testItem, { minPlaytime: 100, maxPlaytime: 90 });
