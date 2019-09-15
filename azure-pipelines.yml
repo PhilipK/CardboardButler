@@ -3,6 +3,9 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
+variables:
+  YARN_CACHE_FOLDER: $(Pipeline.Workspace)/.yarn
+
 trigger:
 - master
 
@@ -17,16 +20,16 @@ steps:
 
 - task: CacheBeta@0
   inputs:
-    key: |
-      $(Agent.OS)
-      $(Build.SourcesDirectory)/yarn.lock
-    path: $(Pipeline.Workspace)/.cache/yarn
-  displayName: 'Cache yarn'
+    key: yarn | $(Agent.OS) | yarn.lock
+    path: $(YARN_CACHE_FOLDER)
+  displayName: Cache Yarn packages
 
 - script: |
     npm install -g yarn --cache-min 999999999    
-    yarn    
-  displayName: 'install'
+  displayName: 'install yarn'
+
+- script: yarn --frozen-lockfile
+  displayName: Install packages
 
 - script: |
     yarn test-ci    
