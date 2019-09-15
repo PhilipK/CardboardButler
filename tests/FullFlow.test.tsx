@@ -50,5 +50,44 @@ describe("Full flow", () => {
         });
 
     });
+
+    describe("Routing", () => {
+        it("Can be initialized with usernames", async () => {
+            window.location.hash = "usernames=Cyndaq,Warium";
+            jest.useFakeTimers();
+            service.getUserInfo = jest.fn((username) => (new Promise((resolver) => resolver({
+                isValid: true,
+                username: username
+            }))));
+            const getColMock = jest.fn((username) => (new Promise<GameInfo[]>((resolver) => resolver(
+                getHugeCollection()
+            ))));
+            service.getUserCollection = getColMock;
+            render(<App bggServce={service} />);
+            expect(getColMock.mock.calls.length).toBe(2);
+            expect(getColMock.mock.calls[0][0]).toBe("Cyndaq");
+            expect(getColMock.mock.calls[1][0]).toBe("Warium");
+        });
+
+
+        it("Changes when routing changes", async () => {
+            window.location.hash = "usernames=Cyndaq";
+            jest.useFakeTimers();
+            service.getUserInfo = jest.fn((username) => (new Promise((resolver) => resolver({
+                isValid: true,
+                username: username
+            }))));
+            const getColMock = jest.fn((username) => (new Promise<GameInfo[]>((resolver) => resolver(
+                getHugeCollection()
+            ))));
+            service.getUserCollection = getColMock;
+            render(<App bggServce={service} />);
+            window.location.hash = "usernames=Cyndaq,Warium,Nakul";
+            getColMock.mockReset();
+            window.dispatchEvent(new HashChangeEvent("hashchange"));
+            expect(getColMock.mock.calls.length).toBe(3);
+            expect(getColMock.mock.calls[2][0]).toBe("Nakul");
+        });
+    });
 });
 

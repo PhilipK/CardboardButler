@@ -24,14 +24,18 @@ export default class App extends React.Component<AppProps, AppState> {
     private collectionMerger: CollectionMerger;
     constructor(superProps: Readonly<AppProps>) {
         super(superProps);
-        this.state = { games: [], loadingMessage: "", names: [], userCollections: {}, showingCollection: false };
+
         this.collectionMerger = new CollectionMerger();
 
         this.fetchGames = this.fetchGames.bind(this);
         this.onNameSelect = this.onNameSelect.bind(this);
         this.userValidator = this.userValidator.bind(this);
-
+        this.handleHashChange = this.handleHashChange.bind(this);
+        this.state = { games: [], loadingMessage: "", names: [], userCollections: {}, showingCollection: false };
+        window.addEventListener("hashchange", this.handleHashChange, false);
     }
+
+    private retries: any[] = [];
 
 
     async fetchGames(name: string) {
@@ -42,17 +46,35 @@ export default class App extends React.Component<AppProps, AppState> {
             collection[name] = games;
             const allGames = this.collectionMerger.getMergedCollection(collection);
             this.setState({ games: allGames, userCollections: collection, loadingMessage: "", showingCollection: true });
-        } else if (games.retryLater) {
+        } else if (games && games.retryLater) {
             if (games.error) {
                 this.setState({ loadingMessage: "An error occoured, trying agian in 5 seconds" });
             } else {
                 this.setState({ loadingMessage: "Bgg is working on it, trying again in 5 seconds" });
             }
-            setTimeout(() => this.fetchGames(name), 5000);
+            const timeoutHandler = setTimeout(() => this.fetchGames(name), 5000);
+            this.retries.push(timeoutHandler);
         }
     }
-    componentWillUnmount() {
 
+
+    componentDidMount() {
+        this.handleHashChange();
+    }
+
+    handleHashChange() {
+        const hashValue = window.location.hash.substr(0);
+        if (hashValue && hashValue !== "" && hashValue.indexOf("usernames=") > -1) {
+            const usernames = hashValue.substring("usernames=".length + 1).split(",");
+            this.onNameSelect(usernames);
+        }
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("hashchange", this.handleHashChange, false);
+        this.retries.forEach((retry) => {
+            clearTimeout(retry);
+        });
     }
 
     getBggService() {
@@ -61,11 +83,14 @@ export default class App extends React.Component<AppProps, AppState> {
 
 
     onNameSelect(newNames: string[]) {
-        this.setState({
-            names: newNames,
-            userCollections: {}
-        });
-        newNames.forEach(this.fetchGames);
+        if (newNames.join(",") !== this.state.names.join(",")) {
+            this.setState({
+                names: newNames,
+                userCollections: {}
+            });
+            window.location.hash = "usernames=" + newNames.join(",");
+            newNames.forEach(this.fetchGames);
+        }
     }
 
 
