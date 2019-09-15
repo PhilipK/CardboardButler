@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import ValidatingUserInput from "./ValidatingUserInput";
-import { Item, Image, Header, Button } from "semantic-ui-react";
+import { Image, Header } from "semantic-ui-react";
 
 interface Props {
     onNameSelect: (names: string[]) => any;
