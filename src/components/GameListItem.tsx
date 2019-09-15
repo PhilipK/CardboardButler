@@ -20,7 +20,7 @@ export default class GameListItem extends React.PureComponent<AppProps> {
             <Item >
                 <Item.Image size="small"><img data-testid="GameImage" src={item.imageUrl} /></Item.Image>
                 <Item.Content verticalAlign={"middle"}>
-                    <Item.Header data-testid="GameName" as="a" size={"medium"} target="_blank">{item.name}</Item.Header>
+                    <Item.Header data-testid="GameName" href={"https://boardgamegeek.com/boardgame/" + item.id} as="a" size={"medium"} target="_blank">{item.name}</Item.Header>
                     <Item.Meta data-testid="GameYear">
                         <span>{item.yearPublished}</span>
                         {item.owners && <span data-testid="Owners"> - <span>{owners.join(", ")}</span></span>}
