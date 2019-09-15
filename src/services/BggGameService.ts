@@ -1,9 +1,10 @@
-import { BggRetryResult } from "./GameService";
 import FetchService from "./FetchService";
 import * as convert from "xml-js";
 import { GameInfo } from "../models/GameInfo";
 import { UserInfo } from "../models/UserInfo";
 
+
+export type BggRetryResult = { retryLater: boolean, error?: Error };
 /**
  * A service that can get Gameplay information from the BGG Api.
  */
