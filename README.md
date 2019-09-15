@@ -30,7 +30,7 @@ yarn
 To start the development server
 
 ```bash
-npm start
+yarn start
 ```
 
 The server will now be listening at:
@@ -42,7 +42,7 @@ It is important to make sure all unit tests work when developing, and also to ma
 To start testing run:
 
 ```bash
-npm run test
+yarn test
 ```
 
 ## Building for production
@@ -50,7 +50,7 @@ npm run test
 To build run:
 
 ```bash
-npm run build
+yarn build
 ```
 
 This will create a production ready build in the dist folder.

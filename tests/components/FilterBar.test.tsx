@@ -143,12 +143,17 @@ describe("Filter bar", () => {
             const options = sortDropdown.querySelectorAll(".item");
             fireEvent.click(options[1]);
             fireEvent.click(options[2]);
-            expect(onChange.mock.calls.length).toEqual(2);
+            fireEvent.click(options[0]);
+            expect(onChange.mock.calls.length).toEqual(3);
+
             expect(onChange.mock.calls[0][0]).toEqual({
                 sortOption: "bggrating"
             });
             expect(onChange.mock.calls[1][0]).toEqual({
                 sortOption: "new"
+            });
+            expect(onChange.mock.calls[2][0]).toEqual({
+                sortOption: "alphabetic"
             });
         });
 

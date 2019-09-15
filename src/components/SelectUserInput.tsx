@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, Input, Icon } from "semantic-ui-react";
+import { Input, Icon } from "semantic-ui-react";
 
 interface AppProps {
     bggNames?: string[];
