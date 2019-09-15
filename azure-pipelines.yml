@@ -17,9 +17,23 @@ steps:
 
 - script: |
     npm install -g yarn --cache-min 999999999    
-    yarn
+    yarn    
+  displayName: 'install'
+
+- script: |
+    yarn test-ci    
+  displayName: 'Run Tests'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: 'junit.xml'
+    mergeTestResults: true
+    failTaskOnFailedTests: true
+
+- script: |
     yarn run build
-  displayName: 'yarn run build'
+  displayName: 'Make a build'
 
 - task: PublishPipelineArtifact@0
   inputs:
