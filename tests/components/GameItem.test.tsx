@@ -49,6 +49,10 @@ describe("GameItem react component", () => {
             const { getByTestId } = render(<GameListItem item={ownersTestItem} />);
             expect(getByTestId("Owners")).toHaveTextContent("- Warium, Nakul");
         });
+        it("link to bgg", () => {
+            const { getByTestId } = render(<GameListItem item={testItem} />);
+            expect(getByTestId("GameName")).toHaveAttribute("href", "https://boardgamegeek.com/boardgame/161970");
+        });
     });
 });
 
