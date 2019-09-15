@@ -35,30 +35,34 @@ export default class App extends React.Component<AppProps, AppState> {
         window.addEventListener("hashchange", this.handleHashChange, false);
     }
 
-    private retries: any[] = [];
+    private _ismounted: boolean;
 
 
     async fetchGames(name: string) {
-        this.setState({ loadingMessage: "Fetching games" });
-        const games = await this.getBggService().getUserCollection(name);
-        if (Array.isArray(games)) {
-            const collection = this.state.userCollections;
-            collection[name] = games;
-            const allGames = this.collectionMerger.getMergedCollection(collection);
-            this.setState({ games: allGames, userCollections: collection, loadingMessage: "", showingCollection: true });
-        } else if (games && games.retryLater) {
-            if (games.error) {
-                this.setState({ loadingMessage: "An error occoured, trying agian in 5 seconds" });
-            } else {
-                this.setState({ loadingMessage: "Bgg is working on it, trying again in 5 seconds" });
+        if (this._ismounted) {
+            this.setState({ loadingMessage: "Fetching games" });
+            const games = await this.getBggService().getUserCollection(name);
+            if (this._ismounted) {
+                if (Array.isArray(games)) {
+                    const collection = this.state.userCollections;
+                    collection[name] = games;
+                    const allGames = this.collectionMerger.getMergedCollection(collection);
+                    this.setState({ games: allGames, userCollections: collection, loadingMessage: "", showingCollection: true });
+                } else if (games && games.retryLater) {
+                    if (games.error) {
+                        this.setState({ loadingMessage: "An error occoured, trying agian in 5 seconds" });
+                    } else {
+                        this.setState({ loadingMessage: "Bgg is working on it, trying again in 5 seconds" });
+                    }
+                    setTimeout(() => this.fetchGames(name), 5000);
+                }
             }
-            const timeoutHandler = setTimeout(() => this.fetchGames(name), 5000);
-            this.retries.push(timeoutHandler);
         }
     }
 
 
     componentDidMount() {
+        this._ismounted = true;
         this.handleHashChange();
     }
 
@@ -72,9 +76,7 @@ export default class App extends React.Component<AppProps, AppState> {
 
     componentWillUnmount() {
         window.removeEventListener("hashchange", this.handleHashChange, false);
-        this.retries.forEach((retry) => {
-            clearTimeout(retry);
-        });
+        this._ismounted = false;
     }
 
     getBggService() {
