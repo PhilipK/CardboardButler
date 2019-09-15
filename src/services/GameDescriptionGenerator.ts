@@ -71,9 +71,12 @@ export default class DescriptionGenerator {
             return "boardgame";
         }
         const bestFamily = gameInfo.families.sort((a, b) => a.value - b.value)[0];
-        const name = bestFamily.friendlyName.toLowerCase();
+        let name = bestFamily.friendlyName.toLowerCase();
         if (name.indexOf(" rank") > -1) {
-            return name.substring(0, name.indexOf(" rank"));
+            name = name.substring(0, name.indexOf(" rank"));
+        }
+        if (!name.endsWith("game")) {
+            name += " game";
         }
         return name;
     }
