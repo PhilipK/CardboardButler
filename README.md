@@ -9,6 +9,9 @@ You can use the beta version here:
 
 https://cardboardbutlerbeta.z21.web.core.windows.net/
 
+[![Build Status](https://dev.azure.com/philipkristoffersen/Cardboard%20Butler/_apis/build/status/PhilipK.CardboardButler?branchName=master)](https://dev.azure.com/philipkristoffersen/Cardboard%20Butler/_build/latest?definitionId=1&branchName=master)
+
+
 ## Installation
 
 Make sure you have Node.js installed and can run npm.
@@ -63,4 +66,3 @@ This will create a production ready build in the dist folder.
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
-[![Build Status](https://travis-ci.org/PhilipK/CardboardButler.svg?branch=master)](https://travis-ci.org/PhilipK/CardboardButler)
