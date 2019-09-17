@@ -58,7 +58,9 @@ export default class SelectUserInput extends React.PureComponent<AppProps> {
     onUseClick() {
         const { onNameSelect } = this.props;
         if (onNameSelect) {
-            onNameSelect(this.props.bggNames);
+            const names = this.props.bggNames;
+            const trimmedNames = names.map((name) => name.trim());
+            onNameSelect(trimmedNames);
         }
     }
 

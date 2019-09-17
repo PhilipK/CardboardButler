@@ -174,6 +174,14 @@ describe("SelectUserInput react component", () => {
             const { getByTestId } = render(<SelectUserInput bggNames={testNames} onNameSelect={useNamesMock} />);
             expect(getByTestId("UseNames")).toContainHTML("us");
         });
+
+        it("trim names", () => {
+            const testNames: string[] = ["Warium ", " Nakul "];
+            const useNamesMock = jest.fn((names) => names);
+            const { getByTestId } = render(<SelectUserInput bggNames={testNames} onNameSelect={useNamesMock} validNames={testNames} />);
+            fireEvent.click(getByTestId("UseNames"));
+            expect(useNamesMock.mock.calls[0][0]).toEqual(["Warium", "Nakul"]);
+        });
     });
 
 
