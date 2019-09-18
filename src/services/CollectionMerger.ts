@@ -1,6 +1,6 @@
 import { GameInfo } from "../models/GameInfo";
 
-interface CollectionMap {
+export interface CollectionMap {
     [username: string]: GameInfo[];
 }
 

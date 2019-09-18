@@ -1,5 +1,6 @@
 import BggGameService from "./BggGameService";
 import { GameInfo } from "../models/GameInfo";
+import { CollectionMap, CollectionMerger } from "./CollectionMerger";
 
 interface LoadingInfo {
     username: string;
@@ -10,31 +11,52 @@ type CollectionUpdateEventHandler = (games: GameInfo[]) => void;
 
 export default class BggGameLoader {
 
-    private _service: BggGameService;
+    private readonly service: BggGameService;
+    private readonly collectionMap: CollectionMap = {};
 
-    private _currentNames: string[] = [];
 
-    private _loadingNames: string[] = [];
+    private currentNames: string[] = [];
+    private loadingNames: string[] = [];
+    private readonly eventHandlers: CollectionUpdateEventHandler[] = [];
 
-    private eventHandlers: CollectionUpdateEventHandler[] = [];
+    private readonly merger: CollectionMerger;
 
-    constructor(bggService: BggGameService) {
-        this._service = bggService;
+
+    constructor(bggService: BggGameService, merger: CollectionMerger) {
+        this.service = bggService;
         this.loadCollections = this.loadCollections.bind(this);
+        this.loadCollectionWithRetry = this.loadCollectionWithRetry.bind(this);
+        this.merger = merger;
     }
 
     public async loadCollections(usernames: string[]): Promise<GameInfo[][]> {
-        this._currentNames = usernames;
-        const collections = await Promise.all(this._currentNames.map(async (name) => {
-            this._loadingNames.push(name);
-            const games = await this._service.getUserCollection(name);
-            this._loadingNames = this._loadingNames.filter((n) => n !== name);
-            if (Array.isArray(games)) {
-                this.eventHandlers.forEach((handler) => handler(games));
-            }
-            return games as GameInfo[];
+        this.currentNames = usernames;
+        const collections = await Promise.all(usernames.map(async (username) => {
+            const games = await this.loadCollectionWithRetry(username);
+            this.collectionMap[username] = games;
+            this.informCollectionUpdateHandlers();
+            return games;
         }));
         return collections;
+    }
+
+    private informCollectionUpdateHandlers() {
+        const allGames = this.merger.getMergedCollection(this.collectionMap);
+        this.eventHandlers.forEach((handler) => handler(allGames));
+    }
+
+    private async loadCollectionWithRetry(name: string): Promise<GameInfo[]> {
+        this.loadingNames.push(name);
+        const games = await this.service.getUserCollection(name);
+        if (Array.isArray(games)) {
+            this.loadingNames = this.loadingNames.filter((n) => n !== name);
+            return games;
+        } else {
+            // add reload info
+            return new Promise<GameInfo[]>(async resolver => {
+                setTimeout(() => resolver(this.loadCollectionWithRetry(name)), 1000);
+            });
+        }
 
     }
 
@@ -42,12 +64,12 @@ export default class BggGameLoader {
         this.eventHandlers.push(handler);
     }
 
-    public currentNames(): string[] {
-        return this._currentNames;
+    public getCurrentNames(): string[] {
+        return this.currentNames;
     }
 
     public getLoadingInfo(): LoadingInfo[] {
-        return this._loadingNames.map((name) => ({
+        return this.loadingNames.map((name) => ({
             username: name,
             isWaitingForRetry: false
         }));
