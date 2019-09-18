@@ -6,7 +6,9 @@ import { UserInfo } from "../models/UserInfo";
 
 export type BggRetryResult = { retryLater: boolean, error?: Error };
 /**
- * A service that can get Gameplay information from the BGG Api.
+ * A service that can wraps the BGG Api.
+ * It does not cache, or handle retries, it simple transform the bgg api into xml
+ * Be adviced: This uses a CORS proxy, to get around the BGG API not providing CORS information.
  */
 class BggGameService {
 
@@ -56,6 +58,12 @@ class BggGameService {
         });
     }
 
+    /**
+     * Get user information about a given useranme.
+     * If a username is given that does not excist then "isValid:true" will be returned.
+     * If the call to bgg fails, then "isValid:unknown" is returend, as the service cannot know if the name is valid.
+     * @param username the username to get information for
+     */
     async getUserInfo(username: string): Promise<UserInfo> {
         const xml = await this.fetUserInfoXml(username);
         if (typeof xml !== "string") {

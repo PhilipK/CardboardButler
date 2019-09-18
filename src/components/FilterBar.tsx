@@ -1,14 +1,14 @@
 import * as React from "react";
 import { Dropdown, Container } from "semantic-ui-react";
-import { FilterOptions, PlayTimeOption, PlayCountOption, SortOption } from "../models/FilterOptions";
+import { FilterAndSortOptions, PlayTimeOption, PlayCountOption, SortOption } from "../models/FilterOptions";
 
 export interface Props {
 
-    onFilterChange?: (options: FilterOptions) => any;
+    onFilterChange?: (options: FilterAndSortOptions) => any;
     currentUsers?: string[];
 }
 interface State {
-    filterOptions: FilterOptions;
+    filterOptions: FilterAndSortOptions;
 }
 
 interface TimerOptions {
@@ -92,7 +92,7 @@ export default class FilterBar extends React.Component<Props, State> {
         this.combineState({ sortOption: option });
     }
 
-    combineState(options: FilterOptions) {
+    combineState(options: FilterAndSortOptions) {
         const newFilter = Object.assign({}, this.state.filterOptions, options);
         if (this.props.onFilterChange) {
             this.props.onFilterChange(newFilter);
