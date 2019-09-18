@@ -103,4 +103,31 @@ describe("Loading games", () => {
         expect(onUpdateMock.mock.calls[1][0]).toHaveLength(2);
         expect(onUpdateMock.mock.calls[2][0]).toHaveLength(3);
     });
+
+    it("informs about loading information", async () => {
+
+        const usernames = ["Warium", "Cyndaq", "Nakul"];
+        const collections = {
+            Warium: [alchemists()],
+            Cyndaq: [sevenWonders()],
+            Nakul: [alchemists(), smallWorld()]
+        };
+
+        service.getUserCollection = jest.fn((username) => (new Promise<GameInfo[]>(async (resolver) => resolver(
+            collections[username]
+        ))));
+
+        const onLoadChange = jest.fn((games) => { });
+        loader.onLoadUpdate(onLoadChange);
+
+        const promise = loader.loadCollections(usernames);
+        expect(onLoadChange.mock.calls).toHaveLength(3);
+        expect(onLoadChange.mock.calls[2][0].map((i) => i.isWaitingForRetry)).toEqual([false, false, false]);
+
+        await promise;
+
+        expect(onLoadChange.mock.calls).toHaveLength(6);
+        expect(onLoadChange.mock.calls[5][0]).toEqual([]);
+
+    });
 });
