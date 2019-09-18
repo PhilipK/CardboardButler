@@ -8,6 +8,7 @@ interface LoadingInfo {
 }
 
 type CollectionUpdateEventHandler = (games: GameInfo[]) => void;
+type LoadingUpdateEventHandler = (games: LoadingInfo[]) => void;
 
 export default class BggGameLoader {
 
@@ -18,6 +19,7 @@ export default class BggGameLoader {
     private currentNames: string[] = [];
     private loadingNames: string[] = [];
     private readonly eventHandlers: CollectionUpdateEventHandler[] = [];
+    private readonly loadingEventHandlers: LoadingUpdateEventHandler[] = [];
 
     private readonly merger: CollectionMerger;
 
@@ -46,11 +48,19 @@ export default class BggGameLoader {
         this.eventHandlers.forEach((handler) => handler(allGames));
     }
 
+    private informLoadingHandlers() {
+        const loadingInfo = this.getLoadingInfo();
+        this.loadingEventHandlers.forEach((handler) => handler(loadingInfo));
+    }
+
+
     private async loadCollectionWithRetry(name: string): Promise<GameInfo[]> {
         this.loadingNames.push(name);
+        this.informLoadingHandlers();
         const games = await this.service.getUserCollection(name);
         if (Array.isArray(games)) {
             this.loadingNames = this.loadingNames.filter((n) => n !== name);
+            this.informLoadingHandlers();
             return games;
         } else {
             // add reload info
@@ -74,7 +84,12 @@ export default class BggGameLoader {
             username: name,
             isWaitingForRetry: false
         }));
+    }
 
+
+
+    public onLoadUpdate(handler: LoadingUpdateEventHandler) {
+        this.loadingEventHandlers.push(handler);
     }
 
 
