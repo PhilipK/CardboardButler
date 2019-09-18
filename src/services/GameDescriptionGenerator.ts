@@ -26,8 +26,15 @@ const weightName = [
 const vowel_list = "aeiouAEIOU";
 
 
+/**
+ * Can generate a human readable describtion of a given game.
+ */
 export default class DescriptionGenerator {
 
+    /**
+     * Given game information, generates a human readable description.
+     * @param gameInfo the game to generate a description for.
+     */
     generateDescription(gameInfo: GameInfo): string {
         const rating = this.getRatingDescription(gameInfo.averagerating);
         const family = this.getFamilyDescription(gameInfo);

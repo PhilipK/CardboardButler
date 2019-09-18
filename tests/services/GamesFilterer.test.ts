@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom/extend-expect";
-import { GamesFilterer } from "../../src/services/GamesFilterer";
+import { GamesFilterAndSorter } from "../../src/services/GamesFilterer";
 import { alchemists, alchemistsTheKing, sevenWonders, smallWorld } from "./model/TestGames";
 import { GameInfo } from "../../src/models/GameInfo";
 import * as fetchMock from "fetch-mock";
@@ -11,7 +11,7 @@ describe("Filtering games", () => {
     const testGame3 = sevenWonders();
     const testGame4 = smallWorld();
     const testCollection = [testGame1, testGame2, testGame3, testGame4];
-    const filterer = new GamesFilterer();
+    const filterer = new GamesFilterAndSorter();
 
     describe("default", () => {
         it("does not filter", () => {
@@ -43,7 +43,7 @@ describe("Filtering games", () => {
                     minimum: 60
                 }
             };
-            const filterer = new GamesFilterer();
+            const filterer = new GamesFilterAndSorter();
             const result = filterer.filter(testCollection, filterOptions);
             expect(result).toHaveLength(2);
             expect(result).toEqual([testGame1, testGame2]);
