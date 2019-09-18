@@ -12,7 +12,7 @@ type CollectionUpdateEventHandler = (games: GameInfo[]) => void;
 export default class BggGameLoader {
 
     private readonly service: BggGameService;
-    private readonly collectionMap: CollectionMap = {};
+    private collectionMap: CollectionMap = {};
 
 
     private currentNames: string[] = [];
@@ -30,6 +30,7 @@ export default class BggGameLoader {
     }
 
     public async loadCollections(usernames: string[]): Promise<GameInfo[][]> {
+        this.collectionMap = {};
         this.currentNames = usernames;
         const collections = await Promise.all(usernames.map(async (username) => {
             const games = await this.loadCollectionWithRetry(username);
