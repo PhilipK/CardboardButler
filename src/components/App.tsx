@@ -41,6 +41,16 @@ export default class App extends React.Component<AppProps, AppState> {
                 this.setState({ games: games, showingCollection: true });
             }
         });
+        this.loader.onLoadUpdate((loadinfo) => {
+            if (this._ismounted) {
+                if (loadinfo.length === 0) {
+                    this.setState({ loadingMessage: "" });
+                } else {
+                    this.setState({ loadingMessage: "Loading: " + loadinfo.map((li) => li.username).join(", ") });
+                }
+
+            }
+        });
         this.state = initialState;
         window.addEventListener("hashchange", this.handleHashChange, false);
     }
