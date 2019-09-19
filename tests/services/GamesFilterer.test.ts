@@ -3,7 +3,7 @@ import { GamesFilterAndSorter } from "../../src/services/GamesFilterer";
 import { alchemists, alchemistsTheKing, sevenWonders, smallWorld } from "./model/TestGames";
 import { GameInfo } from "../../src/models/GameInfo";
 import * as fetchMock from "fetch-mock";
-import { getHugeCollection } from "./BggGameService.test";
+import { getHugeCollection } from "./TestHelpers";
 
 describe("Filtering games", () => {
     const testGame1 = alchemists();
@@ -184,6 +184,14 @@ describe("Filtering games", () => {
             const newOrdering = [ratedGame1, ratedGame2, testGame3];
             const result = filterer.filter(onOrdered, { sortOption: "userrating" });
             expect(result.map((r) => r.userRating)).toEqual(newOrdering.map((r) => r.userRating));
+        });
+
+        it("sorts games with NO ratings as lowest", () => {
+            const ratedGame1 = Object.assign({}, testGame1, { userRating: {} });
+            const ratedGame2 = Object.assign({}, testGame2, { userRating: { warium: 6, cyndaq: 4 } });
+            const onOrdered = [ratedGame2, ratedGame1];
+            const result = filterer.filter(onOrdered, { sortOption: "userrating" });
+            expect(result[1].name).toEqual(ratedGame1.name);
         });
     });
 });

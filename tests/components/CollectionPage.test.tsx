@@ -2,10 +2,9 @@
 import * as React from "react";
 import "@testing-library/jest-dom/extend-expect";
 import CollectionPage from "../../src/components/CollectionPage";
-import { getLargeCollection } from "../services/BggGameService.test";
 import { GameInfo } from "../../src/models/GameInfo";
-import { render, fireEvent, waitForElement, getByTestId, getByText, waitForElementToBeRemoved } from "@testing-library/react";
-import { exportNamedDeclaration } from "@babel/types";
+import { render, fireEvent, waitForElement } from "@testing-library/react";
+import { getLargeCollection } from "../services/TestHelpers";
 
 
 
