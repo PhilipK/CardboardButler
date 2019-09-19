@@ -3,7 +3,7 @@ import { GameInfo } from "../../src/models/GameInfo";
 import { render, fireEvent, waitForElement, getByTestId, getByText } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import FilterBar from "../../src/components/FilterBar";
-import { FilterOptions } from "../../src/models/FilterOptions";
+import { FilterAndSortOptions } from "../../src/models/FilterOptions";
 
 describe("Filter bar", () => {
 
@@ -25,7 +25,7 @@ describe("Filter bar", () => {
     describe("Time selection", () => {
 
         it("can select a time option", () => {
-            const onChange = jest.fn((filterOptions: FilterOptions) => { });
+            const onChange = jest.fn((filterOptions: FilterAndSortOptions) => { });
             const { getByTestId } = render(<FilterBar onFilterChange={onChange} />);
             const playtimeDropdown = getByTestId("PlaytimeDropdown");
             fireEvent.click(playtimeDropdown);
@@ -42,7 +42,7 @@ describe("Filter bar", () => {
 
 
         it("Clicking 'any' time will result in null", () => {
-            const onChange = jest.fn((filterOptions: FilterOptions) => { });
+            const onChange = jest.fn((filterOptions: FilterAndSortOptions) => { });
             const { getByTestId } = render(<FilterBar onFilterChange={onChange} />);
             const playtimeDropdown = getByTestId("PlaytimeDropdown");
             fireEvent.click(playtimeDropdown);
@@ -58,7 +58,7 @@ describe("Filter bar", () => {
     describe("Player count selection", () => {
 
         it("can select a player count option", () => {
-            const onChange = jest.fn((filterOptions: FilterOptions) => { });
+            const onChange = jest.fn((filterOptions: FilterAndSortOptions) => { });
             const { getByTestId } = render(<FilterBar onFilterChange={onChange} />);
             const playerCountDropdown = getByTestId("PlayercountDropdown");
             fireEvent.click(playerCountDropdown);
@@ -71,7 +71,7 @@ describe("Filter bar", () => {
         });
 
         it("Clicking 'any' playercount will result in null", () => {
-            const onChange = jest.fn((filterOptions: FilterOptions) => { });
+            const onChange = jest.fn((filterOptions: FilterAndSortOptions) => { });
             const { getByTestId } = render(<FilterBar onFilterChange={onChange} />);
             const playerCountDropdown = getByTestId("PlayercountDropdown");
             fireEvent.click(playerCountDropdown);
@@ -88,7 +88,7 @@ describe("Filter bar", () => {
     describe("Selecting multiple", () => {
 
         it("combines filter options", () => {
-            const onChange = jest.fn((filterOptions: FilterOptions) => { });
+            const onChange = jest.fn((filterOptions: FilterAndSortOptions) => { });
             const { getByTestId } = render(<FilterBar onFilterChange={onChange} />);
             const playerCountDropdown = getByTestId("PlayercountDropdown");
             fireEvent.click(playerCountDropdown);
@@ -136,7 +136,7 @@ describe("Filter bar", () => {
 
         it("can sort by the selected sort option", () => {
 
-            const onChange = jest.fn((filterOptions: FilterOptions) => { });
+            const onChange = jest.fn((filterOptions: FilterAndSortOptions) => { });
             const { getByTestId } = render(<FilterBar onFilterChange={onChange} />);
             const sortDropdown = getByTestId("SortOptionDropdown");
             fireEvent.click(sortDropdown);
