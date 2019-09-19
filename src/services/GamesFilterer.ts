@@ -1,12 +1,14 @@
 import { GameInfo } from "../models/GameInfo";
-import { FilterOptions, SortOption } from "../models/FilterOptions";
+import { FilterAndSortOptions, SortOption } from "../models/FilterOptions";
 
 type SorterMap = {
     [option in SortOption]: (a: GameInfo, b: GameInfo) => number | undefined;
 };
 
-
-export class GamesFilterer {
+/**
+ * Filters and sorts a given collection and some options on how to do it.
+ */
+export class GamesFilterAndSorter {
 
     private sortMap: SorterMap;
 
@@ -23,25 +25,25 @@ export class GamesFilterer {
     }
 
 
-    filter(outerCollection: GameInfo[], options: FilterOptions = {}): GameInfo[] {
-        let collection = [...outerCollection];
-        if (!options) {
-            collection.sort(this.nameSorter);
-        } else {
-            collection = this.filterCollection(options, collection);
-            this.sortCollection(options, collection);
-
-        }
-        return collection;
+    /**
+     * Filters and sorts a given collection, returns a new collection.
+     * @param collection a collection of games to filter and sort
+     * @param options optional options, that defines how the collection should be filtered and sorted.
+     */
+    filter(collection: GameInfo[], options: FilterAndSortOptions = {}): GameInfo[] {
+        const collectionCopy = [...collection];
+        const filtered = this.filterCollection(collectionCopy, options);
+        const filteredAndSorted = this.sortCollection(filtered, options);
+        return filteredAndSorted;
     }
 
 
-    private sortCollection(options: FilterOptions, collection: GameInfo[]) {
+    private sortCollection(collection: GameInfo[], options: FilterAndSortOptions) {
         const { sortOption = "alphabetic" } = options;
-        collection.sort(this.sortMap[sortOption]);
+        return collection.sort(this.sortMap[sortOption]);
     }
 
-    private filterCollection(options: FilterOptions, collection: GameInfo[]) {
+    private filterCollection(collection: GameInfo[], options: FilterAndSortOptions) {
         const { playtime, playerCount } = options;
         if (playtime) {
             collection = this.filterOnTime(collection, playtime);

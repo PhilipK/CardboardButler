@@ -12,5 +12,9 @@ interface IsError {
     error: Error;
 }
 
+/**
+ * Information about a user.
+ * This includes if the user exists/isvalid or if it is currently unknown since there was an error.
+ */
 export type UserInfo = ValidUser | InvalidUser | IsError;
 

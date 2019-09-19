@@ -3,8 +3,8 @@ import FilterBar from "./FilterBar";
 import { Item, Container, Header } from "semantic-ui-react";
 
 import * as React from "react";
-import { FilterOptions } from "../models/FilterOptions";
-import { GamesFilterer } from "../services/GamesFilterer";
+import { FilterAndSortOptions } from "../models/FilterOptions";
+import { GamesFilterAndSorter } from "../services/GamesFilterer";
 import { GameInfo } from "../models/GameInfo";
 import NoGamesFound from "./NoGamesFound";
 
@@ -15,7 +15,7 @@ interface Props {
 }
 
 interface State {
-    filterOptions: FilterOptions;
+    filterOptions: FilterAndSortOptions;
 }
 
 
@@ -28,7 +28,7 @@ export default class CollectionPage extends React.Component<Props, State> {
         this.state = { filterOptions: {} };
     }
 
-    onFilterChange(filterOptions: FilterOptions) {
+    onFilterChange(filterOptions: FilterAndSortOptions) {
         this.setState({
             filterOptions: filterOptions
         });
@@ -36,7 +36,7 @@ export default class CollectionPage extends React.Component<Props, State> {
 
     render() {
         const { games = [], currentUsers = [] } = this.props;
-        const filterer = new GamesFilterer();
+        const filterer = new GamesFilterAndSorter();
         const filteredGames = filterer.filter(games, this.state.filterOptions);
         const noGames = filteredGames.length === 0;
         return (
