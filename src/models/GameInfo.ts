@@ -1,3 +1,6 @@
+/**
+ * A bgg Family defines a group of games a game relates to, examples are War Games or Thematic Games.
+ */
 interface BoardGameFamily {
     name: string;
     friendlyName: string;
@@ -7,7 +10,9 @@ interface BoardGameFamily {
 
 
 
-
+/**
+ * Information about a BGG Game.
+ */
 export interface GameInfo {
     id: number;
     name: string;
