@@ -1,10 +1,10 @@
 import * as React from "react";
-import { GameInfo } from "../models/GameInfo";
+import { GameInfo, GameInfoPlus } from "../models/GameInfo";
 import { Item } from "semantic-ui-react";
 import DescriptionGenerator from "../services/GameDescriptionGenerator";
 
 export interface AppProps {
-    item: GameInfo;
+    item: GameInfoPlus;
 }
 
 const gameDescription = new DescriptionGenerator();
@@ -13,6 +13,7 @@ const gameDescription = new DescriptionGenerator();
  * PureComponent that renders  a given GameInfo item into a list like view.
  */
 export default class GameListItem extends React.PureComponent<AppProps> {
+
     render() {
         const { item } = this.props;
         const { owners = [] } = item;
@@ -28,7 +29,8 @@ export default class GameListItem extends React.PureComponent<AppProps> {
                     <Item.Description data-testid="GameDescription">
                         {gameDescription.generateDescription(item)}
                     </Item.Description>
-                    {/* <Item.Extra>{game.get("mechanics").map(mec => mec.get("value")).join(", ")}</Item.Extra> */}
+                    {/* {("mechanics" in item) && <Item.Extra>{item.mechanics.join(", ")}</Item.Extra>} */}
+                    {("categories" in item) && <Item.Extra>{item.categories.join(", ")}</Item.Extra>}
                 </Item.Content>
             </Item>
         );

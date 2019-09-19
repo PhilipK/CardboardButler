@@ -2,7 +2,7 @@
 import BggGameLoader from "../../src/services/BggGameLoader";
 import BggGameService from "../../src/services/BggGameService";
 import * as fetchMock from "fetch-mock";
-import { GameInfo } from "../../src/models/GameInfo";
+import { GameInfo, ExtendedGameInfo } from "../../src/models/GameInfo";
 import { alchemists, sevenWonders, smallWorld } from "./model/TestGames";
 import { CollectionMerger } from "../../src/services/CollectionMerger";
 import { getLargeCollection } from "./TestHelpers";
@@ -122,12 +122,58 @@ describe("Loading games", () => {
 
         const promise = loader.loadCollections(usernames);
         expect(onLoadChange.mock.calls).toHaveLength(3);
-        expect(onLoadChange.mock.calls[2][0].map((i) => i.isWaitingForRetry)).toEqual([false, false, false]);
+        expect(onLoadChange.mock.calls[2][0].map((i: { isWaitingForRetry: boolean }) => i.isWaitingForRetry)).toEqual([false, false, false]);
 
         await promise;
 
-        expect(onLoadChange.mock.calls).toHaveLength(6);
         expect(onLoadChange.mock.calls[5][0]).toEqual([]);
+
+    });
+
+
+    it("loads extra game info after getting collection", async () => {
+
+        const usernames = ["Warium", "Cyndaq"];
+        const collections = {
+            Warium: [alchemists()],
+            Cyndaq: [sevenWonders()]
+        };
+
+        const alchemistExtended: ExtendedGameInfo = {
+            description: "AlchemistExtended"
+        };
+
+        const sevenWondersExtended: ExtendedGameInfo = {
+            description: "SevenExtended"
+        };
+        const extendedGameInfos = {
+            [161970]: alchemistExtended,
+            [68448]: sevenWondersExtended
+        };
+
+        const getUserCollectionMock = jest.fn((username) => (new Promise<GameInfo[]>(async (resolver) => resolver(
+            collections[username]
+        ))));
+
+        service.getUserCollection = getUserCollectionMock;
+
+        const getGameInfoMock = jest.fn((id) => (new Promise<ExtendedGameInfo>(async (resolver) => resolver(
+            extendedGameInfos[id]
+        ))));
+
+        service.getGameInfo = getGameInfoMock;
+
+        const onGamesUpdate = jest.fn((games) => { });
+        loader.onGamesUpdate(onGamesUpdate);
+
+        await loader.loadCollections(usernames);
+        onGamesUpdate.mockClear();
+        getGameInfoMock.mockClear();
+        await loader.loadExtendedInfo();
+        expect(getGameInfoMock.mock.calls).toHaveLength(2);
+        expect(onGamesUpdate.mock.calls).toHaveLength(2);
+        expect(onGamesUpdate.mock.calls[1][0][0].description).toEqual("SevenExtended");
+        expect(onGamesUpdate.mock.calls[1][0][1].description).toEqual("AlchemistExtended");
 
     });
 });

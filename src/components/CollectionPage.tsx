@@ -5,12 +5,12 @@ import { Item, Container, Header } from "semantic-ui-react";
 import * as React from "react";
 import { FilterAndSortOptions } from "../models/FilterOptions";
 import { GamesFilterAndSorter } from "../services/GamesFilterer";
-import { GameInfo } from "../models/GameInfo";
+import { GameInfo, GameInfoPlus } from "../models/GameInfo";
 import NoGamesFound from "./NoGamesFound";
 
 
 interface Props {
-    games?: GameInfo[];
+    games?: GameInfoPlus[];
     currentUsers?: string[];
 }
 

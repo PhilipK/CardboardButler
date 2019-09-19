@@ -38,3 +38,7 @@ export interface ExtendedGameInfo {
     mechanics?: string[];
     categories?: string[];
 }
+
+export type FullGameInfo = GameInfo & ExtendedGameInfo;
+
+export type GameInfoPlus = GameInfo | FullGameInfo;

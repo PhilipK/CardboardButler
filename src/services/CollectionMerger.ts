@@ -1,7 +1,11 @@
-import { GameInfo } from "../models/GameInfo";
+import { GameInfo, GameInfoPlus } from "../models/GameInfo";
 
 export interface CollectionMap {
     [username: string]: GameInfo[];
+}
+
+export interface CollectionMapPlus {
+    [username: string]: GameInfoPlus[];
 }
 
 interface GameIdCache {
@@ -21,7 +25,7 @@ export class CollectionMerger {
      * Each game has had its owners and userratings fields updated, to include each owner and their rating.
      * @param collectionsMap A map between usernames and their collections
      */
-    getMergedCollection(collectionsMap: CollectionMap): GameInfo[] {
+    getMergedCollection(collectionsMap: CollectionMapPlus): GameInfo[] {
         const cache: GameIdCache = {};
         const userNames = Object.keys(collectionsMap);
         userNames.forEach((username) => {
