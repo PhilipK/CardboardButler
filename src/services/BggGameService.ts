@@ -98,6 +98,8 @@ class BggGameService {
             return {
                 description: mainElements.find((e) => e.name === "description").elements[0].text.toString().trim(),
                 averageweight: parseFloat(mainElements.find((e) => e.name === "statistics").elements[0].elements.find((e) => e.name === "averageweight").attributes["value"].toString().trim()),
+                mechanics: mainElements.filter((e) => e.name === "link" && e.attributes["type"] === "boardgamemechanic").map((e) => e.attributes["value"].toString()),
+                categories: mainElements.filter((e) => e.name === "link" && e.attributes["type"] === "boardgamecategory").map((e) => e.attributes["value"].toString()),
             };
         } else {
             return xml;

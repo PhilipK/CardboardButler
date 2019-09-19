@@ -250,6 +250,27 @@ describe("BggGameService", () => {
                 expect(result.averageweight).toEqual(3.8616);
             }
         });
+
+        it("can get mechanics", async () => {
+            const result = await service.getGameInfo(gameId);
+            expect(!("retryLater" in result));
+            if (!("retryLater" in result)) {
+                expect(result.mechanics).toEqual(
+                    ["ACT-01 Action Points",
+                        "Card Drafting",
+                        "Hand Management",
+                        "WPL-01 Worker Placement"]);
+            }
+        });
+
+        it("can get categories", async () => {
+            const result = await service.getGameInfo(gameId);
+            expect(!("retryLater" in result));
+            if (!("retryLater" in result)) {
+                expect(result.categories).toEqual(
+                    ["Deduction", "Fantasy"]);
+            }
+        });
     });
 
 

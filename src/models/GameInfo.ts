@@ -35,4 +35,6 @@ export interface GameInfo {
 export interface ExtendedGameInfo {
     description?: string;
     averageweight?: number;
+    mechanics?: string[];
+    categories?: string[];
 }
