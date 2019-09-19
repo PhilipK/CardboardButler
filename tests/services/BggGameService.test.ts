@@ -33,7 +33,7 @@ describe("BggGameService", () => {
         });
 
         it("Handles large collections", async () => {
-            const games = await getLargeCollection(fetch);
+            const games = await getLargeCollection();
             expect(games).toHaveLength(70);
         });
 
