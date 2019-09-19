@@ -1,6 +1,6 @@
 import FetchService from "./FetchService";
 import * as convert from "xml-js";
-import { GameInfo } from "../models/GameInfo";
+import { GameInfo, ExtendedGameInfo } from "../models/GameInfo";
 import { UserInfo } from "../models/UserInfo";
 
 
@@ -28,7 +28,7 @@ class BggGameService {
      * @returns Either a list of game infromation, or a bgg retry result, if there is an error or bgg needed time to generate the list.
      */
     async getUserCollection(username: string): Promise<BggRetryResult | GameInfo[]> {
-        const xmlResult = await this.fetCollectionXml(username);
+        const xmlResult = await this.fetchCollectionXml(username);
         if (typeof xmlResult !== "string") {
             return xmlResult;
         }
@@ -87,6 +87,22 @@ class BggGameService {
         return {
             isValid: false
         };
+    }
+
+
+    async getGameInfo(id: number): Promise<BggRetryResult | ExtendedGameInfo> {
+        const xml = await this.fetchGameXml(id);
+        if (typeof xml === "string") {
+            const jsObj = convert.xml2js(xml) as convert.Element;
+            const mainElements = jsObj.elements[0].elements[0].elements;
+            return {
+                description: mainElements.find((e) => e.name === "description").elements[0].text.toString().trim(),
+                averageweight: parseFloat(mainElements.find((e) => e.name === "statistics").elements[0].elements.find((e) => e.name === "averageweight").attributes["value"].toString().trim()),
+            };
+        } else {
+            return xml;
+        }
+
     }
 
     private getFetch() {
@@ -158,8 +174,18 @@ class BggGameService {
         return tagElement.elements[0].text.toString();
     }
 
-    private async fetCollectionXml(username: string) {
+    private async fetchCollectionXml(username: string) {
         const url = this.buildCollectionUrl(username);
+        return this.fethXml(url);
+    }
+
+    private async fetchGameXml(id: number) {
+        const url = this.buildGameUrl(id);
+        return this.fethXml(url);
+    }
+
+
+    private async fethXml(url: string) {
         return this.getFetch()(url).then(async (res) => {
             if (res.status === 200) {
                 return res.text();
@@ -179,6 +205,10 @@ class BggGameService {
         }).catch((error: Error) => {
             return { error };
         });
+    }
+
+    private buildGameUrl(id: number) {
+        return `https://cors-anywhere.herokuapp.com/https://api.geekdo.com/xmlapi2/thing?id=${id}&stats=1`;
     }
 
     private buildCollectionUrl(username: string) {
