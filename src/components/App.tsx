@@ -1,6 +1,6 @@
 import * as React from "react";
 import BggGameService from "../services/BggGameService";
-import { GameInfo } from "../models/GameInfo";
+import { GameInfo, GameInfoPlus } from "../models/GameInfo";
 import { CollectionMerger } from "../services/CollectionMerger";
 import WelcomePage from "./WelcomePage";
 import CollectionPage from "./CollectionPage";
@@ -13,7 +13,7 @@ export interface AppProps {
 
 export interface AppState {
     names: string[];
-    games: GameInfo[];
+    games: GameInfoPlus[];
     loadingMessage: string;
     showingCollection: boolean;
 }
@@ -35,7 +35,7 @@ export default class App extends React.Component<AppProps, AppState> {
         this.userValidator = this.userValidator.bind(this);
         this.handleHashChange = this.handleHashChange.bind(this);
         const bggService = superProps.bggServce || new BggGameService();
-        this.loader = new BggGameLoader(bggService, this.collectionMerger);
+        this.loader = new BggGameLoader(bggService, this.collectionMerger, true);
         this.loader.onGamesUpdate((games) => {
             if (this._ismounted) {
                 this.setState({ games: games, showingCollection: true });
@@ -90,7 +90,9 @@ export default class App extends React.Component<AppProps, AppState> {
             });
             window.location.hash = "usernames=" + newNames.join(",");
             if (this._ismounted) {
-                this.loader.loadCollections(newNames);
+                this.loader.loadCollections(newNames).then(() => {
+                    this.loader.loadExtendedInfo();
+                });
             }
         }
     }
