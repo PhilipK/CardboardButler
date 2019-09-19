@@ -215,6 +215,44 @@ describe("BggGameService", () => {
         });
     });
 
+
+    describe("Get Single Games", () => {
+
+        const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/thing?id=161970&stats=1`;
+        const alchemistsXml = readFileSync("tests/services/testxml/AlchemistsResult.xml", "utf8");
+        const gameId = 161970;
+
+        beforeEach(() => {
+            fetch.mock(expectedUrl, 200, {
+                response: {
+                    status: 200,
+                    body: alchemistsXml
+                }
+            });
+        });
+
+        it("can get extended information about a game", async () => {
+            await service.getGameInfo(gameId);
+        });
+
+        it("can get desciption", async () => {
+            const result = await service.getGameInfo(gameId);
+            expect(!("retryLater" in result));
+            if (!("retryLater" in result)) {
+                expect(result.description).toEqual("A test description");
+            }
+        });
+
+        it("can get averagewieight", async () => {
+            const result = await service.getGameInfo(gameId);
+            expect(!("retryLater" in result));
+            if (!("retryLater" in result)) {
+                expect(result.averageweight).toEqual(3.8616);
+            }
+        });
+    });
+
+
     describe("Handling errors", () => {
         // const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/collection?username=Warium&own=1&stats=1`;
         const tryAgainMessage = `<message>

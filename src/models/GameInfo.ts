@@ -30,3 +30,9 @@ export interface GameInfo {
     owners?: string[];
     userRating?: { [username: string]: number | undefined };
 }
+
+
+export interface ExtendedGameInfo {
+    description?: string;
+    averageweight?: number;
+}

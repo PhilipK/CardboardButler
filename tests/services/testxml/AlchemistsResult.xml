@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+    <item type="boardgame" id="161970">
+        <thumbnail> https://cf.geekdo-images.com/thumb/img/4VjOkEjTXNR4KQMjaOK7JibjPSw=/fit-in/200x150/pic2241156.png
+        </thumbnail>
+        <image> https://cf.geekdo-images.com/original/img/VKBFHqR2xm0EFGWfb1sPJZctMCs=/0x0/pic2241156.png
+        </image>
+        <name type="primary" sortindex="1" value="Alchemists"/>
+        <name type="alternate" sortindex="1" value="Alchemicy"/>
+        <name type="alternate" sortindex="4" value="De Alchemist"/>
+        <name type="alternate" sortindex="5" value="Die Alchemisten"/>
+        <name type="alternate" sortindex="1" value="Alchimistes"/>
+        <name type="alternate" sortindex="1" value="Alchimisti"/>
+        <name type="alternate" sortindex="1" value="Alchimiștii"/>
+        <name type="alternate" sortindex="1" value="Alchymisté"/>
+        <name type="alternate" sortindex="1" value="Alquimistas"/>
+        <name type="alternate" sortindex="1" value="Алхимики"/>
+        <name type="alternate" sortindex="1" value="アルケミスト"/>
+        <name type="alternate" sortindex="1" value="煉金術士"/>
+        <name type="alternate" sortindex="1" value="연금술 아카데미"/>
+        <description>
+        A test description
+        </description>
+        <yearpublished value="2014"/>
+        <minplayers value="2"/>
+        <maxplayers value="4"/>
+        <poll name="suggested_numplayers" title="User Suggested Number of Players" totalvotes="267">
+            <results numplayers="1">
+                <result value="Best" numvotes="0"/>
+                <result value="Recommended" numvotes="4"/>
+                <result value="Not Recommended" numvotes="144"/>
+            </results>
+            <results numplayers="2">
+                <result value="Best" numvotes="44"/>
+                <result value="Recommended" numvotes="150"/>
+                <result value="Not Recommended" numvotes="34"/>
+            </results>
+            <results numplayers="3">
+                <result value="Best" numvotes="108"/>
+                <result value="Recommended" numvotes="119"/>
+                <result value="Not Recommended" numvotes="3"/>
+            </results>
+            <results numplayers="4">
+                <result value="Best" numvotes="138"/>
+                <result value="Recommended" numvotes="81"/>
+                <result value="Not Recommended" numvotes="14"/>
+            </results>
+            <results numplayers="4+">
+                <result value="Best" numvotes="0"/>
+                <result value="Recommended" numvotes="5"/>
+                <result value="Not Recommended" numvotes="114"/>
+            </results>
+        </poll>
+        <playingtime value="120"/>
+        <minplaytime value="120"/>
+        <maxplaytime value="120"/>
+        <minage value="13"/>
+        <poll name="suggested_playerage" title="User Suggested Player Age" totalvotes="73">
+            <results>
+                <result value="2" numvotes="0"/>
+                <result value="3" numvotes="0"/>
+                <result value="4" numvotes="0"/>
+                <result value="5" numvotes="0"/>
+                <result value="6" numvotes="0"/>
+                <result value="8" numvotes="4"/>
+                <result value="10" numvotes="9"/>
+                <result value="12" numvotes="30"/>
+                <result value="14" numvotes="25"/>
+                <result value="16" numvotes="4"/>
+                <result value="18" numvotes="1"/>
+                <result value="21 and up" numvotes="0"/>
+            </results>
+        </poll>
+        <poll name="language_dependence" title="Language Dependence" totalvotes="50">
+            <results>
+                <result level="6" value="No necessary in-game text" numvotes="0"/>
+                <result level="7" value="Some necessary text - easily memorized or small crib sheet" numvotes="21"/>
+                <result level="8" value="Moderate in-game text - needs crib sheet or paste ups" numvotes="27"/>
+                <result level="9" value="Extensive use of text - massive conversion needed to be playable" numvotes="2"/>
+                <result level="10" value="Unplayable in another language" numvotes="0"/>
+            </results>
+        </poll>
+        <link type="boardgamecategory" id="1039" value="Deduction"/>
+        <link type="boardgamecategory" id="1010" value="Fantasy"/>
+        <link type="boardgamemechanic" id="2001" value="ACT-01 Action Points"/>
+        <link type="boardgamemechanic" id="2041" value="Card Drafting"/>
+        <link type="boardgamemechanic" id="2040" value="Hand Management"/>
+        <link type="boardgamemechanic" id="2082" value="WPL-01 Worker Placement"/>
+        <link type="boardgamefamily" id="41489" value="Digital Hybrid, App Required"/>
+        <link type="boardgameexpansion" id="174522" value="Alchemists: Publisher"/>
+        <link type="boardgameexpansion" id="167849" value="Alchemists: Ring of Favor"/>
+        <link type="boardgameexpansion" id="204650" value="Alchemists: The King's Golem"/>
+        <link type="boardgamedesigner" id="75718" value="Matúš Kotry"/>
+        <link type="boardgameartist" id="12692" value="David Cochard"/>
+        <link type="boardgamepublisher" id="7345" value="Czech Games Edition"/>
+        <link type="boardgamepublisher" id="3475" value="Arclight"/>
+        <link type="boardgamepublisher" id="10768" value="Cranio Creations"/>
+        <link type="boardgamepublisher" id="2366" value="Devir"/>
+        <link type="boardgamepublisher" id="29194" value="GaGa Games"/>
+        <link type="boardgamepublisher" id="2862" value="The Game Master BV"/>
+        <link type="boardgamepublisher" id="264" value="Heidelberger Spieleverlag"/>
+        <link type="boardgamepublisher" id="8923" value="IELLO"/>
+        <link type="boardgamepublisher" id="8291" value="Korea Boardgames co., Ltd."/>
+        <link type="boardgamepublisher" id="25203" value="Lex Games"/>
+        <link type="boardgamepublisher" id="7992" value="MINDOK"/>
+        <link type="boardgamepublisher" id="30552" value="One Moment Games"/>
+        <link type="boardgamepublisher" id="7466" value="Rebel"/>
+        <statistics page="1">
+            <ratings>
+                <usersrated value="15351"/>
+                <average value="7.69342"/>
+                <bayesaverage value="7.47841"/>
+                <ranks>
+                    <rank type="subtype" id="1" name="boardgame" friendlyname="Board Game Rank" value="91" bayesaverage="7.47841"/>
+                    <rank type="family" id="5497" name="strategygames" friendlyname="Strategy Game Rank" value="76" bayesaverage="7.49944"/>
+                </ranks>
+                <stddev value="1.39757"/>
+                <median value="0"/>
+                <owned value="19844"/>
+                <trading value="381"/>
+                <wanting value="612"/>
+                <wishing value="3979"/>
+                <numcomments value="2407"/>
+                <numweights value="838"/>
+                <averageweight value="3.8616"/>
+            </ratings>
+        </statistics>
+    </item>
+</items>
