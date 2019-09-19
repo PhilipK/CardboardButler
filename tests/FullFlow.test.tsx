@@ -5,9 +5,9 @@ import { render, fireEvent, waitForElement, waitForElementToBeRemoved, waitForDo
 import "@testing-library/jest-dom/extend-expect";
 import BggGameService from "../src/services/BggGameService";
 import * as fetchMock from "fetch-mock";
-import { getHugeCollection } from "./services/BggGameService.test";
 import { GameInfo } from "../src/models/GameInfo";
 import { UserInfo } from "../src/models/UserInfo";
+import { getHugeCollection } from "./services/TestHelpers";
 
 
 describe("Full flow", () => {
