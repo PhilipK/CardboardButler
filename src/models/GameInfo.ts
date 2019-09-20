@@ -25,7 +25,6 @@ export interface GameInfo {
     maxPlaytime?: number;
     playingTime?: number;
     averagerating: number;
-    weight?: number;
     families: BoardGameFamily[];
     owners?: string[];
     userRating?: { [username: string]: number | undefined };
@@ -34,7 +33,7 @@ export interface GameInfo {
 
 export interface ExtendedGameInfo {
     description?: string;
-    averageweight?: number;
+    weight?: number;
     mechanics?: string[];
     categories?: string[];
 }

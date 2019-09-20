@@ -15,7 +15,7 @@ export type PlayCountOption = number;
 /**
  * Defines how to sort the collection.
  */
-export type SortOption = "alphabetic" | "bggrating" | "new" | "old" | "userrating";
+export type SortOption = "alphabetic" | "bggrating" | "new" | "old" | "userrating" | "weight-light" | "weight-heavy";
 
 
 /**
