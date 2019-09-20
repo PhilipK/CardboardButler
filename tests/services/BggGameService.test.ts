@@ -247,7 +247,7 @@ describe("BggGameService", () => {
             const result = await service.getGameInfo(gameId);
             expect(!("retryLater" in result));
             if (!("retryLater" in result)) {
-                expect(result.averageweight).toEqual(3.8616);
+                expect(result.weight).toEqual(3.8616);
             }
         });
 

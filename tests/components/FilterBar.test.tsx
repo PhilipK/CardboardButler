@@ -147,13 +147,13 @@ describe("Filter bar", () => {
             expect(onChange.mock.calls.length).toEqual(3);
 
             expect(onChange.mock.calls[0][0]).toEqual({
-                sortOption: "bggrating"
+                sortOption: "alphabetic"
             });
             expect(onChange.mock.calls[1][0]).toEqual({
                 sortOption: "new"
             });
             expect(onChange.mock.calls[2][0]).toEqual({
-                sortOption: "alphabetic"
+                sortOption: "bggrating"
             });
         });
 

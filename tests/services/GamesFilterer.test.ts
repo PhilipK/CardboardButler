@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom/extend-expect";
 import { GamesFilterAndSorter } from "../../src/services/GamesFilterer";
 import { alchemists, alchemistsTheKing, sevenWonders, smallWorld } from "./model/TestGames";
-import { GameInfo } from "../../src/models/GameInfo";
+import { GameInfo, ExtendedGameInfo, GameInfoPlus, FullGameInfo } from "../../src/models/GameInfo";
 import * as fetchMock from "fetch-mock";
 import { getHugeCollection } from "./TestHelpers";
 
@@ -46,7 +46,7 @@ describe("Filtering games", () => {
             const filterer = new GamesFilterAndSorter();
             const result = filterer.filter(testCollection, filterOptions);
             expect(result).toHaveLength(2);
-            expect(result).toEqual([testGame1, testGame2]);
+            expect(result).toEqual([testGame2, testGame1]);
         });
 
         it("can handle infinite bounds minimum  ", () => {
@@ -126,10 +126,17 @@ describe("Filtering games", () => {
     });
 
     describe("sorting", () => {
-        it("sorts by name by default", () => {
+        it("sorts by rating by default", () => {
+            const onOrdered = [testGame1, testGame2, testGame3, testGame4];
+            const rankordering = [testGame2, testGame3, testGame1, testGame4];
+            const result = filterer.filter(onOrdered);
+            expect(result.map((r) => r.averagerating)).toEqual(rankordering.map((r) => r.averagerating));
+        });
+
+        it("can sort by alpabetic", () => {
             const onOrdered = [testGame2, testGame3, testGame1, testGame4];
             const nameOrdered = [testGame3, testGame1, testGame2, testGame4];
-            const result = filterer.filter(onOrdered);
+            const result = filterer.filter(onOrdered, { sortOption: "alphabetic" });
             expect(result.map((r) => r.name)).toEqual(nameOrdered.map((r) => r.name));
         });
         it("can sort by bggranking", () => {
@@ -192,6 +199,25 @@ describe("Filtering games", () => {
             const onOrdered = [ratedGame2, ratedGame1];
             const result = filterer.filter(onOrdered, { sortOption: "userrating" });
             expect(result[1].name).toEqual(ratedGame1.name);
+        });
+
+        it("can sort by average weight , light", () => {
+            const weightGame1: GameInfoPlus = Object.assign({}, testGame1, { weight: 3 });
+            const weightGame2: GameInfoPlus = Object.assign({}, testGame2, { weight: 5 });
+            const unWeighted: GameInfoPlus = Object.assign({}, testGame3, { weight: undefined });
+            const onOrdered = [unWeighted, weightGame1, weightGame2];
+            const result: FullGameInfo[] = filterer.filter(onOrdered, { sortOption: "weight-light" });
+            expect(result.map((r) => r.weight)).toEqual([3, 5, undefined]);
+
+        });
+
+        it("can sort by average weight , heavy", () => {
+            const weightGame1: GameInfoPlus = Object.assign({}, testGame1, { weight: 3 });
+            const weightGame2: GameInfoPlus = Object.assign({}, testGame2, { weight: 5 });
+            const unWeighted: GameInfoPlus = Object.assign({}, testGame3, { weight: undefined });
+            const onOrdered = [unWeighted, weightGame1, weightGame2];
+            const result: FullGameInfo[] = filterer.filter(onOrdered, { sortOption: "weight-heavy" });
+            expect(result.map((r) => r.weight)).toEqual([5, 3, undefined]);
         });
     });
 });
