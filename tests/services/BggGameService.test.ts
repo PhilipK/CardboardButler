@@ -280,6 +280,11 @@ describe("BggGameService", () => {
         Your request for this collection has been accepted and will be processed. Please try again later for access.
         </message>`;
 
+
+        const backOffMessage = `<message>
+        Back off
+        </message>`;
+
         it("Returns try again when 202 is given", async () => {
             fetch.mock(expectedUrl, 202, {
                 response: {
@@ -292,9 +297,29 @@ describe("BggGameService", () => {
             if (!Array.isArray(response)) {
                 expect(response.retryLater).toBeTruthy();
                 expect(response.error).toBeUndefined();
-
             }
         });
+
+
+        it("Returns backoffwhen 429 is given", async () => {
+            fetch.mock(expectedUrl, 429, {
+                response: {
+                    status: 429,
+                    body: backOffMessage
+                }
+            });
+            const response = await service.getUserCollection("Warium");
+            expect("backoff" in response).toBe(true);
+            if ("backoff" in response) {
+                expect(response.backoff).toBeTruthy();
+            }
+
+            expect("retryLater" in response).toBe(true);
+            if ("retryLater" in response) {
+                expect(response.retryLater).toBeTruthy();
+            }
+        });
+
 
 
         it("Returns try again when an error is given, but informs there was an error", async () => {
