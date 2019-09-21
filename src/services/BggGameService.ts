@@ -4,7 +4,7 @@ import { GameInfo, ExtendedGameInfo } from "../models/GameInfo";
 import { UserInfo } from "../models/UserInfo";
 
 
-export type BggRetryResult = { retryLater: boolean, error?: Error };
+export type BggRetryResult = { retryLater: boolean, backoff?: boolean, error?: Error };
 /**
  * A service that can wraps the BGG Api.
  * It does not cache, or handle retries, it simple transform the bgg api into xml
@@ -191,7 +191,12 @@ class BggGameService {
         return this.getFetch()(url).then(async (res) => {
             if (res.status === 200) {
                 return res.text();
-            } else {
+            }
+
+            if (res.status === 429) {
+                return { retryLater: true, backoff: true };
+            }
+            else {
                 return { retryLater: true };
             }
         }).catch((error: Error) => {
