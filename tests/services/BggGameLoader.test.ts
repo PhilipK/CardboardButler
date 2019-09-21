@@ -1,5 +1,5 @@
 
-import BggGameLoader from "../../src/services/BggGameLoader";
+import BggGameLoader, { LoadingInfo } from "../../src/services/BggGameLoader";
 import BggGameService from "../../src/services/BggGameService";
 import * as fetchMock from "fetch-mock";
 import { GameInfo, ExtendedGameInfo } from "../../src/models/GameInfo";
@@ -67,7 +67,7 @@ describe("Loading games", () => {
         const promise = loader.loadCollections(collections);
         expect(getMock.mock.calls[0][0]).toBe("Warium");
         expect(loader.getLoadingInfo()).toEqual([
-            { username: "Warium", isWaitingForRetry: false }
+            { username: "Warium", type: "collection", isLoading: true }
         ]);
         const handler = jest.fn((games) => {
             expect(loader.getLoadingInfo()).toEqual([]);
@@ -122,7 +122,7 @@ describe("Loading games", () => {
 
         const promise = loader.loadCollections(usernames);
         expect(onLoadChange.mock.calls).toHaveLength(3);
-        expect(onLoadChange.mock.calls[2][0].map((i: { isWaitingForRetry: boolean }) => i.isWaitingForRetry)).toEqual([false, false, false]);
+        expect(onLoadChange.mock.calls[2][0].map((i: LoadingInfo) => i.type)).toEqual(["collection", "collection", "collection"]);
 
         await promise;
 
@@ -132,7 +132,6 @@ describe("Loading games", () => {
 
 
     it("loads extra game info after getting collection", async () => {
-
         const usernames = ["Warium", "Cyndaq"];
         const collections = {
             Warium: [alchemists()],

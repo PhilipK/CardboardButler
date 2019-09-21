@@ -1,13 +1,27 @@
-import BggGameService from "./BggGameService";
+import BggGameService, { BggRetryResult } from "./BggGameService";
 import { GameInfo, GameInfoPlus, ExtendedGameInfo } from "../models/GameInfo";
 import { CollectionMap, CollectionMerger, CollectionMapPlus } from "./CollectionMerger";
 
 
 
-interface LoadingInfo {
-    username: string;
-    isWaitingForRetry: boolean;
+interface LoadingStatus {
+    isLoading: boolean;
+    retryInfo?: BggRetryResult;
 }
+
+
+interface GameLoadingInfo {
+    type: "game";
+    gameinfo: GameInfo;
+}
+
+interface CollectionLoadingInfo {
+    type: "collection";
+    username: string;
+}
+
+
+export type LoadingInfo = LoadingStatus & (GameLoadingInfo | CollectionLoadingInfo);
 
 interface ExtraInfoMap {
     [id: number]: (ExtendedGameInfo | undefined);
@@ -26,13 +40,15 @@ export default class BggGameLoader {
 
 
     private currentNames: string[] = [];
-    private loadingNames: string[] = [];
+    private loadingInfo: LoadingInfo[] = [];
     private readonly eventHandlers: CollectionUpdateEventHandler[] = [];
     private readonly loadingEventHandlers: LoadingUpdateEventHandler[] = [];
 
     private readonly merger: CollectionMerger;
     private useCache: boolean;
 
+
+    private readonly concurrentRequestLimit: number = 3;
 
 
     constructor(bggService: BggGameService, merger: CollectionMerger, useCache: boolean = false) {
@@ -60,16 +76,32 @@ export default class BggGameLoader {
 
     }
 
-    public async loadExtendedInfo(): Promise<GameInfoPlus[]> {
+    public async loadExtendedInfo() {
         const allGames = this.merger.getMergedCollection(this.collectionMap);
         const unknownGames = allGames.filter((game) => this.extraInfoMap[game.id] === undefined);
-        await Promise.all(unknownGames.map(async (gameNeedsInfo) => {
-            const extraInfo = await this.loadGameWithRetry(gameNeedsInfo);
-            this.extraInfoMap[gameNeedsInfo.id] = extraInfo;
-            this.StoreExtraInfo();
-            this.informCollectionUpdateHandlers();
+        const loadingInfo: LoadingInfo[] = unknownGames.map((game) => ({
+            type: "game",
+            isLoading: false,
+            gameinfo: game
         }));
-        return;
+        this.loadingInfo = [...loadingInfo, ...this.loadingInfo];
+        while (unknownGames.length > 0) {
+            const promises: Promise<ExtendedGameInfo>[] = [];
+            for (let i = 0; i < this.concurrentRequestLimit; i++) {
+                const currentGame = unknownGames.pop();
+
+                if (currentGame !== undefined) {
+                    const promise = this.loadGameWithRetry(currentGame).then((extraInfo) => {
+                        this.extraInfoMap[currentGame.id] = extraInfo;
+                        this.StoreExtraInfo();
+                        this.informCollectionUpdateHandlers();
+                        return extraInfo;
+                    });
+                    promises.push(promise);
+                }
+            }
+            await Promise.all(promises);
+        }
     }
 
 
@@ -107,34 +139,39 @@ export default class BggGameLoader {
 
 
     private async loadCollectionWithRetry(name: string): Promise<GameInfo[]> {
-        this.loadingNames.push(name);
+        this.loadingInfo.push({
+            isLoading: true,
+            type: "collection",
+            username: name
+        });
         this.informLoadingHandlers();
         const games = await this.service.getUserCollection(name);
         if (Array.isArray(games)) {
-            this.loadingNames = this.loadingNames.filter((n) => n !== name);
+            this.loadingInfo = this.loadingInfo.filter((n) => n.type === "collection" && n.username !== name);
             this.informLoadingHandlers();
             return games;
         } else {
-            // add reload info
+            const retryTime = games.backoff ? 10000 : 1000;
             return new Promise<GameInfo[]>(async resolver => {
-                setTimeout(() => resolver(this.loadCollectionWithRetry(name)), 1000);
+                setTimeout(() => resolver(this.loadCollectionWithRetry(name)), retryTime);
             });
         }
     }
 
-    private async loadGameWithRetry(game: GameInfo): Promise<ExtendedGameInfo> {
+    private async loadGameWithRetry(game: GameInfo) {
         const { id, name } = game;
-        this.loadingNames.push(name);
+        const loadingIndex = this.loadingInfo.findIndex((li) => li.type === "game" && li.gameinfo.id === id);
+        this.loadingInfo[loadingIndex].isLoading = true;
         this.informLoadingHandlers();
         const extended = await this.service.getGameInfo(id);
         if (!("retryLater" in extended)) {
-            this.loadingNames = this.loadingNames.filter((n) => n !== name);
+            this.loadingInfo = this.loadingInfo.filter((g) => g.type !== "game" || g.gameinfo.id !== id);
             this.informLoadingHandlers();
             return extended;
         } else {
-            // add reload info
+            const retryTime = extended.backoff ? 10000 : 3000;
             return new Promise<ExtendedGameInfo>(async resolver => {
-                setTimeout(() => resolver(this.loadGameWithRetry(game)), 1000);
+                setTimeout(() => resolver(this.loadGameWithRetry(game)), retryTime);
             });
         }
     }
@@ -148,10 +185,7 @@ export default class BggGameLoader {
     }
 
     public getLoadingInfo(): LoadingInfo[] {
-        return this.loadingNames.map((name) => ({
-            username: name,
-            isWaitingForRetry: false
-        }));
+        return this.loadingInfo;
     }
 
 

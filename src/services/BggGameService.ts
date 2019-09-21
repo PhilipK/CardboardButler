@@ -192,8 +192,8 @@ class BggGameService {
             if (res.status === 200) {
                 return res.text();
             }
-
             if (res.status === 429) {
+                console.log("backoff");
                 return { retryLater: true, backoff: true };
             }
             else {
