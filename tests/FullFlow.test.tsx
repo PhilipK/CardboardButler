@@ -53,7 +53,6 @@ describe("Full flow", () => {
             );
             fireEvent.click(getByTestId("UseNames"));
             waitForElement(() => getByTestId("CollectionPage"));
-            waitForElementToBeRemoved(() => getByTestId("WelcomePage"));
         });
 
     });
