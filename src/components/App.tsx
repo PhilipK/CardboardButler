@@ -1,10 +1,11 @@
 import * as React from "react";
 import BggGameService from "../services/BggGameService";
-import { GameInfo } from "../models/GameInfo";
+import { GameInfo, GameInfoPlus } from "../models/GameInfo";
 import { CollectionMerger } from "../services/CollectionMerger";
 import WelcomePage from "./WelcomePage";
 import CollectionPage from "./CollectionPage";
-import BggGameLoader from "../services/BggGameLoader";
+import BggGameLoader, { LoadingInfo } from "../services/BggGameLoader";
+import { Dimmer, Loader, Segment } from "semantic-ui-react";
 
 export interface AppProps {
     bggServce?: BggGameService;
@@ -13,12 +14,12 @@ export interface AppProps {
 
 export interface AppState {
     names: string[];
-    games: GameInfo[];
-    loadingMessage: string;
+    games: GameInfoPlus[];
+    loadingInfo: LoadingInfo[];
     showingCollection: boolean;
 }
 
-const initialState: AppState = { games: [], loadingMessage: "", names: [], showingCollection: false };
+const initialState: AppState = { names: [], games: [], loadingInfo: [], showingCollection: false };
 
 
 export default class App extends React.Component<AppProps, AppState> {
@@ -35,7 +36,7 @@ export default class App extends React.Component<AppProps, AppState> {
         this.userValidator = this.userValidator.bind(this);
         this.handleHashChange = this.handleHashChange.bind(this);
         const bggService = superProps.bggServce || new BggGameService();
-        this.loader = new BggGameLoader(bggService, this.collectionMerger);
+        this.loader = new BggGameLoader(bggService, this.collectionMerger, true);
         this.loader.onGamesUpdate((games) => {
             if (this._ismounted) {
                 this.setState({ games: games, showingCollection: true });
@@ -43,12 +44,7 @@ export default class App extends React.Component<AppProps, AppState> {
         });
         this.loader.onLoadUpdate((loadinfo) => {
             if (this._ismounted) {
-                if (loadinfo.length === 0) {
-                    this.setState({ loadingMessage: "" });
-                } else {
-                    this.setState({ loadingMessage: "Loading: " + loadinfo.map((li) => li.username).join(", ") });
-                }
-
+                this.setState({ loadingInfo: loadinfo });
             }
         });
         this.state = initialState;
@@ -90,7 +86,9 @@ export default class App extends React.Component<AppProps, AppState> {
             });
             window.location.hash = "usernames=" + newNames.join(",");
             if (this._ismounted) {
-                this.loader.loadCollections(newNames);
+                this.loader.loadCollections(newNames).then(() => {
+                    this.loader.loadExtendedInfo();
+                });
             }
         }
     }
@@ -102,12 +100,21 @@ export default class App extends React.Component<AppProps, AppState> {
     }
 
     render() {
-        const { loadingMessage, games, showingCollection } = this.state;
+        const { loadingInfo = [], games, showingCollection } = this.state;
+        const loadingCollections = loadingInfo.filter((li) => li.type === "collection").map((c) => c.type === "collection" ? c.username : "");
+        const isLoadingCollections = loadingCollections.length > 0;
+        const loadingGames = loadingInfo.filter((li) => li.type === "game");
         return (
             <span >
-                {!showingCollection && <WelcomePage onNameSelect={this.onNameSelect} userValidator={this.userValidator} />}
-                {loadingMessage}
-                {showingCollection && <CollectionPage currentUsers={this.state.names} games={games} />}
+                {!showingCollection && !isLoadingCollections && <WelcomePage onNameSelect={this.onNameSelect} userValidator={this.userValidator} />}
+                {isLoadingCollections && games.length === 0 && <Dimmer active inverted>
+                    <Loader inverted content={"Finding games for " + loadingCollections.join(", ")} />
+                </Dimmer>
+                }
+                {isLoadingCollections && games.length > 0 && <Loader active inline="centered" content={"Finding games for " + loadingCollections.join(", ")} />}
+                {loadingGames.length > 0 && games.length > 0 && <Loader active inline="centered" content={"Getting extra info for " + loadingGames.length + " games"} />}
+                {games.length > 0 && showingCollection && <CollectionPage currentUsers={this.state.names} games={games} />}
+
             </span>
         );
     }

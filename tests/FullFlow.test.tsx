@@ -7,15 +7,22 @@ import BggGameService from "../src/services/BggGameService";
 import * as fetchMock from "fetch-mock";
 import { GameInfo } from "../src/models/GameInfo";
 import { UserInfo } from "../src/models/UserInfo";
-import { getHugeCollection } from "./services/TestHelpers";
+import { getHugeCollection, getLargeCollection, getSmallCollection } from "./services/TestHelpers";
 
 
 describe("Full flow", () => {
-    const fetch = fetchMock.sandbox();
 
-    afterEach(fetch.restore);
+    const gameinfoUlr = "https://cors-anywhere.herokuapp.com/https://api.geekdo.com/xmlapi2/thing?id";
 
-    const service = new BggGameService(fetch);
+    let service: BggGameService;
+
+    beforeEach(() => {
+        const fetch = fetchMock.sandbox();
+        fetch.mock("begin:" + gameinfoUlr, 404);
+        service = new BggGameService(fetch);
+
+    });
+
 
     describe("Main App", () => {
         it("Renders without errors", () => {
@@ -36,7 +43,7 @@ describe("Full flow", () => {
                 username: username
             }))));
             service.getUserCollection = jest.fn((username) => (new Promise((resolver) => resolver(
-                getHugeCollection()
+                getSmallCollection()
             ))));
             const { getByTestId } = render(<App bggServce={service} />);
             fireEvent.change(getByTestId("Input0"), { target: { value: "Warium" } });
@@ -46,7 +53,6 @@ describe("Full flow", () => {
             );
             fireEvent.click(getByTestId("UseNames"));
             waitForElement(() => getByTestId("CollectionPage"));
-            waitForElementToBeRemoved(() => getByTestId("WelcomePage"));
         });
 
     });
@@ -60,7 +66,7 @@ describe("Full flow", () => {
                 username: username
             }))));
             const getColMock = jest.fn((username) => (new Promise<GameInfo[]>((resolver) => resolver(
-                getHugeCollection()
+                getSmallCollection()
             ))));
             service.getUserCollection = getColMock;
             render(<App bggServce={service} />);
@@ -78,7 +84,7 @@ describe("Full flow", () => {
                 username: username
             }))));
             const getColMock = jest.fn((username) => (new Promise<GameInfo[]>((resolver) => resolver(
-                getHugeCollection()
+                getSmallCollection()
             ))));
             service.getUserCollection = getColMock;
             render(<App bggServce={service} />);
@@ -97,7 +103,7 @@ describe("Full flow", () => {
                 username: username
             }))));
             const getColMock = jest.fn((username) => (new Promise<GameInfo[]>((resolver) => resolver(
-                getHugeCollection()
+                getSmallCollection()
             ))));
             service.getUserCollection = getColMock;
             const { getByText, getByTestId } = render(<App bggServce={service} />);

@@ -215,10 +215,74 @@ describe("BggGameService", () => {
         });
     });
 
+
+    describe("Get Single Games", () => {
+
+        const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/thing?id=161970&stats=1`;
+        const alchemistsXml = readFileSync("tests/services/testxml/AlchemistsResult.xml", "utf8");
+        const gameId = 161970;
+
+        beforeEach(() => {
+            fetch.mock(expectedUrl, 200, {
+                response: {
+                    status: 200,
+                    body: alchemistsXml
+                }
+            });
+        });
+
+        it("can get extended information about a game", async () => {
+            await service.getGameInfo(gameId);
+        });
+
+        it("can get desciption", async () => {
+            const result = await service.getGameInfo(gameId);
+            expect(!("retryLater" in result));
+            if (!("retryLater" in result)) {
+                expect(result.description).toEqual("A test description");
+            }
+        });
+
+        it("can get averagewieight", async () => {
+            const result = await service.getGameInfo(gameId);
+            expect(!("retryLater" in result));
+            if (!("retryLater" in result)) {
+                expect(result.weight).toEqual(3.8616);
+            }
+        });
+
+        it("can get mechanics", async () => {
+            const result = await service.getGameInfo(gameId);
+            expect(!("retryLater" in result));
+            if (!("retryLater" in result)) {
+                expect(result.mechanics).toEqual(
+                    ["ACT-01 Action Points",
+                        "Card Drafting",
+                        "Hand Management",
+                        "WPL-01 Worker Placement"]);
+            }
+        });
+
+        it("can get categories", async () => {
+            const result = await service.getGameInfo(gameId);
+            expect(!("retryLater" in result));
+            if (!("retryLater" in result)) {
+                expect(result.categories).toEqual(
+                    ["Deduction", "Fantasy"]);
+            }
+        });
+    });
+
+
     describe("Handling errors", () => {
         // const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/collection?username=Warium&own=1&stats=1`;
         const tryAgainMessage = `<message>
         Your request for this collection has been accepted and will be processed. Please try again later for access.
+        </message>`;
+
+
+        const backOffMessage = `<message>
+        Back off
         </message>`;
 
         it("Returns try again when 202 is given", async () => {
@@ -233,9 +297,29 @@ describe("BggGameService", () => {
             if (!Array.isArray(response)) {
                 expect(response.retryLater).toBeTruthy();
                 expect(response.error).toBeUndefined();
-
             }
         });
+
+
+        it("Returns backoffwhen 429 is given", async () => {
+            fetch.mock(expectedUrl, 429, {
+                response: {
+                    status: 429,
+                    body: backOffMessage
+                }
+            });
+            const response = await service.getUserCollection("Warium");
+            expect("backoff" in response).toBe(true);
+            if ("backoff" in response) {
+                expect(response.backoff).toBeTruthy();
+            }
+
+            expect("retryLater" in response).toBe(true);
+            if ("retryLater" in response) {
+                expect(response.retryLater).toBeTruthy();
+            }
+        });
+
 
 
         it("Returns try again when an error is given, but informs there was an error", async () => {

@@ -1,4 +1,4 @@
-import { GameInfo } from "../models/GameInfo";
+import { GameInfo, GameInfoPlus } from "../models/GameInfo";
 import { FilterAndSortOptions, SortOption } from "../models/FilterOptions";
 
 type SorterMap = {
@@ -20,7 +20,9 @@ export class GamesFilterAndSorter {
             bggrating: this.averageRatingSorter,
             new: this.newYearSorter,
             old: this.oldYearSorter,
-            userrating: this.userRatingSorter
+            userrating: this.userRatingSorter,
+            "weight-heavy": this.weightHeavySort,
+            "weight-light": this.weightLightSort
         };
     }
 
@@ -30,7 +32,7 @@ export class GamesFilterAndSorter {
      * @param collection a collection of games to filter and sort
      * @param options optional options, that defines how the collection should be filtered and sorted.
      */
-    filter(collection: GameInfo[], options: FilterAndSortOptions = {}): GameInfo[] {
+    filter(collection: GameInfoPlus[], options: FilterAndSortOptions = {}): GameInfoPlus[] {
         const collectionCopy = [...collection];
         const filtered = this.filterCollection(collectionCopy, options);
         const filteredAndSorted = this.sortCollection(filtered, options);
@@ -39,7 +41,7 @@ export class GamesFilterAndSorter {
 
 
     private sortCollection(collection: GameInfo[], options: FilterAndSortOptions) {
-        const { sortOption = "alphabetic" } = options;
+        const { sortOption = "bggrating" } = options;
         return collection.sort(this.sortMap[sortOption]);
     }
 
@@ -52,6 +54,18 @@ export class GamesFilterAndSorter {
             collection = this.filterOnPlayerCount(collection, playerCount);
         }
         return collection;
+    }
+
+    private weightHeavySort(a: GameInfoPlus, b: GameInfoPlus): number {
+        const aValue = "weight" in a ? a.weight : undefined;
+        const bValue = "weight" in b ? b.weight : undefined;
+        return (bValue || 0) - (aValue || 0);
+    }
+
+    private weightLightSort(a: GameInfoPlus, b: GameInfoPlus): number {
+        const aValue = "weight" in a ? a.weight : undefined;
+        const bValue = "weight" in b ? b.weight : undefined;
+        return (aValue || 99) - (bValue || 99);
     }
 
     private userRatingSorter(a: GameInfo, b: GameInfo): number {

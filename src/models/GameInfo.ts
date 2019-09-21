@@ -25,8 +25,19 @@ export interface GameInfo {
     maxPlaytime?: number;
     playingTime?: number;
     averagerating: number;
-    weight?: number;
     families: BoardGameFamily[];
     owners?: string[];
     userRating?: { [username: string]: number | undefined };
 }
+
+
+export interface ExtendedGameInfo {
+    description?: string;
+    weight?: number;
+    mechanics?: string[];
+    categories?: string[];
+}
+
+export type FullGameInfo = GameInfo & ExtendedGameInfo;
+
+export type GameInfoPlus = GameInfo | FullGameInfo;

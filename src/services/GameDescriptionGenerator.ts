@@ -1,4 +1,4 @@
-import { GameInfo } from "../models/GameInfo";
+import { GameInfo, GameInfoPlus, ExtendedGameInfo } from "../models/GameInfo";
 
 
 const ratingNames = [
@@ -35,7 +35,7 @@ export default class DescriptionGenerator {
      * Given game information, generates a human readable description.
      * @param gameInfo the game to generate a description for.
      */
-    generateDescription(gameInfo: GameInfo): string {
+    generateDescription(gameInfo: GameInfoPlus): string {
         const rating = this.getRatingDescription(gameInfo.averagerating);
         const family = this.getFamilyDescription(gameInfo);
         const players = this.getPlayerInfoString(gameInfo);
@@ -43,20 +43,21 @@ export default class DescriptionGenerator {
         const aOrAn = this.getAOrAn(family);
         let firstString = `${aOrAn} ${family} for ${players} in ${playtime}.`;
 
-        if (gameInfo.weight !== undefined || gameInfo.averagerating !== undefined) {
+        const hasWeight = ("weight" in gameInfo) && gameInfo.weight !== undefined;
+        if (hasWeight || gameInfo.averagerating !== undefined) {
             firstString += ` Most people think it is `;
         }
         if (gameInfo.averagerating !== undefined) {
             firstString += rating.toLowerCase();
-            if (gameInfo.weight === undefined) {
+            if (!hasWeight) {
                 firstString += ".";
             }
         }
-        if (gameInfo.weight !== undefined && gameInfo.averagerating !== undefined) {
+        if (hasWeight && gameInfo.averagerating !== undefined) {
             firstString = firstString + " and ";
         }
-        if (gameInfo.weight !== undefined) {
-            const weight = this.getWeightInfo(gameInfo);
+        if (hasWeight) {
+            const weight = this.getWeightInfo(gameInfo as ExtendedGameInfo);
             firstString += weight + " to learn.";
         }
         return firstString;
@@ -73,7 +74,7 @@ export default class DescriptionGenerator {
         return "A";
     }
 
-    private getFamilyDescription(gameInfo: GameInfo) {
+    private getFamilyDescription(gameInfo: GameInfoPlus) {
         if (gameInfo.families === undefined || gameInfo.families.length === 0) {
             return "boardgame";
         }
@@ -94,7 +95,7 @@ export default class DescriptionGenerator {
         return ratingInfo ? ratingInfo : "";
     }
 
-    private getPlayerInfoString(gameInfo: GameInfo) {
+    private getPlayerInfoString(gameInfo: GameInfoPlus) {
         let playerInfo = "";
         const { minPlayers, maxPlayers } = gameInfo;
 
@@ -128,7 +129,7 @@ export default class DescriptionGenerator {
         return timeInfo;
     }
 
-    private getWeightInfo = (gameInfo: GameInfo) => {
+    private getWeightInfo = (gameInfo: ExtendedGameInfo) => {
         const weight = gameInfo.weight;
         const weightIndex = Math.round((weight - 1) / 5 * 6);
         return weightName[Math.max(weightIndex, 0)].toLowerCase();
