@@ -48,7 +48,7 @@ export default class BggGameLoader {
     private useCache: boolean;
 
 
-    private readonly concurrentRequestLimit: number = 3;
+    private concurrentRequestLimit: number = 5;
 
 
     constructor(bggService: BggGameService, merger: CollectionMerger, useCache: boolean = false) {
@@ -151,7 +151,7 @@ export default class BggGameLoader {
             this.informLoadingHandlers();
             return games;
         } else {
-            const retryTime = games.backoff ? 10000 : 1000;
+            const retryTime = games && games.backoff ? 10000 : 1000;
             return new Promise<GameInfo[]>(async resolver => {
                 setTimeout(() => resolver(this.loadCollectionWithRetry(name)), retryTime);
             });
@@ -159,9 +159,10 @@ export default class BggGameLoader {
     }
 
     private async loadGameWithRetry(game: GameInfo) {
-        const { id, name } = game;
+        const { id } = game;
         const loadingIndex = this.loadingInfo.findIndex((li) => li.type === "game" && li.gameinfo.id === id);
         this.loadingInfo[loadingIndex].isLoading = true;
+        this.loadingInfo[loadingIndex].retryInfo = undefined;
         this.informLoadingHandlers();
         const extended = await this.service.getGameInfo(id);
         if (!("retryLater" in extended)) {
@@ -169,7 +170,13 @@ export default class BggGameLoader {
             this.informLoadingHandlers();
             return extended;
         } else {
-            const retryTime = extended.backoff ? 10000 : 3000;
+            const retryTime = (extended && extended.backoff) ? 10000 : 3000;
+            if (extended && extended.backoff) {
+                this.concurrentRequestLimit = Math.max(this.concurrentRequestLimit - 1, 1);
+            }
+            const loadingIndex = this.loadingInfo.findIndex((li) => li.type === "game" && li.gameinfo.id === id);
+            this.loadingInfo[loadingIndex].retryInfo = extended;
+            this.informLoadingHandlers();
             return new Promise<ExtendedGameInfo>(async resolver => {
                 setTimeout(() => resolver(this.loadGameWithRetry(game)), retryTime);
             });

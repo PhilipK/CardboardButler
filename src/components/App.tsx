@@ -5,6 +5,7 @@ import { CollectionMerger } from "../services/CollectionMerger";
 import WelcomePage from "./WelcomePage";
 import CollectionPage from "./CollectionPage";
 import BggGameLoader, { LoadingInfo } from "../services/BggGameLoader";
+import { Dimmer, Loader, Segment } from "semantic-ui-react";
 
 export interface AppProps {
     bggServce?: BggGameService;
@@ -99,27 +100,21 @@ export default class App extends React.Component<AppProps, AppState> {
     }
 
     render() {
-        const { loadingInfo, games, showingCollection } = this.state;
+        const { loadingInfo = [], games, showingCollection } = this.state;
+        const loadingCollections = loadingInfo.filter((li) => li.type === "collection").map((c) => c.type === "collection" ? c.username : "");
+        const isLoadingCollections = loadingCollections.length > 0;
+        const loadingGames = loadingInfo.filter((li) => li.type === "game");
         return (
             <span >
-                {!showingCollection && <WelcomePage onNameSelect={this.onNameSelect} userValidator={this.userValidator} />}
-                {showingCollection && <CollectionPage currentUsers={this.state.names} games={games} />}
-                {loadingInfo.length > 0 && (<div>
-                    Loading:
-                    {loadingInfo.map((li) => {
-                        if (li.type === "collection") {
-                            return <span>
-                                {li.username}
-                            </span>;
-                        } else {
-                            return <div style={{ fontWeight: li.isLoading ? "bold" : "normal" }}>
-                                {li.gameinfo.name}
-                            </div>;
-                        }
-
-                    })}
-                </div>)
+                {!showingCollection && !isLoadingCollections && <WelcomePage onNameSelect={this.onNameSelect} userValidator={this.userValidator} />}
+                {isLoadingCollections && games.length === 0 && <Dimmer active inverted>
+                    <Loader inverted content={"Finding games for " + loadingCollections.join(", ")} />
+                </Dimmer>
                 }
+                {isLoadingCollections && games.length > 0 && <Loader active inline="centered" content={"Finding games for " + loadingCollections.join(", ")} />}
+                {loadingGames.length > 0 && games.length > 0 && <Loader active inline="centered" content={"Getting extra info for " + loadingGames.length + " games"} />}
+                {games.length > 0 && showingCollection && <CollectionPage currentUsers={this.state.names} games={games} />}
+
             </span>
         );
     }
