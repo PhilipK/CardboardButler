@@ -4,7 +4,7 @@ import { GameInfo, GameInfoPlus } from "../models/GameInfo";
 import { CollectionMerger } from "../services/CollectionMerger";
 import WelcomePage from "./WelcomePage";
 import CollectionPage from "./CollectionPage";
-import BggGameLoader from "../services/BggGameLoader";
+import BggGameLoader, { LoadingInfo } from "../services/BggGameLoader";
 
 export interface AppProps {
     bggServce?: BggGameService;
@@ -14,11 +14,11 @@ export interface AppProps {
 export interface AppState {
     names: string[];
     games: GameInfoPlus[];
-    loadingMessage: string;
+    loadingInfo: LoadingInfo[];
     showingCollection: boolean;
 }
 
-const initialState: AppState = { games: [], loadingMessage: "", names: [], showingCollection: false };
+const initialState: AppState = { names: [], games: [], loadingInfo: [], showingCollection: false };
 
 
 export default class App extends React.Component<AppProps, AppState> {
@@ -43,12 +43,7 @@ export default class App extends React.Component<AppProps, AppState> {
         });
         this.loader.onLoadUpdate((loadinfo) => {
             if (this._ismounted) {
-                if (loadinfo.length === 0) {
-                    this.setState({ loadingMessage: "" });
-                } else {
-                    this.setState({ loadingMessage: "Loading: " + loadinfo.map((li) => li.username).join(", ") });
-                }
-
+                this.setState({ loadingInfo: loadinfo });
             }
         });
         this.state = initialState;
@@ -104,12 +99,27 @@ export default class App extends React.Component<AppProps, AppState> {
     }
 
     render() {
-        const { loadingMessage, games, showingCollection } = this.state;
+        const { loadingInfo, games, showingCollection } = this.state;
         return (
             <span >
                 {!showingCollection && <WelcomePage onNameSelect={this.onNameSelect} userValidator={this.userValidator} />}
-                {loadingMessage}
                 {showingCollection && <CollectionPage currentUsers={this.state.names} games={games} />}
+                {loadingInfo.length > 0 && (<div>
+                    Loading:
+                    {loadingInfo.map((li) => {
+                        if (li.type === "collection") {
+                            return <span>
+                                {li.username}
+                            </span>;
+                        } else {
+                            return <div style={{ fontWeight: li.isLoading ? "bold" : "normal" }}>
+                                {li.gameinfo.name}
+                            </div>;
+                        }
+
+                    })}
+                </div>)
+                }
             </span>
         );
     }
