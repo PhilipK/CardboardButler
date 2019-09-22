@@ -91,21 +91,32 @@ class BggGameService {
 
 
     async getGameInfo(id: number): Promise<BggRetryResult | ExtendedGameInfo> {
-        const xml = await this.fetchGameXml(id);
+        const result = await this.getGamesInfo([id]);
+        return Array.isArray(result) ? result[0] : result;
+    }
+
+    async getGamesInfo(ids: number[]): Promise<BggRetryResult | ExtendedGameInfo[]> {
+        const xml = await this.fetchGamesXml(ids);
         if (typeof xml === "string") {
             const jsObj = convert.xml2js(xml) as convert.Element;
-            const mainElements = jsObj.elements[0].elements[0].elements;
-            return {
-                description: mainElements.find((e) => e.name === "description").elements[0].text.toString().trim(),
-                weight: parseFloat(mainElements.find((e) => e.name === "statistics").elements[0].elements.find((e) => e.name === "averageweight").attributes["value"].toString().trim()),
-                mechanics: mainElements.filter((e) => e.name === "link" && e.attributes["type"] === "boardgamemechanic").map((e) => e.attributes["value"].toString()),
-                categories: mainElements.filter((e) => e.name === "link" && e.attributes["type"] === "boardgamecategory").map((e) => e.attributes["value"].toString()),
-            };
+            const itemElements = jsObj.elements[0].elements;
+            return itemElements.map((this.elementToExtendedInfo));
         } else {
             return xml;
         }
-
     }
+
+
+    private elementToExtendedInfo(mainElement: convert.Element) {
+        const mainElements = mainElement.elements;
+        return {
+            description: mainElements.find((e) => e.name === "description").elements[0].text.toString().trim(),
+            weight: parseFloat(mainElements.find((e) => e.name === "statistics").elements[0].elements.find((e) => e.name === "averageweight").attributes["value"].toString().trim()),
+            mechanics: mainElements.filter((e) => e.name === "link" && e.attributes["type"] === "boardgamemechanic").map((e) => e.attributes["value"].toString()),
+            categories: mainElements.filter((e) => e.name === "link" && e.attributes["type"] === "boardgamecategory").map((e) => e.attributes["value"].toString()),
+        };
+    }
+
 
     private getFetch() {
         return this.fetchService;
@@ -186,6 +197,11 @@ class BggGameService {
         return this.fethXml(url);
     }
 
+    private async fetchGamesXml(ids: number[]) {
+        const url = this.buildGameUrls(ids);
+        return this.fethXml(url);
+    }
+
 
     private async fethXml(url: string) {
         return this.getFetch()(url).then(async (res) => {
@@ -215,6 +231,10 @@ class BggGameService {
 
     private buildGameUrl(id: number) {
         return `https://cors-anywhere.herokuapp.com/https://api.geekdo.com/xmlapi2/thing?id=${id}&stats=1`;
+    }
+
+    private buildGameUrls(ids: number[]) {
+        return `https://cors-anywhere.herokuapp.com/https://api.geekdo.com/xmlapi2/thing?id=${ids.join(",")}&stats=1`;
     }
 
     private buildCollectionUrl(username: string) {

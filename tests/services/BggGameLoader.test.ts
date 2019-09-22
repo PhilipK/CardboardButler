@@ -158,23 +158,30 @@ describe("Loading games", () => {
 
         service.getUserCollection = getUserCollectionMock;
 
-        const getGameInfoMock = jest.fn((id) => (new Promise<ExtendedGameInfo>(async (resolver) => resolver(
-            extendedGameInfos[id]
+        const getGamesInfoMock = jest.fn((ids) => (new Promise<ExtendedGameInfo[]>(async (resolver) => resolver(
+            ids.map((idx) => extendedGameInfos[idx])
         ))));
 
-        service.getGameInfo = getGameInfoMock;
+        service.getGamesInfo = getGamesInfoMock;
+
+        const onLoadChange = jest.fn((games) => { });
+        loader.onLoadUpdate(onLoadChange);
 
         const onGamesUpdate = jest.fn((games) => { });
         loader.onGamesUpdate(onGamesUpdate);
 
         await loader.loadCollections(usernames);
         onGamesUpdate.mockClear();
-        getGameInfoMock.mockClear();
-        await loader.loadExtendedInfo();
-        expect(getGameInfoMock.mock.calls).toHaveLength(2);
-        expect(onGamesUpdate.mock.calls).toHaveLength(2);
-        expect(onGamesUpdate.mock.calls[1][0][0].description).toEqual("SevenExtended");
-        expect(onGamesUpdate.mock.calls[1][0][1].description).toEqual("AlchemistExtended");
+        getGamesInfoMock.mockClear();
+        onLoadChange.mockClear();
+        const promise = loader.loadExtendedInfo().then(() => {
+            expect(onGamesUpdate.mock.calls[0][0]).toHaveLength(2);
+            expect(getGamesInfoMock.mock.calls).toHaveLength(1);
+            expect(onGamesUpdate.mock.calls).toHaveLength(1);
+            expect(onGamesUpdate.mock.calls[0][0][0].description).toEqual("SevenExtended");
+            expect(onGamesUpdate.mock.calls[0][0][1].description).toEqual("AlchemistExtended");
+        });
+        await promise;
 
     });
 });

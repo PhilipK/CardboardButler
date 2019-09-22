@@ -1,0 +1,2132 @@
+{
+    "declaration": {
+        "attributes": {
+            "version": "1.0",
+            "encoding": "utf-8"
+        }
+    },
+    "elements": [
+        {
+            "type": "element",
+            "name": "items",
+            "attributes": {
+                "termsofuse": "https://boardgamegeek.com/xmlapi/termsofuse"
+            },
+            "elements": [
+                {
+                    "type": "element",
+                    "name": "item",
+                    "attributes": {
+                        "type": "boardgame",
+                        "id": "68448"
+                    },
+                    "elements": [
+                        {
+                            "type": "element",
+                            "name": "thumbnail",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": " https://cf.geekdo-images.com/thumb/img/Grz-qM9xwxlvQGK7B-MiljtO9pQ=/fit-in/200x150/pic860217.jpg\r\n        "
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "image",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": " https://cf.geekdo-images.com/original/img/3DP_RW5lTX0WrV67s8qi8CsiXoQ=/0x0/pic860217.jpg\r\n        "
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "primary",
+                                "sortindex": "1",
+                                "value": "7 Wonders"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "alternate",
+                                "sortindex": "1",
+                                "value": "7 csoda"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "alternate",
+                                "sortindex": "1",
+                                "value": "7 Cudów Świata"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "alternate",
+                                "sortindex": "1",
+                                "value": "7 divů světa"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "alternate",
+                                "sortindex": "1",
+                                "value": "7 чудес"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "alternate",
+                                "sortindex": "1",
+                                "value": "7 สิ่งมหัศจรรย์"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "alternate",
+                                "sortindex": "1",
+                                "value": "7원더스"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "alternate",
+                                "sortindex": "1",
+                                "value": "Τα 7 θαύματα του κόσμου"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "alternate",
+                                "sortindex": "1",
+                                "value": "七大奇蹟"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "alternate",
+                                "sortindex": "1",
+                                "value": "世界の七不思議"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "description",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\r\nYou are the leader of one of the 7 great cities of the Ancient World. Gather resources, develop commercial routes, and affirm your military supremacy. Build your city and erect an architectural wonder which will transcend future times.\n\n7 Wonders lasts three ages. In each age, players receive seven cards from a particular deck, choose one of those cards, then pass the remainder to an adjacent player. Players reveal their cards simultaneously, paying resources if needed or collecting resources or interacting with other players in various ways. (Players have individual boards with special powers on which to organize their cards, and the boards are double-sided). Each player then chooses another card from the deck they were passed, and the process repeats until players have six cards in play from that age. After three ages, the game ends.\n\nIn essence,                                    7 Wonders is a card development game. Some cards have immediate effects, while others provide bonuses or upgrades later in the game. Some cards provide discounts on future purchases. Some provide military strength to overpower your neighbors and others give nothing but victory points. Each card is played immediately after being drafted, so you'll know which cards your neighbor is receiving and how his choices might affect what you've already built up. Cards are passed left-right-left over the three ages, so you need to keep an eye on the neighbors in both directions.\n\nThough the box of earlier editions is listed as being for 3–7 players, there is an official 2-player variant included in the instructions.\n\n\r\n        "
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "yearpublished",
+                            "attributes": {
+                                "value": "2010"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "minplayers",
+                            "attributes": {
+                                "value": "2"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "maxplayers",
+                            "attributes": {
+                                "value": "7"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "poll",
+                            "attributes": {
+                                "name": "suggested_numplayers",
+                                "title": "User Suggested Number of Players",
+                                "totalvotes": "1791"
+                            },
+                            "elements": [
+                                {
+                                    "type": "element",
+                                    "name": "results",
+                                    "attributes": {
+                                        "numplayers": "1"
+                                    },
+                                    "elements": [
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Best",
+                                                "numvotes": "4"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Recommended",
+                                                "numvotes": "12"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Not Recommended",
+                                                "numvotes": "1027"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "element",
+                                    "name": "results",
+                                    "attributes": {
+                                        "numplayers": "2"
+                                    },
+                                    "elements": [
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Best",
+                                                "numvotes": "111"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Recommended",
+                                                "numvotes": "330"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Not Recommended",
+                                                "numvotes": "848"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "element",
+                                    "name": "results",
+                                    "attributes": {
+                                        "numplayers": "3"
+                                    },
+                                    "elements": [
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Best",
+                                                "numvotes": "389"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Recommended",
+                                                "numvotes": "913"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Not Recommended",
+                                                "numvotes": "161"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "element",
+                                    "name": "results",
+                                    "attributes": {
+                                        "numplayers": "4"
+                                    },
+                                    "elements": [
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Best",
+                                                "numvotes": "921"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Recommended",
+                                                "numvotes": "612"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Not Recommended",
+                                                "numvotes": "34"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "element",
+                                    "name": "results",
+                                    "attributes": {
+                                        "numplayers": "5"
+                                    },
+                                    "elements": [
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Best",
+                                                "numvotes": "770"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Recommended",
+                                                "numvotes": "705"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Not Recommended",
+                                                "numvotes": "46"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "element",
+                                    "name": "results",
+                                    "attributes": {
+                                        "numplayers": "6"
+                                    },
+                                    "elements": [
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Best",
+                                                "numvotes": "358"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Recommended",
+                                                "numvotes": "911"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Not Recommended",
+                                                "numvotes": "132"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "element",
+                                    "name": "results",
+                                    "attributes": {
+                                        "numplayers": "7"
+                                    },
+                                    "elements": [
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Best",
+                                                "numvotes": "308"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Recommended",
+                                                "numvotes": "843"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Not Recommended",
+                                                "numvotes": "232"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "element",
+                                    "name": "results",
+                                    "attributes": {
+                                        "numplayers": "7+"
+                                    },
+                                    "elements": [
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Best",
+                                                "numvotes": "27"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Recommended",
+                                                "numvotes": "77"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Not Recommended",
+                                                "numvotes": "692"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "playingtime",
+                            "attributes": {
+                                "value": "30"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "minplaytime",
+                            "attributes": {
+                                "value": "30"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "maxplaytime",
+                            "attributes": {
+                                "value": "30"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "minage",
+                            "attributes": {
+                                "value": "10"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "poll",
+                            "attributes": {
+                                "name": "suggested_playerage",
+                                "title": "User Suggested Player Age",
+                                "totalvotes": "401"
+                            },
+                            "elements": [
+                                {
+                                    "type": "element",
+                                    "name": "results",
+                                    "elements": [
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "2",
+                                                "numvotes": "0"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "3",
+                                                "numvotes": "0"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "4",
+                                                "numvotes": "1"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "5",
+                                                "numvotes": "0"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "6",
+                                                "numvotes": "14"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "8",
+                                                "numvotes": "110"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "10",
+                                                "numvotes": "158"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "12",
+                                                "numvotes": "94"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "14",
+                                                "numvotes": "20"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "16",
+                                                "numvotes": "3"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "18",
+                                                "numvotes": "1"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "21 and up",
+                                                "numvotes": "0"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "poll",
+                            "attributes": {
+                                "name": "language_dependence",
+                                "title": "Language Dependence",
+                                "totalvotes": "384"
+                            },
+                            "elements": [
+                                {
+                                    "type": "element",
+                                    "name": "results",
+                                    "elements": [
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "level": "6",
+                                                "value": "No necessary in-game text",
+                                                "numvotes": "293"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "level": "7",
+                                                "value": "Some necessary text - easily memorized or small crib sheet",
+                                                "numvotes": "86"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "level": "8",
+                                                "value": "Moderate in-game text - needs crib sheet or paste ups",
+                                                "numvotes": "4"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "level": "9",
+                                                "value": "Extensive use of text - massive conversion needed to be playable",
+                                                "numvotes": "1"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "level": "10",
+                                                "value": "Unplayable in another language",
+                                                "numvotes": "0"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamecategory",
+                                "id": "1050",
+                                "value": "Ancient"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamecategory",
+                                "id": "1002",
+                                "value": "Card Game"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamecategory",
+                                "id": "1029",
+                                "value": "City Building"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamecategory",
+                                "id": "1015",
+                                "value": "Civilization"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamemechanic",
+                                "id": "2838",
+                                "value": "ACT-02 Action Drafting"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamemechanic",
+                                "id": "2015",
+                                "value": "ACT-12 Variable Player Powers"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamemechanic",
+                                "id": "2984",
+                                "value": "CAR-06 Drafting"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamemechanic",
+                                "id": "2041",
+                                "value": "Card Drafting"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamemechanic",
+                                "id": "2907",
+                                "value": "ECO-10 Discounts"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamemechanic",
+                                "id": "2040",
+                                "value": "Hand Management"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamemechanic",
+                                "id": "2004",
+                                "value": "Set Collection"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamemechanic",
+                                "id": "2976",
+                                "value": "SET-01 Set Valuation"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamemechanic",
+                                "id": "2020",
+                                "value": "TRN-09 Simultaneous Action Selection"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamefamily",
+                                "id": "17552",
+                                "value": "7 Wonders"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamefamily",
+                                "id": "27646",
+                                "value": "Tableau Building"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameexpansion",
+                                "id": "247315",
+                                "value": "7 Wonders: Armada"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameexpansion",
+                                "id": "154638",
+                                "value": "7 Wonders: Babel"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameexpansion",
+                                "id": "110308",
+                                "value": "7 Wonders: Catan"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameexpansion",
+                                "id": "111661",
+                                "value": "7 Wonders: Cities"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameexpansion",
+                                "id": "92539",
+                                "value": "7 Wonders: Leaders"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameexpansion",
+                                "id": "83445",
+                                "value": "7 Wonders: Manneken Pis"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameexpansion",
+                                "id": "133993",
+                                "value": "7 Wonders: Wonder Pack"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameexpansion",
+                                "id": "164649",
+                                "value": "Collection (fan expansion for 7 Wonders)"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameexpansion",
+                                "id": "140098",
+                                "value": "Empires (fan expansion for 7 Wonders)"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameexpansion",
+                                "id": "138187",
+                                "value": "Game Wonders (fan expansion for 7 Wonders)"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameexpansion",
+                                "id": "134849",
+                                "value": "Lost Wonders (fan expansion for 7 Wonders)"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameexpansion",
+                                "id": "131947",
+                                "value": "More Wonders... (fan expansion for 7 Wonders)"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameexpansion",
+                                "id": "132146",
+                                "value": "Myths (fan expansion for 7 Wonders)"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameexpansion",
+                                "id": "164648",
+                                "value": "Ruins (fan expansion for 7 Wonders)"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameexpansion",
+                                "id": "164647",
+                                "value": "Sailors (fan expansion for 7 Wonders)"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameimplementation",
+                                "id": "173346",
+                                "value": "7 Wonders Duel"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamedesigner",
+                                "id": "9714",
+                                "value": "Antoine Bauza"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameartist",
+                                "id": "9714",
+                                "value": "Antoine Bauza"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameartist",
+                                "id": "12016",
+                                "value": "Miguel Coimbra"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "4384",
+                                "value": "Repos Production"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "23043",
+                                "value": "ADC Blackfire Entertainment"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "157",
+                                "value": "Asmodee"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "15889",
+                                "value": "Asterion Press"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "15605",
+                                "value": "Galápagos Jogos"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "8820",
+                                "value": "Gém Klub Kft."
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "1391",
+                                "value": "Hobby Japan"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "6214",
+                                "value": "Kaissa Chess  Games"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "8291",
+                                "value": "Korea Boardgames co., Ltd."
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "3218",
+                                "value": "Lautapelit.fi"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "9325",
+                                "value": "Lifestyle Boardgames Ltd"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "32395",
+                                "value": "NeoTroy Games"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "7466",
+                                "value": "Rebel"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "33998",
+                                "value": "Siam Board Games"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "statistics",
+                            "attributes": {
+                                "page": "1"
+                            },
+                            "elements": [
+                                {
+                                    "type": "element",
+                                    "name": "ratings",
+                                    "elements": [
+                                        {
+                                            "type": "element",
+                                            "name": "usersrated",
+                                            "attributes": {
+                                                "value": "71495"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "average",
+                                            "attributes": {
+                                                "value": "7.77338"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "bayesaverage",
+                                            "attributes": {
+                                                "value": "7.67827"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "ranks",
+                                            "elements": [
+                                                {
+                                                    "type": "element",
+                                                    "name": "rank",
+                                                    "attributes": {
+                                                        "type": "subtype",
+                                                        "id": "1",
+                                                        "name": "boardgame",
+                                                        "friendlyname": "Board Game Rank",
+                                                        "value": "48",
+                                                        "bayesaverage": "7.67827"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "element",
+                                                    "name": "rank",
+                                                    "attributes": {
+                                                        "type": "family",
+                                                        "id": "5497",
+                                                        "name": "strategygames",
+                                                        "friendlyname": "Strategy Game Rank",
+                                                        "value": "48",
+                                                        "bayesaverage": "7.64635"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "element",
+                                                    "name": "rank",
+                                                    "attributes": {
+                                                        "type": "family",
+                                                        "id": "5499",
+                                                        "name": "familygames",
+                                                        "friendlyname": "Family Game Rank",
+                                                        "value": "3",
+                                                        "bayesaverage": "7.67552"
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "stddev",
+                                            "attributes": {
+                                                "value": "1.27744"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "median",
+                                            "attributes": {
+                                                "value": "0"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "owned",
+                                            "attributes": {
+                                                "value": "94416"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "trading",
+                                            "attributes": {
+                                                "value": "1255"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "wanting",
+                                            "attributes": {
+                                                "value": "1020"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "wishing",
+                                            "attributes": {
+                                                "value": "9701"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "numcomments",
+                                            "attributes": {
+                                                "value": "12188"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "numweights",
+                                            "attributes": {
+                                                "value": "4100"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "averageweight",
+                                            "attributes": {
+                                                "value": "2.339"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "element",
+                    "name": "item",
+                    "attributes": {
+                        "type": "boardgame",
+                        "id": "161970"
+                    },
+                    "elements": [
+                        {
+                            "type": "element",
+                            "name": "thumbnail",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": " https: //cf.geekdo-images.com/thumb/img/4VjOkEjTXNR4KQMjaOK7JibjPSw=/fit-in/200x150/pic2241156.png\r\n        "
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "image",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": " https://cf.geekdo-images.com/original/img/VKBFHqR2xm0EFGWfb1sPJZctMCs=/0x0/pic2241156.png\r\n        "
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "primary",
+                                "sortindex": "1",
+                                "value": "Alchemists"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "alternate",
+                                "sortindex": "1",
+                                "value": "Alchemicy"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "alternate",
+                                "sortindex": "4",
+                                "value": "De Alchemist"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "alternate",
+                                "sortindex": "5",
+                                "value": "Die Alchemisten"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "alternate",
+                                "sortindex": "1",
+                                "value": "Alchimistes"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "alternate",
+                                "sortindex": "1",
+                                "value": "Alchimisti"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "alternate",
+                                "sortindex": "1",
+                                "value": "Alchimiștii"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "alternate",
+                                "sortindex": "1",
+                                "value": "Alchymisté"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "alternate",
+                                "sortindex": "1",
+                                "value": "Alquimistas"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "alternate",
+                                "sortindex": "1",
+                                "value": "Алхимики"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "alternate",
+                                "sortindex": "1",
+                                "value": "アルケミスト"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "alternate",
+                                "sortindex": "1",
+                                "value": "煉金術士"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "attributes": {
+                                "type": "alternate",
+                                "sortindex": "1",
+                                "value": "연금술 아카데미"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "description",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\r\nIn Alchemists, two to four budding alchemists compete to discover the secrets of their mystical art. Points can be earned in various ways, but most points are earned by publishing theories – correct theories, that is — and therein lies the problem.\n\nThe game is played in six rounds. At the beginning of the round, players choose their play order. Those who choose to play later get more rewards.\nPlayers declare all their actions by placing cubes on the various action spaces, then each action space is evaluated in order. Players gain knowledge by mixing ingredients and testing the results using a smartphone app (iOS, Android, and also Windows) that randomizes the rules of alchemy for each new game. And if the alchemists are longing for something even more special, they can always buy magical artifacts to get an extra push. There are 9 of them (different for each game) and they are not only very powerful, but also very expensive. But money means nothing, when there's academic pride at stake! And the possession of these artifacts will definitely earn you some reputation too. Players can also earn money by selling potions of questionable quality to adventurers, but money is just a means to an end. The alchemists don't want riches, after all. They want respect, and respect usually comes from publishing theories.\n\nDuring play, players' reputations will go up and down. After six rounds and a final exhibition, reputation will be converted into points. Points will also be scored for artifacts and grants. Then the secrets of alchemy are revealed and players score points or lose points based on whether their theories were correct. Whoever has the most points at the end of the game wins.\n\nFlavor text:\nMandrake root and scorpion tail; spongy mushroom and warty toad — these are the foundations of the alchemist's livelihood, science, and art.\n\nBut what arcane secrets do these strange ingredients hide? Now it is time to find out. Mix them into potions and drink them to determine their effects — or play it safe and test the concoction on a helpful assistant! Gain riches selling potions to wandering adventurers and invest these riches in powerful artifacts. As your knowledge grows, so will your reputation, as you publish your theories for all to see. Knowledge, wealth, and fame can all be found in the murky depths of the alchemist's cauldron.\n\n\r\n        "
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "yearpublished",
+                            "attributes": {
+                                "value": "2014"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "minplayers",
+                            "attributes": {
+                                "value": "2"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "maxplayers",
+                            "attributes": {
+                                "value": "4"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "poll",
+                            "attributes": {
+                                "name": "suggested_numplayers",
+                                "title": "User Suggested Number of Players",
+                                "totalvotes": "268"
+                            },
+                            "elements": [
+                                {
+                                    "type": "element",
+                                    "name": "results",
+                                    "attributes": {
+                                        "numplayers": "1"
+                                    },
+                                    "elements": [
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Best",
+                                                "numvotes": "0"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Recommended",
+                                                "numvotes": "4"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Not Recommended",
+                                                "numvotes": "144"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "element",
+                                    "name": "results",
+                                    "attributes": {
+                                        "numplayers": "2"
+                                    },
+                                    "elements": [
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Best",
+                                                "numvotes": "44"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Recommended",
+                                                "numvotes": "151"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Not Recommended",
+                                                "numvotes": "34"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "element",
+                                    "name": "results",
+                                    "attributes": {
+                                        "numplayers": "3"
+                                    },
+                                    "elements": [
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Best",
+                                                "numvotes": "108"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Recommended",
+                                                "numvotes": "119"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Not Recommended",
+                                                "numvotes": "3"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "element",
+                                    "name": "results",
+                                    "attributes": {
+                                        "numplayers": "4"
+                                    },
+                                    "elements": [
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Best",
+                                                "numvotes": "138"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Recommended",
+                                                "numvotes": "81"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Not Recommended",
+                                                "numvotes": "14"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "element",
+                                    "name": "results",
+                                    "attributes": {
+                                        "numplayers": "4+"
+                                    },
+                                    "elements": [
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Best",
+                                                "numvotes": "0"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Recommended",
+                                                "numvotes": "5"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "Not Recommended",
+                                                "numvotes": "114"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "playingtime",
+                            "attributes": {
+                                "value": "120"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "minplaytime",
+                            "attributes": {
+                                "value": "120"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "maxplaytime",
+                            "attributes": {
+                                "value": "120"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "minage",
+                            "attributes": {
+                                "value": "13"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "poll",
+                            "attributes": {
+                                "name": "suggested_playerage",
+                                "title": "User Suggested Player Age",
+                                "totalvotes": "73"
+                            },
+                            "elements": [
+                                {
+                                    "type": "element",
+                                    "name": "results",
+                                    "elements": [
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "2",
+                                                "numvotes": "0"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "3",
+                                                "numvotes": "0"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "4",
+                                                "numvotes": "0"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "5",
+                                                "numvotes": "0"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "6",
+                                                "numvotes": "0"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "8",
+                                                "numvotes": "4"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "10",
+                                                "numvotes": "9"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "12",
+                                                "numvotes": "30"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "14",
+                                                "numvotes": "25"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "16",
+                                                "numvotes": "3"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "18",
+                                                "numvotes": "2"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "value": "21 and up",
+                                                "numvotes": "0"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "poll",
+                            "attributes": {
+                                "name": "language_dependence",
+                                "title": "Language Dependence",
+                                "totalvotes": "50"
+                            },
+                            "elements": [
+                                {
+                                    "type": "element",
+                                    "name": "results",
+                                    "elements": [
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "level": "1",
+                                                "value": "No necessary in-game text",
+                                                "numvotes": "0"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "level": "2",
+                                                "value": "Some necessary text - easily memorized or small crib sheet",
+                                                "numvotes": "21"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "level": "3",
+                                                "value": "Moderate in-game text - needs crib sheet or paste ups",
+                                                "numvotes": "27"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "level": "4",
+                                                "value": "Extensive use of text - massive conversion needed to be playable",
+                                                "numvotes": "2"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "result",
+                                            "attributes": {
+                                                "level": "5",
+                                                "value": "Unplayable in another language",
+                                                "numvotes": "0"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamecategory",
+                                "id": "1039",
+                                "value": "Deduction"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamecategory",
+                                "id": "1010",
+                                "value": "Fantasy"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamemechanic",
+                                "id": "2001",
+                                "value": "ACT-01 Action Points"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamemechanic",
+                                "id": "2041",
+                                "value": "Card Drafting"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamemechanic",
+                                "id": "2040",
+                                "value": "Hand Management"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamemechanic",
+                                "id": "2082",
+                                "value": "WPL-01 Worker Placement"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamefamily",
+                                "id": "41489",
+                                "value": "Digital Hybrid, App Required"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameexpansion",
+                                "id": "174522",
+                                "value": "Alchemists: Publisher"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameexpansion",
+                                "id": "167849",
+                                "value": "Alchemists: Ring of Favor"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameexpansion",
+                                "id": "204650",
+                                "value": "Alchemists: The King's Golem"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamedesigner",
+                                "id": "75718",
+                                "value": "Matúš Kotry"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgameartist",
+                                "id": "12692",
+                                "value": "David Cochard"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "7345",
+                                "value": "Czech Games Edition"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "3475",
+                                "value": "Arclight"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "10768",
+                                "value": "Cranio Creations"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "2366",
+                                "value": "Devir"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "29194",
+                                "value": "GaGa Games"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "2862",
+                                "value": "The Game Master BV"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "264",
+                                "value": "Heidelberger Spieleverlag"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "8923",
+                                "value": "IELLO"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "8291",
+                                "value": "Korea Boardgames co., Ltd."
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "25203",
+                                "value": "Lex Games"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "7992",
+                                "value": "MINDOK"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "30552",
+                                "value": "One Moment Games"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "link",
+                            "attributes": {
+                                "type": "boardgamepublisher",
+                                "id": "7466",
+                                "value": "Rebel"
+                            }
+                        },
+                        {
+                            "type": "element",
+                            "name": "statistics",
+                            "attributes": {
+                                "page": "1"
+                            },
+                            "elements": [
+                                {
+                                    "type": "element",
+                                    "name": "ratings",
+                                    "elements": [
+                                        {
+                                            "type": "element",
+                                            "name": "usersrated",
+                                            "attributes": {
+                                                "value": "15370"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "average",
+                                            "attributes": {
+                                                "value": "7.69395"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "bayesaverage",
+                                            "attributes": {
+                                                "value": "7.47847"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "ranks",
+                                            "elements": [
+                                                {
+                                                    "type": "element",
+                                                    "name": "rank",
+                                                    "attributes": {
+                                                        "type": "subtype",
+                                                        "id": "1",
+                                                        "name": "boardgame",
+                                                        "friendlyname": "Board Game Rank",
+                                                        "value": "91",
+                                                        "bayesaverage": "7.47847"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "element",
+                                                    "name": "rank",
+                                                    "attributes": {
+                                                        "type": "family",
+                                                        "id": "5497",
+                                                        "name": "strategygames",
+                                                        "friendlyname": "Strategy Game Rank",
+                                                        "value": "76",
+                                                        "bayesaverage": "7.49929"
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "stddev",
+                                            "attributes": {
+                                                "value": "1.3975"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "median",
+                                            "attributes": {
+                                                "value": "0"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "owned",
+                                            "attributes": {
+                                                "value": "19857"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "trading",
+                                            "attributes": {
+                                                "value": "383"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "wanting",
+                                            "attributes": {
+                                                "value": "610"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "wishing",
+                                            "attributes": {
+                                                "value": "3976"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "numcomments",
+                                            "attributes": {
+                                                "value": "2408"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "numweights",
+                                            "attributes": {
+                                                "value": "839"
+                                            }
+                                        },
+                                        {
+                                            "type": "element",
+                                            "name": "averageweight",
+                                            "attributes": {
+                                                "value": "3.8629"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -216,7 +216,7 @@ describe("BggGameService", () => {
     });
 
 
-    describe("Get Single Games", () => {
+    describe("Get Single Game", () => {
 
         const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/thing?id=161970&stats=1`;
         const alchemistsXml = readFileSync("tests/services/testxml/AlchemistsResult.xml", "utf8");
@@ -274,8 +274,51 @@ describe("BggGameService", () => {
     });
 
 
+    describe("Get Multiple Games", () => {
+        const expectedUrlSingle = `${proxyUrl}https://api.geekdo.com/xmlapi2/thing?id=68448&stats=1`;
+
+        const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/thing?id=68448,161970&stats=1`;
+        const twoGamesXml = readFileSync("tests/services/testxml/TwoGameResult.xml", "utf8");
+        const alchemistsXml = readFileSync("tests/services/testxml/AlchemistsResult.xml", "utf8");
+        const gameId = 68448;
+
+        const gameIds = [68448, 161970];
+
+        beforeEach(() => {
+            fetch.mock(expectedUrl, 200, {
+                response: {
+                    status: 200,
+                    body: twoGamesXml
+                }
+            });
+
+            fetch.mock(expectedUrlSingle, 200, {
+                response: {
+                    status: 200,
+                    body: alchemistsXml
+                }
+            });
+        });
+
+        it("can get extended information about multiple games", async () => {
+            const extendedInfo = await service.getGamesInfo(gameIds);
+            expect(Array.isArray(extendedInfo)).toBe(true);
+            if (Array.isArray(extendedInfo)) {
+                expect(extendedInfo).toHaveLength(2);
+            }
+        });
+
+
+        it("is the same as multiple single", async () => {
+            const gamesInfo = await service.getGamesInfo([gameId]);
+            const gameInfo = await service.getGameInfo(gameId);
+            expect(gamesInfo[0]).toEqual(gameInfo);
+        });
+    });
+
+
+
     describe("Handling errors", () => {
-        // const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/collection?username=Warium&own=1&stats=1`;
         const tryAgainMessage = `<message>
         Your request for this collection has been accepted and will be processed. Please try again later for access.
         </message>`;
