@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+    <item type="boardgame" id="68448">
+        <thumbnail> https://cf.geekdo-images.com/thumb/img/Grz-qM9xwxlvQGK7B-MiljtO9pQ=/fit-in/200x150/pic860217.jpg
+        </thumbnail>
+        <image> https://cf.geekdo-images.com/original/img/3DP_RW5lTX0WrV67s8qi8CsiXoQ=/0x0/pic860217.jpg
+        </image>
+        <name type="primary" sortindex="1" value="7 Wonders"/>
+        <name type="alternate" sortindex="1" value="7 csoda"/>
+        <name type="alternate" sortindex="1" value="7 Cudów Świata"/>
+        <name type="alternate" sortindex="1" value="7 divů světa"/>
+        <name type="alternate" sortindex="1" value="7 чудес"/>
+        <name type="alternate" sortindex="1" value="7 สิ่งมหัศจรรย์"/>
+        <name type="alternate" sortindex="1" value="7원더스"/>
+        <name type="alternate" sortindex="1" value="Τα 7 θαύματα του κόσμου"/>
+        <name type="alternate" sortindex="1" value="七大奇蹟"/>
+        <name type="alternate" sortindex="1" value="世界の七不思議"/>
+        <description>
+You are the leader of one of the 7 great cities of the Ancient World. Gather resources, develop commercial routes, and affirm your military supremacy. Build your city and erect an architectural wonder which will transcend future times.&#10;&#10;7 Wonders lasts three ages. In each age, players receive seven cards from a particular deck, choose one of those cards, then pass the remainder to an adjacent player. Players reveal their cards simultaneously, paying resources if needed or collecting resources or interacting with other players in various ways. (Players have individual boards with special powers on which to organize their cards, and the boards are double-sided). Each player then chooses another card from the deck they were passed, and the process repeats until players have six cards in play from that age. After three ages, the game ends.&#10;&#10;In essence, 7 Wonders is a card development game. Some cards have immediate effects, while others provide bonuses or upgrades later in the game. Some cards provide discounts on future purchases. Some provide military strength to overpower your neighbors and others give nothing but victory points. Each card is played immediately after being drafted, so you'll know which cards your neighbor is receiving and how his choices might affect what you've already built up. Cards are passed left-right-left over the three ages, so you need to keep an eye on the neighbors in both directions.&#10;&#10;Though the box of earlier editions is listed as being for 3&ndash;7 players, there is an official 2-player variant included in the instructions.&#10;&#10;
+        </description>
+        <yearpublished value="2010"/>
+        <minplayers value="2"/>
+        <maxplayers value="7"/>
+        <poll name="suggested_numplayers" title="User Suggested Number of Players" totalvotes="1791">
+            <results numplayers="1">
+                <result value="Best" numvotes="4"/>
+                <result value="Recommended" numvotes="12"/>
+                <result value="Not Recommended" numvotes="1027"/>
+            </results>
+            <results numplayers="2">
+                <result value="Best" numvotes="111"/>
+                <result value="Recommended" numvotes="330"/>
+                <result value="Not Recommended" numvotes="848"/>
+            </results>
+            <results numplayers="3">
+                <result value="Best" numvotes="389"/>
+                <result value="Recommended" numvotes="913"/>
+                <result value="Not Recommended" numvotes="161"/>
+            </results>
+            <results numplayers="4">
+                <result value="Best" numvotes="921"/>
+                <result value="Recommended" numvotes="612"/>
+                <result value="Not Recommended" numvotes="34"/>
+            </results>
+            <results numplayers="5">
+                <result value="Best" numvotes="770"/>
+                <result value="Recommended" numvotes="705"/>
+                <result value="Not Recommended" numvotes="46"/>
+            </results>
+            <results numplayers="6">
+                <result value="Best" numvotes="358"/>
+                <result value="Recommended" numvotes="911"/>
+                <result value="Not Recommended" numvotes="132"/>
+            </results>
+            <results numplayers="7">
+                <result value="Best" numvotes="308"/>
+                <result value="Recommended" numvotes="843"/>
+                <result value="Not Recommended" numvotes="232"/>
+            </results>
+            <results numplayers="7+">
+                <result value="Best" numvotes="27"/>
+                <result value="Recommended" numvotes="77"/>
+                <result value="Not Recommended" numvotes="692"/>
+            </results>
+        </poll>
+        <playingtime value="30"/>
+        <minplaytime value="30"/>
+        <maxplaytime value="30"/>
+        <minage value="10"/>
+        <poll name="suggested_playerage" title="User Suggested Player Age" totalvotes="401">
+            <results>
+                <result value="2" numvotes="0"/>
+                <result value="3" numvotes="0"/>
+                <result value="4" numvotes="1"/>
+                <result value="5" numvotes="0"/>
+                <result value="6" numvotes="14"/>
+                <result value="8" numvotes="110"/>
+                <result value="10" numvotes="158"/>
+                <result value="12" numvotes="94"/>
+                <result value="14" numvotes="20"/>
+                <result value="16" numvotes="3"/>
+                <result value="18" numvotes="1"/>
+                <result value="21 and up" numvotes="0"/>
+            </results>
+        </poll>
+        <poll name="language_dependence" title="Language Dependence" totalvotes="384">
+            <results>
+                <result level="6" value="No necessary in-game text" numvotes="293"/>
+                <result level="7" value="Some necessary text - easily memorized or small crib sheet" numvotes="86"/>
+                <result level="8" value="Moderate in-game text - needs crib sheet or paste ups" numvotes="4"/>
+                <result level="9" value="Extensive use of text - massive conversion needed to be playable" numvotes="1"/>
+                <result level="10" value="Unplayable in another language" numvotes="0"/>
+            </results>
+        </poll>
+        <link type="boardgamecategory" id="1050" value="Ancient"/>
+        <link type="boardgamecategory" id="1002" value="Card Game"/>
+        <link type="boardgamecategory" id="1029" value="City Building"/>
+        <link type="boardgamecategory" id="1015" value="Civilization"/>
+        <link type="boardgamemechanic" id="2838" value="ACT-02 Action Drafting"/>
+        <link type="boardgamemechanic" id="2015" value="ACT-12 Variable Player Powers"/>
+        <link type="boardgamemechanic" id="2984" value="CAR-06 Drafting"/>
+        <link type="boardgamemechanic" id="2041" value="Card Drafting"/>
+        <link type="boardgamemechanic" id="2907" value="ECO-10 Discounts"/>
+        <link type="boardgamemechanic" id="2040" value="Hand Management"/>
+        <link type="boardgamemechanic" id="2004" value="Set Collection"/>
+        <link type="boardgamemechanic" id="2976" value="SET-01 Set Valuation"/>
+        <link type="boardgamemechanic" id="2020" value="TRN-09 Simultaneous Action Selection"/>
+        <link type="boardgamefamily" id="17552" value="7 Wonders"/>
+        <link type="boardgamefamily" id="27646" value="Tableau Building"/>
+        <link type="boardgameexpansion" id="247315" value="7 Wonders: Armada"/>
+        <link type="boardgameexpansion" id="154638" value="7 Wonders: Babel"/>
+        <link type="boardgameexpansion" id="110308" value="7 Wonders: Catan"/>
+        <link type="boardgameexpansion" id="111661" value="7 Wonders: Cities"/>
+        <link type="boardgameexpansion" id="92539" value="7 Wonders: Leaders"/>
+        <link type="boardgameexpansion" id="83445" value="7 Wonders: Manneken Pis"/>
+        <link type="boardgameexpansion" id="133993" value="7 Wonders: Wonder Pack"/>
+        <link type="boardgameexpansion" id="164649" value="Collection (fan expansion for 7 Wonders)"/>
+        <link type="boardgameexpansion" id="140098" value="Empires (fan expansion for 7 Wonders)"/>
+        <link type="boardgameexpansion" id="138187" value="Game Wonders (fan expansion for 7 Wonders)"/>
+        <link type="boardgameexpansion" id="134849" value="Lost Wonders (fan expansion for 7 Wonders)"/>
+        <link type="boardgameexpansion" id="131947" value="More Wonders... (fan expansion for 7 Wonders)"/>
+        <link type="boardgameexpansion" id="132146" value="Myths (fan expansion for 7 Wonders)"/>
+        <link type="boardgameexpansion" id="164648" value="Ruins (fan expansion for 7 Wonders)"/>
+        <link type="boardgameexpansion" id="164647" value="Sailors (fan expansion for 7 Wonders)"/>
+        <link type="boardgameimplementation" id="173346" value="7 Wonders Duel"/>
+        <link type="boardgamedesigner" id="9714" value="Antoine Bauza"/>
+        <link type="boardgameartist" id="9714" value="Antoine Bauza"/>
+        <link type="boardgameartist" id="12016" value="Miguel Coimbra"/>
+        <link type="boardgamepublisher" id="4384" value="Repos Production"/>
+        <link type="boardgamepublisher" id="23043" value="ADC Blackfire Entertainment"/>
+        <link type="boardgamepublisher" id="157" value="Asmodee"/>
+        <link type="boardgamepublisher" id="15889" value="Asterion Press"/>
+        <link type="boardgamepublisher" id="15605" value="Galápagos Jogos"/>
+        <link type="boardgamepublisher" id="8820" value="Gém Klub Kft."/>
+        <link type="boardgamepublisher" id="1391" value="Hobby Japan"/>
+        <link type="boardgamepublisher" id="6214" value="Kaissa Chess Games"/>
+        <link type="boardgamepublisher" id="8291" value="Korea Boardgames co., Ltd."/>
+        <link type="boardgamepublisher" id="3218" value="Lautapelit.fi"/>
+        <link type="boardgamepublisher" id="9325" value="Lifestyle Boardgames Ltd"/>
+        <link type="boardgamepublisher" id="32395" value="NeoTroy Games"/>
+        <link type="boardgamepublisher" id="7466" value="Rebel"/>
+        <link type="boardgamepublisher" id="33998" value="Siam Board Games"/>
+        <statistics page="1">
+            <ratings>
+                <usersrated value="71495"/>
+                <average value="7.77338"/>
+                <bayesaverage value="7.67827"/>
+                <ranks>
+                    <rank type="subtype" id="1" name="boardgame" friendlyname="Board Game Rank" value="48" bayesaverage="7.67827"/>
+                    <rank type="family" id="5497" name="strategygames" friendlyname="Strategy Game Rank" value="48" bayesaverage="7.64635"/>
+                    <rank type="family" id="5499" name="familygames" friendlyname="Family Game Rank" value="3" bayesaverage="7.67552"/>
+                </ranks>
+                <stddev value="1.27744"/>
+                <median value="0"/>
+                <owned value="94416"/>
+                <trading value="1255"/>
+                <wanting value="1020"/>
+                <wishing value="9701"/>
+                <numcomments value="12188"/>
+                <numweights value="4100"/>
+                <averageweight value="2.339"/>
+            </ratings>
+        </statistics>
+    </item>
+    <item type="boardgame" id="161970">
+        <thumbnail> https://cf.geekdo-images.com/thumb/img/4VjOkEjTXNR4KQMjaOK7JibjPSw=/fit-in/200x150/pic2241156.png
+        </thumbnail>
+        <image> https://cf.geekdo-images.com/original/img/VKBFHqR2xm0EFGWfb1sPJZctMCs=/0x0/pic2241156.png
+        </image>
+        <name type="primary" sortindex="1" value="Alchemists"/>
+        <name type="alternate" sortindex="1" value="Alchemicy"/>
+        <name type="alternate" sortindex="4" value="De Alchemist"/>
+        <name type="alternate" sortindex="5" value="Die Alchemisten"/>
+        <name type="alternate" sortindex="1" value="Alchimistes"/>
+        <name type="alternate" sortindex="1" value="Alchimisti"/>
+        <name type="alternate" sortindex="1" value="Alchimiștii"/>
+        <name type="alternate" sortindex="1" value="Alchymisté"/>
+        <name type="alternate" sortindex="1" value="Alquimistas"/>
+        <name type="alternate" sortindex="1" value="Алхимики"/>
+        <name type="alternate" sortindex="1" value="アルケミスト"/>
+        <name type="alternate" sortindex="1" value="煉金術士"/>
+        <name type="alternate" sortindex="1" value="연금술 아카데미"/>
+        <description>
+In Alchemists, two to four budding alchemists compete to discover the secrets of their mystical art. Points can be earned in various ways, but most points are earned by publishing theories &ndash; correct theories, that is &mdash; and therein lies the problem.&#10;&#10;The game is played in six rounds. At the beginning of the round, players choose their play order. Those who choose to play later get more rewards.&#10;Players declare all their actions by placing cubes on the various action spaces, then each action space is evaluated in order. Players gain knowledge by mixing ingredients and testing the results using a smartphone app (iOS, Android, and also Windows) that randomizes the rules of alchemy for each new game. And if the alchemists are longing for something even more special, they can always buy magical artifacts to get an extra push. There are 9 of them (different for each game) and they are not only very powerful, but also very expensive. But money means nothing, when there's academic pride at stake! And the possession of these artifacts will definitely earn you some reputation too. Players can also earn money by selling potions of questionable quality to adventurers, but money is just a means to an end. The alchemists don't want riches, after all. They want respect, and respect usually comes from publishing theories.&#10;&#10;During play, players' reputations will go up and down. After six rounds and a final exhibition, reputation will be converted into points. Points will also be scored for artifacts and grants. Then the secrets of alchemy are revealed and players score points or lose points based on whether their theories were correct. Whoever has the most points at the end of the game wins.&#10;&#10;Flavor text:&#10;Mandrake root and scorpion tail; spongy mushroom and warty toad &mdash; these are the foundations of the alchemist's livelihood, science, and art.&#10;&#10;But what arcane secrets do these strange ingredients hide? Now it is time to find out. Mix them into potions and drink them to determine their effects &mdash; or play it safe and test the concoction on a helpful assistant! Gain riches selling potions to wandering adventurers and invest these riches in powerful artifacts. As your knowledge grows, so will your reputation, as you publish your theories for all to see. Knowledge, wealth, and fame can all be found in the murky depths of the alchemist's cauldron.&#10;&#10;
+        </description>
+        <yearpublished value="2014"/>
+        <minplayers value="2"/>
+        <maxplayers value="4"/>
+        <poll name="suggested_numplayers" title="User Suggested Number of Players" totalvotes="268">
+            <results numplayers="1">
+                <result value="Best" numvotes="0"/>
+                <result value="Recommended" numvotes="4"/>
+                <result value="Not Recommended" numvotes="144"/>
+            </results>
+            <results numplayers="2">
+                <result value="Best" numvotes="44"/>
+                <result value="Recommended" numvotes="151"/>
+                <result value="Not Recommended" numvotes="34"/>
+            </results>
+            <results numplayers="3">
+                <result value="Best" numvotes="108"/>
+                <result value="Recommended" numvotes="119"/>
+                <result value="Not Recommended" numvotes="3"/>
+            </results>
+            <results numplayers="4">
+                <result value="Best" numvotes="138"/>
+                <result value="Recommended" numvotes="81"/>
+                <result value="Not Recommended" numvotes="14"/>
+            </results>
+            <results numplayers="4+">
+                <result value="Best" numvotes="0"/>
+                <result value="Recommended" numvotes="5"/>
+                <result value="Not Recommended" numvotes="114"/>
+            </results>
+        </poll>
+        <playingtime value="120"/>
+        <minplaytime value="120"/>
+        <maxplaytime value="120"/>
+        <minage value="13"/>
+        <poll name="suggested_playerage" title="User Suggested Player Age" totalvotes="73">
+            <results>
+                <result value="2" numvotes="0"/>
+                <result value="3" numvotes="0"/>
+                <result value="4" numvotes="0"/>
+                <result value="5" numvotes="0"/>
+                <result value="6" numvotes="0"/>
+                <result value="8" numvotes="4"/>
+                <result value="10" numvotes="9"/>
+                <result value="12" numvotes="30"/>
+                <result value="14" numvotes="25"/>
+                <result value="16" numvotes="3"/>
+                <result value="18" numvotes="2"/>
+                <result value="21 and up" numvotes="0"/>
+            </results>
+        </poll>
+        <poll name="language_dependence" title="Language Dependence" totalvotes="50">
+            <results>
+                <result level="1" value="No necessary in-game text" numvotes="0"/>
+                <result level="2" value="Some necessary text - easily memorized or small crib sheet" numvotes="21"/>
+                <result level="3" value="Moderate in-game text - needs crib sheet or paste ups" numvotes="27"/>
+                <result level="4" value="Extensive use of text - massive conversion needed to be playable" numvotes="2"/>
+                <result level="5" value="Unplayable in another language" numvotes="0"/>
+            </results>
+        </poll>
+        <link type="boardgamecategory" id="1039" value="Deduction"/>
+        <link type="boardgamecategory" id="1010" value="Fantasy"/>
+        <link type="boardgamemechanic" id="2001" value="ACT-01 Action Points"/>
+        <link type="boardgamemechanic" id="2041" value="Card Drafting"/>
+        <link type="boardgamemechanic" id="2040" value="Hand Management"/>
+        <link type="boardgamemechanic" id="2082" value="WPL-01 Worker Placement"/>
+        <link type="boardgamefamily" id="41489" value="Digital Hybrid, App Required"/>
+        <link type="boardgameexpansion" id="174522" value="Alchemists: Publisher"/>
+        <link type="boardgameexpansion" id="167849" value="Alchemists: Ring of Favor"/>
+        <link type="boardgameexpansion" id="204650" value="Alchemists: The King's Golem"/>
+        <link type="boardgamedesigner" id="75718" value="Matúš Kotry"/>
+        <link type="boardgameartist" id="12692" value="David Cochard"/>
+        <link type="boardgamepublisher" id="7345" value="Czech Games Edition"/>
+        <link type="boardgamepublisher" id="3475" value="Arclight"/>
+        <link type="boardgamepublisher" id="10768" value="Cranio Creations"/>
+        <link type="boardgamepublisher" id="2366" value="Devir"/>
+        <link type="boardgamepublisher" id="29194" value="GaGa Games"/>
+        <link type="boardgamepublisher" id="2862" value="The Game Master BV"/>
+        <link type="boardgamepublisher" id="264" value="Heidelberger Spieleverlag"/>
+        <link type="boardgamepublisher" id="8923" value="IELLO"/>
+        <link type="boardgamepublisher" id="8291" value="Korea Boardgames co., Ltd."/>
+        <link type="boardgamepublisher" id="25203" value="Lex Games"/>
+        <link type="boardgamepublisher" id="7992" value="MINDOK"/>
+        <link type="boardgamepublisher" id="30552" value="One Moment Games"/>
+        <link type="boardgamepublisher" id="7466" value="Rebel"/>
+        <statistics page="1">
+            <ratings>
+                <usersrated value="15370"/>
+                <average value="7.69395"/>
+                <bayesaverage value="7.47847"/>
+                <ranks>
+                    <rank type="subtype" id="1" name="boardgame" friendlyname="Board Game Rank" value="91" bayesaverage="7.47847"/>
+                    <rank type="family" id="5497" name="strategygames" friendlyname="Strategy Game Rank" value="76" bayesaverage="7.49929"/>
+                </ranks>
+                <stddev value="1.3975"/>
+                <median value="0"/>
+                <owned value="19857"/>
+                <trading value="383"/>
+                <wanting value="610"/>
+                <wishing value="3976"/>
+                <numcomments value="2408"/>
+                <numweights value="839"/>
+                <averageweight value="3.8629"/>
+            </ratings>
+        </statistics>
+    </item>
+</items>

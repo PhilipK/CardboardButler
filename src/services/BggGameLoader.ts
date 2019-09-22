@@ -79,31 +79,35 @@ export default class BggGameLoader {
     }
 
     public async loadExtendedInfo() {
-        const allGames = this.merger.getMergedCollection(this.collectionMap);
-        const unknownGames = allGames.filter((game) => this.extraInfoMap[game.id] === undefined);
-        const loadingInfo: LoadingInfo[] = unknownGames.map((game) => ({
+        const allGames = this.getAllGamesPlus();
+        const allUnknownGames = allGames.filter((game) => this.extraInfoMap[game.id] === undefined);
+        const loadingInfo: LoadingInfo[] = allUnknownGames.map((game) => ({
             type: "game",
             isLoading: false,
             gameinfo: game
         }));
         this.loadingInfo = [...loadingInfo, ...this.loadingInfo];
-        while (unknownGames.length > 0) {
-            const promises: Promise<ExtendedGameInfo>[] = [];
-            for (let i = 0; i < this.concurrentRequestLimit; i++) {
-                const currentGame = unknownGames.pop();
+        const chunks = this.chunk(allUnknownGames, 50);
+        return await Promise.all(chunks.map((unknownGames) => {
+            return this.loadGamesWithRetry(unknownGames).then((extraInfos) => {
+                extraInfos.forEach((extraInfo, i) => {
+                    this.extraInfoMap[unknownGames[i].id] = extraInfo;
+                });
+                this.storeExtraInfo();
+                this.informCollectionUpdateHandlers();
+                return extraInfos;
+            });
+        }));
+    }
 
-                if (currentGame !== undefined) {
-                    const promise = this.loadGameWithRetry(currentGame).then((extraInfo) => {
-                        this.extraInfoMap[currentGame.id] = extraInfo;
-                        this.storeExtraInfo();
-                        this.informCollectionUpdateHandlers();
-                        return extraInfo;
-                    });
-                    promises.push(promise);
-                }
-            }
-            await Promise.all(promises);
+    private chunk<T>(input: T[], chunkSize: number): T[][] {
+        const chunked_arr: T[][] = [];
+        const copied = [...input]; // ES6 destructuring
+        const numOfChild = Math.ceil(copied.length / chunkSize); // Round up to the nearest integer
+        for (let i = 0; i < numOfChild; i++) {
+            chunked_arr.push(copied.splice(0, chunkSize));
         }
+        return chunked_arr;
     }
 
 
@@ -186,27 +190,33 @@ export default class BggGameLoader {
         }
     }
 
-    private async loadGameWithRetry(game: GameInfo) {
-        const { id } = game;
-        const loadingIndex = this.loadingInfo.findIndex((li) => li.type === "game" && li.gameinfo.id === id);
-        this.loadingInfo[loadingIndex].isLoading = true;
-        this.loadingInfo[loadingIndex].retryInfo = undefined;
+    private async loadGamesWithRetry(games: GameInfo[]) {
+        const ids = games.map((g) => g.id);
+        ids.forEach((id) => {
+            const loadingIndex = this.loadingInfo.findIndex((li) => li.type === "game" && li.gameinfo.id === id);
+            this.loadingInfo[loadingIndex].isLoading = true;
+            this.loadingInfo[loadingIndex].retryInfo = undefined;
+        });
         this.informLoadingHandlers();
-        const extended = await this.service.getGameInfo(id);
-        if (!("retryLater" in extended)) {
-            this.loadingInfo = this.loadingInfo.filter((g) => g.type !== "game" || g.gameinfo.id !== id);
+        const extendeds = await this.service.getGamesInfo(ids);
+        if (!("retryLater" in extendeds)) {
+            ids.forEach((id) => {
+                this.loadingInfo = this.loadingInfo.filter((g) => g.type !== "game" || g.gameinfo.id !== id);
+            });
             this.informLoadingHandlers();
-            return extended;
+            return extendeds;
         } else {
-            const retryTime = (extended && extended.backoff) ? 10000 : 3000;
-            if (extended && extended.backoff) {
+            const retryTime = (extendeds && extendeds.backoff) ? 10000 : 3000;
+            if (extendeds && extendeds.backoff) {
                 this.concurrentRequestLimit = Math.max(this.concurrentRequestLimit - 1, 1);
             }
-            const loadingIndex = this.loadingInfo.findIndex((li) => li.type === "game" && li.gameinfo.id === id);
-            this.loadingInfo[loadingIndex].retryInfo = extended;
+            ids.forEach((id) => {
+                const loadingIndex = this.loadingInfo.findIndex((li) => li.type === "game" && li.gameinfo.id === id);
+                this.loadingInfo[loadingIndex].retryInfo = extendeds;
+            });
             this.informLoadingHandlers();
-            return new Promise<ExtendedGameInfo>(async resolver => {
-                setTimeout(() => resolver(this.loadGameWithRetry(game)), retryTime);
+            return new Promise<ExtendedGameInfo[]>(async resolver => {
+                setTimeout(() => resolver(this.loadGamesWithRetry(games)), retryTime);
             });
         }
     }
