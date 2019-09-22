@@ -60,16 +60,18 @@ export default class BggGameLoader {
         this.merger = merger;
         this.useCache = useCache;
         this.extraInfoMap = {};
-        this.LoadExtraInfo();
+        this.loadExtraInfo();
 
     }
 
     public async loadCollections(usernames: string[]): Promise<GameInfo[][]> {
-        this.collectionMap = {};
+        this.loadCollectionsFromCache();
         this.currentNames = usernames;
+        this.informCollectionUpdateHandlers();
         return await Promise.all(usernames.map(async (username) => {
             const games = await this.loadCollectionWithRetry(username);
             this.collectionMap[username] = games;
+            this.storeCollections();
             this.informCollectionUpdateHandlers();
             return games;
         }));
@@ -93,7 +95,7 @@ export default class BggGameLoader {
                 if (currentGame !== undefined) {
                     const promise = this.loadGameWithRetry(currentGame).then((extraInfo) => {
                         this.extraInfoMap[currentGame.id] = extraInfo;
-                        this.StoreExtraInfo();
+                        this.storeExtraInfo();
                         this.informCollectionUpdateHandlers();
                         return extraInfo;
                     });
@@ -105,13 +107,13 @@ export default class BggGameLoader {
     }
 
 
-    private StoreExtraInfo() {
+    private storeExtraInfo() {
         if (localStorage && this.useCache) {
             localStorage.setItem("extrainfo", JSON.stringify(this.extraInfoMap));
         }
     }
 
-    private LoadExtraInfo() {
+    private loadExtraInfo() {
         this.extraInfoMap = {};
         if (localStorage && this.useCache) {
             const cache = JSON.parse(localStorage.getItem("extrainfo")) as ExtraInfoMap;
@@ -121,8 +123,32 @@ export default class BggGameLoader {
         }
     }
 
+
+    private storeCollections() {
+        if (localStorage && this.useCache) {
+            localStorage.setItem("collections", JSON.stringify(this.collectionMap));
+        }
+    }
+
+    private loadCollectionsFromCache() {
+        this.collectionMap = {};
+        if (localStorage && this.useCache) {
+            const cache = JSON.parse(localStorage.getItem("collections")) as CollectionMap;
+            if (cache) {
+                this.collectionMap = cache;
+            }
+        }
+    }
+
     private getAllGamesPlus() {
-        const allGames = this.merger.getMergedCollection(this.collectionMap);
+        const shownGamesMap = this.currentNames.reduce((prev, cur) => {
+            const known = this.collectionMap[cur];
+            if (!known) {
+                return prev;
+            }
+            return Object.assign({}, prev, { [cur]: known });
+        }, {}) as CollectionMap;
+        const allGames = this.merger.getMergedCollection(shownGamesMap);
         const allGamesPlus = allGames.map((ag) => Object.assign({}, ag, this.extraInfoMap[ag.id] || {}));
         return allGamesPlus;
     }
