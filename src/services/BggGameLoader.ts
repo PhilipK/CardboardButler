@@ -146,7 +146,9 @@ export default class BggGameLoader {
             if (!known) {
                 return prev;
             }
-            return Object.assign({}, prev, { [cur]: known });
+            const newC: CollectionMap = {};
+            newC[cur] = known;
+            return Object.assign({}, prev, newC);
         }, {}) as CollectionMap;
         const allGames = this.merger.getMergedCollection(shownGamesMap);
         const allGamesPlus = allGames.map((ag) => Object.assign({}, ag, this.extraInfoMap[ag.id] || {}));
