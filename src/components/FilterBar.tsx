@@ -123,7 +123,7 @@ export default class FilterBar extends React.Component<Props, State> {
                     <div className="ui container">
                         <span className="topselect">
                             <span>Hi {iWe}  {amAre} </span>
-                            <span><b>{this.joinWithAndEnd(currentUsers)}</b></span>
+                            <span><a href="#"><b>{this.joinWithAndEnd(currentUsers)}</b></a></span>
                             <span> {iWe}  {amAre} looking for a </span>
                             <span>boardgame </span>
                             <span className="topselect">
