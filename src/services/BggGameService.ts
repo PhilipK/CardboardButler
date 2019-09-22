@@ -91,14 +91,8 @@ class BggGameService {
 
 
     async getGameInfo(id: number): Promise<BggRetryResult | ExtendedGameInfo> {
-        const xml = await this.fetchGameXml(id);
-        if (typeof xml === "string") {
-            const jsObj = convert.xml2js(xml) as convert.Element;
-            const mainElement = jsObj.elements[0].elements[0];
-            return this.elementToExtendedInfo(mainElement);
-        } else {
-            return xml;
-        }
+        const result = await this.getGamesInfo([id]);
+        return Array.isArray(result) ? result[0] : result;
     }
 
     async getGamesInfo(ids: number[]): Promise<BggRetryResult | ExtendedGameInfo[]> {

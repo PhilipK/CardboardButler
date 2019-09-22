@@ -319,7 +319,6 @@ describe("BggGameService", () => {
 
 
     describe("Handling errors", () => {
-        // const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/collection?username=Warium&own=1&stats=1`;
         const tryAgainMessage = `<message>
         Your request for this collection has been accepted and will be processed. Please try again later for access.
         </message>`;
