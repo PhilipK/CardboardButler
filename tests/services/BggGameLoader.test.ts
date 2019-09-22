@@ -17,7 +17,7 @@ describe("Loading games", () => {
     let loader: BggGameLoader;
 
     beforeEach(() => {
-        loader = new BggGameLoader(service, merger);
+        loader = new BggGameLoader(service, merger, false);
     });
 
     it("fetches collections when requested", () => {
@@ -45,7 +45,8 @@ describe("Loading games", () => {
         await loader.loadCollections(collections);
         // Expect
         expect(getMock.mock.calls).toHaveLength(2);
-        expect(onUpdateMock.mock.calls).toHaveLength(2);
+        // initiall calls with 1, empty
+        expect(onUpdateMock).toHaveBeenCalledTimes(3);
     });
 
     it("can get the users currently shown", () => {
@@ -98,10 +99,11 @@ describe("Loading games", () => {
         // act
         await loader.loadCollections(usernames);
 
-        expect(onUpdateMock.mock.calls).toHaveLength(3);
-        expect(onUpdateMock.mock.calls[0][0]).toHaveLength(1);
-        expect(onUpdateMock.mock.calls[1][0]).toHaveLength(2);
-        expect(onUpdateMock.mock.calls[2][0]).toHaveLength(3);
+        expect(onUpdateMock.mock.calls).toHaveLength(4);
+        expect(onUpdateMock.mock.calls[0][0]).toHaveLength(0);
+        expect(onUpdateMock.mock.calls[1][0]).toHaveLength(1);
+        expect(onUpdateMock.mock.calls[2][0]).toHaveLength(2);
+        expect(onUpdateMock.mock.calls[3][0]).toHaveLength(3);
     });
 
     it("informs about loading information", async () => {
