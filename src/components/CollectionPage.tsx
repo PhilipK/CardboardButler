@@ -7,6 +7,7 @@ import { FilterAndSortOptions } from "../models/FilterOptions";
 import { GamesFilterAndSorter } from "../services/GamesFilterer";
 import { GameInfo, GameInfoPlus } from "../models/GameInfo";
 import NoGamesFound from "./NoGamesFound";
+import PickAGameForMe from "./PickAGame";
 
 
 interface Props {
@@ -49,9 +50,13 @@ export default class CollectionPage extends React.Component<Props, State> {
                 <FilterBar onFilterChange={this.onFilterChange} currentUsers={currentUsers} />
 
                 {noGames && <NoGamesFound />}
+
                 <Container fluid className="collections">
                     <div>
                         <Container text className="main" >
+                            {games.length > 0 && <PickAGameForMe games={games} />}
+
+
                             <Item.Group>
                                 {filteredGames.map((game) => <GameListItem key={game.id} item={game} />)}
                             </Item.Group>
