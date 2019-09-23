@@ -3,9 +3,11 @@ import { GameInfo, GameInfoPlus } from "../models/GameInfo";
 import { Item } from "semantic-ui-react";
 import DescriptionGenerator from "../services/GameDescriptionGenerator";
 
+type Size = "mini" | "tiny" | "small" | "medium" | "large" | "big" | "huge" | "massive";
+
 export interface AppProps {
     item: GameInfoPlus;
-    size: "mini" | "tiny" | "small" | "medium" | "large" | "big" | "huge" | "massive" | undefined;
+    size?: Size;
 
 }
 
