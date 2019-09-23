@@ -78,12 +78,14 @@ export default class PickAGameForMe extends React.Component<Props, State> {
             );
         } else {
             return (
-                <Button fluid basic onClick={(e) => {
-                    e.stopPropagation();
-                    this.pickARandomGame();
-                }}>
-                    <Icon name="cube" />Pick a game for me!
+                <Container text >
+                    <Button fluid basic onClick={(e) => {
+                        e.stopPropagation();
+                        this.pickARandomGame();
+                    }}>
+                        <Icon name="cube" />Pick a game for me!
             </Button>
+                </Container>
             );
         }
     }
