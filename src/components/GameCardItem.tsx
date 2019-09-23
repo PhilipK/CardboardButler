@@ -3,9 +3,12 @@ import { GameInfoPlus } from "../models/GameInfo";
 import { Card, Icon, Image } from "semantic-ui-react";
 import DescriptionGenerator from "../services/GameDescriptionGenerator";
 
+type Size = "mini" | "tiny" | "small" | "medium" | "large" | "big" | "huge" | "massive";
+
+
 export interface AppProps {
     item: GameInfoPlus;
-    size: "large" | "medium" | "small" | undefined;
+    size?: Size;
 }
 
 const gameDescription = new DescriptionGenerator();
@@ -16,14 +19,15 @@ const gameDescription = new DescriptionGenerator();
 export default class GameCardItem extends React.PureComponent<AppProps> {
 
     render() {
-        const { item, size = "medium" } = this.props;
+        const { item, size } = this.props;
+        const { owners = [] } = item;
         return (
             <Card size={size}>
                 <Image src={item.imageUrl} size={"massive"} wrapped ui={false} />
                 <Card.Content>
                     <Card.Header>{item.name}</Card.Header>
                     <Card.Meta>
-                        <span className="date">{(item.yearPublished || "") + " - " + item.owners.join(", ")}</span>
+                        <span className="date">{(item.yearPublished || "") + " - " + owners.join(", ")}</span>
                     </Card.Meta>
                     <Card.Description>
                         {gameDescription.generateDescription(item)}
