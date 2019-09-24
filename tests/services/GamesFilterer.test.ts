@@ -225,13 +225,13 @@ describe("Filtering games", () => {
             const suggestedNumberOfPlayers1: SuggestedNumberOfPlayersMap = {
                 [3]: {
                     best: 100,
-                    notrecommended: 200,
+                    notRecommended: 200,
                     numberOfPlayers: 3,
                     recommended: 13
                 },
                 [Infinity]: {
                     best: 0,
-                    notrecommended: 2,
+                    notRecommended: 2,
                     numberOfPlayers: Infinity,
                     recommended: 3
                 }
@@ -240,13 +240,13 @@ describe("Filtering games", () => {
             const suggestedNumberOfPlayers2: SuggestedNumberOfPlayersMap = {
                 [3]: {
                     best: 100,
-                    notrecommended: 3,
+                    notRecommended: 3,
                     numberOfPlayers: 3,
                     recommended: 10
                 },
                 [Infinity]: {
                     best: 0,
-                    notrecommended: 0,
+                    notRecommended: 0,
                     numberOfPlayers: Infinity,
                     recommended: 3
                 }
@@ -255,13 +255,13 @@ describe("Filtering games", () => {
             const suggestedNumberOfPlayers3: SuggestedNumberOfPlayersMap = {
                 [1]: {
                     best: 2000,
-                    notrecommended: 120,
+                    notRecommended: 120,
                     numberOfPlayers: Infinity,
                     recommended: 3
                 },
                 [Infinity]: {
                     best: 0,
-                    notrecommended: 120,
+                    notRecommended: 120,
                     numberOfPlayers: Infinity,
                     recommended: 3
                 }
@@ -279,13 +279,13 @@ describe("Filtering games", () => {
             const suggestedNumberOfPlayers1: SuggestedNumberOfPlayersMap = {
                 [3]: {
                     best: 100,
-                    notrecommended: 200,
+                    notRecommended: 200,
                     numberOfPlayers: 3,
                     recommended: 13
                 },
                 [Infinity]: {
                     best: 0,
-                    notrecommended: 2,
+                    notRecommended: 2,
                     numberOfPlayers: Infinity,
                     recommended: 3
                 }
@@ -294,13 +294,13 @@ describe("Filtering games", () => {
             const suggestedNumberOfPlayers2: SuggestedNumberOfPlayersMap = {
                 [3]: {
                     best: 100,
-                    notrecommended: 3,
+                    notRecommended: 3,
                     numberOfPlayers: 3,
                     recommended: 10
                 },
                 [Infinity]: {
                     best: 100,
-                    notrecommended: 0,
+                    notRecommended: 0,
                     numberOfPlayers: Infinity,
                     recommended: 3
                 }
@@ -309,13 +309,13 @@ describe("Filtering games", () => {
             const suggestedNumberOfPlayers3: SuggestedNumberOfPlayersMap = {
                 [1]: {
                     best: 2,
-                    notrecommended: 120,
+                    notRecommended: 120,
                     numberOfPlayers: Infinity,
                     recommended: 3
                 },
                 [Infinity]: {
                     best: 2000,
-                    notrecommended: 120,
+                    notRecommended: 120,
                     numberOfPlayers: Infinity,
                     recommended: 3
                 }

@@ -35,7 +35,7 @@ export interface NumberOfPlayersVotes {
     numberOfPlayers: number;
     best: number;
     recommended: number;
-    notrecommended: number;
+    notRecommended: number;
 }
 
 export interface SuggestedNumberOfPlayersMap {

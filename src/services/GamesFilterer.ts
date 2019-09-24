@@ -46,26 +46,28 @@ export class GamesFilterAndSorter {
         const { sortOption = "bggrating" } = options;
         if (typeof sortOption === "object") {
             const { numberOfPlayers } = sortOption;
-            collection.sort(this.getSuggestedComparatorComparator(numberOfPlayers));
-            return collection;
+            if (numberOfPlayers) {
+                return collection.sort(this.getSuggestedComparatorComparator(numberOfPlayers));
+            } else {
+                return collection;
+            }
         } else {
             return collection.sort(this.sortMap[sortOption]);
         }
     }
 
     private getSuggestedComparatorComparator(playerCount: number) {
-        const players = playerCount;
         return (a: GameInfoPlus, b: GameInfoPlus) => {
-            return this.getSuggestePlayerScore(players, b) - this.getSuggestePlayerScore(players, a);
+            return this.getSuggestePlayerScore(playerCount, b) - this.getSuggestePlayerScore(playerCount, a);
         };
     }
 
-    private getSuggestePlayerScore(playerCount: number, gameInfo: GameInfoPlus) {
+    private getSuggestePlayerScore(playerCount: number, gameInfo: GameInfoPlus): number {
         if ("suggestedNumberOfPlayers" in gameInfo) {
             const votes = gameInfo.suggestedNumberOfPlayers[playerCount] || gameInfo.suggestedNumberOfPlayers[Infinity];
             if (votes !== undefined) {
-                const total = votes.best + votes.recommended + votes.notrecommended;
-                const score = (votes.best / total * 100) + (votes.recommended / total * 50) - (votes.notrecommended / total * 75);
+                const total = votes.best + votes.recommended + votes.notRecommended;
+                const score = (votes.best / total * 200) + (votes.recommended / total * 100) - (votes.notRecommended / total * 100);
                 return score;
             }
         }

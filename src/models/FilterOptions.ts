@@ -21,7 +21,7 @@ export type SimpleSortOption = "alphabetic" | "bggrating" | "new" | "old" | "use
 
 export type ParametricSortOption = {
     type: "suggestedPlayers",
-    numberOfPlayers: number
+    numberOfPlayers?: number
 };
 
 
