@@ -68,8 +68,8 @@ export default class CollectionPage extends React.Component<Props, State> {
 
                 {noGames && <NoGamesFound />}
 
-                {games.length > 0 && <Container text fluid>
-                    <PickAGameForMe games={games} />
+                {filteredGames.length > 0 && <Container text fluid>
+                    <PickAGameForMe games={filteredGames} />
                     <Divider hidden />
                 </Container>
                 }
