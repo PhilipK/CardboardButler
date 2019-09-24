@@ -31,7 +31,7 @@ export interface GameInfo {
 }
 
 
-interface NumberOfPlayersVotes {
+export interface NumberOfPlayersVotes {
     numberOfPlayers: number;
     best: number;
     recommended: number;

@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom/extend-expect";
 import { GamesFilterAndSorter } from "../../src/services/GamesFilterer";
 import { alchemists, alchemistsTheKing, sevenWonders, smallWorld } from "./model/TestGames";
-import { GameInfo, ExtendedGameInfo, GameInfoPlus, FullGameInfo } from "../../src/models/GameInfo";
+import { GameInfo, ExtendedGameInfo, GameInfoPlus, FullGameInfo, SuggestedNumberOfPlayersMap } from "../../src/models/GameInfo";
 import * as fetchMock from "fetch-mock";
 import { getHugeCollection } from "./TestHelpers";
 
@@ -218,6 +218,115 @@ describe("Filtering games", () => {
             const onOrdered = [unWeighted, weightGame1, weightGame2];
             const result = filterer.filter(onOrdered, { sortOption: "weight-heavy" });
             expect(result.map((r) => ("weight" in r) ? r.weight : undefined)).toEqual([5, 3, undefined]);
+        });
+
+
+        it("can sort by suggestedPlayers", () => {
+            const suggestedNumberOfPlayers1: SuggestedNumberOfPlayersMap = {
+                [3]: {
+                    best: 100,
+                    notrecommended: 200,
+                    numberOfPlayers: 3,
+                    recommended: 13
+                },
+                [Infinity]: {
+                    best: 0,
+                    notrecommended: 2,
+                    numberOfPlayers: Infinity,
+                    recommended: 3
+                }
+            };
+
+            const suggestedNumberOfPlayers2: SuggestedNumberOfPlayersMap = {
+                [3]: {
+                    best: 100,
+                    notrecommended: 3,
+                    numberOfPlayers: 3,
+                    recommended: 10
+                },
+                [Infinity]: {
+                    best: 0,
+                    notrecommended: 0,
+                    numberOfPlayers: Infinity,
+                    recommended: 3
+                }
+            };
+
+            const suggestedNumberOfPlayers3: SuggestedNumberOfPlayersMap = {
+                [1]: {
+                    best: 2000,
+                    notrecommended: 120,
+                    numberOfPlayers: Infinity,
+                    recommended: 3
+                },
+                [Infinity]: {
+                    best: 0,
+                    notrecommended: 120,
+                    numberOfPlayers: Infinity,
+                    recommended: 3
+                }
+            };
+            const game1: GameInfoPlus = Object.assign({}, testGame1, { suggestedNumberOfPlayers: suggestedNumberOfPlayers1 });
+            const game2: GameInfoPlus = Object.assign({}, testGame2, { suggestedNumberOfPlayers: suggestedNumberOfPlayers2 });
+            const game3: GameInfoPlus = Object.assign({}, testGame3, { suggestedNumberOfPlayers: suggestedNumberOfPlayers3 });
+            const game4: GameInfoPlus = Object.assign({}, testGame4);
+            const onOrdered = [game1, game2, game3, game4];
+            const result = filterer.filter(onOrdered, { sortOption: { type: "suggestedPlayers", numberOfPlayers: 3 } });
+            expect(result.map((r) => r.name)).toEqual([game2, game1, game3, game4].map((g) => g.name));
+        });
+
+        it("can sort by suggestedPlayers even if infinity", () => {
+            const suggestedNumberOfPlayers1: SuggestedNumberOfPlayersMap = {
+                [3]: {
+                    best: 100,
+                    notrecommended: 200,
+                    numberOfPlayers: 3,
+                    recommended: 13
+                },
+                [Infinity]: {
+                    best: 0,
+                    notrecommended: 2,
+                    numberOfPlayers: Infinity,
+                    recommended: 3
+                }
+            };
+
+            const suggestedNumberOfPlayers2: SuggestedNumberOfPlayersMap = {
+                [3]: {
+                    best: 100,
+                    notrecommended: 3,
+                    numberOfPlayers: 3,
+                    recommended: 10
+                },
+                [Infinity]: {
+                    best: 100,
+                    notrecommended: 0,
+                    numberOfPlayers: Infinity,
+                    recommended: 3
+                }
+            };
+
+            const suggestedNumberOfPlayers3: SuggestedNumberOfPlayersMap = {
+                [1]: {
+                    best: 2,
+                    notrecommended: 120,
+                    numberOfPlayers: Infinity,
+                    recommended: 3
+                },
+                [Infinity]: {
+                    best: 2000,
+                    notrecommended: 120,
+                    numberOfPlayers: Infinity,
+                    recommended: 3
+                }
+            };
+            const game1: GameInfoPlus = Object.assign({}, testGame1, { suggestedNumberOfPlayers: suggestedNumberOfPlayers1 });
+            const game2: GameInfoPlus = Object.assign({}, testGame2, { suggestedNumberOfPlayers: suggestedNumberOfPlayers2 });
+            const game3: GameInfoPlus = Object.assign({}, testGame3, { suggestedNumberOfPlayers: suggestedNumberOfPlayers3 });
+            const game4: GameInfoPlus = Object.assign({}, testGame4);
+            const onOrdered = [game1, game2, game3, game4];
+            const result = filterer.filter(onOrdered, { sortOption: { type: "suggestedPlayers", numberOfPlayers: 1 } });
+            expect(result.map((r) => r.name)).toEqual([game2, game1, game3, game4].map((g) => g.name));
         });
     });
 });
