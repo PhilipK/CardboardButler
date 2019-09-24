@@ -206,8 +206,8 @@ describe("Filtering games", () => {
             const weightGame2: GameInfoPlus = Object.assign({}, testGame2, { weight: 5 });
             const unWeighted: GameInfoPlus = Object.assign({}, testGame3, { weight: undefined });
             const onOrdered = [unWeighted, weightGame1, weightGame2];
-            const result: FullGameInfo[] = filterer.filter(onOrdered, { sortOption: "weight-light" });
-            expect(result.map((r) => r.weight)).toEqual([3, 5, undefined]);
+            const result: GameInfoPlus[] = filterer.filter(onOrdered, { sortOption: "weight-light" });
+            expect(result.map((r) => ("weight" in r) ? r.weight : undefined)).toEqual([3, 5, undefined]);
 
         });
 
@@ -216,8 +216,8 @@ describe("Filtering games", () => {
             const weightGame2: GameInfoPlus = Object.assign({}, testGame2, { weight: 5 });
             const unWeighted: GameInfoPlus = Object.assign({}, testGame3, { weight: undefined });
             const onOrdered = [unWeighted, weightGame1, weightGame2];
-            const result: FullGameInfo[] = filterer.filter(onOrdered, { sortOption: "weight-heavy" });
-            expect(result.map((r) => r.weight)).toEqual([5, 3, undefined]);
+            const result = filterer.filter(onOrdered, { sortOption: "weight-heavy" });
+            expect(result.map((r) => ("weight" in r) ? r.weight : undefined)).toEqual([5, 3, undefined]);
         });
     });
 });
