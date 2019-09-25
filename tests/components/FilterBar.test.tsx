@@ -35,7 +35,7 @@ describe("Filter bar", () => {
             expect(onChange.mock.calls[0][0]).toEqual({
                 playtime: {
                     minimum: 0,
-                    maximum: 20
+                    maximum: 30
                 }
             });
         });
@@ -105,7 +105,7 @@ describe("Filter bar", () => {
                 playerCount: 1,
                 playtime: {
                     minimum: 0,
-                    maximum: 20
+                    maximum: 30
                 }
             });
         });
