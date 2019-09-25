@@ -19,7 +19,7 @@ interface CollectionLoadingInfo {
     type: "collection";
     username: string;
 }
-const storageVersion = "1";
+const storageVersion = "2";
 
 
 export type LoadingInfo = LoadingStatus & (GameLoadingInfo | CollectionLoadingInfo);
@@ -61,12 +61,12 @@ export default class BggGameLoader {
         this.merger = merger;
         this.useCache = useCache;
         this.extraInfoMap = {};
+        this.loadCollectionsFromCache();
         this.loadExtraInfo();
-
+        this.setStorageVersion();
     }
 
     public async loadCollections(usernames: string[]): Promise<GameInfo[][]> {
-        this.loadCollectionsFromCache();
         this.currentNames = usernames;
         this.informCollectionUpdateHandlers();
         return await Promise.all(usernames.map(async (username) => {
@@ -128,6 +128,12 @@ export default class BggGameLoader {
             if (cache) {
                 this.extraInfoMap = cache;
             }
+        }
+    }
+
+    private setStorageVersion() {
+        if (localStorage && this.useCache) {
+            localStorage.setItem("storageVersion", storageVersion);
         }
     }
 
