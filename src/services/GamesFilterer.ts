@@ -1,8 +1,8 @@
-import { GameInfo, GameInfoPlus } from "../models/GameInfo";
-import { FilterAndSortOptions, SortOption } from "../models/FilterOptions";
+import { GameInfo, GameInfoPlus, SuggestedNumberOfPlayersMap, NumberOfPlayersVotes, FullGameInfo } from "../models/GameInfo";
+import { FilterAndSortOptions, SortOption, SimpleSortOption } from "../models/FilterOptions";
 
 type SorterMap = {
-    [option in SortOption]: (a: GameInfo, b: GameInfo) => number | undefined;
+    [option in SimpleSortOption]: (a: GameInfo, b: GameInfo) => number | undefined;
 };
 
 /**
@@ -15,6 +15,8 @@ export class GamesFilterAndSorter {
     constructor() {
         this.userRatingSorter = this.userRatingSorter.bind(this);
         this.getAverageUserRating = this.getAverageUserRating.bind(this);
+        this.getSuggestePlayerScore = this.getSuggestePlayerScore.bind(this);
+        this.getSuggestedComparatorComparator = this.getSuggestedComparatorComparator.bind(this);
         this.sortMap = {
             alphabetic: this.nameSorter,
             bggrating: this.averageRatingSorter,
@@ -40,10 +42,42 @@ export class GamesFilterAndSorter {
     }
 
 
-    private sortCollection(collection: GameInfo[], options: FilterAndSortOptions) {
+    private sortCollection(collection: GameInfoPlus[], options: FilterAndSortOptions) {
         const { sortOption = "bggrating" } = options;
-        return collection.sort(this.sortMap[sortOption]);
+        if (typeof sortOption === "object") {
+            const { numberOfPlayers } = sortOption;
+            if (numberOfPlayers) {
+                return collection.sort(this.getSuggestedComparatorComparator(numberOfPlayers));
+            } else {
+                return collection;
+            }
+        } else {
+            return collection.sort(this.sortMap[sortOption]);
+        }
     }
+
+    private getSuggestedComparatorComparator(playerCount: number) {
+        return (a: GameInfoPlus, b: GameInfoPlus) => {
+            return this.getSuggestePlayerScore(playerCount, b) - this.getSuggestePlayerScore(playerCount, a);
+        };
+    }
+
+    private getSuggestePlayerScore(playerCount: number, gameInfo: GameInfoPlus): number {
+        if ("suggestedNumberOfPlayers" in gameInfo) {
+            const votes = gameInfo.suggestedNumberOfPlayers[playerCount] || gameInfo.suggestedNumberOfPlayers[Infinity];
+            if (votes !== undefined) {
+                const total = votes.best + votes.recommended + votes.notRecommended;
+                const score = (votes.best / total * 3) + (votes.recommended / total) - (votes.notRecommended / total * 2);
+                return score;
+            }
+        }
+        return -Infinity;
+
+
+    }
+
+
+
 
     private filterCollection(collection: GameInfo[], options: FilterAndSortOptions) {
         const { playtime, playerCount } = options;

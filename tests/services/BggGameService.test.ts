@@ -271,6 +271,29 @@ describe("BggGameService", () => {
                     ["Deduction", "Fantasy"]);
             }
         });
+
+        it("can get suggestedPlayers", async () => {
+            const result = await service.getGameInfo(gameId);
+            expect(!("retryLater" in result));
+            if (!("retryLater" in result)) {
+                const numberOfPlayers = result.suggestedNumberOfPlayers;
+                expect(numberOfPlayers).toBeDefined();
+                expect(numberOfPlayers[2]).toBeDefined();
+                expect(numberOfPlayers[1]).toEqual({
+                    numberOfPlayers: 1,
+                    best: 0,
+                    recommended: 4,
+                    notRecommended: 144
+                });
+
+                expect(numberOfPlayers[Infinity]).toEqual({
+                    numberOfPlayers: Infinity,
+                    best: 0,
+                    recommended: 5,
+                    notRecommended: 114
+                });
+            }
+        });
     });
 
 

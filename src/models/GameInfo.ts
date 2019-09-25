@@ -31,11 +31,24 @@ export interface GameInfo {
 }
 
 
+export interface NumberOfPlayersVotes {
+    numberOfPlayers: number;
+    best: number;
+    recommended: number;
+    notRecommended: number;
+}
+
+export interface SuggestedNumberOfPlayersMap {
+    [numberOfPlayers: number]: NumberOfPlayersVotes | undefined;
+}
+
+
 export interface ExtendedGameInfo {
     description?: string;
     weight?: number;
     mechanics?: string[];
     categories?: string[];
+    suggestedNumberOfPlayers: SuggestedNumberOfPlayersMap;
 }
 
 export type FullGameInfo = GameInfo & ExtendedGameInfo;

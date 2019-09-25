@@ -30,7 +30,6 @@ export default class App extends React.Component<AppProps, AppState> {
 
     constructor(superProps: Readonly<AppProps>) {
         super(superProps);
-
         this.collectionMerger = new CollectionMerger();
 
         this.onNameSelect = this.onNameSelect.bind(this);

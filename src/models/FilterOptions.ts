@@ -15,7 +15,14 @@ export type PlayCountOption = number;
 /**
  * Defines how to sort the collection.
  */
-export type SortOption = "alphabetic" | "bggrating" | "new" | "old" | "userrating" | "weight-light" | "weight-heavy";
+export type SortOption = SimpleSortOption | ParametricSortOption;
+
+export type SimpleSortOption = "alphabetic" | "bggrating" | "new" | "old" | "userrating" | "weight-light" | "weight-heavy";
+
+export type ParametricSortOption = {
+    type: "suggestedPlayers",
+    numberOfPlayers?: number
+};
 
 
 /**

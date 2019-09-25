@@ -46,7 +46,7 @@ for (let i = 2; i <= 10; i++) {
 interface SortingOptions {
     text: string;
     value: number;
-    sortoption: SortOption;
+    sortoption?: SortOption;
 }
 
 
@@ -58,8 +58,7 @@ export const sortingOptions: SortingOptions[] = [
     { text: "we like", value: 4, sortoption: "userrating" },
     { text: "are easy to learn", value: 5, sortoption: "weight-light" },
     { text: "are complex", value: 6, sortoption: "weight-heavy" },
-    // { text: "have a high bgg rank", value: "rank" },
-    // { text: "are best with this number of players", value: "bestWithPlayers" },
+    { text: "are best with this number of players", value: 7 },
     // { text: "are easy to learn", value: "easy" },
     // { text: "are complex", value: "complex" },
     // // { text: "least recently got played", value: "lastTimePlayed" },
@@ -86,11 +85,22 @@ export default class FilterBar extends React.Component<Props, State> {
 
     onPlayerCountChange(playerCountIndex: number) {
         const option = playercountOptions[playerCountIndex].playercount;
-        this.combineState({ playerCount: option });
+        if (typeof this.state.filterOptions.sortOption === "object") {
+
+            this.combineState({ playerCount: option, sortOption: Object.assign({}, this.state.filterOptions.sortOption, { numberOfPlayers: option }) });
+        } else {
+            this.combineState({ playerCount: option });
+        }
     }
 
     onSortChange(sortOptionIndex: number) {
-        const option = sortingOptions[sortOptionIndex].sortoption;
+        let option = sortingOptions[sortOptionIndex].sortoption;
+        if (option === undefined && sortingOptions[sortOptionIndex].value === 7) {
+            option = {
+                type: "suggestedPlayers",
+                numberOfPlayers: this.state.filterOptions.playerCount
+            };
+        }
         this.combineState({ sortOption: option });
     }
 

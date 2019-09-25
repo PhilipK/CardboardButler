@@ -19,6 +19,7 @@ interface CollectionLoadingInfo {
     type: "collection";
     username: string;
 }
+const storageVersion = "1";
 
 
 export type LoadingInfo = LoadingStatus & (GameLoadingInfo | CollectionLoadingInfo);
@@ -102,8 +103,8 @@ export default class BggGameLoader {
 
     private chunk<T>(input: T[], chunkSize: number): T[][] {
         const chunked_arr: T[][] = [];
-        const copied = [...input]; // ES6 destructuring
-        const numOfChild = Math.ceil(copied.length / chunkSize); // Round up to the nearest integer
+        const copied = [...input];
+        const numOfChild = Math.ceil(copied.length / chunkSize);
         for (let i = 0; i < numOfChild; i++) {
             chunked_arr.push(copied.splice(0, chunkSize));
         }
@@ -120,6 +121,9 @@ export default class BggGameLoader {
     private loadExtraInfo() {
         this.extraInfoMap = {};
         if (localStorage && this.useCache) {
+            if (localStorage.getItem("storageVersion") !== storageVersion) {
+                localStorage.removeItem("extrainfo");
+            }
             const cache = JSON.parse(localStorage.getItem("extrainfo")) as ExtraInfoMap;
             if (cache) {
                 this.extraInfoMap = cache;
@@ -137,6 +141,9 @@ export default class BggGameLoader {
     private loadCollectionsFromCache() {
         this.collectionMap = {};
         if (localStorage && this.useCache) {
+            if (localStorage.getItem("storageVersion") !== storageVersion) {
+                localStorage.removeItem("collections");
+            }
             const cache = JSON.parse(localStorage.getItem("collections")) as CollectionMap;
             if (cache) {
                 this.collectionMap = cache;
