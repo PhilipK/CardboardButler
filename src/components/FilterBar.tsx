@@ -19,11 +19,15 @@ interface TimerOptions {
 
 export const timeOptions: TimerOptions[] = [
     { text: "any time", value: 0, playtime: null },
-    { text: "less than 20 minutes", value: 1, playtime: { minimum: 0, maximum: 20 } },
-    { text: "20-60 minutes", value: 2, playtime: { minimum: 20, maximum: 60 } },
-    { text: "1-2 hours", value: 3, playtime: { minimum: 60, maximum: 120 } },
-    { text: "2-4 hours", value: 4, playtime: { minimum: 120, maximum: 240 } },
-    { text: "4 or more hours", value: 5, playtime: { minimum: 240, maximum: 9999999 } }
+    { text: "30 minutes or less", value: 1, playtime: { minimum: 0, maximum: 30 } },
+    { text: "1 hour or less", value: 2, playtime: { maximum: 60 } },
+    { text: "2 hours or less", value: 3, playtime: { maximum: 120 } },
+    { text: "3 hours or less", value: 4, playtime: { maximum: 180 } },
+    { text: "20-60 minutes", value: 5, playtime: { minimum: 20, maximum: 60 } },
+    { text: "1-2 hours", value: 6, playtime: { minimum: 60, maximum: 120 } },
+    { text: "2-4 hours", value: 7, playtime: { minimum: 120, maximum: 240 } },
+    { text: "4 or more hours", value: 8, playtime: { minimum: 240, maximum: 9999999 } },
+
 ];
 
 
