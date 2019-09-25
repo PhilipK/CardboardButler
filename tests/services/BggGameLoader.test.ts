@@ -141,11 +141,13 @@ describe("Loading games", () => {
         };
 
         const alchemistExtended: ExtendedGameInfo = {
-            description: "AlchemistExtended"
+            description: "AlchemistExtended",
+            suggestedNumberOfPlayers: {}
         };
 
         const sevenWondersExtended: ExtendedGameInfo = {
-            description: "SevenExtended"
+            description: "SevenExtended",
+            suggestedNumberOfPlayers: {}
         };
         const extendedGameInfos = {
             [161970]: alchemistExtended,
