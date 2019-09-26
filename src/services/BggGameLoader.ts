@@ -184,6 +184,7 @@ export default class BggGameLoader {
 
 
     private async loadCollectionWithRetry(name: string): Promise<GameInfo[]> {
+        this.loadingInfo = this.loadingInfo.filter((n) => n.type === "collection" && n.username !== name);
         this.loadingInfo.push({
             isLoading: true,
             type: "collection",
