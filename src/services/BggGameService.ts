@@ -114,17 +114,21 @@ class BggGameService {
 
             const numOfPlayersString = e.attributes.numplayers.toString();
             const numberOfPlayers = numOfPlayersString.indexOf("+") > -1 ? Infinity : parseInt(numOfPlayersString, 10);
-            const best = parseInt(e.elements.find((e) => e.name === "result" && e.attributes["value"].toString() === "Best").attributes["numvotes"] as string);
-            const recommended = parseInt(e.elements.find((e) => e.name === "result" && e.attributes["value"].toString() === "Recommended").attributes.numvotes as string);
-            const notRecommended = parseInt(e.elements.find((e) => e.name === "result" && e.attributes["value"].toString() === "Not Recommended").attributes.numvotes as string);
-            return {
-                numberOfPlayers: numberOfPlayers,
-                best: best,
-                recommended: recommended,
-                notRecommended: notRecommended
-            };
+            if (e.elements) {
+                const best = parseInt(e.elements.find((e) => e.name === "result" && e.attributes["value"].toString() === "Best").attributes["numvotes"] as string);
+                const recommended = parseInt(e.elements.find((e) => e.name === "result" && e.attributes["value"].toString() === "Recommended").attributes.numvotes as string);
+                const notRecommended = parseInt(e.elements.find((e) => e.name === "result" && e.attributes["value"].toString() === "Not Recommended").attributes.numvotes as string);
+                return {
+                    numberOfPlayers: numberOfPlayers,
+                    best: best,
+                    recommended: recommended,
+                    notRecommended: notRecommended
+                };
+            }
+            return undefined;
+
         });
-        const suggesteNumberOfPlayersMap: SuggestedNumberOfPlayersMap = suggestedNumberOfPlayersArray.reduce((p, c) => Object.assign(p, { [c.numberOfPlayers]: c }), {});
+        const suggesteNumberOfPlayersMap: SuggestedNumberOfPlayersMap = suggestedNumberOfPlayersArray.filter((snp) => snp).reduce((p, c) => Object.assign(p, { [c.numberOfPlayers]: c }), {});
 
         return {
             description: mainElements.find((e) => e.name === "description").elements[0].text.toString().trim(),
