@@ -1,11 +1,11 @@
 import GameListItem from "./GameListItem";
 import FilterBar from "./FilterBar";
-import { Item, Container, Header, Card, Button, Icon, Segment, Divider } from "semantic-ui-react";
+import { Item, Container, Header, Card, Icon, Divider } from "semantic-ui-react";
 
 import * as React from "react";
 import { FilterAndSortOptions } from "../models/FilterOptions";
 import { GamesFilterAndSorter } from "../services/GamesFilterer";
-import { GameInfo, GameInfoPlus } from "../models/GameInfo";
+import { GameInfoPlus } from "../models/GameInfo";
 import NoGamesFound from "./NoGamesFound";
 import PickAGameForMe from "./PickAGame";
 import GameCardItem from "./GameCardItem";

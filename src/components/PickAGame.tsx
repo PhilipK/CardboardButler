@@ -2,7 +2,6 @@ import React = require("react");
 import { Icon, Dimmer, Container, Item, Button, Segment, Card, Header, Divider } from "semantic-ui-react";
 import { GameInfoPlus, } from "../models/GameInfo";
 import GameListItem from "./GameListItem";
-import GameCardItem from "./GameCardItem";
 
 interface Props {
     games: GameInfoPlus[];

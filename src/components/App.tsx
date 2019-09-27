@@ -1,12 +1,11 @@
 import * as React from "react";
 import BggGameService from "../services/BggGameService";
-import { GameInfo, GameInfoPlus } from "../models/GameInfo";
+import { GameInfoPlus } from "../models/GameInfo";
 import { CollectionMerger } from "../services/CollectionMerger";
 import WelcomePage from "./WelcomePage";
 import CollectionPage from "./CollectionPage";
 import BggGameLoader, { LoadingInfo } from "../services/BggGameLoader";
-import { Dimmer, Loader, Segment } from "semantic-ui-react";
-import PickAGameForMe from "./PickAGame";
+import { Dimmer, Loader } from "semantic-ui-react";
 
 export interface AppProps {
     bggServce?: BggGameService;

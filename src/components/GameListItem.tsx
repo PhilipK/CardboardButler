@@ -1,5 +1,5 @@
 import * as React from "react";
-import { GameInfo, GameInfoPlus } from "../models/GameInfo";
+import { GameInfoPlus } from "../models/GameInfo";
 import { Item } from "semantic-ui-react";
 import DescriptionGenerator from "../services/GameDescriptionGenerator";
 
