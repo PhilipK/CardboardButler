@@ -6,10 +6,6 @@ import WelcomePage from "./WelcomePage";
 import CollectionPage from "./CollectionPage";
 import BggGameLoader, { LoadingInfo } from "../services/BggGameLoader";
 import { Dimmer, Loader, Progress } from "semantic-ui-react";
-
-
-
-
 export interface AppProps {
     bggServce?: BggGameService;
 }

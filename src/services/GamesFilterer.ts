@@ -1,5 +1,5 @@
-import { GameInfo, GameInfoPlus, SuggestedNumberOfPlayersMap, NumberOfPlayersVotes, FullGameInfo } from "../models/GameInfo";
-import { FilterAndSortOptions, SortOption, SimpleSortOption } from "../models/FilterOptions";
+import { GameInfo, GameInfoPlus } from "../models/GameInfo";
+import { FilterAndSortOptions, SimpleSortOption } from "../models/FilterOptions";
 
 type SorterMap = {
     [option in SimpleSortOption]: (a: GameInfo, b: GameInfo) => number | undefined;
