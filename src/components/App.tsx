@@ -1,12 +1,14 @@
 import * as React from "react";
 import BggGameService from "../services/BggGameService";
-import { GameInfo, GameInfoPlus } from "../models/GameInfo";
+import { GameInfoPlus } from "../models/GameInfo";
 import { CollectionMerger } from "../services/CollectionMerger";
 import WelcomePage from "./WelcomePage";
 import CollectionPage from "./CollectionPage";
 import BggGameLoader, { LoadingInfo } from "../services/BggGameLoader";
-import { Dimmer, Loader, Segment } from "semantic-ui-react";
-import PickAGameForMe from "./PickAGame";
+import { Dimmer, Loader, Progress } from "semantic-ui-react";
+
+
+
 
 export interface AppProps {
     bggServce?: BggGameService;
@@ -104,6 +106,7 @@ export default class App extends React.Component<AppProps, AppState> {
         const loadingCollections = loadingInfo.filter((li) => li.type === "collection").map((c) => c.type === "collection" ? c.username : "");
         const isLoadingCollections = loadingCollections.length > 0;
         const loadingGames = loadingInfo.filter((li) => li.type === "game");
+        const progressStyle: React.CSSProperties = { position: "fixed", borderRadius: 30, bottom: 0, height: 120, left: "20%", right: "20%", padding: 40, backgroundColor: "white" };
         return (
             <span >
                 {!showingCollection && !isLoadingCollections && <WelcomePage onNameSelect={this.onNameSelect} userValidator={this.userValidator} />}
@@ -111,9 +114,21 @@ export default class App extends React.Component<AppProps, AppState> {
                     <Loader inverted content={"Finding games for " + loadingCollections.join(", ")} />
                 </Dimmer>
                 }
-                {isLoadingCollections && games.length > 0 && <Loader active inline="centered" content={"Finding games for " + loadingCollections.join(", ")} />}
-                {loadingGames.length > 0 && games.length > 0 && <Loader active inline="centered" content={"Getting extra info for " + loadingGames.length + " games"} />}
+
                 {games.length > 0 && showingCollection && <CollectionPage currentUsers={this.state.names} games={games} />}
+                {isLoadingCollections && games.length > 0 &&
+                    <div style={progressStyle}>
+                        <Loader Active active inline="centered" content={"Finding games for " + loadingCollections.join(", ")} />
+                    </div>
+                }
+                {games.length > 0 && loadingGames.length > 0 &&
+                    < div style={progressStyle}>
+                        <Progress Active indicative value={games.length - loadingGames.length} total={games.length} progress="ratio">
+                            Getting more game info
+                    </Progress>
+                    </div>
+
+                }
 
             </span>
         );
