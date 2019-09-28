@@ -340,6 +340,91 @@ describe("BggGameService", () => {
     });
 
 
+    describe("Get Player Plays", () => {
+
+        beforeEach(() => {
+            fetch.reset();
+        });
+        it("Can get a users plays", async () => {
+            const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/xmlapi2/plays?username=Warium`;
+            const wariumPlays = readFileSync("tests/services/testxml/WariumPlays100.xml", "utf8");
+            fetch.mock(expectedUrl, 200, {
+                response: {
+                    status: 200,
+                    body: wariumPlays
+                }
+            });
+            const plays = await service.getPlays("Warium");
+            expect(plays).toBeDefined();
+            expect(Array.isArray(plays)).toBe(true);
+            if (Array.isArray(plays)) {
+                expect(plays.length).toEqual(100);
+            }
+        });
+
+        it("Request multiple pages if pagenation is needed.", async () => {
+            const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/xmlapi2/plays?username=Warium`;
+            const expectedUrl2 = `${proxyUrl}https://api.geekdo.com/xmlapi2/xmlapi2/plays?username=Warium&page=2`;
+            const expectedUrl3 = `${proxyUrl}https://api.geekdo.com/xmlapi2/xmlapi2/plays?username=Warium&page=3`;
+            const expectedUrl4 = `${proxyUrl}https://api.geekdo.com/xmlapi2/xmlapi2/plays?username=Warium&page=4`;
+            const wariumPlays1 = readFileSync("tests/services/testxml/WariumPlays1.xml", "utf8");
+            const wariumPlays2 = readFileSync("tests/services/testxml/WariumPlays2.xml", "utf8");
+            const wariumPlays3 = readFileSync("tests/services/testxml/WariumPlays3.xml", "utf8");
+            const wariumPlays4 = readFileSync("tests/services/testxml/WariumPlays4.xml", "utf8");
+            fetch.mock(expectedUrl, 200, {
+                response: {
+                    status: 200,
+                    body: wariumPlays1
+                }
+            });
+            fetch.mock(expectedUrl2, 200, {
+                response: {
+                    status: 200,
+                    body: wariumPlays2
+                }
+            });
+            fetch.mock(expectedUrl3, 200, {
+                response: {
+                    status: 200,
+                    body: wariumPlays3
+                }
+            });
+            fetch.mock(expectedUrl4, 200, {
+                response: {
+                    status: 200,
+                    body: wariumPlays4
+                }
+            });
+            const plays = await service.getPlays("Warium");
+            expect(Array.isArray(plays)).toBe(true);
+            if (Array.isArray(plays)) {
+                expect(plays).toBeDefined();
+                expect(plays.length).toEqual(311);
+            }
+        });
+
+        it("can load play info", async () => {
+            const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/xmlapi2/plays?username=Warium`;
+            const wariumPlays = readFileSync("tests/services/testxml/WariumPlays100.xml", "utf8");
+            fetch.mock(expectedUrl, 200, {
+                response: {
+                    status: 200,
+                    body: wariumPlays
+                }
+            });
+            const plays = await service.getPlays("Warium");
+            expect(Array.isArray(plays)).toBe(true);
+            if (Array.isArray(plays)) {
+                const play = plays[0];
+                expect(play.playId).toEqual(37982777);
+                expect(play.date).toEqual(new Date("2019-09-28"));
+                expect(play.length).toEqual(45);
+                expect(play.quantity).toEqual(1);
+                expect(play.gameId).toEqual(182134);
+            }
+        });
+    });
+
 
     describe("Handling errors", () => {
         const tryAgainMessage = `<message>

@@ -1,0 +1,90 @@
+<plays username="Warium" userid="1070138" total="311" page="4" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+    <play id="14629006" date="2015-04-24" quantity="1" length="120" incomplete="0" nowinstats="0" location="Home">
+        <item name="Dead of Winter: A Crossroads Game" objecttype="thing" objectid="150376">
+            <subtypes>
+                <subtype value="boardgame"/>
+                <subtype value="boardgameintegration"/>
+            </subtypes>
+        </item>
+        <players>
+            <player username="" userid="0" name="Erin Kristoffersen" startposition="2" color="" score="" new="0" rating="0" win="0"/>
+            <player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="4" color="" score="" new="0" rating="0" win="0"/>
+            <player username="" userid="0" name="Peter Eskelund Bering" startposition="1" color="" score="" new="0" rating="0" win="1"/>
+            <player username="" userid="0" name="Jackie Bering" startposition="3" color="" score="" new="0" rating="0" win="0"/>
+        </players>
+    </play>
+    <play id="14602680" date="2015-04-19" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+        <item name="Dead of Winter: A Crossroads Game" objecttype="thing" objectid="150376">
+            <subtypes>
+                <subtype value="boardgame"/>
+                <subtype value="boardgameintegration"/>
+            </subtypes>
+        </item>
+    </play>
+    <play id="14602682" date="2015-04-19" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+        <item name="Dead of Winter: A Crossroads Game" objecttype="thing" objectid="150376">
+            <subtypes>
+                <subtype value="boardgame"/>
+                <subtype value="boardgameintegration"/>
+            </subtypes>
+        </item>
+    </play>
+    <play id="14552727" date="2015-04-11" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+        <item name="Star Wars: Imperial Assault" objecttype="thing" objectid="164153">
+            <subtypes>
+                <subtype value="boardgame"/>
+                <subtype value="boardgameimplementation"/>
+            </subtypes>
+        </item>
+    </play>
+    <play id="14552726" date="2015-04-10" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+        <item name="Star Wars: Imperial Assault" objecttype="thing" objectid="164153">
+            <subtypes>
+                <subtype value="boardgame"/>
+                <subtype value="boardgameimplementation"/>
+            </subtypes>
+        </item>
+    </play>
+    <play id="14552721" date="0000-00-00" quantity="5" length="0" incomplete="0" nowinstats="0" location="">
+        <item name="7 Wonders" objecttype="thing" objectid="68448">
+            <subtypes>
+                <subtype value="boardgame"/>
+            </subtypes>
+        </item>
+    </play>
+    <play id="14552723" date="0000-00-00" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+        <item name="Dominant Species" objecttype="thing" objectid="62219">
+            <subtypes>
+                <subtype value="boardgame"/>
+            </subtypes>
+        </item>
+    </play>
+    <play id="14552720" date="0000-00-00" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+        <item name="Le Havre" objecttype="thing" objectid="35677">
+            <subtypes>
+                <subtype value="boardgame"/>
+            </subtypes>
+        </item>
+    </play>
+    <play id="14552724" date="0000-00-00" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+        <item name="Lords of Waterdeep" objecttype="thing" objectid="110327">
+            <subtypes>
+                <subtype value="boardgame"/>
+            </subtypes>
+        </item>
+    </play>
+    <play id="14552722" date="0000-00-00" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+        <item name="Race for the Galaxy" objecttype="thing" objectid="28143">
+            <subtypes>
+                <subtype value="boardgame"/>
+            </subtypes>
+        </item>
+    </play>
+    <play id="14552729" date="0000-00-00" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+        <item name="Twilight Struggle" objecttype="thing" objectid="12333">
+            <subtypes>
+                <subtype value="boardgame"/>
+            </subtypes>
+        </item>
+    </play>
+</plays>

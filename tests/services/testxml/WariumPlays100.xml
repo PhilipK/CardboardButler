@@ -1,0 +1,1108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<plays username="Warium" userid="1070138" total="100" page="1" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="37982777" date="2019-09-28" quantity="1" length="45" incomplete="0" nowinstats="0" location="Home">
+<item name="Evolution: Climate" objecttype="thing" objectid="182134">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Daniel" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="37913383" date="2019-09-22" quantity="1" length="30" incomplete="0" nowinstats="0" location="Home">
+<item name="Evolution" objecttype="thing" objectid="155703">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Daniel" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="37913386" date="2019-09-20" quantity="1" length="120" incomplete="0" nowinstats="0" location="Paphoved">
+<item name="Inis" objecttype="thing" objectid="155821">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Paphoved" userid="1383856" name="Jonas Thyssen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Dado" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Minus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="37805806" date="2019-09-16" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Inis" objecttype="thing" objectid="155821">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="37805799" date="2019-09-15" quantity="1" length="60" incomplete="0" nowinstats="0" location="">
+<item name="Inis" objecttype="thing" objectid="155821">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="29148872" date="2018-05-19" quantity="1" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="T.I.M.E Stories" objecttype="thing" objectid="146508">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="28219170" date="2018-03-23" quantity="1" length="120" incomplete="0" nowinstats="0" location="Gedved Biblioteket">
+<item name="Root" objecttype="thing" objectid="237182">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Paphoved" userid="1383856" name="Jonas Thyssen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="28219188" date="2018-03-21" quantity="1" length="180" incomplete="0" nowinstats="0" location="inLogic">
+<item name="Root" objecttype="thing" objectid="237182">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="27399835" date="2018-02-03" quantity="1" length="240" incomplete="0" nowinstats="0" location="Mads">
+<item name="Inis" objecttype="thing" objectid="155821">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Mads" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Ole" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="cyndaq" userid="662528" name="Cyndaq 16" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="27399810" date="2018-02-03" quantity="1" length="60" incomplete="0" nowinstats="0" location="Mads">
+<item name="Scythe" objecttype="thing" objectid="169786">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Mads" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Ole" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Peter" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="27358767" date="2018-01-31" quantity="2" length="180" incomplete="0" nowinstats="0" location="inLogic">
+<item name="Inis" objecttype="thing" objectid="155821">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Bjarke" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Kim Andersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Kim Hjort" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="27263416" date="2018-01-27" quantity="1" length="45" incomplete="0" nowinstats="0" location="Gedved Biblioteket">
+<item name="Evolution: Climate" objecttype="thing" objectid="182134">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Klaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Sebastian" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="27263389" date="2018-01-27" quantity="1" length="60" incomplete="0" nowinstats="0" location="Gedved Biblioteket">
+<item name="Inis" objecttype="thing" objectid="155821">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Klaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Sebastian" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Søren" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="27275600" date="2018-01-27" quantity="4" length="90" incomplete="0" nowinstats="0" location="">
+<item name="Sequence" objecttype="thing" objectid="2375">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="27263407" date="2018-01-27" quantity="1" length="30" incomplete="0" nowinstats="0" location="Gedved Biblioteket">
+<item name="Skull" objecttype="thing" objectid="92415">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Klaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Sebastian" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Ditte" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="26881545" date="2018-01-06" quantity="2" length="135" incomplete="0" nowinstats="0" location="Klaus">
+<item name="Flamme Rouge" objecttype="thing" objectid="199478">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Klaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Tobias" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Johnnie" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Nikolaj" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Paphoved" userid="1383856" name="Jonas Thyssen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="26884026" date="2018-01-06" quantity="1" length="40" incomplete="0" nowinstats="0" location="Klaus">
+<item name="Flamme Rouge" objecttype="thing" objectid="199478">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Klaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Tobias" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Johnnie" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Nikolaj" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Paphoved" userid="1383856" name="Jonas Thyssen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="26885300" date="2018-01-06" quantity="1" length="45" incomplete="0" nowinstats="0" location="Klaus">
+<item name="Flamme Rouge" objecttype="thing" objectid="199478">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Klaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Tobias" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Johnnie" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Nikolaj" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Paphoved" userid="1383856" name="Jonas Thyssen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="26887187" date="2018-01-06" quantity="1" length="45" incomplete="0" nowinstats="0" location="Klaus">
+<item name="Flamme Rouge" objecttype="thing" objectid="199478">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Klaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Tobias" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Johnnie" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Nikolaj" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Paphoved" userid="1383856" name="Jonas Thyssen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="26789390" date="2018-01-02" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="26799999" date="2018-01-02" quantity="3" length="75" incomplete="0" nowinstats="0" location="Home">
+<item name="But Wait, There's More!" objecttype="thing" objectid="114438">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Michael" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Julie" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="26754852" date="2018-01-01" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="26769279" date="2018-01-01" quantity="4" length="45" incomplete="0" nowinstats="0" location="Home">
+<item name="Skull" objecttype="thing" objectid="92415">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Michael" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Julie" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="26717234" date="2017-12-31" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="26717729" date="2017-12-31" quantity="1" length="45" incomplete="0" nowinstats="0" location="Home">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="26687302" date="2017-12-30" quantity="1" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="26688329" date="2017-12-30" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="26600060" date="2017-12-26" quantity="1" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="Fog of Love" objecttype="thing" objectid="175324">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Julie" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Michael" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="26588149" date="2017-12-25" quantity="1" length="20" incomplete="1" nowinstats="0" location="Home">
+<item name="Fog of Love" objecttype="thing" objectid="175324">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="26500145" date="2017-12-21" quantity="1" length="55" incomplete="0" nowinstats="0" location="">
+<item name="Flamme Rouge" objecttype="thing" objectid="199478">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="26442688" date="2017-12-16" quantity="2" length="30" incomplete="0" nowinstats="0" location="Peter">
+<item name="Skull" objecttype="thing" objectid="92415">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="26303644" date="2017-12-07" quantity="2" length="240" incomplete="0" nowinstats="0" location="">
+<item name="Root" objecttype="thing" objectid="237182">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="26281371" date="2017-12-05" quantity="1" length="101" incomplete="0" nowinstats="0" location="">
+<item name="Root" objecttype="thing" objectid="237182">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="26228631" date="2017-12-02" quantity="1" length="18" incomplete="0" nowinstats="0" location="">
+<item name="Exploding Kittens" objecttype="thing" objectid="172225">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+</play>
+<play id="26125511" date="2017-11-25" quantity="1" length="150" incomplete="0" nowinstats="0" location="Peter">
+<item name="Great Western Trail" objecttype="thing" objectid="193738">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="cyndaq" userid="662528" name="Cyndaq 16" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Julius" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="26130720" date="2017-11-25" quantity="1" length="120" incomplete="0" nowinstats="0" location="">
+<item name="Mansions of Madness: Second Edition" objecttype="thing" objectid="205059">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="26122415" date="2017-11-25" quantity="1" length="150" incomplete="0" nowinstats="0" location="">
+<item name="Root" objecttype="thing" objectid="237182">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="26078615" date="2017-11-22" quantity="1" length="180" incomplete="0" nowinstats="0" location="Home">
+<item name="Root" objecttype="thing" objectid="237182">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="26058414" date="2017-11-20" quantity="2" length="180" incomplete="0" nowinstats="0" location="Michaels">
+<item name="Pandemic Legacy: Season 1" objecttype="thing" objectid="161936">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Nakul" userid="336247" name="Michael Nielsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Tom" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Sille" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="25973544" date="2017-11-16" quantity="1" length="90" incomplete="0" nowinstats="0" location="inLogic">
+<item name="Evolution: Climate" objecttype="thing" objectid="182134">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<comments> #bgstats</comments>
+<players>
+<player username="" userid="0" name="Bjarke" startposition="" color="" score="" new="1" rating="0" win="0"/>
+<player username="" userid="0" name="Bjarne" startposition="" color="" score="" new="1" rating="0" win="0"/>
+<player username="" userid="0" name="Kim Andersen" startposition="" color="" score="" new="1" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="25973546" date="2017-11-16" quantity="1" length="90" incomplete="0" nowinstats="0" location="inLogic">
+<item name="Evolution: Climate" objecttype="thing" objectid="182134">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<comments> #bgstats</comments>
+<players>
+<player username="" userid="0" name="Bjarke" startposition="" color="" score="50" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Bjarne" startposition="" color="" score="51" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Kim Andersen" startposition="" color="" score="30" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="52" new="0" rating="0" win="1"/>
+</players>
+</play>
+<play id="25917145" date="2017-11-12" quantity="1" length="37" incomplete="0" nowinstats="0" location="Home">
+<item name="Carcassonne" objecttype="thing" objectid="822">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<comments> #bgstats</comments>
+<players>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="106" new="0" rating="0" win="1"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="80" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="25869931" date="2017-11-10" quantity="2" length="15" incomplete="0" nowinstats="0" location="inLogic">
+<item name="One Night Ultimate Werewolf" objecttype="thing" objectid="147949">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+</play>
+<play id="25854325" date="2017-11-09" quantity="2" length="60" incomplete="0" nowinstats="0" location="Tivoli hotel">
+<item name="Skull" objecttype="thing" objectid="92415">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="25783513" date="2017-11-04" quantity="1" length="60" incomplete="0" nowinstats="0" location="">
+<item name="Inis" objecttype="thing" objectid="155821">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="25785746" date="2017-11-04" quantity="1" length="100" incomplete="0" nowinstats="0" location="">
+<item name="Inis" objecttype="thing" objectid="155821">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="25644755" date="2017-10-26" quantity="1" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="Dead of Winter: A Crossroads Game" objecttype="thing" objectid="150376">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Jonas Lindeløv" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Christian Holm Madsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="25636296" date="2017-10-25" quantity="1" length="190" incomplete="0" nowinstats="0" location="Work">
+<item name="Dead of Winter: A Crossroads Game" objecttype="thing" objectid="150376">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+</play>
+<play id="25636299" date="2017-10-14" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="25636300" date="2017-10-14" quantity="1" length="70" incomplete="0" nowinstats="0" location="">
+<item name="Inis" objecttype="thing" objectid="155821">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="25434678" date="2017-10-10" quantity="6" length="90" incomplete="0" nowinstats="0" location="inLogic">
+<item name="Coup" objecttype="thing" objectid="131357">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="25434672" date="2017-10-10" quantity="6" length="90" incomplete="0" nowinstats="0" location="inLogic">
+<item name="Skull" objecttype="thing" objectid="92415">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="25285098" date="2017-09-30" quantity="1" length="30" incomplete="0" nowinstats="0" location="Horsens Bibliotek">
+<item name="Dice Forge" objecttype="thing" objectid="194594">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="25285093" date="2017-09-30" quantity="1" length="10" incomplete="0" nowinstats="0" location="Horsens Bibliotek">
+<item name="Skull" objecttype="thing" objectid="92415">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="25285102" date="2017-09-30" quantity="1" length="30" incomplete="0" nowinstats="0" location="Horsens Bibliotek">
+<item name="Tesla vs. Edison: Duel" objecttype="thing" objectid="224125">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="25760007" date="2017-07-20" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Dead of Winter: A Crossroads Game" objecttype="thing" objectid="150376">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+</play>
+<play id="23968523" date="2017-06-27" quantity="1" length="90" incomplete="0" nowinstats="0" location="Jonas">
+<item name="Inis" objecttype="thing" objectid="155821">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Jonas Lindeløv" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Christian Holm Madsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="23968520" date="2017-06-27" quantity="3" length="120" incomplete="0" nowinstats="0" location="Jonas">
+<item name="Magic Maze" objecttype="thing" objectid="209778">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Jonas Lindeløv" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Christian Holm Madsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="23408677" date="2017-05-20" quantity="2" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="Inis" objecttype="thing" objectid="155821">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="23284251" date="2017-05-11" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Inis" objecttype="thing" objectid="155821">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="23254733" date="2017-05-08" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Inis" objecttype="thing" objectid="155821">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="23206987" date="2017-05-05" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Inis" objecttype="thing" objectid="155821">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="23040841" date="2017-04-23" quantity="3" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="Inis" objecttype="thing" objectid="155821">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="23022445" date="2017-04-22" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Inis" objecttype="thing" objectid="155821">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22996126" date="2017-04-20" quantity="1" length="15" incomplete="0" nowinstats="0" location="Klaus">
+<item name="FUSE" objecttype="thing" objectid="171273">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Klaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22996092" date="2017-04-20" quantity="1" length="100" incomplete="0" nowinstats="0" location="Klaus">
+<item name="Inis" objecttype="thing" objectid="155821">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Klaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Paphoved" userid="1383856" name="Jonas Thyssen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22996114" date="2017-04-20" quantity="3" length="20" incomplete="0" nowinstats="0" location="Klaus">
+<item name="Skull" objecttype="thing" objectid="92415">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Klaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Paphoved" userid="1383856" name="Jonas Thyssen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22888054" date="2017-04-13" quantity="1" length="30" incomplete="0" nowinstats="0" location="Michaels">
+<item name="Flamme Rouge" objecttype="thing" objectid="199478">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Nakul" userid="336247" name="Michael Nielsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22889531" date="2017-04-13" quantity="1" length="30" incomplete="0" nowinstats="0" location="Michaels">
+<item name="Legendary Encounters: An Alien Deck Building Game" objecttype="thing" objectid="146652">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Nakul" userid="336247" name="Michael Nielsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22877034" date="2017-04-12" quantity="1" length="150" incomplete="0" nowinstats="0" location="Home">
+<item name="Unlock! Escape Adventures" objecttype="thing" objectid="213460">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgamecompilation"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22839143" date="2017-04-09" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Unlock! Escape Adventures" objecttype="thing" objectid="213460">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgamecompilation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22815016" date="2017-04-08" quantity="1" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="Unlock! Escape Adventures" objecttype="thing" objectid="213460">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgamecompilation"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22815015" date="2017-04-07" quantity="1" length="20" incomplete="0" nowinstats="0" location="Home">
+<item name="Unlock! Escape Adventures" objecttype="thing" objectid="213460">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgamecompilation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22737732" date="2017-04-01" quantity="1" length="90" incomplete="0" nowinstats="0" location="Paphoved">
+<item name="Inis" objecttype="thing" objectid="155821">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Klaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Paphoved" userid="1383856" name="Jonas Thyssen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22737745" date="2017-04-01" quantity="1" length="45" incomplete="0" nowinstats="0" location="Paphoved">
+<item name="Roll for the Galaxy" objecttype="thing" objectid="132531">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Klaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Paphoved" userid="1383856" name="Jonas Thyssen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22672202" date="2017-03-27" quantity="1" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22666810" date="2017-03-26" quantity="2" length="90" incomplete="0" nowinstats="0" location="Asger">
+<item name="Captain Sonar" objecttype="thing" objectid="171131">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="cyndaq" userid="662528" name="Cyndaq 16" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="asgerf" userid="686635" name="Asger Feldthaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Julius" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Mads" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Christian" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22666807" date="2017-03-26" quantity="1" length="60" incomplete="0" nowinstats="0" location="Asger">
+<item name="Evolution: Climate" objecttype="thing" objectid="182134">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="cyndaq" userid="662528" name="Cyndaq 16" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="asgerf" userid="686635" name="Asger Feldthaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Julius" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Mads" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Christian" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22666818" date="2017-03-26" quantity="1" length="60" incomplete="0" nowinstats="0" location="Asger">
+<item name="Flamme Rouge" objecttype="thing" objectid="199478">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="asgerf" userid="686635" name="Asger Feldthaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Mads" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Clara" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22666795" date="2017-03-26" quantity="1" length="20" incomplete="0" nowinstats="0" location="Asger">
+<item name="FUSE" objecttype="thing" objectid="171273">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="cyndaq" userid="662528" name="Cyndaq 16" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="asgerf" userid="686635" name="Asger Feldthaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Julius" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Mads" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22666800" date="2017-03-26" quantity="1" length="140" incomplete="0" nowinstats="0" location="Asger">
+<item name="Mansions of Madness: Second Edition" objecttype="thing" objectid="205059">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="cyndaq" userid="662528" name="Cyndaq 16" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="asgerf" userid="686635" name="Asger Feldthaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Julius" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Mads" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22666804" date="2017-03-26" quantity="1" length="150" incomplete="0" nowinstats="0" location="Asger">
+<item name="Mansions of Madness: Second Edition" objecttype="thing" objectid="205059">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="cyndaq" userid="662528" name="Cyndaq 16" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="asgerf" userid="686635" name="Asger Feldthaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Julius" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Mads" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22666826" date="2017-03-26" quantity="1" length="90" incomplete="1" nowinstats="0" location="Asger">
+<item name="Scythe" objecttype="thing" objectid="169786">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="asgerf" userid="686635" name="Asger Feldthaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Mads" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Julius" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="cyndaq" userid="662528" name="Cyndaq 16" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22626844" date="2017-03-24" quantity="1" length="30" incomplete="0" nowinstats="0" location="Paphoved">
+<item name="Flamme Rouge" objecttype="thing" objectid="199478">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Paphoved" userid="1383856" name="Jonas Thyssen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Klaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Johnny" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22626840" date="2017-03-24" quantity="1" length="180" incomplete="0" nowinstats="0" location="Paphoved">
+<item name="Inis" objecttype="thing" objectid="155821">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Paphoved" userid="1383856" name="Jonas Thyssen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Klaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Johnny" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22617289" date="2017-03-23" quantity="1" length="60" incomplete="0" nowinstats="0" location="Jonas">
+<item name="Flamme Rouge" objecttype="thing" objectid="199478">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Jonas Lindeløv" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Christian Holm Madsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22571981" date="2017-03-20" quantity="5" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="Skull" objecttype="thing" objectid="92415">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Nakul" userid="336247" name="Michael Nielsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Tau" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Sille" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22516840" date="2017-03-16" quantity="1" length="60" incomplete="0" nowinstats="0" location="Paphoved">
+<item name="Evolution: Climate" objecttype="thing" objectid="182134">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Klaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Paphoved" userid="1383856" name="Jonas Thyssen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22499795" date="2017-03-15" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22489842" date="2017-03-14" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22471839" date="2017-03-12" quantity="1" length="90" incomplete="0" nowinstats="0" location="Klaus">
+<item name="Scythe" objecttype="thing" objectid="169786">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Jonas" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Klaus" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22439786" date="2017-03-11" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22384834" date="2017-03-06" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22346239" date="2017-03-04" quantity="1" length="120" incomplete="0" nowinstats="0" location="Home">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22324390" date="2017-03-02" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22300563" date="2017-02-28" quantity="1" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22259678" date="2017-02-26" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22236407" date="2017-02-25" quantity="1" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22258306" date="2017-02-25" quantity="1" length="150" incomplete="0" nowinstats="0" location="Home">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22189703" date="2017-02-21" quantity="2" length="150" incomplete="0" nowinstats="0" location="Home">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+</plays>
