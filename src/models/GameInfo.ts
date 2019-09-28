@@ -51,6 +51,15 @@ export interface ExtendedGameInfo {
     suggestedNumberOfPlayers: SuggestedNumberOfPlayersMap;
 }
 
+
+export interface PlayInfo {
+    playId: number;
+    date: Date;
+    quantity: number;
+    length?: number;
+    gameId: number;
+}
+
 export type FullGameInfo = GameInfo & ExtendedGameInfo;
 
 export type GameInfoPlus = GameInfo | FullGameInfo;

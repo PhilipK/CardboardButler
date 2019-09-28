@@ -1,6 +1,6 @@
 import FetchService from "./FetchService";
 import * as convert from "xml-js";
-import { GameInfo, ExtendedGameInfo, SuggestedNumberOfPlayersMap } from "../models/GameInfo";
+import { GameInfo, ExtendedGameInfo, SuggestedNumberOfPlayersMap, PlayInfo } from "../models/GameInfo";
 import { UserInfo } from "../models/UserInfo";
 
 
@@ -107,6 +107,58 @@ class BggGameService {
     }
 
 
+
+    async getPlays(username: string): Promise<BggRetryResult | PlayInfo[]> {
+        const firstPage = await this.getPlaysPage(username);
+        if ("plays" in firstPage) {
+            const { plays, totalPlays } = firstPage;
+            const needMorePlays = firstPage.totalPlays > firstPage.plays.length;
+            if (needMorePlays) {
+                const numberOfPagesMissing = Math.ceil(totalPlays / plays.length) - 1;
+                const missingPagesPromises = new Array(numberOfPagesMissing).fill(0).map((_, i) => this.getPlaysPage(username, i + 2)); // start at index 2, we already have page 1
+                const missingPagesResults = await Promise.all(missingPagesPromises);
+                const missingPagesPlays = missingPagesResults.reduce((prev, cur) => ("plays" in cur) ? prev.concat(cur.plays) : prev, [] as PlayInfo[]);
+                return [...plays, ...missingPagesPlays];
+            } else {
+                return plays;
+            }
+        } else {
+            return firstPage;
+        }
+
+    }
+
+    async getPlaysPage(username: string, pageNumber: number = 1) {
+        const xml = await this.fetchPlaysXml(username, pageNumber);
+        if (typeof xml === "string") {
+            const jsObj = convert.xml2js(xml) as convert.Element;
+            const mainPlayElement = jsObj.elements[0];
+            const itemElements = mainPlayElement.elements;
+            const totalPlays = parseInt(mainPlayElement.attributes["total"].toString());
+            return {
+                totalPlays: totalPlays,
+                pageNumber: pageNumber,
+                plays: itemElements.map(this.elementToPlayInfo)
+            };
+        } else {
+            return xml;
+        }
+    }
+
+    private elementToPlayInfo(mainElement: convert.Element): PlayInfo {
+
+        return {
+            date: new Date(mainElement.attributes["date"]),
+            gameId: parseInt(mainElement.elements[0].attributes["objectid"].toString()),
+            length: parseInt(mainElement.attributes["length"].toString()),
+            playId: parseInt(mainElement.attributes["id"].toString()),
+            quantity: parseInt(mainElement.attributes["quantity"].toString()),
+        };
+
+    }
+
+
+
     private elementToExtendedInfo(mainElement: convert.Element): ExtendedGameInfo {
         const mainElements = mainElement.elements;
         const suggestedplayersElement = mainElements.find((e) => e.name === "poll" && e.attributes.name === "suggested_numplayers");
@@ -115,7 +167,7 @@ class BggGameService {
             const numOfPlayersString = e.attributes.numplayers.toString();
             const numberOfPlayers = numOfPlayersString.indexOf("+") > -1 ? Infinity : parseInt(numOfPlayersString, 10);
             if (e.elements) {
-                const best = parseInt(e.elements.find((e) => e.name === "result" && e.attributes["value"].toString() === "Best").attributes["numvotes"] as string);
+                const best = parseInt(e.elements.find((e) => e.name === "result" && e.attributes["value"].toString() === "Best").attributes.numvotes as string);
                 const recommended = parseInt(e.elements.find((e) => e.name === "result" && e.attributes["value"].toString() === "Recommended").attributes.numvotes as string);
                 const notRecommended = parseInt(e.elements.find((e) => e.name === "result" && e.attributes["value"].toString() === "Not Recommended").attributes.numvotes as string);
                 return {
@@ -221,6 +273,13 @@ class BggGameService {
     }
 
 
+    private async fetchPlaysXml(username: string, pageNumber: number) {
+        const url = this.buildPlaysUrl(username, pageNumber);
+        return this.fethXml(url);
+    }
+
+
+
     private async fethXml(url: string) {
         return this.getFetch()(url).then(async (res) => {
             if (res.status === 200) {
@@ -247,6 +306,10 @@ class BggGameService {
         });
     }
 
+    private buildPlaysUrl(username: string, pageNumber: number) {
+        const baseUrl = `https://cors-anywhere.herokuapp.com/https://api.geekdo.com/xmlapi2/xmlapi2/plays?username=${username}`;
+        return pageNumber > 1 ? (baseUrl + "&page=" + pageNumber) : baseUrl;
+    }
 
     private buildGameUrls(ids: number[]) {
         return `https://cors-anywhere.herokuapp.com/https://api.geekdo.com/xmlapi2/thing?id=${ids.join(",")}&stats=1`;

@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<plays username="Warium" userid="1070138" total="311" page="2" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="22133555" date="2017-02-18" quantity="1" length="240" incomplete="0" nowinstats="0" location="">
+<item name="Battlestar Galactica: The Board Game" objecttype="thing" objectid="37111">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="22133500" date="2017-02-18" quantity="2" length="30" incomplete="0" nowinstats="0" location="">
+<item name="FUSE" objecttype="thing" objectid="171273">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="22142983" date="2017-02-18" quantity="1" length="60" incomplete="0" nowinstats="0" location="">
+<item name="PitchCar" objecttype="thing" objectid="150">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="22133519" date="2017-02-18" quantity="2" length="30" incomplete="0" nowinstats="0" location="">
+<item name="Skull" objecttype="thing" objectid="92415">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="22142842" date="2017-02-18" quantity="1" length="30" incomplete="0" nowinstats="0" location="">
+<item name="Splendor" objecttype="thing" objectid="148228">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="22170021" date="2017-02-18" quantity="1" length="30" incomplete="1" nowinstats="0" location="">
+<item name="T.I.M.E Stories" objecttype="thing" objectid="146508">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="22124811" date="2017-02-17" quantity="1" length="90" incomplete="0" nowinstats="0" location="">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="22124808" date="2017-02-17" quantity="2" length="120" incomplete="0" nowinstats="0" location="">
+<item name="Evolution: Climate" objecttype="thing" objectid="182134">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="22124798" date="2017-02-17" quantity="2" length="20" incomplete="0" nowinstats="0" location="">
+<item name="FUSE" objecttype="thing" objectid="171273">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="22124803" date="2017-02-17" quantity="1" length="30" incomplete="0" nowinstats="0" location="">
+<item name="Splendor" objecttype="thing" objectid="148228">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="22097275" date="2017-02-15" quantity="1" length="120" incomplete="0" nowinstats="0" location="Home">
+<item name="Descent: Journeys in the Dark (Second Edition)" objecttype="thing" objectid="104162">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Jonas Lindeløv" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Christian Holm Madsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22097280" date="2017-02-15" quantity="2" length="20" incomplete="0" nowinstats="0" location="Home">
+<item name="FUSE" objecttype="thing" objectid="171273">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Jonas Lindeløv" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Christian Holm Madsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="22030788" date="2017-02-11" quantity="1" length="40" incomplete="1" nowinstats="0" location="Home">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21993588" date="2017-02-08" quantity="1" length="30" incomplete="1" nowinstats="0" location="Home">
+<item name="Arkham Horror: The Card Game" objecttype="thing" objectid="205637">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21969512" date="2017-02-06" quantity="1" length="110" incomplete="0" nowinstats="0" location="Home">
+<item name="T.I.M.E Stories" objecttype="thing" objectid="146508">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21923049" date="2017-02-04" quantity="1" length="40" incomplete="0" nowinstats="0" location="Home">
+<item name="T.I.M.E Stories" objecttype="thing" objectid="146508">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21919867" date="2017-02-03" quantity="1" length="30" incomplete="0" nowinstats="0" location="Home">
+<item name="Carcassonne" objecttype="thing" objectid="822">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Daniel" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21919877" date="2017-02-03" quantity="1" length="30" incomplete="0" nowinstats="0" location="Home">
+<item name="Ticket to Ride: Europe" objecttype="thing" objectid="14996">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Daniel" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21851329" date="2017-01-29" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Descent: Journeys in the Dark (Second Edition)" objecttype="thing" objectid="104162">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21825858" date="2017-01-28" quantity="1" length="30" incomplete="0" nowinstats="0" location="Home">
+<item name="Carcassonne" objecttype="thing" objectid="822">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Daniel" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21826441" date="2017-01-28" quantity="1" length="30" incomplete="0" nowinstats="0" location="Home">
+<item name="Descent: Journeys in the Dark (Second Edition)" objecttype="thing" objectid="104162">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21806214" date="2017-01-26" quantity="1" length="180" incomplete="0" nowinstats="0" location="Christian">
+<item name="Descent: Journeys in the Dark (Second Edition)" objecttype="thing" objectid="104162">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Jonas Lindeløv" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Christian Holm Madsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21760180" date="2017-01-22" quantity="1" length="40" incomplete="0" nowinstats="0" location="Home">
+<item name="Descent: Journeys in the Dark (Second Edition)" objecttype="thing" objectid="104162">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21609845" date="2017-01-14" quantity="1" length="80" incomplete="0" nowinstats="0" location="Home">
+<item name="Descent: Journeys in the Dark (Second Edition)" objecttype="thing" objectid="104162">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21618641" date="2017-01-14" quantity="1" length="120" incomplete="0" nowinstats="0" location="Home">
+<item name="T.I.M.E Stories" objecttype="thing" objectid="146508">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21540847" date="2017-01-08" quantity="1" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="T.I.M.E Stories" objecttype="thing" objectid="146508">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21484754" date="2017-01-06" quantity="2" length="20" incomplete="0" nowinstats="0" location="Home">
+<item name="Candy Land" objecttype="thing" objectid="5048">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Daniel" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21498010" date="2017-01-06" quantity="1" length="180" incomplete="0" nowinstats="0" location="Jonas">
+<item name="Descent: Journeys in the Dark (Second Edition)" objecttype="thing" objectid="104162">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Jonas Lindeløv" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Christian Holm Madsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21459626" date="2017-01-04" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="T.I.M.E Stories" objecttype="thing" objectid="146508">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21438945" date="2017-01-03" quantity="1" length="40" incomplete="0" nowinstats="0" location="Home">
+<item name="Carcassonne" objecttype="thing" objectid="822">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Julie" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Michael" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21424791" date="2017-01-02" quantity="2" length="60" incomplete="0" nowinstats="0" location="Michaels">
+<item name="Beyond Baker Street" objecttype="thing" objectid="168681">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Nakul" userid="336247" name="Michael Nielsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21424813" date="2017-01-02" quantity="2" length="330" incomplete="0" nowinstats="0" location="Michaels">
+<item name="Descent: Journeys in the Dark (Second Edition)" objecttype="thing" objectid="104162">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Nakul" userid="336247" name="Michael Nielsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21424756" date="2017-01-02" quantity="2" length="30" incomplete="0" nowinstats="0" location="Michaels">
+<item name="FUSE" objecttype="thing" objectid="171273">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Nakul" userid="336247" name="Michael Nielsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21424856" date="2017-01-02" quantity="2" length="40" incomplete="0" nowinstats="0" location="Michaels">
+<item name="Mr. Jack Pocket" objecttype="thing" objectid="72287">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Nakul" userid="336247" name="Michael Nielsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21424827" date="2017-01-02" quantity="2" length="90" incomplete="0" nowinstats="0" location="Michaels">
+<item name="Quantum" objecttype="thing" objectid="143519">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Nakul" userid="336247" name="Michael Nielsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21392763" date="2017-01-01" quantity="1" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="Descent: Journeys in the Dark (Second Edition)" objecttype="thing" objectid="104162">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21400627" date="2017-01-01" quantity="1" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="Mansions of Madness: Second Edition" objecttype="thing" objectid="205059">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Michael" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Julie" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21326124" date="2016-12-29" quantity="4" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="FUSE" objecttype="thing" objectid="171273">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Julie" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Michael" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21288020" date="2016-12-27" quantity="5" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="BANG! The Dice Game" objecttype="thing" objectid="143741">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Michael" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Julie" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21258341" date="2016-12-26" quantity="3" length="30" incomplete="0" nowinstats="0" location="Home">
+<item name="Candy Land" objecttype="thing" objectid="5048">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Daniel" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Michael" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Julie" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21261617" date="2016-12-26" quantity="1" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="Descent: Journeys in the Dark (Second Edition)" objecttype="thing" objectid="104162">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21258031" date="2016-12-26" quantity="1" length="10" incomplete="0" nowinstats="0" location="Home">
+<item name="FUSE" objecttype="thing" objectid="171273">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21269848" date="2016-12-26" quantity="1" length="90" incomplete="1" nowinstats="0" location="Home">
+<item name="Mansions of Madness: Second Edition" objecttype="thing" objectid="205059">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Michael" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Julie" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21214075" date="2016-12-23" quantity="1" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="Descent: Journeys in the Dark (Second Edition)" objecttype="thing" objectid="104162">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21218246" date="2016-12-23" quantity="1" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="Mansions of Madness: Second Edition" objecttype="thing" objectid="205059">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Michael" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Julie" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21181384" date="2016-12-20" quantity="2" length="30" incomplete="0" nowinstats="0" location="Home">
+<item name="Skull" objecttype="thing" objectid="92415">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Michael" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Julie" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21181353" date="2016-12-20" quantity="5" length="30" incomplete="0" nowinstats="0" location="Home">
+<item name="Spyfall" objecttype="thing" objectid="166384">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Michael" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Julie" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21164776" date="2016-12-19" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Descent: Journeys in the Dark (Second Edition)" objecttype="thing" objectid="104162">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21161515" date="2016-12-19" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Friday" objecttype="thing" objectid="43570">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21164783" date="2016-12-19" quantity="3" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Friday" objecttype="thing" objectid="43570">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21135928" date="2016-12-17" quantity="1" length="130" incomplete="0" nowinstats="0" location="Jonas">
+<item name="Descent: Journeys in the Dark (Second Edition)" objecttype="thing" objectid="104162">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Jonas Lindeløv" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Christian Holm Madsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21092470" date="2016-12-12" quantity="1" length="120" incomplete="0" nowinstats="0" location="Home">
+<item name="Mansions of Madness: Second Edition" objecttype="thing" objectid="205059">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21084500" date="2016-12-11" quantity="1" length="60" incomplete="1" nowinstats="0" location="Home">
+<item name="Descent: Journeys in the Dark (Second Edition)" objecttype="thing" objectid="104162">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21051889" date="2016-12-10" quantity="1" length="30" incomplete="1" nowinstats="0" location="Home">
+<item name="Descent: Journeys in the Dark (Second Edition)" objecttype="thing" objectid="104162">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21066604" date="2016-12-10" quantity="1" length="90" incomplete="1" nowinstats="0" location="Home">
+<item name="Mansions of Madness: Second Edition" objecttype="thing" objectid="205059">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="21031184" date="2016-12-07" quantity="1" length="120" incomplete="0" nowinstats="0" location="Home">
+<item name="Evolution: Climate" objecttype="thing" objectid="182134">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Jonas Lindeløv" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Christian Holm Madsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="20997188" date="2016-12-04" quantity="1" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="Mansions of Madness: Second Edition" objecttype="thing" objectid="205059">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="20923870" date="2016-11-27" quantity="1" length="90" incomplete="0" nowinstats="0" location="">
+<item name="Evolution: Climate" objecttype="thing" objectid="182134">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="20914683" date="2016-11-27" quantity="3" length="60" incomplete="0" nowinstats="0" location="">
+<item name="The Resistance" objecttype="thing" objectid="41114">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="20923868" date="2016-11-27" quantity="1" length="90" incomplete="0" nowinstats="0" location="">
+<item name="Scythe" objecttype="thing" objectid="169786">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+</play>
+<play id="20923873" date="2016-11-27" quantity="3" length="60" incomplete="0" nowinstats="0" location="">
+<item name="Skull" objecttype="thing" objectid="92415">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="20923877" date="2016-11-27" quantity="1" length="30" incomplete="0" nowinstats="0" location="">
+<item name="Splendor" objecttype="thing" objectid="148228">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="20923876" date="2016-11-27" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Zombicide" objecttype="thing" objectid="113924">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+</play>
+<play id="20923886" date="2016-11-26" quantity="1" length="90" incomplete="0" nowinstats="0" location="">
+<item name="Mansions of Madness: Second Edition" objecttype="thing" objectid="205059">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="20854771" date="2016-11-23" quantity="2" length="30" incomplete="0" nowinstats="0" location="Home">
+<item name="Exploding Kittens" objecttype="thing" objectid="172225">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+</play>
+<play id="20854764" date="2016-11-23" quantity="1" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="Pandemic" objecttype="thing" objectid="30549">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="20724348" date="2016-11-13" quantity="1" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="Mansions of Madness: Second Edition" objecttype="thing" objectid="205059">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="20711260" date="2016-11-12" quantity="1" length="120" incomplete="1" nowinstats="0" location="Home">
+<item name="Mansions of Madness: Second Edition" objecttype="thing" objectid="205059">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="20685472" date="2016-11-10" quantity="1" length="120" incomplete="0" nowinstats="0" location="Home">
+<item name="Mansions of Madness: Second Edition" objecttype="thing" objectid="205059">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="20679947" date="2016-11-09" quantity="1" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="Mansions of Madness: Second Edition" objecttype="thing" objectid="205059">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="20659011" date="2016-11-07" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Carcassonne" objecttype="thing" objectid="822">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+</play>
+<play id="20659014" date="2016-11-07" quantity="3" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Coup" objecttype="thing" objectid="131357">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="20659015" date="2016-11-07" quantity="4" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Skull" objecttype="thing" objectid="92415">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="20604688" date="2016-11-03" quantity="4" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Gooseberry" objecttype="thing" objectid="205420">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="20604689" date="2016-11-03" quantity="3" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Skull" objecttype="thing" objectid="92415">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="20553776" date="2016-10-30" quantity="3" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Alchemidus" objecttype="thing" objectid="184462">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="20552126" date="2016-10-30" quantity="3" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Captain Sonar" objecttype="thing" objectid="171131">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="20552118" date="2016-10-30" quantity="2" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Evolution: Climate" objecttype="thing" objectid="182134">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="20532164" date="2016-10-29" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Evolution: Climate" objecttype="thing" objectid="182134">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="20440417" date="2016-10-21" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Evolution: Climate" objecttype="thing" objectid="182134">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="20427136" date="2016-10-19" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Evolution: Climate" objecttype="thing" objectid="182134">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="20417003" date="2016-10-19" quantity="2" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Pandemic Legacy: Season 1" objecttype="thing" objectid="161936">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="20416997" date="2016-10-18" quantity="2" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Dungeons And Dragons: Rock Paper Wizard" objecttype="thing" objectid="207062">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="20376158" date="2016-10-15" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Evolution" objecttype="thing" objectid="155703">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="1" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="2" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="20232681" date="2016-10-02" quantity="2" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Captain Sonar" objecttype="thing" objectid="171131">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="20232684" date="2016-10-02" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Mysterium" objecttype="thing" objectid="181304">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="20232683" date="2016-10-02" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Roll for the Galaxy" objecttype="thing" objectid="132531">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="20232685" date="2016-10-02" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Shadowrun: Crossfire" objecttype="thing" objectid="135382">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="20176618" date="2016-09-26" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Carcassonne" objecttype="thing" objectid="822">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="20068446" date="2016-09-17" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Burgle Bros." objecttype="thing" objectid="172081">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="20068448" date="2016-09-17" quantity="3" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Evolution" objecttype="thing" objectid="155703">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="20068449" date="2016-09-17" quantity="2" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Shadowrun: Crossfire" objecttype="thing" objectid="135382">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="20068452" date="2016-09-17" quantity="2" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Splendor" objecttype="thing" objectid="148228">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="20022770" date="2016-09-12" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Shadowrun: Crossfire" objecttype="thing" objectid="135382">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="19849630" date="2016-08-28" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Cutthroat Caverns" objecttype="thing" objectid="28259">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="19849599" date="2016-08-28" quantity="3" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Deception: Murder in Hong Kong" objecttype="thing" objectid="156129">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="19850487" date="2016-08-28" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Flash Point: Fire Rescue" objecttype="thing" objectid="100901">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="19850491" date="2016-08-28" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Quantum" objecttype="thing" objectid="143519">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="19849624" date="2016-08-28" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Shadowrun: Crossfire" objecttype="thing" objectid="135382">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="19719944" date="2016-08-16" quantity="1" length="30" incomplete="0" nowinstats="0" location="Home">
+<item name="Carcassonne" objecttype="thing" objectid="822">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+</plays>

@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<plays username="Warium" userid="1070138" total="311" page="3" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="19669542" date="2016-08-12" quantity="2" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Coup" objecttype="thing" objectid="131357">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="19669535" date="2016-08-12" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Creationary" objecttype="thing" objectid="41833">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="19646368" date="2016-08-09" quantity="1" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="Ashes: Rise of the Phoenixborn" objecttype="thing" objectid="167400">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="19389435" date="2016-07-17" quantity="2" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Pandemic Legacy: Season 1" objecttype="thing" objectid="161936">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="19389428" date="2016-07-17" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Specter Ops" objecttype="thing" objectid="155624">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Nakul" userid="336247" name="Michael Nielsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="19389430" date="2016-07-17" quantity="1" length="0" incomplete="1" nowinstats="0" location="">
+<item name="Specter Ops" objecttype="thing" objectid="155624">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Nakul" userid="336247" name="Michael Nielsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="18959975" date="2016-06-08" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Tales of the Arabian Nights" objecttype="thing" objectid="34119">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="18946156" date="2016-06-07" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Shadowrun: Crossfire" objecttype="thing" objectid="135382">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="18943641" date="2016-06-06" quantity="2" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Ashes: Rise of the Phoenixborn" objecttype="thing" objectid="167400">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Nakul" userid="336247" name="Michael Nielsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="18943638" date="2016-06-06" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Blueprints" objecttype="thing" objectid="140933">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Nakul" userid="336247" name="Michael Nielsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="18943644" date="2016-06-06" quantity="3" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Shadowrun: Crossfire" objecttype="thing" objectid="135382">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Nakul" userid="336247" name="Michael Nielsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="18943645" date="2016-06-06" quantity="2" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Warhammer Quest: The Adventure Card Game" objecttype="thing" objectid="181521">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Nakul" userid="336247" name="Michael Nielsen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="18888390" date="2016-06-02" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Formula Dé" objecttype="thing" objectid="173">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="18871398" date="2016-05-31" quantity="2" length="0" incomplete="0" nowinstats="0" location="">
+<item name="But Wait, There's More!" objecttype="thing" objectid="114438">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+</play>
+<play id="18854452" date="2016-05-30" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Mysterium" objecttype="thing" objectid="181304">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="18859406" date="2016-05-30" quantity="2" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Mysterium" objecttype="thing" objectid="181304">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="18823370" date="2016-05-28" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Agent Decker" objecttype="thing" objectid="182260">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="18823777" date="2016-05-28" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Agent Decker" objecttype="thing" objectid="182260">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="18823371" date="2016-05-28" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Carcassonne" objecttype="thing" objectid="822">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="18813067" date="2016-05-27" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Carcassonne" objecttype="thing" objectid="822">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="18814381" date="2016-05-27" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Carcassonne" objecttype="thing" objectid="822">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="18798046" date="2016-05-25" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Agent Decker" objecttype="thing" objectid="182260">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="18794083" date="2016-05-25" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Carcassonne" objecttype="thing" objectid="822">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+</play>
+<play id="18788634" date="2016-05-24" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Agent Decker" objecttype="thing" objectid="182260">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="18788635" date="2016-05-24" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Flash Point: Fire Rescue" objecttype="thing" objectid="100901">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="18778841" date="2016-05-23" quantity="3" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Agent Decker" objecttype="thing" objectid="182260">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="18762929" date="2016-05-22" quantity="2" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Agent Decker" objecttype="thing" objectid="182260">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="18748496" date="2016-05-21" quantity="2" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Agent Decker" objecttype="thing" objectid="182260">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="18734881" date="2016-05-20" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Shadowrun: Crossfire" objecttype="thing" objectid="135382">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="18717906" date="2016-05-18" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="One Deck Dungeon" objecttype="thing" objectid="179275">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+</play>
+<play id="18720347" date="2016-05-18" quantity="2" length="0" incomplete="0" nowinstats="0" location="">
+<item name="One Deck Dungeon" objecttype="thing" objectid="179275">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+</play>
+<play id="18717509" date="2016-05-18" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Shadowrun: Crossfire" objecttype="thing" objectid="135382">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="18700472" date="2016-05-16" quantity="1" length="0" incomplete="1" nowinstats="0" location="">
+<item name="Flash Point: Fire Rescue" objecttype="thing" objectid="100901">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="18699522" date="2016-05-16" quantity="2" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Shadowrun: Crossfire" objecttype="thing" objectid="135382">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="18700456" date="2016-05-16" quantity="2" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Shadowrun: Crossfire" objecttype="thing" objectid="135382">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="18703417" date="2016-05-16" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Shadowrun: Crossfire" objecttype="thing" objectid="135382">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="18679938" date="2016-05-15" quantity="2" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Shadowrun: Crossfire" objecttype="thing" objectid="135382">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="18654160" date="2016-05-12" quantity="2" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Shadowrun: Crossfire" objecttype="thing" objectid="135382">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="18606395" date="2016-05-07" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Alchemists" objecttype="thing" objectid="161970">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="18606403" date="2016-05-07" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Formula D" objecttype="thing" objectid="37904">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="18606391" date="2016-05-07" quantity="1" length="300" incomplete="0" nowinstats="0" location="">
+<item name="Kingdom Death: Monster" objecttype="thing" objectid="55690">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="18535138" date="2016-05-01" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Cutthroat Caverns" objecttype="thing" objectid="28259">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="18535158" date="2016-05-01" quantity="2" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Evolution" objecttype="thing" objectid="155703">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="18535191" date="2016-05-01" quantity="2" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Skull" objecttype="thing" objectid="92415">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="18535178" date="2016-05-01" quantity="1" length="180" incomplete="0" nowinstats="0" location="Home">
+<item name="T.I.M.E Stories" objecttype="thing" objectid="146508">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="18436029" date="2016-04-23" quantity="4" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Skull" objecttype="thing" objectid="92415">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="18423643" date="2016-04-22" quantity="1" length="30" incomplete="0" nowinstats="0" location="Home">
+<item name="But Wait, There's More!" objecttype="thing" objectid="114438">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="18423647" date="2016-04-22" quantity="2" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Splendor" objecttype="thing" objectid="148228">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="18283870" date="2016-04-09" quantity="1" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="T.I.M.E Stories" objecttype="thing" objectid="146508">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="18195572" date="2016-04-01" quantity="2" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Evolution" objecttype="thing" objectid="155703">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="18195583" date="2016-04-01" quantity="2" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Hive" objecttype="thing" objectid="2655">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="18195578" date="2016-04-01" quantity="3" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Pandemic Legacy: Season 1" objecttype="thing" objectid="161936">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="18202492" date="2016-03-26" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="T.I.M.E Stories" objecttype="thing" objectid="146508">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="18139401" date="2016-03-26" quantity="1" length="30" incomplete="1" nowinstats="0" location="Home">
+<item name="T.I.M.E Stories: A Prophecy of Dragons" objecttype="thing" objectid="189035">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameexpansion"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="18094252" date="2016-03-24" quantity="1" length="30" incomplete="1" nowinstats="0" location="Home">
+<item name="T.I.M.E Stories: A Prophecy of Dragons" objecttype="thing" objectid="189035">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameexpansion"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="18085406" date="2016-03-23" quantity="1" length="120" incomplete="1" nowinstats="0" location="Home">
+<item name="T.I.M.E Stories: A Prophecy of Dragons" objecttype="thing" objectid="189035">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameexpansion"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="18075814" date="2016-03-21" quantity="1" length="30" incomplete="0" nowinstats="0" location="Home">
+<item name="Evolution" objecttype="thing" objectid="155703">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="18047503" date="2016-03-20" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Evolution" objecttype="thing" objectid="155703">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="18039888" date="2016-03-19" quantity="5" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Codenames" objecttype="thing" objectid="178900">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+</play>
+<play id="18040032" date="2016-03-19" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Cosmic Encounter" objecttype="thing" objectid="39463">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="18039831" date="2016-03-19" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Cutthroat Caverns" objecttype="thing" objectid="28259">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="18039822" date="2016-03-19" quantity="3" length="60" incomplete="0" nowinstats="0" location="Home">
+<item name="Evolution" objecttype="thing" objectid="155703">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="18039879" date="2016-03-19" quantity="2" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Exploding Kittens" objecttype="thing" objectid="172225">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+</play>
+<play id="18039857" date="2016-03-19" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Flash Point: Fire Rescue" objecttype="thing" objectid="100901">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="18039843" date="2016-03-19" quantity="1" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Space Cadets" objecttype="thing" objectid="123096">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="18039955" date="2016-03-18" quantity="2" length="0" incomplete="0" nowinstats="0" location="Home">
+<item name="Codenames" objecttype="thing" objectid="178900">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+</play>
+<play id="17892820" date="2016-03-06" quantity="1" length="30" incomplete="0" nowinstats="0" location="Home">
+<item name="Forbidden Desert" objecttype="thing" objectid="136063">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="17881093" date="2016-03-05" quantity="2" length="90" incomplete="0" nowinstats="0" location="Home">
+<item name="Flash Point: Fire Rescue" objecttype="thing" objectid="100901">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="17727359" date="2016-02-20" quantity="1" length="0" incomplete="1" nowinstats="0" location="">
+<item name="Elder Sign" objecttype="thing" objectid="100423">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="17727350" date="2016-02-20" quantity="1" length="60" incomplete="1" nowinstats="0" location="">
+<item name="Ground Floor" objecttype="thing" objectid="38765">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="17727344" date="2016-02-20" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Posthuman" objecttype="thing" objectid="171835">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="17727342" date="2016-02-20" quantity="2" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Roll for the Galaxy" objecttype="thing" objectid="132531">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="17727337" date="2016-02-20" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Tiny Epic Galaxies" objecttype="thing" objectid="163967">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="17727334" date="2016-02-19" quantity="1" length="0" incomplete="0" nowinstats="0" location="Vold-Con 2016">
+<item name="Cosmic Encounter" objecttype="thing" objectid="39463">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="17727335" date="2016-02-19" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Fury of Dracula (Third/Fourth Edition)" objecttype="thing" objectid="181279">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="17727331" date="2016-02-19" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Pandemic" objecttype="thing" objectid="30549">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+</play>
+<play id="17727403" date="2016-01-30" quantity="1" length="0" incomplete="1" nowinstats="0" location="">
+<item name="Dead of Winter: A Crossroads Game" objecttype="thing" objectid="150376">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+</play>
+<play id="17727384" date="2016-01-30" quantity="2" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Exploding Kittens" objecttype="thing" objectid="172225">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+</play>
+<play id="17727409" date="2016-01-30" quantity="4" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Roll for the Galaxy" objecttype="thing" objectid="132531">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="17727412" date="2016-01-30" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Sheriff of Nottingham" objecttype="thing" objectid="157969">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="17727378" date="2016-01-30" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Tales of the Arabian Nights" objecttype="thing" objectid="34119">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+<play id="14843401" date="2015-05-17" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Android: Netrunner" objecttype="thing" objectid="124742">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="2" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="1" color="" score="" new="0" rating="0" win="1"/>
+</players>
+</play>
+<play id="14843405" date="2015-05-17" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Android: Netrunner" objecttype="thing" objectid="124742">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="2" color="" score="" new="0" rating="0" win="1"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="1" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="14843406" date="2015-05-17" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Android: Netrunner" objecttype="thing" objectid="124742">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="2" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="1" color="" score="" new="0" rating="0" win="1"/>
+</players>
+</play>
+<play id="14844161" date="2015-05-16" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Dead of Winter: A Crossroads Game" objecttype="thing" objectid="150376">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Jonas" startposition="2" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Toke" startposition="1" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="4" color="" score="" new="0" rating="0" win="1"/>
+<player username="" userid="0" name="Simon" startposition="3" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="14844162" date="2015-05-16" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Dead of Winter: A Crossroads Game" objecttype="thing" objectid="150376">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="2" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Toke" startposition="1" color="" score="" new="0" rating="0" win="1"/>
+<player username="" userid="0" name="Simon" startposition="3" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="14844168" date="2015-05-16" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Imperial 2030" objecttype="thing" objectid="54138">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Toke" startposition="2" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Simon" startposition="1" color="" score="" new="0" rating="0" win="1"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="3" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="14844144" date="2015-05-16" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="One Night Ultimate Werewolf" objecttype="thing" objectid="147949">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Jonas" startposition="2" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="4" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Toke" startposition="1" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Simon" startposition="3" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="14844149" date="2015-05-16" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="One Night Ultimate Werewolf" objecttype="thing" objectid="147949">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Jonas" startposition="2" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="4" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Toke" startposition="1" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Simon" startposition="3" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="14844152" date="2015-05-16" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="One Night Ultimate Werewolf" objecttype="thing" objectid="147949">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Jonas" startposition="2" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="4" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Toke" startposition="1" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Simon" startposition="3" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="14844154" date="2015-05-16" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="One Night Ultimate Werewolf" objecttype="thing" objectid="147949">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Jonas" startposition="2" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="4" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Toke" startposition="1" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Simon" startposition="3" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="14844158" date="2015-05-16" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="One Night Ultimate Werewolf" objecttype="thing" objectid="147949">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+<subtype value="boardgameintegration"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Jonas" startposition="2" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="4" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Toke" startposition="1" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Simon" startposition="3" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="14843769" date="2015-05-16" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Pandemic" objecttype="thing" objectid="30549">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Jonas" startposition="2" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="4" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Toke" startposition="1" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Simon" startposition="3" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="14843775" date="2015-05-16" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Pandemic" objecttype="thing" objectid="30549">
+<subtypes>
+<subtype value="boardgame"/>
+</subtypes>
+</item>
+<players>
+<player username="" userid="0" name="Jonas" startposition="2" color="" score="" new="0" rating="0" win="0"/>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="4" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Toke" startposition="1" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Simon" startposition="3" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="14698140" date="2015-05-02" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Android: Netrunner" objecttype="thing" objectid="124742">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="2" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="1" color="" score="" new="0" rating="0" win="1"/>
+</players>
+</play>
+<play id="14685047" date="2015-04-30" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Android: Netrunner" objecttype="thing" objectid="124742">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="2" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="1" color="" score="" new="0" rating="0" win="1"/>
+</players>
+</play>
+<play id="14667003" date="2015-04-28" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Android: Netrunner" objecttype="thing" objectid="124742">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="2" color="" score="" new="0" rating="0" win="1"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="1" color="" score="" new="0" rating="0" win="0"/>
+</players>
+</play>
+<play id="14651621" date="2015-04-26" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Android: Netrunner" objecttype="thing" objectid="124742">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="2" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="1" color="" score="" new="0" rating="0" win="1"/>
+</players>
+</play>
+<play id="14632644" date="2015-04-25" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Android: Netrunner" objecttype="thing" objectid="124742">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+<players>
+<player username="Warium" userid="1070138" name="Philip Kristoffersen" startposition="2" color="" score="" new="0" rating="0" win="0"/>
+<player username="" userid="0" name="Erin Kristoffersen" startposition="1" color="" score="" new="0" rating="0" win="1"/>
+</players>
+</play>
+<play id="14643480" date="2015-04-25" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+<item name="Android: Netrunner" objecttype="thing" objectid="124742">
+<subtypes>
+<subtype value="boardgame"/>
+<subtype value="boardgameimplementation"/>
+</subtypes>
+</item>
+</play>
+</plays>

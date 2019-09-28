@@ -114,12 +114,12 @@ export default class App extends React.Component<AppProps, AppState> {
                 {games.length > 0 && showingCollection && <CollectionPage currentUsers={this.state.names} games={games} />}
                 {isLoadingCollections && games.length > 0 &&
                     <div style={progressStyle}>
-                        <Loader Active active inline="centered" content={"Finding games for " + loadingCollections.join(", ")} />
+                        <Loader active inline="centered" content={"Finding games for " + loadingCollections.join(", ")} />
                     </div>
                 }
                 {games.length > 0 && loadingGames.length > 0 &&
                     < div style={progressStyle}>
-                        <Progress Active indicative value={games.length - loadingGames.length} total={games.length} progress="ratio">
+                        <Progress indicating value={games.length - loadingGames.length} total={games.length} progress="ratio">
                             Getting more game info
                     </Progress>
                     </div>
