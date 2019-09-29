@@ -328,5 +328,13 @@ describe("Filtering games", () => {
             const result = filterer.filter(onOrdered, { sortOption: { type: "suggestedPlayers", numberOfPlayers: 1 } });
             expect(result.map((r) => r.name)).toEqual([game2, game1, game3, game4].map((g) => g.name));
         });
+
+        it("can sort by multiple options", () => {
+            const onOrdered = [testGame1, testGame2, testGame3, testGame4];
+            const result = filterer.filter(onOrdered, { sortOption: ["bggrating", "old", "weight-light"] });
+            const expected = [204650, 68448, 161970, 40692];
+            expect(result.map((r) => r.id)).toEqual(expected);
+
+        });
     });
 });
