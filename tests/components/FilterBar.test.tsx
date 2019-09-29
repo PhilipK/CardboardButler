@@ -157,9 +157,24 @@ describe("Filter bar", () => {
             });
         });
 
-
-
-
+        it("can allow sorting by multiple options", () => {
+            const onChange = jest.fn((filterOptions: FilterAndSortOptions) => { });
+            const { getByTestId } = render(<FilterBar onFilterChange={onChange} />);
+            const sortDropdown = getByTestId("SortOptionDropdown");
+            fireEvent.click(sortDropdown);
+            const sortByMultiple = getByTestId("SortByMultipleOption");
+            fireEvent.click(sortByMultiple);
+            const options = sortDropdown.querySelectorAll(".item");
+            fireEvent.click(options[2]);
+            fireEvent.click(getByTestId("suggestedPlayers"));
+            expect(onChange).toHaveBeenCalledTimes(2);
+            expect(onChange.mock.calls[0][0]).toEqual({
+                sortOption: [undefined]
+            });
+            expect(onChange.mock.calls[1][0]).toEqual({
+                sortOption: ["bggrating", { type: "suggestedPlayers" }]
+            });
+        });
     });
 });
 

@@ -31,5 +31,5 @@ export type ParametricSortOption = {
 export interface FilterAndSortOptions {
     playtime?: PlayTimeOption;
     playerCount?: PlayCountOption;
-    sortOption?: SortOption;
+    sortOption?: SortOption | SortOption[];
 }

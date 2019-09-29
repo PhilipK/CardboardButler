@@ -1,9 +1,14 @@
 import { GameInfo, GameInfoPlus } from "../models/GameInfo";
-import { FilterAndSortOptions, SimpleSortOption } from "../models/FilterOptions";
+import { FilterAndSortOptions, SimpleSortOption, SortOption } from "../models/FilterOptions";
 
 type SorterMap = {
     [option in SimpleSortOption]: (a: GameInfo, b: GameInfo) => number | undefined;
 };
+
+interface IndexMap {
+    [gameid: number]: number[];
+
+}
 
 /**
  * Filters and sorts a given collection and some options on how to do it.
@@ -37,23 +42,50 @@ export class GamesFilterAndSorter {
     filter(collection: GameInfoPlus[], options: FilterAndSortOptions = {}): GameInfoPlus[] {
         const collectionCopy = [...collection];
         const filtered = this.filterCollection(collectionCopy, options);
-        const filteredAndSorted = this.sortCollection(filtered, options);
+        const filteredAndSorted = this.sortCollection(filtered, options.sortOption);
         return filteredAndSorted;
     }
 
 
-    private sortCollection(collection: GameInfoPlus[], options: FilterAndSortOptions) {
-        const { sortOption = "bggrating" } = options;
-        if (typeof sortOption === "object") {
-            const { numberOfPlayers } = sortOption;
-            if (numberOfPlayers) {
-                return collection.sort(this.getSuggestedComparatorComparator(numberOfPlayers));
-            } else {
-                return collection;
-            }
+
+
+    private sortCollection(collection: GameInfoPlus[], sortOption: (SortOption | SortOption[]) = "bggrating"): GameInfoPlus[] {
+        const mutableCollection = [...collection];
+        if (Array.isArray(sortOption)) {
+            const sortOptions = sortOption;
+            const sortedCollections = sortOptions.map((option) => this.sortCollection(collection, option));
+            const indexMaps = sortedCollections.map((collection) => collection.reduce((prev, cur, index) => {
+                prev[cur.id] = [index];
+                return prev;
+            }, {} as IndexMap));
+            const multiScoreMap = indexMaps.reduce((prev, cur) => {
+                Object.keys(cur).forEach((gameId) => {
+                    prev[gameId] = (prev[gameId] || []).concat(cur[gameId]);
+                });
+                return prev;
+            }, {} as IndexMap);
+            return mutableCollection.sort(this.createCompareWithMap(multiScoreMap));
         } else {
-            return collection.sort(this.sortMap[sortOption]);
+            if (typeof sortOption === "object") {
+                const { numberOfPlayers } = sortOption;
+                if (numberOfPlayers) {
+                    return mutableCollection.sort(this.getSuggestedComparatorComparator(numberOfPlayers));
+                } else {
+                    return mutableCollection;
+                }
+            } else {
+                return mutableCollection.sort(this.sortMap[sortOption]);
+            }
         }
+    }
+
+    private createCompareWithMap(indexMap: IndexMap) {
+        return (a: GameInfo, b: GameInfo) => {
+            const aScore = indexMap[a.id].reduce((p, c) => p + c, 0);
+            const bScore = indexMap[b.id].reduce((p, c) => p + c, 0);
+            const score = aScore - bScore;
+            return score === 0 ? indexMap[a.id][0] - indexMap[b.id][0] : score;
+        };
     }
 
     private getSuggestedComparatorComparator(playerCount: number) {

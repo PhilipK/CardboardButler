@@ -184,6 +184,5 @@ describe("Loading games", () => {
             expect(onGamesUpdate.mock.calls[0][0][1].description).toEqual("AlchemistExtended");
         });
         await promise;
-
     });
 });
