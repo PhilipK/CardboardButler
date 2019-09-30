@@ -11,24 +11,20 @@ import { NameSorter } from "./sorters/NameSorter";
 import { SuggestedPlayersSorter } from "./sorters/SuggestedPlayersSorter";
 import { MultiSorter } from "./sorters/MultiSorter";
 
-export class GameSorter {
-    private sortMap = {
-        alphabetic: new NameSorter(),
-        bggrating: new BggRatingSorter(),
-        new: new YoungSorter(),
-        old: new OldSorter(),
-        userrating: new UserRatingSorter(),
-        "weight-heavy": new HeavySorter(),
-        "weight-light": new LightSorter()
-    };
+const sortMap = {
+    alphabetic: new NameSorter(),
+    bggrating: new BggRatingSorter(),
+    new: new YoungSorter(),
+    old: new OldSorter(),
+    userrating: new UserRatingSorter(),
+    "weight-heavy": new HeavySorter(),
+    "weight-light": new LightSorter()
+};
 
-    constructor() {
-        this.getSorter = this.getSorter.bind(this);
-    }
+export class GameSorter {
 
     public sortCollection(collection: GameInfoPlus[], sortOption: (SortOption | SortOption[]) = "bggrating"): GameInfoPlus[] {
-        const sorter = this.getSorter(sortOption);
-        return sorter.sort([...collection]);
+        return this.getSorter(sortOption).sort([...collection]);
     }
 
     private getSorter(sortOption: (SortOption | SortOption[])): Sorter {
@@ -39,7 +35,7 @@ export class GameSorter {
         if (typeof sortOption === "object") {
             return new SuggestedPlayersSorter(sortOption.numberOfPlayers);
         }
-        return this.sortMap[sortOption];
+        return sortMap[sortOption];
     }
 
 }
