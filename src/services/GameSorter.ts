@@ -1,5 +1,5 @@
-import { GameInfoPlus, GameInfo } from "../models/GameInfo";
-import { SortOption, SimpleSortOption } from "../models/FilterOptions";
+import { GameInfoPlus } from "../models/GameInfo";
+import { SortOption } from "../models/FilterOptions";
 import { UserRatingSorter } from "./sorters/UserRatingSorter";
 import { Sorter } from "./sorters/Sorter";
 import { YoungSorter } from "./sorters/YoungSorter";
@@ -11,32 +11,24 @@ import { NameSorter } from "./sorters/NameSorter";
 import { SuggestedPlayersSorter } from "./sorters/SuggestedPlayersSorter";
 import { MultiSorter } from "./sorters/MultiSorter";
 
-type SorterMap = {
-    [option in SimpleSortOption]: Sorter;
-};
-
 export class GameSorter {
-
-
-    private sortMap: SorterMap;
+    private sortMap = {
+        alphabetic: new NameSorter(),
+        bggrating: new BggRatingSorter(),
+        new: new YoungSorter(),
+        old: new OldSorter(),
+        userrating: new UserRatingSorter(),
+        "weight-heavy": new HeavySorter(),
+        "weight-light": new LightSorter()
+    };
 
     constructor() {
         this.getSorter = this.getSorter.bind(this);
-        this.sortMap = {
-            alphabetic: new NameSorter(),
-            bggrating: new BggRatingSorter(),
-            new: new YoungSorter(),
-            old: new OldSorter(),
-            userrating: new UserRatingSorter(),
-            "weight-heavy": new HeavySorter(),
-            "weight-light": new LightSorter()
-        };
     }
 
     public sortCollection(collection: GameInfoPlus[], sortOption: (SortOption | SortOption[]) = "bggrating"): GameInfoPlus[] {
-        const mutableCollection = [...collection];
         const sorter = this.getSorter(sortOption);
-        return sorter.sort(mutableCollection);
+        return sorter.sort([...collection]);
     }
 
     private getSorter(sortOption: (SortOption | SortOption[])): Sorter {
