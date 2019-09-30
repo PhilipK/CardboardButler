@@ -1,8 +1,16 @@
 import { GameInfoPlus, GameInfo } from "../models/GameInfo";
 import { SortOption, SimpleSortOption } from "../models/FilterOptions";
+import { UserRatingSorter } from "./sorters/UserRatingSorter";
+import { Sorter } from "./sorters/Sorter";
+import { YoungSorter } from "./sorters/YoungSorter";
+import { OldSorter } from "./sorters/OldSorter";
+import { HeavySorter } from "./sorters/HeavySorter";
+import { LightSorter } from "./sorters/LightSorter";
+import { BggRatingSorter } from "./sorters/BggRatingSorter";
+import { NameSorter } from "./sorters/NameSorter";
 
 type SorterMap = {
-    [option in SimpleSortOption]: (a: GameInfo, b: GameInfo) => number | undefined;
+    [option in SimpleSortOption]: Sorter;
 };
 
 
@@ -17,19 +25,16 @@ export class GameSorter {
     private sortMap: SorterMap;
 
     constructor() {
-        this.userRatingSorter = this.userRatingSorter.bind(this);
-        this.getAverageUserRating = this.getAverageUserRating.bind(this);
         this.getSuggestePlayerScore = this.getSuggestePlayerScore.bind(this);
         this.getSuggestedComparatorComparator = this.getSuggestedComparatorComparator.bind(this);
-
         this.sortMap = {
-            alphabetic: this.nameSorter,
-            bggrating: this.averageRatingSorter,
-            new: this.newYearSorter,
-            old: this.oldYearSorter,
-            userrating: this.userRatingSorter,
-            "weight-heavy": this.weightHeavySort,
-            "weight-light": this.weightLightSort
+            alphabetic: new NameSorter(),
+            bggrating: new BggRatingSorter(),
+            new: new YoungSorter(),
+            old: new OldSorter(),
+            userrating: new UserRatingSorter(),
+            "weight-heavy": new HeavySorter(),
+            "weight-light": new LightSorter()
         };
     }
 
@@ -58,7 +63,7 @@ export class GameSorter {
                     return mutableCollection;
                 }
             } else {
-                return mutableCollection.sort(this.sortMap[sortOption]);
+                return this.sortMap[sortOption].sort(mutableCollection);
             }
         }
     }
@@ -72,61 +77,6 @@ export class GameSorter {
             return score === 0 ? indexMap[a.id][0] - indexMap[b.id][0] : score;
         };
     }
-
-
-
-    private weightHeavySort(a: GameInfoPlus, b: GameInfoPlus): number {
-        const aValue = "weight" in a ? a.weight : undefined;
-        const bValue = "weight" in b ? b.weight : undefined;
-        return (bValue || 0) - (aValue || 0);
-    }
-
-    private weightLightSort(a: GameInfoPlus, b: GameInfoPlus): number {
-        const aValue = "weight" in a ? a.weight : undefined;
-        const bValue = "weight" in b ? b.weight : undefined;
-        return (aValue || 99) - (bValue || 99);
-    }
-
-    private userRatingSorter(a: GameInfo, b: GameInfo): number {
-        const aRating = this.getAverageUserRating(a);
-        const bRating = this.getAverageUserRating(b);
-        return (bRating || 0) - (aRating || 0);
-    }
-
-
-    private getAverageUserRating(a: GameInfo) {
-        const scoreMap = a.userRating;
-        if (!scoreMap) {
-            return undefined;
-        } else {
-            const userNames = Object.keys(scoreMap);
-            const userNamesWithRatings = userNames.filter((name) => scoreMap[name]);
-            if (userNamesWithRatings.length === 0) {
-                return undefined;
-            }
-            const sum = userNamesWithRatings.reduce((p, c) => p + scoreMap[c], 0);
-            return sum / userNamesWithRatings.length;
-        }
-    }
-
-
-    private oldYearSorter(a: GameInfo, b: GameInfo): number {
-        return (a.yearPublished || Infinity) - (b.yearPublished || Infinity);
-    }
-
-    private newYearSorter(a: GameInfo, b: GameInfo): number {
-        return (b.yearPublished || -100000) - (a.yearPublished || -10000);
-    }
-
-    private averageRatingSorter(a: GameInfo, b: GameInfo): number {
-        return b.averagerating - a.averagerating;
-    }
-
-    private nameSorter(a: GameInfo, b: GameInfo): number {
-        return a.name.localeCompare(b.name);
-    }
-
-
 
     private getSuggestedComparatorComparator(playerCount: number) {
         return (a: GameInfoPlus, b: GameInfoPlus) => {
