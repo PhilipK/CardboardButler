@@ -9,16 +9,11 @@ import { LightSorter } from "./sorters/LightSorter";
 import { BggRatingSorter } from "./sorters/BggRatingSorter";
 import { NameSorter } from "./sorters/NameSorter";
 import { SuggestedPlayersSorter } from "./sorters/SuggestedPlayersSorter";
+import { MultiSorter } from "./sorters/MultiSorter";
 
 type SorterMap = {
     [option in SimpleSortOption]: Sorter;
 };
-
-
-interface IndexMap {
-    [gameid: number]: number[];
-
-}
 
 export class GameSorter {
 
@@ -26,6 +21,7 @@ export class GameSorter {
     private sortMap: SorterMap;
 
     constructor() {
+        this.getSorter = this.getSorter.bind(this);
         this.sortMap = {
             alphabetic: new NameSorter(),
             bggrating: new BggRatingSorter(),
@@ -39,43 +35,19 @@ export class GameSorter {
 
     public sortCollection(collection: GameInfoPlus[], sortOption: (SortOption | SortOption[]) = "bggrating"): GameInfoPlus[] {
         const mutableCollection = [...collection];
-        if (Array.isArray(sortOption)) {
-            const sortOptions = sortOption;
-            const sortedCollections = sortOptions.map((option) => this.sortCollection(collection, option));
-            const indexMaps = sortedCollections.map((collection) => collection.reduce((prev, cur, index) => {
-                prev[cur.id] = [index];
-                return prev;
-            }, {} as IndexMap));
-            const multiScoreMap = indexMaps.reduce((prev, cur) => {
-                Object.keys(cur).forEach((gameId) => {
-                    prev[gameId] = (prev[gameId] || []).concat(cur[gameId]);
-                });
-                return prev;
-            }, {} as IndexMap);
-            return mutableCollection.sort(this.createCompareWithMap(multiScoreMap));
-        } else {
-            if (typeof sortOption === "object") {
-                const { numberOfPlayers } = sortOption;
-                if (numberOfPlayers) {
-                    const sorter = new SuggestedPlayersSorter(numberOfPlayers);
-                    return sorter.sort(mutableCollection);
-                } else {
-                    return mutableCollection;
-                }
-            } else {
-                return this.sortMap[sortOption].sort(mutableCollection);
-            }
-        }
+        const sorter = this.getSorter(sortOption);
+        return sorter.sort(mutableCollection);
     }
 
-
-    private createCompareWithMap(indexMap: IndexMap) {
-        return (a: GameInfo, b: GameInfo) => {
-            const aScore = indexMap[a.id].reduce((p, c) => p + c, 0);
-            const bScore = indexMap[b.id].reduce((p, c) => p + c, 0);
-            const score = aScore - bScore;
-            return score === 0 ? indexMap[a.id][0] - indexMap[b.id][0] : score;
-        };
+    private getSorter(sortOption: (SortOption | SortOption[])): Sorter {
+        if (Array.isArray(sortOption)) {
+            const innerSorters = sortOption.map(this.getSorter);
+            return new MultiSorter(innerSorters);
+        }
+        if (typeof sortOption === "object") {
+            return new SuggestedPlayersSorter(sortOption.numberOfPlayers);
+        }
+        return this.sortMap[sortOption];
     }
 
 }

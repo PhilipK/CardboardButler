@@ -2,14 +2,19 @@ import { Sorter } from "./Sorter";
 import { GameInfoPlus } from "../../models/GameInfo";
 
 export class SuggestedPlayersSorter implements Sorter {
-    playerCount: number;
+    playerCount?: number;
 
-    constructor(playerCount: number) {
+    constructor(playerCount?: number) {
         this.playerCount = playerCount;
     }
 
     sort(collection: GameInfoPlus[]): GameInfoPlus[] {
-        return [...collection.sort(this.getSuggestedComparatorComparator(this.playerCount))];
+        const immutableCollection = [...collection];
+        if (this.playerCount !== undefined) {
+            return immutableCollection.sort(this.getSuggestedComparatorComparator(this.playerCount));
+        }
+        return immutableCollection;
+
     }
     private getSuggestedComparatorComparator(playerCount: number) {
         return (a: GameInfoPlus, b: GameInfoPlus) => {
