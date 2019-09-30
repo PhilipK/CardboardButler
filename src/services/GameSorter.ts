@@ -8,6 +8,7 @@ import { HeavySorter } from "./sorters/HeavySorter";
 import { LightSorter } from "./sorters/LightSorter";
 import { BggRatingSorter } from "./sorters/BggRatingSorter";
 import { NameSorter } from "./sorters/NameSorter";
+import { SuggestedPlayersSorter } from "./sorters/SuggestedPlayersSorter";
 
 type SorterMap = {
     [option in SimpleSortOption]: Sorter;
@@ -25,8 +26,6 @@ export class GameSorter {
     private sortMap: SorterMap;
 
     constructor() {
-        this.getSuggestePlayerScore = this.getSuggestePlayerScore.bind(this);
-        this.getSuggestedComparatorComparator = this.getSuggestedComparatorComparator.bind(this);
         this.sortMap = {
             alphabetic: new NameSorter(),
             bggrating: new BggRatingSorter(),
@@ -58,7 +57,8 @@ export class GameSorter {
             if (typeof sortOption === "object") {
                 const { numberOfPlayers } = sortOption;
                 if (numberOfPlayers) {
-                    return mutableCollection.sort(this.getSuggestedComparatorComparator(numberOfPlayers));
+                    const sorter = new SuggestedPlayersSorter(numberOfPlayers);
+                    return sorter.sort(mutableCollection);
                 } else {
                     return mutableCollection;
                 }
@@ -77,26 +77,5 @@ export class GameSorter {
             return score === 0 ? indexMap[a.id][0] - indexMap[b.id][0] : score;
         };
     }
-
-    private getSuggestedComparatorComparator(playerCount: number) {
-        return (a: GameInfoPlus, b: GameInfoPlus) => {
-            return this.getSuggestePlayerScore(playerCount, b) - this.getSuggestePlayerScore(playerCount, a);
-        };
-    }
-
-    private getSuggestePlayerScore(playerCount: number, gameInfo: GameInfoPlus): number {
-        if ("suggestedNumberOfPlayers" in gameInfo) {
-            const votes = gameInfo.suggestedNumberOfPlayers[playerCount] || gameInfo.suggestedNumberOfPlayers[Infinity];
-            if (votes !== undefined) {
-                const total = votes.best + votes.recommended + votes.notRecommended;
-                const score = (votes.best / total * 3) + (votes.recommended / total) - (votes.notRecommended / total * 2);
-                return score;
-            }
-        }
-        return -Infinity;
-
-
-    }
-
 
 }
