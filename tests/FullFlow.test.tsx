@@ -1,13 +1,12 @@
 
 import * as React from "react";
 import App from "../src/components/App";
-import { render, fireEvent, waitForElement, waitForElementToBeRemoved, waitForDomChange } from "@testing-library/react";
+import { render, fireEvent, waitForElement } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import BggGameService from "../src/services/BggGameService";
 import * as fetchMock from "fetch-mock";
 import { GameInfo } from "../src/models/GameInfo";
-import { UserInfo } from "../src/models/UserInfo";
-import { getHugeCollection, getLargeCollection, getSmallCollection } from "./services/TestHelpers";
+import { getSmallCollection } from "./services/TestHelpers";
 
 
 describe("Full flow", () => {
@@ -65,7 +64,7 @@ describe("Full flow", () => {
                 isValid: true,
                 username: username
             }))));
-            const getColMock = jest.fn((username) => (new Promise<GameInfo[]>((resolver) => resolver(
+            const getColMock = jest.fn((_) => (new Promise<GameInfo[]>((resolver) => resolver(
                 getSmallCollection()
             ))));
             service.getUserCollection = getColMock;

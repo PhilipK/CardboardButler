@@ -65,12 +65,6 @@ export const sortingOptions: SortingOptions[] = [
     { text: "are easy to learn", value: 5, sortoption: "weight-light" },
     { text: "are complex", value: 6, sortoption: "weight-heavy" },
     { text: "are best with this number of players", value: 7, ["data-testid"]: "suggestedPlayers" }
-    // { text: "are easy to learn", value: "easy" },
-    // { text: "are complex", value: "complex" },
-    // // { text: "least recently got played", value: "lastTimePlayed" },
-    // { text: "most recently got played", value: "lastTimePlayedRev" },
-    // { text: "have been played a lot", value: "timePlayed" },
-    // { text: "have not been played a lot", value: "timePlayedRev" }
 ];
 
 const initialState: State = {
@@ -157,8 +151,7 @@ export default class FilterBar extends React.Component<Props, State> {
 
     render() {
         const { currentUsers = ["Unknown"] } = this.props;
-        const { filterOptions, allowMultiSelect } = this.state;
-        const sortingOption = filterOptions.sortOption;
+        const { allowMultiSelect } = this.state;
         const oneUser = currentUsers.length <= 1;
         const iWe = oneUser ? "I" : "we";
         const amAre = oneUser ? "am" : "are";

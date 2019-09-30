@@ -4,7 +4,7 @@ import { Item, Container, Header, Card, Icon, Divider } from "semantic-ui-react"
 
 import * as React from "react";
 import { FilterAndSortOptions } from "../models/FilterOptions";
-import { GamesFilterAndSorter } from "../services/GamesFilterer";
+import { GamesFilterAndSorter } from "../services/GamesFilterAndSorter";
 import { GameInfoPlus } from "../models/GameInfo";
 import NoGamesFound from "./NoGamesFound";
 import PickAGameForMe from "./PickAGame";
@@ -51,7 +51,7 @@ export default class CollectionPage extends React.Component<Props, State> {
         const { games = [], currentUsers = [] } = this.props;
         const { viewType } = this.state;
         const filterer = new GamesFilterAndSorter();
-        const filteredGames = filterer.filter(games, this.state.filterOptions);
+        const filteredGames = filterer.filterAndSort(games, this.state.filterOptions);
         const noGames = filteredGames.length === 0;
         return (
             <div data-testid="CollectionPage">

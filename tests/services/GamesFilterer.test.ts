@@ -1,8 +1,7 @@
 import "@testing-library/jest-dom/extend-expect";
-import { GamesFilterAndSorter } from "../../src/services/GamesFilterer";
+import { GamesFilterAndSorter } from "../../src/services/GamesFilterAndSorter";
 import { alchemists, alchemistsTheKing, sevenWonders, smallWorld } from "./model/TestGames";
-import { GameInfo, ExtendedGameInfo, GameInfoPlus, FullGameInfo, SuggestedNumberOfPlayersMap } from "../../src/models/GameInfo";
-import * as fetchMock from "fetch-mock";
+import { GameInfo, GameInfoPlus, SuggestedNumberOfPlayersMap } from "../../src/models/GameInfo";
 import { getHugeCollection } from "./TestHelpers";
 
 describe("Filtering games", () => {
@@ -15,7 +14,7 @@ describe("Filtering games", () => {
 
     describe("default", () => {
         it("does not filter", () => {
-            const result = filterer.filter(testCollection);
+            const result = filterer.filterAndSort(testCollection);
             expect(result.length).toEqual(testCollection.length);
         });
 
@@ -32,7 +31,7 @@ describe("Filtering games", () => {
                     maximum: 60
                 }
             };
-            const result = filterer.filter(testCollection, filterOptions);
+            const result = filterer.filterAndSort(testCollection, filterOptions);
             expect(result).toHaveLength(1);
             expect(result).toEqual([testGame3]);
         });
@@ -44,7 +43,7 @@ describe("Filtering games", () => {
                 }
             };
             const filterer = new GamesFilterAndSorter();
-            const result = filterer.filter(testCollection, filterOptions);
+            const result = filterer.filterAndSort(testCollection, filterOptions);
             expect(result).toHaveLength(2);
             expect(result).toEqual([testGame2, testGame1]);
         });
@@ -55,7 +54,7 @@ describe("Filtering games", () => {
                     maximum: 90
                 }
             };
-            const result = filterer.filter(testCollection, filterOptions);
+            const result = filterer.filterAndSort(testCollection, filterOptions);
             expect(result).toHaveLength(2);
             expect(result).toEqual([testGame3, testGame4]);
         });
@@ -77,7 +76,7 @@ describe("Filtering games", () => {
                     minimum: 30
                 }
             };
-            const result = filterer.filter(fakeCollection, filterOptions);
+            const result = filterer.filterAndSort(fakeCollection, filterOptions);
             expect(result).toHaveLength(1);
         });
         it("can handle if game has no limit", () => {
@@ -96,14 +95,14 @@ describe("Filtering games", () => {
                     maximum: 90
                 }
             };
-            const result = filterer.filter(fakeCollection, filterOptions);
+            const result = filterer.filterAndSort(fakeCollection, filterOptions);
             expect(result).toHaveLength(0);
         });
     });
 
     describe("player count time filtering", () => {
         it("filters on player count", () => {
-            const result = filterer.filter(testCollection, {
+            const result = filterer.filterAndSort(testCollection, {
                 playerCount: 5
             });
             expect(result).toEqual([testGame3, testGame4]);
@@ -115,7 +114,7 @@ describe("Filtering games", () => {
             const largeCollection = await getHugeCollection();
             expect(largeCollection).toHaveLength(360);
             if (Array.isArray(largeCollection)) {
-                const result = filterer.filter(largeCollection, {
+                const result = filterer.filterAndSort(largeCollection, {
                     playerCount: 5,
                     playtime: { minimum: 30, maximum: 80 }
                 });
@@ -129,33 +128,33 @@ describe("Filtering games", () => {
         it("sorts by rating by default", () => {
             const onOrdered = [testGame1, testGame2, testGame3, testGame4];
             const rankordering = [testGame2, testGame3, testGame1, testGame4];
-            const result = filterer.filter(onOrdered);
+            const result = filterer.filterAndSort(onOrdered);
             expect(result.map((r) => r.averagerating)).toEqual(rankordering.map((r) => r.averagerating));
         });
 
         it("can sort by alpabetic", () => {
             const onOrdered = [testGame2, testGame3, testGame1, testGame4];
             const nameOrdered = [testGame3, testGame1, testGame2, testGame4];
-            const result = filterer.filter(onOrdered, { sortOption: "alphabetic" });
+            const result = filterer.filterAndSort(onOrdered, { sortOption: "alphabetic" });
             expect(result.map((r) => r.name)).toEqual(nameOrdered.map((r) => r.name));
         });
         it("can sort by bggranking", () => {
             const onOrdered = [testGame1, testGame2, testGame3, testGame4];
             const rankordering = [testGame2, testGame3, testGame1, testGame4];
-            const result = filterer.filter(onOrdered, { sortOption: "bggrating" });
+            const result = filterer.filterAndSort(onOrdered, { sortOption: "bggrating" });
             expect(result.map((r) => r.averagerating)).toEqual(rankordering.map((r) => r.averagerating));
         });
         it("can sort by new games", () => {
             const onOrdered = [testGame1, testGame2, testGame3, testGame4];
             const newOrdering = [testGame2, testGame1, testGame3, testGame4];
-            const result = filterer.filter(onOrdered, { sortOption: "new" });
+            const result = filterer.filterAndSort(onOrdered, { sortOption: "new" });
             expect(result.map((r) => r.yearPublished)).toEqual(newOrdering.map((r) => r.yearPublished));
         });
 
         it("can sort by old games", () => {
             const onOrdered = [testGame1, testGame2, testGame3, testGame4];
             const oldOrdering = [testGame4, testGame3, testGame1, testGame2];
-            const result = filterer.filter(onOrdered, { sortOption: "old" });
+            const result = filterer.filterAndSort(onOrdered, { sortOption: "old" });
             expect(result.map((r) => r.yearPublished)).toEqual(oldOrdering.map((r) => r.yearPublished));
         });
 
@@ -163,7 +162,7 @@ describe("Filtering games", () => {
             const wihtoutYear = Object.assign({}, testGame4, { yearPublished: undefined });
             const onOrdered = [wihtoutYear, testGame1, testGame2, testGame3];
             const oldOrdering = [testGame3, testGame1, testGame2, wihtoutYear];
-            const result = filterer.filter(onOrdered, { sortOption: "old" });
+            const result = filterer.filterAndSort(onOrdered, { sortOption: "old" });
             expect(result.map((r) => r.yearPublished)).toEqual(oldOrdering.map((r) => r.yearPublished));
         });
 
@@ -171,7 +170,7 @@ describe("Filtering games", () => {
             const wihtoutYear = Object.assign({}, testGame4, { yearPublished: undefined });
             const onOrdered = [testGame1, wihtoutYear, testGame2, testGame3];
             const newOrdering = [testGame2, testGame1, testGame3, wihtoutYear];
-            const result = filterer.filter(onOrdered, { sortOption: "new" });
+            const result = filterer.filterAndSort(onOrdered, { sortOption: "new" });
             expect(result.map((r) => r.yearPublished)).toEqual(newOrdering.map((r) => r.yearPublished));
         });
 
@@ -180,7 +179,7 @@ describe("Filtering games", () => {
             const ratedGame2 = Object.assign({}, testGame2, { userRating: { warium: 6 } });
             const onOrdered = [ratedGame2, ratedGame1, testGame3];
             const newOrdering = [ratedGame1, ratedGame2, testGame3];
-            const result = filterer.filter(onOrdered, { sortOption: "userrating" });
+            const result = filterer.filterAndSort(onOrdered, { sortOption: "userrating" });
             expect(result.map((r) => r.userRating)).toEqual(newOrdering.map((r) => r.userRating));
         });
 
@@ -189,7 +188,7 @@ describe("Filtering games", () => {
             const ratedGame2 = Object.assign({}, testGame2, { userRating: { warium: 6, cyndaq: 4 } });
             const onOrdered = [ratedGame2, ratedGame1, testGame3];
             const newOrdering = [ratedGame1, ratedGame2, testGame3];
-            const result = filterer.filter(onOrdered, { sortOption: "userrating" });
+            const result = filterer.filterAndSort(onOrdered, { sortOption: "userrating" });
             expect(result.map((r) => r.userRating)).toEqual(newOrdering.map((r) => r.userRating));
         });
 
@@ -197,7 +196,7 @@ describe("Filtering games", () => {
             const ratedGame1 = Object.assign({}, testGame1, { userRating: {} });
             const ratedGame2 = Object.assign({}, testGame2, { userRating: { warium: 6, cyndaq: 4 } });
             const onOrdered = [ratedGame2, ratedGame1];
-            const result = filterer.filter(onOrdered, { sortOption: "userrating" });
+            const result = filterer.filterAndSort(onOrdered, { sortOption: "userrating" });
             expect(result[1].name).toEqual(ratedGame1.name);
         });
 
@@ -206,7 +205,7 @@ describe("Filtering games", () => {
             const weightGame2: GameInfoPlus = Object.assign({}, testGame2, { weight: 5 });
             const unWeighted: GameInfoPlus = Object.assign({}, testGame3, { weight: undefined });
             const onOrdered = [unWeighted, weightGame1, weightGame2];
-            const result: GameInfoPlus[] = filterer.filter(onOrdered, { sortOption: "weight-light" });
+            const result: GameInfoPlus[] = filterer.filterAndSort(onOrdered, { sortOption: "weight-light" });
             expect(result.map((r) => ("weight" in r) ? r.weight : undefined)).toEqual([3, 5, undefined]);
 
         });
@@ -216,7 +215,7 @@ describe("Filtering games", () => {
             const weightGame2: GameInfoPlus = Object.assign({}, testGame2, { weight: 5 });
             const unWeighted: GameInfoPlus = Object.assign({}, testGame3, { weight: undefined });
             const onOrdered = [unWeighted, weightGame1, weightGame2];
-            const result = filterer.filter(onOrdered, { sortOption: "weight-heavy" });
+            const result = filterer.filterAndSort(onOrdered, { sortOption: "weight-heavy" });
             expect(result.map((r) => ("weight" in r) ? r.weight : undefined)).toEqual([5, 3, undefined]);
         });
 
@@ -271,7 +270,7 @@ describe("Filtering games", () => {
             const game3: GameInfoPlus = Object.assign({}, testGame3, { suggestedNumberOfPlayers: suggestedNumberOfPlayers3 });
             const game4: GameInfoPlus = Object.assign({}, testGame4);
             const onOrdered = [game1, game2, game3, game4];
-            const result = filterer.filter(onOrdered, { sortOption: { type: "suggestedPlayers", numberOfPlayers: 3 } });
+            const result = filterer.filterAndSort(onOrdered, { sortOption: { type: "suggestedPlayers", numberOfPlayers: 3 } });
             expect(result.map((r) => r.name)).toEqual([game2, game1, game3, game4].map((g) => g.name));
         });
 
@@ -325,13 +324,13 @@ describe("Filtering games", () => {
             const game3: GameInfoPlus = Object.assign({}, testGame3, { suggestedNumberOfPlayers: suggestedNumberOfPlayers3 });
             const game4: GameInfoPlus = Object.assign({}, testGame4);
             const onOrdered = [game1, game2, game3, game4];
-            const result = filterer.filter(onOrdered, { sortOption: { type: "suggestedPlayers", numberOfPlayers: 1 } });
+            const result = filterer.filterAndSort(onOrdered, { sortOption: { type: "suggestedPlayers", numberOfPlayers: 1 } });
             expect(result.map((r) => r.name)).toEqual([game2, game1, game3, game4].map((g) => g.name));
         });
 
         it("can sort by multiple options", () => {
             const onOrdered = [testGame1, testGame2, testGame3, testGame4];
-            const result = filterer.filter(onOrdered, { sortOption: ["bggrating", "old", "weight-light"] });
+            const result = filterer.filterAndSort(onOrdered, { sortOption: ["bggrating", "old", "weight-light"] });
             const expected = [204650, 68448, 161970, 40692];
             expect(result.map((r) => r.id)).toEqual(expected);
 
