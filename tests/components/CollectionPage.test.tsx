@@ -33,7 +33,7 @@ describe("Collection Page", () => {
         };
         const gamesWithFake = [...games, fakeGame];
         const { getByTestId, getByText } = render(<CollectionPage games={gamesWithFake} />);
-        const element = await waitForElement(() => getByText(fakeName));
+        await waitForElement(() => getByText(fakeName));
         const playerCountDropdown = getByTestId("PlayercountDropdown");
         fireEvent.click(playerCountDropdown);
         const playerCountOptions = playerCountDropdown.querySelectorAll(".item");
