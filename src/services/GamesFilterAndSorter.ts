@@ -1,5 +1,5 @@
-import { GameInfo, GameInfoPlus } from "../models/GameInfo";
-import { FilterAndSortOptions, SimpleSortOption, SortOption } from "../models/FilterOptions";
+import { GameInfoPlus } from "../models/GameInfo";
+import { FilterAndSortOptions } from "../models/FilterOptions";
 import { GameSorter } from "./GameSorter";
 import { GameFilterer } from "./GameFilterer";
 
