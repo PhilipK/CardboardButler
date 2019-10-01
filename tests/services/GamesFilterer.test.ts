@@ -333,7 +333,13 @@ describe("Filtering games", () => {
             const result = filterer.filterAndSort(onOrdered, { sortOption: ["bggrating", "old", "alphabetic"] });
             const expected = [68448, 204650, 161970, 40692];
             expect(result.map((r) => r.id)).toEqual(expected);
+        });
 
+        it("When multiple and undefined, sorts by default value", () => {
+            const onOrdered = [testGame1, testGame2, testGame3, testGame4];
+            const rankordering = [testGame2, testGame3, testGame1, testGame4];
+            const result = filterer.filterAndSort(onOrdered, { sortOption: [undefined] });
+            expect(result.map((r) => r.averagerating)).toEqual(rankordering.map((r) => r.averagerating));
         });
     });
 });

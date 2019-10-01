@@ -21,16 +21,19 @@ const sortMap = {
     "weight-light": new LightSorter()
 };
 
+const DEFAULT_OPTION = "bggrating";
+
 export class GameSorter {
 
-    public sortCollection(collection: GameInfoPlus[], sortOption: (SortOption | SortOption[]) = "bggrating"): GameInfoPlus[] {
+    public sortCollection(collection: GameInfoPlus[], sortOption: (SortOption | SortOption[]) = DEFAULT_OPTION): GameInfoPlus[] {
         return this.getSorter(sortOption).sort([...collection]);
     }
 
     private getSorter(sortOption: (SortOption | SortOption[])): Sorter {
         if (Array.isArray(sortOption)) {
             const innerSorters = sortOption.map(this.getSorter);
-            return new MultiSorter(innerSorters);
+            const safeSorters = innerSorters.map((is) => is || sortMap[DEFAULT_OPTION]);
+            return new MultiSorter(safeSorters);
         }
         if (typeof sortOption === "object") {
             return new SuggestedPlayersSorter(sortOption.numberOfPlayers);
