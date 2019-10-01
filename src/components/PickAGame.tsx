@@ -36,7 +36,7 @@ export default class PickAGameForMe extends React.Component<Props, State> {
 
         }
         const randomIndexDice = new Array(3).fill(0).map(() => this.randomInteger(0, gamesToPickFrom.length - 1));
-        const randomIndex = randomIndexDice.reduce((p, c) => Math.min(p, c), gamesToPickFrom.length - 1);
+        const randomIndex = randomIndexDice.reduce((p, c) => Math.min(p, c), Math.ceil((gamesToPickFrom.length - 1) / 2));
         const pickedGame = gamesToPickFrom[randomIndex];
         gamesAlreadyShown.push(pickedGame);
         this.setState({
