@@ -25,15 +25,17 @@ const DEFAULT_OPTION = "bggrating";
 
 export class GameSorter {
 
-    public sortCollection(collection: GameInfoPlus[], sortOption: (SortOption | SortOption[]) = DEFAULT_OPTION): GameInfoPlus[] {
+    public sortCollection(collection: GameInfoPlus[], sortOption: (SortOption | SortOption[])): GameInfoPlus[] {
         return this.getSorter(sortOption).sort([...collection]);
     }
 
-    private getSorter(sortOption: (SortOption | SortOption[])): Sorter {
+    private getSorter(sortOption: (SortOption | SortOption[]) = DEFAULT_OPTION): Sorter {
         if (Array.isArray(sortOption)) {
+            if (sortOption.length === 1) {
+                return this.getSorter(sortOption[0]);
+            }
             const innerSorters = sortOption.map(this.getSorter);
-            const safeSorters = innerSorters.map((is) => is || sortMap[DEFAULT_OPTION]);
-            return new MultiSorter(safeSorters);
+            return new MultiSorter(innerSorters);
         }
         if (typeof sortOption === "object") {
             return new SuggestedPlayersSorter(sortOption.numberOfPlayers);
