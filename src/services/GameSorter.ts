@@ -31,9 +31,6 @@ export class GameSorter {
 
     private getSorter(sortOption: (SortOption | SortOption[]) = DEFAULT_OPTION): Sorter {
         if (Array.isArray(sortOption)) {
-            if (sortOption.length === 1) {
-                return this.getSorter(sortOption[0]);
-            }
             const innerSorters = sortOption.map(this.getSorter);
             return new MultiSorter(innerSorters);
         }

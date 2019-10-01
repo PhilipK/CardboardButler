@@ -32,11 +32,9 @@ describe("Filter bar", () => {
             const options = playtimeDropdown.querySelectorAll(".item");
             fireEvent.click(options[1]);
             expect(onChange.mock.calls.length).toEqual(1);
-            expect(onChange.mock.calls[0][0]).toEqual({
-                playtime: {
-                    minimum: 0,
-                    maximum: 30
-                }
+            expect(onChange.mock.calls[0][0].playtime).toEqual({
+                minimum: 0,
+                maximum: 30
             });
         });
 
@@ -49,9 +47,7 @@ describe("Filter bar", () => {
             const options = playtimeDropdown.querySelectorAll(".item");
             fireEvent.click(options[0]);
             expect(onChange.mock.calls.length).toEqual(1);
-            expect(onChange.mock.calls[0][0]).toEqual({
-                playtime: null
-            });
+            expect(onChange.mock.calls[0][0].playtime).toEqual(null);
         });
     });
 
@@ -65,9 +61,7 @@ describe("Filter bar", () => {
             const options = playerCountDropdown.querySelectorAll(".item");
             fireEvent.click(options[3]);
             expect(onChange.mock.calls.length).toEqual(1);
-            expect(onChange.mock.calls[0][0]).toEqual({
-                playerCount: 3
-            });
+            expect(onChange.mock.calls[0][0].playerCount).toEqual(3);
         });
 
         it("Clicking 'any' playercount will result in null", () => {
@@ -78,9 +72,7 @@ describe("Filter bar", () => {
             const options = playerCountDropdown.querySelectorAll(".item");
             fireEvent.click(options[0]);
             expect(onChange.mock.calls.length).toEqual(1);
-            expect(onChange.mock.calls[0][0]).toEqual({
-                playerCount: null
-            });
+            expect(onChange.mock.calls[0][0].playerCount).toEqual(null);
         });
     });
 
@@ -101,12 +93,10 @@ describe("Filter bar", () => {
             fireEvent.click(playtimeOptions[1]);
 
             expect(onChange.mock.calls.length).toEqual(2);
-            expect(onChange.mock.calls[1][0]).toEqual({
-                playerCount: 1,
-                playtime: {
-                    minimum: 0,
-                    maximum: 30
-                }
+            expect(onChange.mock.calls[1][0].playerCount).toEqual(1);
+            expect(onChange.mock.calls[1][0].playtime).toEqual({
+                minimum: 0,
+                maximum: 30
             });
         });
     });
@@ -160,19 +150,46 @@ describe("Filter bar", () => {
         it("can allow sorting by multiple options", () => {
             const onChange = jest.fn((filterOptions: FilterAndSortOptions) => { });
             const { getByTestId } = render(<FilterBar onFilterChange={onChange} />);
-            const sortDropdown = getByTestId("SortOptionDropdown");
-            fireEvent.click(sortDropdown);
-            const sortByMultiple = getByTestId("SortByMultipleOption");
-            fireEvent.click(sortByMultiple);
-            const options = sortDropdown.querySelectorAll(".item");
-            fireEvent.click(options[2]);
+            fireEvent.click(getByTestId("SortOptionDropdown"));
+            fireEvent.click(getByTestId("SortByMultipleOption"));
+            fireEvent.click(getByTestId("SortOptionDropdown"));
             fireEvent.click(getByTestId("suggestedPlayers"));
-            expect(onChange).toHaveBeenCalledTimes(2);
+            fireEvent.click(getByTestId("sortByNew"));
+            expect(onChange).toHaveBeenCalledTimes(3);
             expect(onChange.mock.calls[0][0]).toEqual({
                 sortOption: [undefined]
             });
             expect(onChange.mock.calls[1][0]).toEqual({
-                sortOption: ["bggrating", { type: "suggestedPlayers" }]
+                sortOption: [{ type: "suggestedPlayers" }]
+            });
+            expect(onChange.mock.calls[2][0]).toEqual({
+                sortOption: [{ type: "suggestedPlayers" }, "new"]
+            });
+        });
+
+        it("can switch back and forth between multi/single options", () => {
+            const onChange = jest.fn((filterOptions: FilterAndSortOptions) => { });
+            const { getByTestId } = render(<FilterBar onFilterChange={onChange} />);
+            const sortDropdown = getByTestId("SortOptionDropdown");
+            fireEvent.click(sortDropdown);
+            fireEvent.click(getByTestId("SortByMultipleOption"));
+            expect(onChange.mock.calls[0][0]).toEqual({
+                sortOption: [undefined]
+            });
+
+            const sortBySingle = getByTestId("SortBySingleOption");
+            fireEvent.click(sortBySingle);
+            expect(onChange.mock.calls[1][0]).toEqual({
+                sortOption: undefined
+            });
+            fireEvent.click(getByTestId("sortByNew"));
+            expect(onChange.mock.calls[2][0]).toEqual({
+                sortOption: "new"
+            });
+            fireEvent.click(getByTestId("SortByMultipleOption"));
+            expect(onChange).toHaveBeenCalledTimes(4);
+            expect(onChange.mock.calls[3][0]).toEqual({
+                sortOption: ["new"]
             });
         });
     });

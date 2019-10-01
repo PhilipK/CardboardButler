@@ -9,7 +9,6 @@ export interface Props {
 }
 interface State {
     filterOptions: FilterAndSortOptions;
-    allowMultiSelect: boolean;
 }
 
 interface TimerOptions {
@@ -55,11 +54,10 @@ interface SortingOptions {
     ["data-testid"]?: string;
 }
 
-
 export const sortingOptions: SortingOptions[] = [
     { text: "are highly rated", value: 0, sortoption: "bggrating" },
     { text: "are alphabetic", value: 1, sortoption: "alphabetic" },
-    { text: "are new", value: 2, sortoption: "new" },
+    { text: "are new", value: 2, sortoption: "new", ["data-testid"]: "sortByNew" },
     { text: "are old", value: 3, sortoption: "old" },
     { text: "we like", value: 4, sortoption: "userrating" },
     { text: "are easy to learn", value: 5, sortoption: "weight-light" },
@@ -67,10 +65,12 @@ export const sortingOptions: SortingOptions[] = [
     { text: "are best with this number of players", value: 7, ["data-testid"]: "suggestedPlayers" }
 ];
 
+
+
+
 const initialState: State = {
     filterOptions: {
-    },
-    allowMultiSelect: false
+    }
 };
 
 export default class FilterBar extends React.Component<Props, State> {
@@ -78,6 +78,8 @@ export default class FilterBar extends React.Component<Props, State> {
         super(props);
         this.state = initialState;
         this.getSortOptionFromIndex = this.getSortOptionFromIndex.bind(this);
+        this.getSortOptionFromIndexSingle = this.getSortOptionFromIndexSingle.bind(this);
+        this.getDropdownValues = this.getDropdownValues.bind(this);
     }
 
     onTimeChange(timerIndex: number) {
@@ -87,8 +89,10 @@ export default class FilterBar extends React.Component<Props, State> {
 
     onPlayerCountChange(playerCountIndex: number) {
         const option = playercountOptions[playerCountIndex].playercount;
-        if (typeof this.state.filterOptions.sortOption === "object") {
-
+        const sortOption = this.state.filterOptions.sortOption;
+        if (Array.isArray(sortOption)) {
+            this.combineState({ playerCount: option, sortOption: sortOption.map((so) => typeof so === "object" ? Object.assign({}, this.state.filterOptions.sortOption, { numberOfPlayers: option }) : so) as any });
+        } else if (typeof sortOption === "object") {
             this.combineState({ playerCount: option, sortOption: Object.assign({}, this.state.filterOptions.sortOption, { numberOfPlayers: option }) });
         } else {
             this.combineState({ playerCount: option });
@@ -96,32 +100,30 @@ export default class FilterBar extends React.Component<Props, State> {
     }
 
     onSortChange(sortOptionIndex: number | number[]) {
-        let option: SortOption | SortOption[] | undefined;
-        if (sortOptionIndex === 8 || (Array.isArray(sortOptionIndex) && sortOptionIndex.indexOf(8) > -1)) {
-            const { allowMultiSelect } = this.state;
-            if (allowMultiSelect) {
-                const currentOption = this.state.filterOptions.sortOption as SortOption[];
-                option = currentOption[0];
+        const currentOption = this.state.filterOptions.sortOption;
+        const clickedSwitchState = sortOptionIndex === 8 || (Array.isArray(sortOptionIndex) && sortOptionIndex.indexOf(8) > -1);
+        if (clickedSwitchState) {
+            if (Array.isArray(currentOption)) {
+                this.combineState({ sortOption: currentOption[0] });
             } else {
-                const currentOption = this.state.filterOptions.sortOption as SortOption;
-                option = [currentOption];
+                this.combineState({ sortOption: [currentOption] });
             }
-            this.setState({ allowMultiSelect: !allowMultiSelect });
         } else {
             if (Array.isArray(sortOptionIndex)) {
-                if (sortOptionIndex.length === 0) {
-                    option = sortingOptions[0].sortoption;
-                } else {
-                    option = sortOptionIndex.map(this.getSortOptionFromIndex);
-                }
+                this.combineState({ sortOption: this.getSortOptionFromIndex(sortOptionIndex) });
             } else {
-                option = this.getSortOptionFromIndex(sortOptionIndex);
+                this.combineState({ sortOption: this.getSortOptionFromIndexSingle(sortOptionIndex) });
             }
         }
-        this.combineState({ sortOption: option });
     }
 
-    getSortOptionFromIndex(sortOptionIndex: number) {
+
+
+    getSortOptionFromIndex(sortOptionIndex: number[]) {
+        return sortOptionIndex.map(this.getSortOptionFromIndexSingle);
+    }
+
+    getSortOptionFromIndexSingle(sortOptionIndex: number) {
         let option = sortingOptions[sortOptionIndex].sortoption;
         if (option === undefined && sortingOptions[sortOptionIndex].value === 7) {
             option = {
@@ -149,16 +151,32 @@ export default class FilterBar extends React.Component<Props, State> {
         return newStrings.join(", ") + " and " + last;
     }
 
+    getDropdownValues() {
+        const options = this.state.filterOptions.sortOption;
+        if (options === undefined) {
+            return undefined;
+        }
+        if (Array.isArray(options)) {
+            if (options.length === 1 && options[0] === undefined) {
+                return [];
+            }
+            return options.map((o) => typeof o === "object" ? 7 : sortingOptions.findIndex((so) => so.sortoption === o));
+        } else {
+            return typeof options === "object" ? 7 : sortingOptions.findIndex((so) => so.sortoption === options);
+        }
+    }
+
     render() {
         const { currentUsers = ["Unknown"] } = this.props;
-        const { allowMultiSelect } = this.state;
+        const options = this.state.filterOptions.sortOption;
+        const allowMultiSelect = Array.isArray(options);
         const oneUser = currentUsers.length <= 1;
         const iWe = oneUser ? "I" : "we";
         const amAre = oneUser ? "am" : "are";
         sortingOptions.find((o) => o.sortoption === "userrating").text = iWe + " rate highly";
         const singlePreferenceOption = { text: iWe + " only have one preference", value: 8, ["data-testid"]: "SortBySingleOption" };
         const multiPreferenceOption = { text: iWe + " have multiple preferences", value: 8, ["data-testid"]: "SortByMultipleOption" };
-
+        const values = this.getDropdownValues();
         return (
             <Container fluid>
                 <div className="topMenu ui fixed" >
@@ -193,28 +211,15 @@ export default class FilterBar extends React.Component<Props, State> {
 
                         <span className="topselect">
                             <span>and {iWe} prefer games that </span>
-                            {allowMultiSelect &&
-                                <Dropdown
-                                    inline={true}
-                                    defaultValue={[sortingOptions[0].value]}
-                                    data-testid="SortOptionDropdown"
-                                    options={[...sortingOptions, singlePreferenceOption]}
-                                    multiple={true}
-                                    closeOnChange={false}
-                                    // value={sortingOption.map((sortingOption) =>sortingOptions.find((so) => so.sortoption === sortingOption).value)}
-                                    onChange={(_e, d) => this.onSortChange(d.value as number[])} />
-                            }
-                            {!allowMultiSelect &&
-                                <Dropdown
-                                    inline={true}
-                                    defaultValue={sortingOptions[0].value}
-                                    data-testid="SortOptionDropdown"
-                                    options={[...sortingOptions, multiPreferenceOption]}
-                                    multiple={false}
-                                    closeOnChange={true}
-                                    // value={sortingOptions.find((so) => so.sortoption === sortingOption).value}
-                                    onChange={(_e, d) => this.onSortChange(d.value as number)} />
-                            }
+                            <Dropdown
+                                inline={true}
+                                placeholder={sortingOptions[0].text}
+                                data-testid="SortOptionDropdown"
+                                options={[...sortingOptions, allowMultiSelect ? singlePreferenceOption : multiPreferenceOption]}
+                                multiple={allowMultiSelect}
+                                closeOnChange={!allowMultiSelect}
+                                value={values}
+                                onChange={(_e, d) => this.onSortChange(d.value as number[])} />
                         </span>
                     </div>
                 </div>
