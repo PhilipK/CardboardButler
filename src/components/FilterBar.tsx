@@ -110,7 +110,7 @@ export default class FilterBar extends React.Component<Props, State> {
             }
         } else {
             if (Array.isArray(sortOptionIndex)) {
-                this.combineState({ sortOption: this.getSortOptionFromIndex(sortOptionIndex) });
+                this.combineState({ sortOption: this.getSortOptionFromIndex(sortOptionIndex) as SortOption[] });
             } else {
                 this.combineState({ sortOption: this.getSortOptionFromIndexSingle(sortOptionIndex) });
             }
@@ -120,6 +120,9 @@ export default class FilterBar extends React.Component<Props, State> {
 
 
     getSortOptionFromIndex(sortOptionIndex: number[]) {
+        if (sortOptionIndex.length === 0) {
+            return sortingOptions[0];
+        }
         return sortOptionIndex.map(this.getSortOptionFromIndexSingle);
     }
 
