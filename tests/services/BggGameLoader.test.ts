@@ -259,6 +259,10 @@ describe("Loading games", () => {
         onLoadChange.mockClear();
         await loader.loadPlays();
         expect(getPlaysMock).toHaveBeenCalledTimes(2);
+        expect(onLoadChange).toHaveBeenCalledTimes(4);
+        expect(onGamesUpdate).toHaveBeenCalledTimes(2);
+        expect(onGamesUpdate.mock.calls[1][0]).toHaveLength(2);
+        expect(onGamesUpdate.mock.calls[1][0][0].plays[0]).toEqual(Object.assign({}, play2, { playedBy: "Cyndaq" }));
 
     });
 });
