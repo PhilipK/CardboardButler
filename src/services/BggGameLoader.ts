@@ -101,6 +101,13 @@ export default class BggGameLoader {
         }));
     }
 
+    public async loadPlays() {
+        const names = this.currentNames;
+        return Promise.all(names.map(async (name) => {
+            const playerPlays = await this.service.getPlays(name);
+        }));
+    }
+
     private chunk<T>(input: T[], chunkSize: number): T[][] {
         const chunked_arr: T[][] = [];
         const copied = [...input];
