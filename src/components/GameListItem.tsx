@@ -21,7 +21,6 @@ export default class GameListItem extends React.PureComponent<AppProps> {
     render() {
         const { item, size } = this.props;
         const { owners = [] } = item;
-        const lastPlayed = (("lastPlayed" in item) && item.lastPlayed && item.lastPlayed.toDateString()) || undefined;
         return (
             <Item >
                 <Item.Image size={size}><img data-testid="GameImage" src={item.imageUrl} /></Item.Image>
@@ -35,7 +34,7 @@ export default class GameListItem extends React.PureComponent<AppProps> {
                     <Item.Description data-testid="GameDescription">
                         {gameDescription.generateDescription(item)}
                     </Item.Description>
-                    {lastPlayed && <Item.Extra>{lastPlayed}</Item.Extra>}
+                    {/* {lastPlayed && <Item.Extra>{lastPlayed}</Item.Extra>} */}
                     {/* {("mechanics" in item) && <Item.Extra>{item.mechanics.join(", ")}</Item.Extra>} */}
                     {("categories" in item) && <Item.Extra>{item.categories.join(", ")}</Item.Extra>}
                 </Item.Content>
