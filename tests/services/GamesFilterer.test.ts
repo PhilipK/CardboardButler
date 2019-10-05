@@ -352,5 +352,16 @@ describe("Filtering games", () => {
             const result = filterer.filterAndSort(onOrdered, { sortOption: "playedRecently" });
             expect(result).toEqual(rankordering);
         });
+
+        it("Can sort by played long ago", () => {
+            const onOrdered = [
+                Object.assign({}, testGame1, { lastPlayed: new Date("2019-01-01") }),
+                testGame3,
+                Object.assign({}, testGame2, { lastPlayed: new Date("2018-01-01") }),
+            ];
+            const rankordering = [onOrdered[1], onOrdered[2], onOrdered[0]];
+            const result = filterer.filterAndSort(onOrdered, { sortOption: "playedLongAgo" });
+            expect(result).toEqual(rankordering);
+        });
     });
 });

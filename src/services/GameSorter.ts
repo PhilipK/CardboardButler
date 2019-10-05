@@ -11,6 +11,7 @@ import { NameSorter } from "./sorters/NameSorter";
 import { SuggestedPlayersSorter } from "./sorters/SuggestedPlayersSorter";
 import { MultiSorter } from "./sorters/MultiSorter";
 import { RecentlyPlayedSorter } from "./sorters/RecentlyPlayedSorter";
+import { PlayedLongAgoSorter } from "./sorters/PlayedLongAgoSorter";
 
 const sortMap = {
     alphabetic: new NameSorter(),
@@ -20,7 +21,8 @@ const sortMap = {
     userrating: new UserRatingSorter(),
     "weight-heavy": new HeavySorter(),
     "weight-light": new LightSorter(),
-    "playedRecently": new RecentlyPlayedSorter()
+    "playedRecently": new RecentlyPlayedSorter(),
+    "playedLongAgo": new PlayedLongAgoSorter()
 };
 
 const DEFAULT_OPTION = "bggrating";
