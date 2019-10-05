@@ -9,6 +9,7 @@ import { GameInfoPlus } from "../models/GameInfo";
 import NoGamesFound from "./NoGamesFound";
 import PickAGameForMe from "./PickAGame";
 import GameCardItem from "./GameCardItem";
+import Footer from "./Footer";
 
 
 
@@ -85,6 +86,8 @@ export default class CollectionPage extends React.Component<Props, State> {
                         </Card.Group>
                     }
                 </Container>
+                <Footer />
+
             </div>
         );
     }
