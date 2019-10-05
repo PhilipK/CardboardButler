@@ -423,6 +423,19 @@ describe("BggGameService", () => {
                 expect(play.gameId).toEqual(182134);
             }
         });
+
+        it("gives empty list back when no plays", async () => {
+            const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/plays?username=Cyndaq`;
+            const noPlays = readFileSync("tests/services/testxml/NoPlays.xml", "utf8");
+            fetch.mock(expectedUrl, 200, {
+                response: {
+                    status: 200,
+                    body: noPlays
+                }
+            });
+            const plays = await service.getPlays("Cyndaq");
+            expect(plays).toHaveLength(0);
+        });
     });
 
 

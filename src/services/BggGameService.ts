@@ -133,6 +133,13 @@ class BggGameService {
         if (typeof xml === "string") {
             const jsObj = convert.xml2js(xml) as convert.Element;
             const mainPlayElement = jsObj.elements[0];
+            if (mainPlayElement.elements === undefined) {
+                return {
+                    totalPlays: 0,
+                    pageNumber: pageNumber,
+                    plays: []
+                };
+            }
             const itemElements = mainPlayElement.elements;
             const totalPlays = parseInt(mainPlayElement.attributes["total"].toString());
             return {
