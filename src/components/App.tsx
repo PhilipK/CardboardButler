@@ -4,7 +4,7 @@ import { GameInfoPlus } from "../models/GameInfo";
 import { CollectionMerger } from "../services/CollectionMerger";
 import WelcomePage from "./WelcomePage";
 import CollectionPage from "./CollectionPage";
-import BggGameLoader, { LoadingInfo } from "../services/BggGameLoader";
+import BggGameLoader, { LoadingInfo, PlaysLoadingInfo } from "../services/BggGameLoader";
 import { Dimmer, Loader, Progress } from "semantic-ui-react";
 export interface AppProps {
     bggServce?: BggGameService;
@@ -85,7 +85,9 @@ export default class App extends React.Component<AppProps, AppState> {
             window.location.hash = "usernames=" + newNames.join(",");
             if (this._ismounted) {
                 this.loader.loadCollections(newNames).then(() => {
-                    this.loader.loadExtendedInfo();
+                    this.loader.loadExtendedInfo().then(() => {
+                        this.loader.loadPlays();
+                    });
                 });
             }
         }
@@ -98,10 +100,11 @@ export default class App extends React.Component<AppProps, AppState> {
     }
 
     render() {
-        const { loadingInfo = [], games, showingCollection } = this.state;
+        const { loadingInfo = [], games, showingCollection, names } = this.state;
         const loadingCollections = loadingInfo.filter((li) => li.type === "collection").map((c) => c.type === "collection" ? c.username : "");
         const isLoadingCollections = loadingCollections.length > 0;
         const loadingGames = loadingInfo.filter((li) => li.type === "game");
+        const loadingPlays = loadingInfo.filter((li) => li.type === "plays") as PlaysLoadingInfo[];
         const progressStyle: React.CSSProperties = { position: "fixed", borderRadius: 30, bottom: 0, height: 120, left: "20%", right: "20%", padding: 40, backgroundColor: "white" };
         return (
             <span >
@@ -123,7 +126,14 @@ export default class App extends React.Component<AppProps, AppState> {
                             Getting more game info
                     </Progress>
                     </div>
+                }
 
+                {games.length > 0 && loadingPlays.length > 0 &&
+                    < div style={progressStyle}>
+                        <Progress indicating value={names.length - loadingPlays.length} total={names.length} progress="ratio">
+                            Finding plays for {loadingPlays.map((lp) => lp.username).join(", ")}
+                        </Progress>
+                    </div>
                 }
 
             </span>

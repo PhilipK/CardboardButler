@@ -20,7 +20,7 @@ interface CollectionLoadingInfo {
     username: string;
 }
 
-interface PlaysLoadingInfo {
+export interface PlaysLoadingInfo {
     type: "plays";
     username: string;
 }
@@ -73,6 +73,7 @@ export default class BggGameLoader {
         this.extraInfoMap = {};
         this.loadCollectionsFromCache();
         this.loadExtraInfo();
+        this.loadPlayMaps();
         this.setStorageVersion();
     }
 
@@ -139,6 +140,25 @@ export default class BggGameLoader {
             if (cache) {
                 this.extraInfoMap = cache;
             }
+        }
+    }
+
+    private loadPlayMaps() {
+        this.playsMap = {};
+        if (localStorage && this.useCache) {
+            if (localStorage.getItem("storageVersion") !== storageVersion) {
+                localStorage.removeItem("playsMap");
+            }
+            const cache = JSON.parse(localStorage.getItem("playsMap")) as PlaysMap;
+            if (cache) {
+                this.playsMap = cache;
+            }
+        }
+    }
+
+    private storePlayMaps() {
+        if (localStorage && this.useCache) {
+            localStorage.setItem("playsMap", JSON.stringify(this.playsMap));
         }
     }
 

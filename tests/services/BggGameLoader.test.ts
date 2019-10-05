@@ -263,6 +263,7 @@ describe("Loading games", () => {
         expect(onGamesUpdate).toHaveBeenCalledTimes(2);
         expect(onGamesUpdate.mock.calls[1][0]).toHaveLength(2);
         expect(onGamesUpdate.mock.calls[1][0][0].plays[0]).toEqual(Object.assign({}, play2, { playedBy: "Cyndaq" }));
+        expect(onGamesUpdate.mock.calls[1][0][1].plays[0]).toEqual(Object.assign({}, play1, { playedBy: "Warium" }));
 
     });
 });

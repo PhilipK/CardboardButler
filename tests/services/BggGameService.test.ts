@@ -346,7 +346,7 @@ describe("BggGameService", () => {
             fetch.reset();
         });
         it("Can get a users plays", async () => {
-            const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/xmlapi2/plays?username=Warium`;
+            const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/plays?username=Warium`;
             const wariumPlays = readFileSync("tests/services/testxml/WariumPlays100.xml", "utf8");
             fetch.mock(expectedUrl, 200, {
                 response: {
@@ -363,10 +363,10 @@ describe("BggGameService", () => {
         });
 
         it("Request multiple pages if pagenation is needed.", async () => {
-            const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/xmlapi2/plays?username=Warium`;
-            const expectedUrl2 = `${proxyUrl}https://api.geekdo.com/xmlapi2/xmlapi2/plays?username=Warium&page=2`;
-            const expectedUrl3 = `${proxyUrl}https://api.geekdo.com/xmlapi2/xmlapi2/plays?username=Warium&page=3`;
-            const expectedUrl4 = `${proxyUrl}https://api.geekdo.com/xmlapi2/xmlapi2/plays?username=Warium&page=4`;
+            const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/plays?username=Warium`;
+            const expectedUrl2 = `${proxyUrl}https://api.geekdo.com/xmlapi2/plays?username=Warium&page=2`;
+            const expectedUrl3 = `${proxyUrl}https://api.geekdo.com/xmlapi2/plays?username=Warium&page=3`;
+            const expectedUrl4 = `${proxyUrl}https://api.geekdo.com/xmlapi2/plays?username=Warium&page=4`;
             const wariumPlays1 = readFileSync("tests/services/testxml/WariumPlays1.xml", "utf8");
             const wariumPlays2 = readFileSync("tests/services/testxml/WariumPlays2.xml", "utf8");
             const wariumPlays3 = readFileSync("tests/services/testxml/WariumPlays3.xml", "utf8");
@@ -404,7 +404,7 @@ describe("BggGameService", () => {
         });
 
         it("can load play info", async () => {
-            const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/xmlapi2/plays?username=Warium`;
+            const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/plays?username=Warium`;
             const wariumPlays = readFileSync("tests/services/testxml/WariumPlays100.xml", "utf8");
             fetch.mock(expectedUrl, 200, {
                 response: {
