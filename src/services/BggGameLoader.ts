@@ -1,5 +1,5 @@
 import BggGameService, { BggRetryResult } from "./BggGameService";
-import { GameInfo, GameInfoPlus, ExtendedGameInfo } from "../models/GameInfo";
+import { GameInfo, GameInfoPlus, ExtendedGameInfo, PlayInfo, GamePlayInfo } from "../models/GameInfo";
 import { CollectionMap, CollectionMerger, CollectionMapPlus } from "./CollectionMerger";
 
 
@@ -19,13 +19,22 @@ interface CollectionLoadingInfo {
     type: "collection";
     username: string;
 }
+
+export interface PlaysLoadingInfo {
+    type: "plays";
+    username: string;
+}
 const storageVersion = "2";
 
 
-export type LoadingInfo = LoadingStatus & (GameLoadingInfo | CollectionLoadingInfo);
+export type LoadingInfo = LoadingStatus & (GameLoadingInfo | CollectionLoadingInfo | PlaysLoadingInfo);
 
 interface ExtraInfoMap {
     [id: number]: (ExtendedGameInfo | undefined);
+}
+
+interface PlaysMap {
+    [username: string]: (PlayInfo[] | undefined);
 }
 
 type CollectionUpdateEventHandler = (games: GameInfoPlus[]) => void;
@@ -38,6 +47,7 @@ export default class BggGameLoader {
     private collectionMap: CollectionMapPlus = {};
 
     private extraInfoMap: ExtraInfoMap = {};
+    private playsMap: PlaysMap = {};
 
 
     private currentNames: string[] = [];
@@ -63,6 +73,7 @@ export default class BggGameLoader {
         this.extraInfoMap = {};
         this.loadCollectionsFromCache();
         this.loadExtraInfo();
+        this.loadPlayMaps();
         this.setStorageVersion();
     }
 
@@ -101,6 +112,7 @@ export default class BggGameLoader {
         }));
     }
 
+
     private chunk<T>(input: T[], chunkSize: number): T[][] {
         const chunked_arr: T[][] = [];
         const copied = [...input];
@@ -131,6 +143,25 @@ export default class BggGameLoader {
         }
     }
 
+    private loadPlayMaps() {
+        this.playsMap = {};
+        if (localStorage && this.useCache) {
+            if (localStorage.getItem("storageVersion") !== storageVersion) {
+                localStorage.removeItem("playsMap");
+            }
+            const cache = JSON.parse(localStorage.getItem("playsMap")) as PlaysMap;
+            if (cache) {
+                this.playsMap = cache;
+            }
+        }
+    }
+
+    private storePlayMaps() {
+        if (localStorage && this.useCache) {
+            localStorage.setItem("playsMap", JSON.stringify(this.playsMap));
+        }
+    }
+
     private setStorageVersion() {
         if (localStorage && this.useCache) {
             localStorage.setItem("storageVersion", storageVersion);
@@ -158,7 +189,8 @@ export default class BggGameLoader {
     }
 
     private getAllGamesPlus() {
-        const shownGamesMap = this.currentNames.reduce((prev, cur) => {
+        const currentNames = this.currentNames;
+        const shownGamesMap = currentNames.reduce((prev, cur) => {
             const known = this.collectionMap[cur];
             if (!known) {
                 return prev;
@@ -169,6 +201,31 @@ export default class BggGameLoader {
         }, {}) as CollectionMap;
         const allGames = this.merger.getMergedCollection(shownGamesMap);
         const allGamesPlus = allGames.map((ag) => Object.assign({}, ag, this.extraInfoMap[ag.id] || {}));
+        if (Object.keys(this.playsMap).length > 0) {
+            const allGamesWithPlays = allGamesPlus.map((game) => {
+                const allPlaysOfGame = currentNames.map((name) => {
+                    const usersPlays = this.playsMap[name];
+                    if (usersPlays) {
+                        const usersPlaysOfThisGame = usersPlays.filter((usersPlay) => usersPlay.gameId === game.id);
+                        const gameWithPlayedBy = usersPlaysOfThisGame.map((up) => Object.assign({}, up, { playedBy: name }));
+                        return gameWithPlayedBy;
+                    }
+                    return [];
+
+                }).reduce((prev, cur) => prev.concat(cur), []);
+                const lastPlayInMinutes = allPlaysOfGame.reduce((prev, cur) => Math.max(prev, cur.date.getTime()), 0);
+                const timePlayedInMinutes = allPlaysOfGame.reduce((prev, cur) => prev + (cur.length || 0), 0);
+                const result: GamePlayInfo = {
+                    plays: allPlaysOfGame,
+                    lastPlayed: lastPlayInMinutes ? new Date(lastPlayInMinutes) : undefined,
+                    timePlayedMinutes: timePlayedInMinutes
+
+                };
+                return Object.assign({}, game, result);
+            });
+            return allGamesWithPlays;
+
+        }
         return allGamesPlus;
     }
 
@@ -180,6 +237,38 @@ export default class BggGameLoader {
     private informLoadingHandlers() {
         const loadingInfo = this.getLoadingInfo();
         this.loadingEventHandlers.forEach((handler) => handler(loadingInfo));
+    }
+
+
+    public async loadPlays() {
+        const names = this.currentNames;
+        return Promise.all(names.map(async (name) => {
+            this.loadingInfo = this.loadingInfo.filter((n) => n.type !== "plays" || (n.type === "plays" && n.username !== name));
+            this.loadingInfo.push({
+                isLoading: true,
+                type: "plays",
+                username: name
+            });
+            this.informLoadingHandlers();
+            const playerPlays = await this.loadPlaysWithRetry(name);
+            this.playsMap[name] = playerPlays;
+            this.loadingInfo = this.loadingInfo.filter((n) => n.type !== "plays" || (n.type === "plays" && n.username !== name));
+            this.informLoadingHandlers();
+            this.informCollectionUpdateHandlers();
+
+        }));
+    }
+
+    private async loadPlaysWithRetry(name: string): Promise<PlayInfo[]> {
+        const plays = await this.service.getPlays(name);
+        if (Array.isArray(plays)) {
+            return plays;
+        }
+        const retryTime = plays && plays.backoff ? 10000 : 1000;
+        return new Promise<PlayInfo[]>(async resolver => {
+            setTimeout(() => resolver(this.loadPlaysWithRetry(name)), retryTime);
+        });
+
     }
 
 

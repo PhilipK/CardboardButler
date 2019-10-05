@@ -10,6 +10,10 @@ import { BggRatingSorter } from "./sorters/BggRatingSorter";
 import { NameSorter } from "./sorters/NameSorter";
 import { SuggestedPlayersSorter } from "./sorters/SuggestedPlayersSorter";
 import { MultiSorter } from "./sorters/MultiSorter";
+import { RecentlyPlayedSorter } from "./sorters/RecentlyPlayedSorter";
+import { PlayedLongAgoSorter } from "./sorters/PlayedLongAgoSorter";
+import { PlayedALotSorter } from "./sorters/PlayedALotSorter";
+import { PlayedNotALotSorter } from "./sorters/PlayedNotALotSorter";
 
 const sortMap = {
     alphabetic: new NameSorter(),
@@ -18,7 +22,11 @@ const sortMap = {
     old: new OldSorter(),
     userrating: new UserRatingSorter(),
     "weight-heavy": new HeavySorter(),
-    "weight-light": new LightSorter()
+    "weight-light": new LightSorter(),
+    "playedRecently": new RecentlyPlayedSorter(),
+    "playedLongAgo": new PlayedLongAgoSorter(),
+    "playedALot": new PlayedALotSorter(),
+    "playedNotALot": new PlayedNotALotSorter()
 };
 
 const DEFAULT_OPTION = "bggrating";

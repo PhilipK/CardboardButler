@@ -1,3 +1,5 @@
+import { number } from "prop-types";
+
 /**
  * A bgg Family defines a group of games a game relates to, examples are War Games or Thematic Games.
  */
@@ -52,14 +54,21 @@ export interface ExtendedGameInfo {
 }
 
 
+export interface GamePlayInfo {
+    plays?: PlayInfo[] | undefined;
+    lastPlayed?: Date;
+    timePlayedMinutes: number;
+}
+
 export interface PlayInfo {
     playId: number;
     date: Date;
     quantity: number;
     length?: number;
     gameId: number;
+    playedBy?: string;
 }
 
-export type FullGameInfo = GameInfo & ExtendedGameInfo;
+export type FullGameInfo = GameInfo & ExtendedGameInfo & GamePlayInfo;
 
 export type GameInfoPlus = GameInfo | FullGameInfo;

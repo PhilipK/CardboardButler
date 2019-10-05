@@ -61,7 +61,7 @@ export default class PickAGameForMe extends React.Component<Props, State> {
                     <Container >
                         <Segment>
                             <Header as="h3">What about this game?</Header>
-                            <Item.Group centered>
+                            <Item.Group >
                                 <GameListItem size={"large"} item={pickedGame} />
                             </Item.Group>
                             <Button className="large" color="black" onClick={(e) => {
