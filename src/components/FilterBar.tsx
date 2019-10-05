@@ -79,17 +79,29 @@ export default class FilterBar extends React.Component<Props, State> {
     }
 
     getSortOptions() {
+        const options = this.state.filterOptions.sortOption;
+        const allowMultiSelect = Array.isArray(options);
+        const { currentUsers = ["Unknown"] } = this.props;
+        const oneUser = currentUsers.length <= 1;
+        const iWe = oneUser ? "I" : "we";
+
         const sortingOptions: SortingOptions[] = [
             { text: "are highly rated", value: 0, sortoption: "bggrating" },
             { text: "are alphabetic", value: 1, sortoption: "alphabetic" },
             { text: "are new", value: 2, sortoption: "new", ["data-testid"]: "sortByNew" },
             { text: "are old", value: 3, sortoption: "old" },
-            { text: "we like", value: 4, sortoption: "userrating" },
+            { text: iWe + " rate highly", value: 4, sortoption: "userrating" },
             { text: "are easy to learn", value: 5, sortoption: "weight-light" },
             { text: "are complex", value: 6, sortoption: "weight-heavy" },
-            { text: "are best with this number of players", value: 7, ["data-testid"]: "suggestedPlayers" }
+            { text: "are best with this number of players", value: 7, ["data-testid"]: "suggestedPlayers" },
+            { text: iWe + " played recently", value: 8, sortoption: "playedRecently" },
+            { text: iWe + " haven't played in a while", value: 9, sortoption: "playedLongAgo" },
+            { text: iWe + " have played a lot", value: 10, sortoption: "playedALot" },
+            { text: iWe + " have not played a lot", value: 11, sortoption: "playedNotALot" },
         ];
-        return sortingOptions;
+        const singlePreferenceOption: SortingOptions = { text: iWe + " only have one preference", value: 12, ["data-testid"]: "SortBySingleOption" };
+        const multiPreferenceOption: SortingOptions = { text: iWe + " have multiple preferences", value: 12, ["data-testid"]: "SortByMultipleOption" };
+        return [...sortingOptions, allowMultiSelect ? singlePreferenceOption : multiPreferenceOption];
     }
 
     onTimeChange(timerIndex: number) {
@@ -111,7 +123,7 @@ export default class FilterBar extends React.Component<Props, State> {
 
     onSortChange(sortOptionIndex: number | number[]) {
         const currentOption = this.state.filterOptions.sortOption;
-        const clickedSwitchState = sortOptionIndex === 8 || (Array.isArray(sortOptionIndex) && sortOptionIndex.indexOf(8) > -1);
+        const clickedSwitchState = sortOptionIndex === 12 || (Array.isArray(sortOptionIndex) && sortOptionIndex.indexOf(12) > -1);
         if (clickedSwitchState) {
             if (Array.isArray(currentOption)) {
                 this.combineState({ sortOption: currentOption[0] });
@@ -191,9 +203,6 @@ export default class FilterBar extends React.Component<Props, State> {
         const iWe = oneUser ? "I" : "we";
         const amAre = oneUser ? "am" : "are";
         const sortingOptions = this.getSortOptions();
-        sortingOptions.find((o) => o.sortoption === "userrating").text = iWe + " rate highly";
-        const singlePreferenceOption = { text: iWe + " only have one preference", value: 8, ["data-testid"]: "SortBySingleOption" };
-        const multiPreferenceOption = { text: iWe + " have multiple preferences", value: 8, ["data-testid"]: "SortByMultipleOption" };
         const values = this.getDropdownValues();
         const timeOptions = this.getOptions();
         return (
@@ -234,7 +243,7 @@ export default class FilterBar extends React.Component<Props, State> {
                                 inline={true}
                                 placeholder={sortingOptions[0].text}
                                 data-testid="SortOptionDropdown"
-                                options={[...sortingOptions, allowMultiSelect ? singlePreferenceOption : multiPreferenceOption]}
+                                options={this.getSortOptions()}
                                 multiple={allowMultiSelect}
                                 closeOnChange={!allowMultiSelect}
                                 value={values}
