@@ -4,17 +4,13 @@
 
 # Cardboard Butler
 
-Cardboard Butler is a webapp that let [BGG](https://boardgamegeek.com/) users show find a game from their collection that fit their game group.
-
-Note, this is the early beta of Cardboard Butler verion 2, that is a reimplementation of version 1.
-This project is still under contruction, but most of the features of version 1 are done by now.
-
-You can use the beta version here:
-
-http://cardboardbutler.dk
+Cardboard Butler is an open-source web page, that helps you decide the next boardgame to play.
 
 [![Build Status](https://dev.azure.com/philipkristoffersen/Cardboard%20Butler/_apis/build/status/PhilipK.CardboardButler?branchName=master)](https://dev.azure.com/philipkristoffersen/Cardboard%20Butler/_build/latest?definitionId=1&branchName=master)
 
+
+## Why?
+As boardgame collections grow, it gets more and more difficult decicde on what to play. This will help you decide.
 
 ## Installation
 
@@ -70,3 +66,6 @@ This will create a production ready build in the dist folder.
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
+## Support BGG
+All game data is from [BoardGameGeek](www.boardgamegeek.com).
+If you like Cardboard Butler, you can help by supporting BGG [here](https://boardgamegeek.com/support)
