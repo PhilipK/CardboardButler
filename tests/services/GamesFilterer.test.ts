@@ -363,5 +363,27 @@ describe("Filtering games", () => {
             const result = filterer.filterAndSort(onOrdered, { sortOption: "playedLongAgo" });
             expect(result).toEqual(rankordering);
         });
+
+        it("Can sort by played a lot", () => {
+            const onOrdered = [
+                Object.assign({}, testGame1, { plays: [{}] }),
+                testGame3,
+                Object.assign({}, testGame2, { plays: [{}, {}] }),
+            ];
+            const rankordering = [onOrdered[2], onOrdered[0], onOrdered[1]];
+            const result = filterer.filterAndSort(onOrdered, { sortOption: "playedALot" });
+            expect(result).toEqual(rankordering);
+        });
+
+        it("Can sort by played not a lot", () => {
+            const onOrdered = [
+                Object.assign({}, testGame1, { plays: [{}] }),
+                testGame3,
+                Object.assign({}, testGame2, { plays: [{}, {}] }),
+            ];
+            const rankordering = [onOrdered[1], onOrdered[0], onOrdered[2]];
+            const result = filterer.filterAndSort(onOrdered, { sortOption: "playedNotALot" });
+            expect(result).toEqual(rankordering);
+        });
     });
 });

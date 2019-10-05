@@ -17,7 +17,7 @@ export type PlayCountOption = number;
  */
 export type SortOption = SimpleSortOption | ParametricSortOption;
 
-export type SimpleSortOption = "alphabetic" | "bggrating" | "new" | "old" | "userrating" | "weight-light" | "weight-heavy" | "playedRecently" | "playedLongAgo";
+export type SimpleSortOption = "alphabetic" | "bggrating" | "new" | "old" | "userrating" | "weight-light" | "weight-heavy" | "playedRecently" | "playedLongAgo" | "playedALot" | "playedNotALot";
 
 export type ParametricSortOption = {
     type: "suggestedPlayers",
