@@ -10,6 +10,7 @@ import { BggRatingSorter } from "./sorters/BggRatingSorter";
 import { NameSorter } from "./sorters/NameSorter";
 import { SuggestedPlayersSorter } from "./sorters/SuggestedPlayersSorter";
 import { MultiSorter } from "./sorters/MultiSorter";
+import { RecentlyPlayedSorter } from "./sorters/RecentlyPlayedSorter";
 
 const sortMap = {
     alphabetic: new NameSorter(),
@@ -18,7 +19,8 @@ const sortMap = {
     old: new OldSorter(),
     userrating: new UserRatingSorter(),
     "weight-heavy": new HeavySorter(),
-    "weight-light": new LightSorter()
+    "weight-light": new LightSorter(),
+    "playedRecently": new RecentlyPlayedSorter()
 };
 
 const DEFAULT_OPTION = "bggrating";
