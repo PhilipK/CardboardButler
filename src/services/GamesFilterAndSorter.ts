@@ -27,7 +27,7 @@ export class GamesFilterAndSorter {
      * @param options optional options, that defines how the collection should be filtered and sorted.
      */
 
-    filterAndSort: (collection: GameInfoPlus[], options: FilterAndSortOptions) => GameInfoPlus[];
+    filterAndSort: (collection: GameInfoPlus[], options?: FilterAndSortOptions) => GameInfoPlus[];
 
     filterAndSortInner(collection: GameInfoPlus[], options: FilterAndSortOptions = {}): GameInfoPlus[] {
         const collectionCopy = [...collection];
