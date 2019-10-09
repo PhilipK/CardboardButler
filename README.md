@@ -1,15 +1,14 @@
-![Cardboard Butler Logo](https://cardboardbutler.azureedge.net/butler.png)
-
-
 
 # Cardboard Butler
 
+![Cardboard Butler Logo](https://cardboardbutler.azureedge.net/butler.png)
+
 Cardboard Butler is an open-source web page, that helps you decide the next boardgame to play.
+You can the live version here:
+[Cardboard Butler](http://cardboardbutler.dk)
 
-[![Build Status](https://dev.azure.com/philipkristoffersen/Cardboard%20Butler/_apis/build/status/PhilipK.CardboardButler?branchName=master)](https://dev.azure.com/philipkristoffersen/Cardboard%20Butler/_build/latest?definitionId=1&branchName=master)
+## Why
 
-
-## Why?
 As boardgame collections grow, it gets more and more difficult decicde on what to play. This will help you decide.
 
 ## Installation
@@ -67,5 +66,8 @@ This will create a production ready build in the dist folder.
 5. Submit a pull request :D
 
 ## Support BGG
+
 All game data is from [BoardGameGeek](www.boardgamegeek.com).
 If you like Cardboard Butler, you can help by supporting BGG [here](https://boardgamegeek.com/support)
+
+[![Build Status](https://dev.azure.com/philipkristoffersen/Cardboard%20Butler/_apis/build/status/PhilipK.CardboardButler?branchName=master)](https://dev.azure.com/philipkristoffersen/Cardboard%20Butler/_build/latest?definitionId=1&branchName=master)
