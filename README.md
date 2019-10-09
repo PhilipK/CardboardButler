@@ -5,7 +5,7 @@
 
 Cardboard Butler is an open-source web page, that helps you decide the next boardgame to play.
 You can the live version here:
-[Cardboard Butler](http://cardboardbutler.dk)
+[Cardboard Butler](https://cardboardbutler.azureedge.net)
 
 ## Why
 
