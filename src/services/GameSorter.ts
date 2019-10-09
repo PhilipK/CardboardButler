@@ -14,6 +14,7 @@ import { RecentlyPlayedSorter } from "./sorters/RecentlyPlayedSorter";
 import { PlayedLongAgoSorter } from "./sorters/PlayedLongAgoSorter";
 import { PlayedALotSorter } from "./sorters/PlayedALotSorter";
 import { PlayedNotALotSorter } from "./sorters/PlayedNotALotSorter";
+const memoize = require("fast-memoize");
 
 const sortMap = {
     alphabetic: new NameSorter(),
@@ -31,21 +32,32 @@ const sortMap = {
 
 const DEFAULT_OPTION = "bggrating";
 
+function getSorterInner(sortOption: (SortOption | SortOption[]) = DEFAULT_OPTION): Sorter {
+    if (Array.isArray(sortOption)) {
+        const innerSorters = sortOption.map(getSorterInner);
+        return new MultiSorter(innerSorters);
+    }
+    if (typeof sortOption === "object") {
+        return new SuggestedPlayersSorter(sortOption.numberOfPlayers);
+    }
+    return sortMap[sortOption];
+}
+
+const getSorter = memoize(getSorterInner);
+
+
 export class GameSorter {
 
-    public sortCollection(collection: GameInfoPlus[], sortOption: (SortOption | SortOption[])): GameInfoPlus[] {
-        return this.getSorter(sortOption).sort([...collection]);
+    constructor() {
+        this.sortCollection = memoize(this.sortCollectionInner);
+
     }
 
-    private getSorter(sortOption: (SortOption | SortOption[]) = DEFAULT_OPTION): Sorter {
-        if (Array.isArray(sortOption)) {
-            const innerSorters = sortOption.map(this.getSorter);
-            return new MultiSorter(innerSorters);
-        }
-        if (typeof sortOption === "object") {
-            return new SuggestedPlayersSorter(sortOption.numberOfPlayers);
-        }
-        return sortMap[sortOption];
+    public sortCollection: (collection: GameInfoPlus[], sortOption: (SortOption | SortOption[])) => GameInfoPlus[];
+
+    private sortCollectionInner(collection: GameInfoPlus[], sortOption: (SortOption | SortOption[])): GameInfoPlus[] {
+        const sorter = getSorter(sortOption);
+        return sorter.sort([...collection]);
     }
 
 }
