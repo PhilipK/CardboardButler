@@ -1,9 +1,18 @@
 import { GameInfo } from "../models/GameInfo";
 
 import { FilterAndSortOptions } from "../models/FilterOptions";
+const memoize = require("fast-memoize");
 
 export class GameFilterer {
-    public filterCollection(collection: GameInfo[], options: FilterAndSortOptions) {
+
+    constructor() {
+        this.filterCollectionInner = this.filterCollectionInner.bind(this);
+        this.filterCollection = memoize(this.filterCollectionInner);
+    }
+
+    public filterCollection: (collection: GameInfo[], options: FilterAndSortOptions) => GameInfo[];
+
+    private filterCollectionInner(collection: GameInfo[], options: FilterAndSortOptions) {
         const { playtime, playerCount } = options;
         if (playtime) {
             collection = this.filterOnTime(collection, playtime);

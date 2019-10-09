@@ -10,6 +10,8 @@ import NoGamesFound from "./NoGamesFound";
 import PickAGameForMe from "./PickAGame";
 import GameCardItem from "./GameCardItem";
 import Footer from "./Footer";
+import CollectionList from "./CollectionList";
+import CollectionGrid from "./CollectionGrid";
 
 
 
@@ -76,14 +78,10 @@ export default class CollectionPage extends React.Component<Props, State> {
                 }
                 <Container fluid text={viewType === "list"}>
                     {viewType === "list" &&
-                        <Item.Group>
-                            {filteredGames.map((game) => <GameListItem key={game.id} item={game} />)}
-                        </Item.Group>
+                        <CollectionList games={filteredGames} />
                     }
                     {viewType === "grid" &&
-                        <Card.Group centered  >
-                            {filteredGames.map((game) => <GameCardItem key={game.id} item={game} />)}
-                        </Card.Group>
+                        <CollectionGrid games={filteredGames} />
                     }
                 </Container>
                 <Footer />
