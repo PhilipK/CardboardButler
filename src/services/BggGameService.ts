@@ -170,13 +170,13 @@ class BggGameService {
         const mainElements = mainElement.elements;
         const suggestedplayersElement = mainElements.find((e) => e.name === "poll" && e.attributes.name === "suggested_numplayers");
         const suggestedNumberOfPlayersArray = suggestedplayersElement.elements.map((e) => {
-
             const numOfPlayersString = e.attributes.numplayers.toString();
             const numberOfPlayers = numOfPlayersString.indexOf("+") > -1 ? Infinity : parseInt(numOfPlayersString, 10);
+            const getNumberOfVotes = (resultType: string) => parseInt(e.elements.find((e) => e.name === "result" && e.attributes["value"].toString() === resultType).attributes.numvotes as string);
             if (e.elements) {
-                const best = parseInt(e.elements.find((e) => e.name === "result" && e.attributes["value"].toString() === "Best").attributes.numvotes as string);
-                const recommended = parseInt(e.elements.find((e) => e.name === "result" && e.attributes["value"].toString() === "Recommended").attributes.numvotes as string);
-                const notRecommended = parseInt(e.elements.find((e) => e.name === "result" && e.attributes["value"].toString() === "Not Recommended").attributes.numvotes as string);
+                const best = getNumberOfVotes("Best");
+                const recommended = getNumberOfVotes("Recommended");
+                const notRecommended = getNumberOfVotes("Not Recommended");
                 return {
                     numberOfPlayers: numberOfPlayers,
                     best: best,
@@ -188,12 +188,12 @@ class BggGameService {
 
         });
         const suggesteNumberOfPlayersMap: SuggestedNumberOfPlayersMap = suggestedNumberOfPlayersArray.filter((snp) => snp).reduce((p, c) => Object.assign(p, { [c.numberOfPlayers]: c }), {});
-
+        const getLinkValues = (typeName: string) => mainElements.filter((e) => e.name === "link" && e.attributes["type"] === typeName).map((e) => e.attributes["value"].toString());
         return {
             description: mainElements.find((e) => e.name === "description").elements[0].text.toString().trim(),
             weight: parseFloat(mainElements.find((e) => e.name === "statistics").elements[0].elements.find((e) => e.name === "averageweight").attributes["value"].toString().trim()),
-            mechanics: mainElements.filter((e) => e.name === "link" && e.attributes["type"] === "boardgamemechanic").map((e) => e.attributes["value"].toString()),
-            categories: mainElements.filter((e) => e.name === "link" && e.attributes["type"] === "boardgamecategory").map((e) => e.attributes["value"].toString()),
+            mechanics: getLinkValues("boardgamemechanic"),
+            categories: getLinkValues("boardgamecategory"),
             suggestedNumberOfPlayers: suggesteNumberOfPlayersMap
         };
     }
@@ -219,16 +219,16 @@ class BggGameService {
     private getPlayStatsFromCollection(elements: convert.Element[]) {
         const stats = this.getStatsElement(elements);
         const attr = stats.attributes;
+        const parseAsInt = (name: string) => attr[name] && parseInt(attr[name].toString());
         return {
-            minPlayers: attr.minplayers && parseInt(attr.minplayers.toString()),
-            maxPlayers: attr.maxplayers && parseInt(attr.maxplayers.toString()),
-            minPlaytime: attr.minplaytime && parseInt(attr.minplaytime.toString()),
-            maxPlaytime: attr.maxplaytime && parseInt(attr.maxplaytime.toString()),
-            playingTime: attr.playingtime && parseInt(attr.playingtime.toString()),
-            numberOwned: attr.numowned && parseInt(attr.numowned.toString()),
+            minPlayers: parseAsInt("minplayers"),
+            numberOwned: parseAsInt("numowned"),
+            maxPlayers: parseAsInt("maxplayers"),
+            minPlaytime: parseAsInt("minplaytime"),
+            maxPlaytime: parseAsInt("maxplaytime"),
+            playingTime: parseAsInt("playingtime")
         };
     }
-
     private getUserRating(username: string, elements: convert.Element[]) {
         const ratingElement = this.getRatingElement(elements);
         const ratingString = ratingElement.attributes["value"] as string;
