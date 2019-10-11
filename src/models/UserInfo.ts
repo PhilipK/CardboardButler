@@ -9,7 +9,7 @@ interface InvalidUser {
 
 interface IsError {
     isValid: "unknown";
-    error: Error;
+    error: Error | string;
 }
 
 /**

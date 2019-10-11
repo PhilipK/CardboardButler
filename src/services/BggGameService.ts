@@ -304,10 +304,14 @@ class BggGameService {
         });
     }
 
+
     private async fetUserInfoXml(username: string) {
         const url = this.buildUserUrl(username);
-        return this.getFetch()(url).then((res) => {
-            return res.text();
+        return this.getFetch()(url).then(async (res) => {
+            if (res.status === 429) {
+                return { error: "backoff" };
+            }
+            return await res.text();
         }).catch((error: Error) => {
             return { error };
         });
@@ -332,5 +336,7 @@ class BggGameService {
 
 
 }
+
+
 
 export default BggGameService;

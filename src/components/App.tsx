@@ -16,9 +16,10 @@ export interface AppState {
     games: GameInfoPlus[];
     loadingInfo: LoadingInfo[];
     showingCollection: boolean;
+    showBackoff: boolean;
 }
 
-const initialState: AppState = { names: [], games: [], loadingInfo: [], showingCollection: false };
+const initialState: AppState = { names: [], games: [], loadingInfo: [], showingCollection: false, showBackoff: false };
 
 
 export default class App extends React.Component<AppProps, AppState> {
@@ -96,11 +97,21 @@ export default class App extends React.Component<AppProps, AppState> {
 
     async userValidator(name: string) {
         const res = await this.getBggService().getUserInfo(name);
-        return res.isValid === true;
+        const beingToldToBackOff = res.isValid === "unknown" && res.error === "backoff";
+        if (beingToldToBackOff) {
+            this.setState({ showBackoff: true });
+            return false;
+        } else {
+            const allGoodAgain = res.isValid === true;
+            if (allGoodAgain) {
+                this.setState({ showBackoff: false });
+            }
+            return allGoodAgain;
+        }
     }
 
     render() {
-        const { loadingInfo = [], games, showingCollection, names } = this.state;
+        const { loadingInfo = [], games, showingCollection, names, showBackoff } = this.state;
         const loadingCollections = loadingInfo.filter((li) => li.type === "collection").map((c) => c.type === "collection" ? c.username : "");
         const isLoadingCollections = loadingCollections.length > 0;
         const loadingGames = loadingInfo.filter((li) => li.type === "game");
@@ -108,7 +119,7 @@ export default class App extends React.Component<AppProps, AppState> {
         const progressStyle: React.CSSProperties = { position: "fixed", borderRadius: 30, bottom: 0, height: 120, left: "20%", right: "20%", padding: 40, backgroundColor: "white" };
         return (
             <span >
-                {!showingCollection && !isLoadingCollections && <WelcomePage onNameSelect={this.onNameSelect} userValidator={this.userValidator} />}
+                {!showingCollection && !isLoadingCollections && <WelcomePage onNameSelect={this.onNameSelect} userValidator={this.userValidator} showWarning={showBackoff} />}
                 {isLoadingCollections && games.length === 0 && <Dimmer active inverted>
                     <Loader inverted content={"Finding games for " + loadingCollections.join(", ")} />
                 </Dimmer>
