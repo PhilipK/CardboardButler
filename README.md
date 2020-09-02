@@ -4,7 +4,7 @@
 ![Cardboard Butler Logo](https://cardboardbutler.azureedge.net/butler.png)
 
 Cardboard Butler is an open-source web page, that helps you decide the next boardgame to play.
-You can the live version here:
+You can view the live version here:
 [Cardboard Butler](https://cardboardbutler.azureedge.net)
 
 ## Why
