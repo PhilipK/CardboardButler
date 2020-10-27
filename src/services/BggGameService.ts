@@ -318,20 +318,20 @@ class BggGameService {
     }
 
     private buildPlaysUrl(username: string, pageNumber: number) {
-        const baseUrl = `https://cors-anywhere.herokuapp.com/https://api.geekdo.com/xmlapi2/plays?username=${username}`;
+        const baseUrl = `https://api.geekdo.com/xmlapi2/plays?username=${username}`;
         return pageNumber > 1 ? (baseUrl + "&page=" + pageNumber) : baseUrl;
     }
 
     private buildGameUrls(ids: number[]) {
-        return `https://cors-anywhere.herokuapp.com/https://api.geekdo.com/xmlapi2/thing?id=${ids.join(",")}&stats=1`;
+        return `https://api.geekdo.com/xmlapi2/thing?id=${ids.join(",")}&stats=1`;
     }
 
     private buildCollectionUrl(username: string) {
-        return `https://cors-anywhere.herokuapp.com/https://api.geekdo.com/xmlapi2/collection?username=${username}&own=1&stats=1&excludesubtype=boardgameexpansion`;
+        return `https://api.geekdo.com/xmlapi2/collection?username=${username}&own=1&stats=1&excludesubtype=boardgameexpansion`;
     }
 
     private buildUserUrl(username: string) {
-        return `https://cors-anywhere.herokuapp.com/https://api.geekdo.com/xmlapi2/user?name=${username}`;
+        return `https://api.geekdo.com/xmlapi2/user?name=${username}`;
     }
 
 
