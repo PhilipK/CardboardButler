@@ -4,8 +4,7 @@ import BggGameService from "../../src/services/BggGameService";
 import { readFileSync } from "fs";
 import { alchemists, alchemistsTheKing } from "./model/TestGames";
 
-const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-const expectedUrl = `${proxyUrl}https://api.geekdo.com/xmlapi2/collection?username=Warium&own=1&stats=1&excludesubtype=boardgameexpansion`;
+const expectedUrl = `https://api.geekdo.com/xmlapi2/collection?username=Warium&own=1&stats=1&excludesubtype=boardgameexpansion`;
 
 let smallCollectionCache: GameInfo[] = undefined;
 export async function getSmallCollection() {

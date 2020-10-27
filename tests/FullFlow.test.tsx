@@ -11,7 +11,7 @@ import { getSmallCollection } from "./services/TestHelpers";
 
 describe("Full flow", () => {
 
-    const gameinfoUlr = "https://cors-anywhere.herokuapp.com/https://api.geekdo.com/xmlapi2/thing?id";
+    const gameinfoUlr = "https://api.geekdo.com/xmlapi2/thing?id";
 
     let service: BggGameService;
 
