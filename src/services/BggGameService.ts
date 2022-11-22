@@ -204,7 +204,7 @@ class BggGameService {
     }
 
     private getAverageRating(elements: convert.Element[]) {
-        const stringValue = this.getRatingElement(elements).elements.find((t) => t.name === "average").attributes.value;
+        const stringValue = this.getRatingElement(elements).elements.find((t) => t.name === "bayesaverage").attributes.value;
         return parseFloat(stringValue.toString());
     }
 
